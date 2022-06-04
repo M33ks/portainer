@@ -42,12 +42,6 @@
                     "name": "TZ"
                 },
                 {
-                    "default": "USER_DB_NAME",
-                    "description": "Specify the name of a database to be created on image startup.",
-                    "label": "MYSQL_DATABASE",
-                    "name": "MYSQL_DATABASE"
-                },
-                {
                     "default": "MYSQL_USER",
                     "description": "This user will have superuser access to the database specified by MYSQL_DATABASE (do not use root here).",
                     "label": "MYSQL_USER",
