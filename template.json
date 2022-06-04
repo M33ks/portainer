@@ -30,34 +30,10 @@
                     "name": "PGID"
                 },
                 {
-                    "default": "ROOT_ACCESS_PASSWORD",
-                    "description": "Set this to root password for installation (minimum 4 characters).",
-                    "label": "MYSQL_ROOT_PASSWORD",
-                    "name": "MYSQL_ROOT_PASSWORD"
-                },
-                {
                     "default": "America/New_York",
                     "description": "Specify a timezone to use for example Europe/Amsterdam",
                     "label": "TZ",
                     "name": "TZ"
-                },
-                {
-                    "default": "MYSQL_USER",
-                    "description": "This user will have superuser access to the database specified by MYSQL_DATABASE (do not use root here).",
-                    "label": "MYSQL_USER",
-                    "name": "MYSQL_USER"
-                },
-                {
-                    "default": "DATABASE_PASSWORD",
-                    "description": "Set this to the password you want to use for you MYSQL_USER (minimum 4 characters).",
-                    "label": "MYSQL_PASSWORD",
-                    "name": "MYSQL_PASSWORD"
-                },
-                {
-                    "default": "http://URL1/your.sql,https://URL2/your.sql",
-                    "description": "Set this to ingest sql files from an http/https endpoint (comma seperated array).",
-                    "label": "REMOTE_SQL",
-                    "name": "REMOTE_SQL"
                 }
             ]
         }, {
