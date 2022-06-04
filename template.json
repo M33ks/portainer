@@ -1,6 +1,7 @@
 {
     "version": "2",
-    "templates": [{
+    "templates": [
+        {
             "description": "[Mariadb](https://mariadb.org/) is one of the most popular database servers. Made by the original developers of MySQL.",
             "env": [{
                     "default": "1024",
@@ -66,5 +67,6 @@
                 "bind": "/volume1/docker/mariadb/config",
                 "container": "/config"
             }]
-        }]
+        }
+    ]
 }
