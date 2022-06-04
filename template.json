@@ -1,50 +1,21 @@
 {
     "version": "2",
     "templates": [{
-        "description": "[Mariadb](https://mariadb.org/) is one of the most popular database servers. Made by the original developers of MySQL.",
-        "note": "Portainer App Templates by <a href='https://www.technorabilia.com' target='_blank'>Technorabilia</a> based on data provided by <a href='https://www.linuxserver.io' target='_blank'>LinuxServer.io</a>.</p><p>Don't forget to create the volume directories on the host file system.</p><p>mkdir -p /volume1/docker/mariadb/config</p>",
-        "logo": "https://raw.githubusercontent.com/linuxserver/docker-templates/master/linuxserver.io/img/mariadb-git.png",
-        "platform": "linux",
-        "type": 1,
-        "name": "MariaDBN",
-        "title": "MariaDBT",    
-        "image": "linuxserver/mariadb:latest",
-        "restart_policy": "unless-stopped",
-        "ports": [
-                    "3306:3306/tcp"
+            "description": "[Mariadb](https://mariadb.org/) is one of the most popular database servers. Made by the original developers of MySQL.",
+            "note": "Portainer App Templates by <a href='https://www.technorabilia.com' target='_blank'>Technorabilia</a> based on data provided by <a href='https://www.linuxserver.io' target='_blank'>LinuxServer.io</a>.</p><p>Don't forget to create the volume directories on the host file system.</p><p>mkdir -p /volume1/docker/mariadb/config</p>",
+            "logo": "https://raw.githubusercontent.com/linuxserver/docker-templates/master/linuxserver.io/img/mariadb-git.png",
+            "platform": "linux",
+            "name": "MariaDB",
+            "title": "MariaDB",
+            "image": "linuxserver/mariadb:latest",
+            "restart_policy": "unless-stopped",
+            "ports": [
+                "3306:3306/tcp"
             ],
-        "volumes": [{
+            "type": 1,
+            "volumes": [{
                 "bind": "/var/lib/docker/volumes/mariadb/config",
                 "container": "/config"
-            }],
-        "categories": [
-                    "Must Set Up"
-            ],
-    }, {
-        "description": "[Phpmyadmin](https://github.com/phpmyadmin/phpmyadmin/) is a free software tool written in PHP, intended to handle the administration of MySQL over the Web. phpMyAdmin supports a wide range of operations on MySQL and MariaDB.",
-        "note": "Portainer App Templates by <a href='https://www.technorabilia.com' target='_blank'>Technorabilia</a> based on data provided by <a href='https://www.linuxserver.io' target='_blank'>LinuxServer.io</a>.</p><p>Don't forget to create the volume directories on the host file system.</p><p>mkdir -p /volume1/docker/phpmyadmin/config</p>",
-        "logo": "https://raw.githubusercontent.com/linuxserver/docker-templates/master/linuxserver.io/img/phpmyadmin-logo.png",
-        "platform": "linux",
-        "type": 1,
-        "name": "PHPMyAdmin",
-        "title": "PHPMyAdmin",
-        "image": "linuxserver/phpmyadmin:latest",
-        "restart_policy": "unless-stopped",
-        "ports": [
-                "88:80/tcp"
-            ],
-        "volumes": [{
-                "bind": "/var/lib/docker/volumes/phpmyadmin/config",
-                "container": "/config"
-            }],
-        "env": [{
-                "default": "127.0.0.1",
-                "description": "IP of the MariaDB",
-                "label": "PMA_HOSTS",
-                "name": "PMA_HOSTS"
-            }],
-        "categories": [
-                "Must Set Up"
-            ],
-    }]
+            }]
+        }]
 }
