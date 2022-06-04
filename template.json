@@ -6,8 +6,8 @@
         "logo": "https://raw.githubusercontent.com/linuxserver/docker-templates/master/linuxserver.io/img/mariadb-git.png",
         "platform": "linux",
         "type": 1,
-        "name": "MariaDB",
-        "title": "MariaDB",    
+        "name": "MariaDBN",
+        "title": "MariaDBT",    
         "image": "linuxserver/mariadb:latest",
         "restart_policy": "unless-stopped",
         "ports": [
@@ -211,62 +211,41 @@
                 "Other"
             ]
     }, {
-            "categories": [
-                "Audio"
-            ],
-            "description": "[Booksonic-air](http://booksonic.org) is a platform for accessing the audibooks you own wherever you are. At the moment the platform consists of Booksonic Air - A server for streaming your audiobooks, successor to the original Booksonic server and based on Airsonic. Booksonic App - An DSub based Android app for connection to Booksonic-Air servers. .",
-            "env": [{
-                    "default": "1024",
-                    "description": "for GroupID",
-                    "label": "PUID",
-                    "name": "PUID"
-                },
-                {
-                    "default": "100",
-                    "description": "for UserID",
-                    "label": "PGID",
-                    "name": "PGID"
-                },
-                {
-                    "default": "America/New_York",
-                    "description": "Specify a timezone to use for example Europe/Amsterdam",
-                    "label": "TZ",
-                    "name": "TZ"
-                },
-                {
-                    "default": "url-base",
-                    "description": "Base url for use with reverse proxies etc.",
-                    "label": "CONTEXT_PATH",
-                    "name": "CONTEXT_PATH"
-                }
-            ],
-            "image": "linuxserver/booksonic-air:latest",
-            "logo": "https://raw.githubusercontent.com/linuxserver/docker-templates/master/linuxserver.io/img/booksonic-air.png",
-            "name": "Booksonic-air",
-            "note": "Portainer App Templates by <a href='https://www.technorabilia.com' target='_blank'>Technorabilia</a> based on data provided by <a href='https://www.linuxserver.io' target='_blank'>LinuxServer.io</a>.</p><p>Don't forget to create the volume directories on the host file system.</p><p>mkdir -p /volume1/docker/booksonic-air/config<br>mkdir -p /volume1/docker/booksonic-air/audiobooks<br>mkdir -p /volume1/docker/booksonic-air/podcasts<br>mkdir -p /volume1/docker/booksonic-air/othermedia</p>",
-            "platform": "linux",
-            "ports": [
+        "description": "[Booksonic-air](http://booksonic.org) is a platform for accessing the audibooks you own wherever you are. At the moment the platform consists of Booksonic Air - A server for streaming your audiobooks, successor to the original Booksonic server and based on Airsonic. Booksonic App - An DSub based Android app for connection to Booksonic-Air servers. .",
+            
+        
+        "env": [{
+                "default": "url-base",
+                "description": "Base url for use with reverse proxies etc.",
+                "label": "CONTEXT_PATH",
+                "name": "CONTEXT_PATH"
+            }],
+        "image": "linuxserver/booksonic-air:latest",
+        "logo": "https://raw.githubusercontent.com/linuxserver/docker-templates/master/linuxserver.io/img/booksonic-air.png",
+        "name": "Booksonic-air",
+        "note": "Portainer App Templates by <a href='https://www.technorabilia.com' target='_blank'>Technorabilia</a> based on data provided by <a href='https://www.linuxserver.io' target='_blank'>LinuxServer.io</a>.</p><p>Don't forget to create the volume directories on the host file system.</p><p>mkdir -p /volume1/docker/booksonic-air/config<br>mkdir -p /volume1/docker/booksonic-air/audiobooks<br>mkdir -p /volume1/docker/booksonic-air/podcasts<br>mkdir -p /volume1/docker/booksonic-air/othermedia</p>",
+        "platform": "linux",
+        "ports": [
                 "4040:4040/tcp"
             ],
-            "restart_policy": "unless-stopped",
-            "title": "Booksonic-air",
-            "type": 1,
-            "volumes": [{
-                    "bind": "/var/lib/docker/volumes/booksonic-air/config",
-                    "container": "/config"
-                },
-                {
-                    "bind": "/var/lib/docker/volumes/booksonic-air/audiobooks",
-                    "container": "/audiobooks"
-                },
-                {
-                    "bind": "/var/lib/docker/volumes/booksonic-air/podcasts",
-                    "container": "/podcasts"
-                },
-                {
-                    "bind": "/var/lib/docker/volumes/booksonic-air/othermedia",
-                    "container": "/othermedia"
-                }
+        "restart_policy": "unless-stopped",
+        "title": "Booksonic-air",
+        "type": 1,
+        "volumes": [{
+                "bind": "/var/lib/docker/volumes/booksonic-air/config",
+                "container": "/config"
+            },{
+                "bind": "/var/lib/docker/volumes/booksonic-air/audiobooks",
+                "container": "/audiobooks"
+            },{
+                "bind": "/var/lib/docker/volumes/booksonic-air/podcasts",
+                "container": "/podcasts"
+            },{
+                "bind": "/var/lib/docker/volumes/booksonic-air/othermedia",
+                "container": "/othermedia"
+            }],
+        "categories": [
+                "Audio"
             ]
         }, {
             "categories": [
