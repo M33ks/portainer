@@ -1,20 +1,70 @@
 {
     "version": "2",
     "templates": [{
+            {
             "description": "[Mariadb](https://mariadb.org/) is one of the most popular database servers. Made by the original developers of MySQL.",
-            "note": "Portainer App Templates by <a href='https://www.technorabilia.com' target='_blank'>Technorabilia</a> based on data provided by <a href='https://www.linuxserver.io' target='_blank'>LinuxServer.io</a>.</p><p>Don't forget to create the volume directories on the host file system.</p><p>mkdir -p /volume1/docker/mariadb/config</p>",
-            "logo": "https://raw.githubusercontent.com/linuxserver/docker-templates/master/linuxserver.io/img/mariadb-git.png",
-            "platform": "linux",
-            "name": "MariaDB",
-            "title": "MariaDB",
+            "env": [{
+                    "default": "1024",
+                    "description": "for GroupID",
+                    "label": "PUID",
+                    "name": "PUID"
+                },
+                {
+                    "default": "100",
+                    "description": "for UserID",
+                    "label": "PGID",
+                    "name": "PGID"
+                },
+                {
+                    "default": "ROOT_ACCESS_PASSWORD",
+                    "description": "Set this to root password for installation (minimum 4 characters).",
+                    "label": "MYSQL_ROOT_PASSWORD",
+                    "name": "MYSQL_ROOT_PASSWORD"
+                },
+                {
+                    "default": "Europe/Amsterdam",
+                    "description": "Specify a timezone to use for example Europe/Amsterdam",
+                    "label": "TZ",
+                    "name": "TZ"
+                },
+                {
+                    "default": "USER_DB_NAME",
+                    "description": "Specify the name of a database to be created on image startup.",
+                    "label": "MYSQL_DATABASE",
+                    "name": "MYSQL_DATABASE"
+                },
+                {
+                    "default": "MYSQL_USER",
+                    "description": "This user will have superuser access to the database specified by MYSQL_DATABASE (do not use root here).",
+                    "label": "MYSQL_USER",
+                    "name": "MYSQL_USER"
+                },
+                {
+                    "default": "DATABASE_PASSWORD",
+                    "description": "Set this to the password you want to use for you MYSQL_USER (minimum 4 characters).",
+                    "label": "MYSQL_PASSWORD",
+                    "name": "MYSQL_PASSWORD"
+                },
+                {
+                    "default": "http://URL1/your.sql,https://URL2/your.sql",
+                    "description": "Set this to ingest sql files from an http/https endpoint (comma seperated array).",
+                    "label": "REMOTE_SQL",
+                    "name": "REMOTE_SQL"
+                }
+            ],
             "image": "linuxserver/mariadb:latest",
-            "restart_policy": "unless-stopped",
+            "logo": "https://raw.githubusercontent.com/linuxserver/docker-templates/master/linuxserver.io/img/mariadb-git.png",
+            "name": "Mariadb",
+            "note": "Portainer App Templates by <a href='https://www.technorabilia.com' target='_blank'>Technorabilia</a> based on data provided by <a href='https://www.linuxserver.io' target='_blank'>LinuxServer.io</a>.</p><p>Don't forget to create the volume directories on the host file system.</p><p>mkdir -p /volume1/docker/mariadb/config</p>",
+            "platform": "linux",
             "ports": [
                 "3306:3306/tcp"
             ],
+            "restart_policy": "unless-stopped",
+            "title": "Mariadb",
             "type": 1,
             "volumes": [{
-                "bind": "/var/lib/docker/volumes/mariadb/config",
+                "bind": "/volume1/docker/mariadb/config",
                 "container": "/config"
             }]
         }]
