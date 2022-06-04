@@ -1,6 +1,191 @@
 {
     "version": "2",
     "templates": [{
+            "description": "[Mariadb](https://mariadb.org/) is one of the most popular database servers. Made by the original developers of MySQL.",
+            "image": "linuxserver/mariadb:latest",
+            "logo": "https://raw.githubusercontent.com/linuxserver/docker-templates/master/linuxserver.io/img/mariadb-git.png",
+            "name": "MariaDB",
+            "title": "MariaDB",
+            "note": "Portainer App Templates by <a href='https://www.technorabilia.com' target='_blank'>Technorabilia</a> based on data provided by <a href='https://www.linuxserver.io' target='_blank'>LinuxServer.io</a>.</p><p>Don't forget to create the volume directories on the host file system.</p><p>mkdir -p /volume1/docker/mariadb/config</p>",
+            "platform": "linux",
+            "ports": [
+                "3306:3306/tcp"
+            ],
+            "restart_policy": "unless-stopped",
+            "type": 1,
+            "volumes": [{
+                "bind": "/var/lib/docker/volumes/mariadb/config",
+                "container": "/config"
+            }],
+            "env": [{
+                    "default": "1024",
+                    "description": "for GroupID",
+                    "label": "PUID",
+                    "name": "PUID"
+                },
+                {
+                    "default": "100",
+                    "description": "for UserID",
+                    "label": "PGID",
+                    "name": "PGID"
+                },
+                {
+                    "default": "ROOT_ACCESS_PASSWORD",
+                    "description": "Set this to root password for installation (minimum 4 characters).",
+                    "label": "MYSQL_ROOT_PASSWORD",
+                    "name": "MYSQL_ROOT_PASSWORD"
+                },
+                {
+                    "default": "America/New_York",
+                    "description": "Specify a timezone to use for example Europe/Amsterdam",
+                    "label": "TZ",
+                    "name": "TZ"
+                },
+                {
+                    "default": "USER_DB_NAME",
+                    "description": "Specify the name of a database to be created on image startup.",
+                    "label": "MYSQL_DATABASE",
+                    "name": "MYSQL_DATABASE"
+                },
+                {
+                    "default": "MYSQL_USER",
+                    "description": "This user will have superuser access to the database specified by MYSQL_DATABASE (do not use root here).",
+                    "label": "MYSQL_USER",
+                    "name": "MYSQL_USER"
+                },
+                {
+                    "default": "DATABASE_PASSWORD",
+                    "description": "Set this to the password you want to use for you MYSQL_USER (minimum 4 characters).",
+                    "label": "MYSQL_PASSWORD",
+                    "name": "MYSQL_PASSWORD"
+                },
+                {
+                    "default": "http://URL1/your.sql,https://URL2/your.sql",
+                    "description": "Set this to ingest sql files from an http/https endpoint (comma seperated array).",
+                    "label": "REMOTE_SQL",
+                    "name": "REMOTE_SQL"
+                }
+            ]
+        }, {
+            "categories": [
+                "System Tools"
+            ],
+            "description": "[Phpmyadmin](https://github.com/phpmyadmin/phpmyadmin/) is a free software tool written in PHP, intended to handle the administration of MySQL over the Web. phpMyAdmin supports a wide range of operations on MySQL and MariaDB.",
+            "env": [{
+                    "default": "1024",
+                    "description": "for GroupID",
+                    "label": "PUID",
+                    "name": "PUID"
+                },
+                {
+                    "default": "100",
+                    "description": "for UserID",
+                    "label": "PGID",
+                    "name": "PGID"
+                },
+                {
+                    "default": "America/New_York",
+                    "description": "Specify a timezone to use for example Europe/Amsterdam",
+                    "label": "TZ",
+                    "name": "TZ"
+                },
+                {
+                    "default": "127.0.0.1",
+                    "description": "IP of the MariaDB",
+                    "label": "PMA_HOSTS",
+                    "name": "PMA_HOSTS"
+                }
+            ],
+            "image": "linuxserver/phpmyadmin:latest",
+            "logo": "https://raw.githubusercontent.com/linuxserver/docker-templates/master/linuxserver.io/img/phpmyadmin-logo.png",
+            "name": "PHPMyAdmin",
+            "note": "Portainer App Templates by <a href='https://www.technorabilia.com' target='_blank'>Technorabilia</a> based on data provided by <a href='https://www.linuxserver.io' target='_blank'>LinuxServer.io</a>.</p><p>Don't forget to create the volume directories on the host file system.</p><p>mkdir -p /volume1/docker/phpmyadmin/config</p>",
+            "platform": "linux",
+            "ports": [
+                "88:80/tcp"
+            ],
+            "restart_policy": "unless-stopped",
+            "title": "PHPMyAdmin",
+            "type": 1,
+            "volumes": [{
+                "bind": "/var/lib/docker/volumes/phpmyadmin/config",
+                "container": "/config"
+            }]
+        }, {
+            "categories": [
+                "Proxy",
+                "Tools"
+            ],
+            "description": "Nginx Proxy Manager enables you to easily forward to your websites running at home or otherwise, including free SSL, without having to know too much about Nginx or Letsencrypt.",
+            "env": [{
+                "default": "/data/database.sqlite",
+                "label": "DB_SQLITE_FILE",
+                "name": "DB_SQLITE_FILE"
+            }],
+            "image": "jc21/nginx-proxy-manager",
+            "logo": "https://raw.githubusercontent.com/Qballjos/portainer_templates/master/Images/proxy_mgr.png",
+            "name": "NGINX",
+            "platform": "linux",
+            "ports": [
+                "80:80/tcp",
+                "81:81/tcp",
+                "443:443/tcp"
+            ],
+            "restart_policy": "unless-stopped",
+            "title": "NGINX",
+            "type": 1,
+            "volumes": [{
+                    "bind": "/var/lib/docker/volumes/nginx/data",
+                    "container": "/data"
+                },
+                {
+                    "bind": "/var/lib/docker/volumes/nginx/letsencrypt",
+                    "container": "/etc/letsencrypt"
+                }
+            ]
+        }, {
+            "categories": [
+                "Other",
+                "Tools"
+            ],
+            "description": "A clientless remote desktop gateway.",
+            "image": "oznu/guacamole:latest",
+            "logo": "https://raw.githubusercontent.com/Qballjos/portainer_templates/master/Images/guacamole.png",
+            "name": "Guacamole",
+            "note": "The default login will be guacadmin/guacadmin. It is common practice to add a new admin user and remove the default user for Guacamole.",
+            "platform": "linux",
+            "ports": [
+                "8080:8080/tcp"
+            ],
+            "restart_policy": "unless-stopped",
+            "title": "Guacamole",
+            "type": 1,
+            "volumes": [{
+                "bind": "/var/lib/docker/volumes/guacamole/config",
+                "container": "/config"
+            }]
+        }, {
+            "categories": [
+                "Other",
+                "Wiki"
+            ],
+            "description": "MediaWiki is free and open-source wiki software. Originally developed by Magnus Manske and improved by Lee Daniel Crocker, it runs on many websites, including Wikipedia, Wiktionary and Wikimedia Commons. It is written in the PHP programming language and stores the contents into a database. Like WordPress, which is based on a similar licensing and architecture, it has become the dominant software in its category.",
+            "image": "linuxserver/mediawiki:latest",
+            "logo": "https://raw.githubusercontent.com/docker-library/docs/27b797857efd9253c0981c09696f579a167062d4/mediawiki/logo.svg",
+            "name": "MediaWiki",
+            "note": "The default login will be guacadmin/guacadmin. It is common practice to add a new admin user and remove the default user for Guacamole.",
+            "platform": "linux",
+            "ports": [
+                "89:80/tcp"
+            ],
+            "restart_policy": "unless-stopped",
+            "title": "MediaWiki",
+            "type": 1,
+            "volumes": [{
+                "bind": "/var/lib/docker/volumes/mediawiki/html",
+                "container": "/var/www/html"
+            }]
+        }, {
             "categories": [
                 "Other"
             ],
@@ -23,7 +208,7 @@
             ],
             "image": "adguard/adguardhome:latest",
             "logo": "https://raw.githubusercontent.com/Qballjos/portainer_templates/master/Images/adguard.png",
-            "name": "adguard",
+            "name": "AdGuard",
             "platform": "linux",
             "ports": [
                 "53:53/tcp",
@@ -37,14 +222,14 @@
                 "3000:3000/tcp"
             ],
             "restart_policy": "unless-stopped",
-            "title": "Adguard",
+            "title": "AdGuard",
             "type": 1,
             "volumes": [{
-                    "bind": "/var/lib/docker/volumes/Adguard/Workdir",
+                    "bind": "/var/lib/docker/volumes/adguard/workdir",
                     "container": "/opt/adguardhome/work"
                 },
                 {
-                    "bind": "/var/lib/docker/volumes/Adguard/Conf",
+                    "bind": "/var/lib/docker/volumes/adguard/conf",
                     "container": "/opt/adguardhome/conf"
                 }
             ]
@@ -92,8 +277,8 @@
                 "3000:3000/tcp"
             ],
             "volumes": [{
-                "container": "/config",
-                "bind": "/var/lib/docker/volumes/blender/config"
+                "bind": "/var/lib/docker/volumes/blender/config",
+                "container": "/config"
             }],
             "restart_policy": "unless-stopped"
         }, {
@@ -432,8 +617,8 @@
                 "3000:3000/tcp"
             ],
             "volumes": [{
-                "container": "/config",
-                "bind": "/var/lib/docker/volumes/digikam/config"
+                "bind": "/var/lib/docker/volumes/digikam/config",
+                "container": "/config"
             }],
             "restart_policy": "unless-stopped"
         }, {
@@ -671,6 +856,7 @@
             "title": "Elasticsearch",
             "type": 1,
             "volumes": [{
+                "bind": "/var/lib/docker/volumes/elasticsearch/data",
                 "container": "/usr/share/elasticsearch/data"
             }]
         }, {
@@ -702,7 +888,7 @@
             ],
             "image": "linuxserver/emulatorjs:latest",
             "logo": "https://raw.githubusercontent.com/linuxserver/docker-templates/master/linuxserver.io/img/emulatorjs-logo.png",
-            "name": "Emulatorjs",
+            "name": "EmulatorJS",
             "note": "Portainer App Templates by <a href='https://www.technorabilia.com' target='_blank'>Technorabilia</a> based on data provided by <a href='https://www.linuxserver.io' target='_blank'>LinuxServer.io</a>.</p><p>Don't forget to create the volume directories on the host file system.</p><p>mkdir -p /volume1/docker/emulatorjs/data</p>",
             "platform": "linux",
             "ports": [
@@ -711,7 +897,7 @@
                 "4001:4001/tcp"
             ],
             "restart_policy": "unless-stopped",
-            "title": "Emulatorjs",
+            "title": "EmulatorJS",
             "type": 1,
             "volumes": [{
                 "bind": "/var/lib/docker/volumes/emulatorjs/data",
@@ -782,27 +968,6 @@
             ]
         }, {
             "categories": [
-                "Other",
-                "Tools"
-            ],
-            "description": "A clientless remote desktop gateway.",
-            "image": "oznu/guacamole:latest",
-            "logo": "https://raw.githubusercontent.com/Qballjos/portainer_templates/master/Images/guacamole.png",
-            "name": "guacamole",
-            "note": "The default login will be guacadmin/guacadmin. It is common practice to add a new admin user and remove the default user for Guacamole.",
-            "platform": "linux",
-            "ports": [
-                "8080:8080/tcp"
-            ],
-            "restart_policy": "unless-stopped",
-            "title": "Guacamole",
-            "type": 1,
-            "volumes": [{
-                "bind": "/var/lib/docker/volumes/Guacamole/config",
-                "container": "/config"
-            }]
-        }, {
-            "categories": [
                 "webserver"
             ],
             "description": "Open-source HTTP server",
@@ -816,72 +981,6 @@
             "type": 1,
             "volumes": [{
                 "container": "/usr/local/apache2/htdocs/"
-            }]
-        }, {
-            "description": "[Mariadb](https://mariadb.org/) is one of the most popular database servers. Made by the original developers of MySQL.",
-            "env": [{
-                    "default": "1024",
-                    "description": "for GroupID",
-                    "label": "PUID",
-                    "name": "PUID"
-                },
-                {
-                    "default": "100",
-                    "description": "for UserID",
-                    "label": "PGID",
-                    "name": "PGID"
-                },
-                {
-                    "default": "ROOT_ACCESS_PASSWORD",
-                    "description": "Set this to root password for installation (minimum 4 characters).",
-                    "label": "MYSQL_ROOT_PASSWORD",
-                    "name": "MYSQL_ROOT_PASSWORD"
-                },
-                {
-                    "default": "America/New_York",
-                    "description": "Specify a timezone to use for example Europe/Amsterdam",
-                    "label": "TZ",
-                    "name": "TZ"
-                },
-                {
-                    "default": "USER_DB_NAME",
-                    "description": "Specify the name of a database to be created on image startup.",
-                    "label": "MYSQL_DATABASE",
-                    "name": "MYSQL_DATABASE"
-                },
-                {
-                    "default": "MYSQL_USER",
-                    "description": "This user will have superuser access to the database specified by MYSQL_DATABASE (do not use root here).",
-                    "label": "MYSQL_USER",
-                    "name": "MYSQL_USER"
-                },
-                {
-                    "default": "DATABASE_PASSWORD",
-                    "description": "Set this to the password you want to use for you MYSQL_USER (minimum 4 characters).",
-                    "label": "MYSQL_PASSWORD",
-                    "name": "MYSQL_PASSWORD"
-                },
-                {
-                    "default": "http://URL1/your.sql,https://URL2/your.sql",
-                    "description": "Set this to ingest sql files from an http/https endpoint (comma seperated array).",
-                    "label": "REMOTE_SQL",
-                    "name": "REMOTE_SQL"
-                }
-            ],
-            "image": "linuxserver/mariadb:latest",
-            "logo": "https://raw.githubusercontent.com/linuxserver/docker-templates/master/linuxserver.io/img/mariadb-git.png",
-            "name": "Mariadb",
-            "note": "Portainer App Templates by <a href='https://www.technorabilia.com' target='_blank'>Technorabilia</a> based on data provided by <a href='https://www.linuxserver.io' target='_blank'>LinuxServer.io</a>.</p><p>Don't forget to create the volume directories on the host file system.</p><p>mkdir -p /volume1/docker/mariadb/config</p>",
-            "platform": "linux",
-            "ports": [
-                "3306:3306/tcp"
-            ],
-            "restart_policy": "unless-stopped",
-            "title": "Mariadb",
-            "type": 1,
-            "volumes": [{
-                "bind": "/var/lib/docker/volumes/mariadb/config",
-                "container": "/config"
             }]
         }, {
             "description": "[Mstream](https://mstream.io/) is a personal music streaming server. You can use mStream to stream your music from your home computer to any device, anywhere. There are mobile apps available for both Android and iPhone.",
@@ -1002,38 +1101,6 @@
                 }
             ]
         }, {
-            "categories": [
-                "Proxy",
-                "Tools"
-            ],
-            "description": "Nginx Proxy Manager enables you to easily forward to your websites running at home or otherwise, including free SSL, without having to know too much about Nginx or Letsencrypt.",
-            "env": [{
-                "default": "/data/database.sqlite",
-                "label": "DB_SQLITE_FILE",
-                "name": "DB_SQLITE_FILE"
-            }],
-            "image": "jc21/nginx-proxy-manager",
-            "logo": "https://raw.githubusercontent.com/Qballjos/portainer_templates/master/Images/proxy_mgr.png",
-            "name": "nginx-proxy-manager",
-            "platform": "linux",
-            "ports": [
-                "80:80/tcp",
-                "81:81/tcp",
-                "443:443/tcp"
-            ],
-            "restart_policy": "unless-stopped",
-            "title": "Nginx Proxy Manager",
-            "type": 1,
-            "volumes": [{
-                    "bind": "/var/lib/docker/volumes/Nginx-Proxy/data",
-                    "container": "/data"
-                },
-                {
-                    "bind": "/var/lib/docker/volumes/Nginx-Proxy/letsencrypt",
-                    "container": "/etc/letsencrypt"
-                }
-            ]
-        }, {
             "category": [
                 "Other"
             ],
@@ -1130,51 +1197,6 @@
             "type": 1,
             "volumes": [{
                 "bind": "/var/lib/docker/volumes/openvscode-server/config",
-                "container": "/config"
-            }]
-        }, {
-            "categories": [
-                "System Tools"
-            ],
-            "description": "[Phpmyadmin](https://github.com/phpmyadmin/phpmyadmin/) is a free software tool written in PHP, intended to handle the administration of MySQL over the Web. phpMyAdmin supports a wide range of operations on MySQL and MariaDB.",
-            "env": [{
-                    "default": "1024",
-                    "description": "for GroupID",
-                    "label": "PUID",
-                    "name": "PUID"
-                },
-                {
-                    "default": "100",
-                    "description": "for UserID",
-                    "label": "PGID",
-                    "name": "PGID"
-                },
-                {
-                    "default": "America/New_York",
-                    "description": "Specify a timezone to use for example Europe/Amsterdam",
-                    "label": "TZ",
-                    "name": "TZ"
-                },
-                {
-                    "default": "127.0.0.1",
-                    "description": "IP of the MariaDB",
-                    "label": "PMA_HOSTS",
-                    "name": "PMA_HOSTS"
-                }
-            ],
-            "image": "linuxserver/phpmyadmin:latest",
-            "logo": "https://raw.githubusercontent.com/linuxserver/docker-templates/master/linuxserver.io/img/phpmyadmin-logo.png",
-            "name": "Phpmyadmin",
-            "note": "Portainer App Templates by <a href='https://www.technorabilia.com' target='_blank'>Technorabilia</a> based on data provided by <a href='https://www.linuxserver.io' target='_blank'>LinuxServer.io</a>.</p><p>Don't forget to create the volume directories on the host file system.</p><p>mkdir -p /volume1/docker/phpmyadmin/config</p>",
-            "platform": "linux",
-            "ports": [
-                "88:80/tcp"
-            ],
-            "restart_policy": "unless-stopped",
-            "title": "Phpmyadmin",
-            "type": 1,
-            "volumes": [{
-                "bind": "/var/lib/docker/volumes/phpmyadmin/config",
                 "container": "/config"
             }]
         }, {
