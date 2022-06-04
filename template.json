@@ -1,108 +1,51 @@
 {
     "version": "2",
-    "templates": [
-        {
-            "categories": [
-                "Other"
+    "templates": [{
+        "title": "MariaDB",   
+        "description": "[Mariadb](https://mariadb.org/) is one of the most popular database servers. Made by the original developers of MySQL.",
+        "note": "Portainer App Templates by <a href='https://www.technorabilia.com' target='_blank'>Technorabilia</a> based on data provided by <a href='https://www.linuxserver.io' target='_blank'>LinuxServer.io</a>.</p><p>Don't forget to create the volume directories on the host file system.</p><p>mkdir -p /volume1/docker/mariadb/config</p>",
+        "logo": "https://raw.githubusercontent.com/linuxserver/docker-templates/master/linuxserver.io/img/mariadb-git.png",
+        "platform": "linux",
+        "type": 1,
+        "name": "MariaDB", 
+        "image": "linuxserver/mariadb:latest",
+        "restart_policy": "unless-stopped",
+        "ports": [
+                    "3306:3306/tcp"
             ],
-            "description": "AdGuard Home is a network-wide software for blocking ads & tracking. After you set it up, it’ll cover ALL your home devices, and you don’t need any client-side software for that. With the rise of Internet-Of-Things and connected devices, it becomes more and more important to be able to control your whole network.",
-            "env": [{
-                    "default": "1000",
-                    "label": "PUID",
-                    "name": "PUID"
-                },
-                {
-                    "default": "100",
-                    "label": "PGID",
-                    "name": "PGID"
-                },
-                {
-                    "label": "CONTEXT_PATH",
-                    "name": "CONTEXT_PATH",
-                    "set": "adguard home"
-                }
+        "volumes": [{
+                "bind": "/var/lib/docker/volumes/mariadb/config",
+                "container": "/config"
+            }],
+        "categories": [
+                    "Must Set Up"
             ],
-            "image": "adguard/adguardhome:latest",
-            "logo": "https://raw.githubusercontent.com/Qballjos/portainer_templates/master/Images/adguard.png",
-            "name": "adguardN",
-            "platform": "linux",
-            "ports": [
-                "53:53/tcp",
-                "53:53/udp",
-                "67:67/udp",
-                "68:68/tcp",
-                "68:68/udp",
-                "80:80/tcp",
-                "443:443/tcp",
-                "853:853/tcp",
-                "3000:3000/tcp"
+    }, {
+        "title": "PHPMyAdmin",
+        "description": "[Phpmyadmin](https://github.com/phpmyadmin/phpmyadmin/) is a free software tool written in PHP, intended to handle the administration of MySQL over the Web. phpMyAdmin supports a wide range of operations on MySQL and MariaDB.",
+        "note": "Portainer App Templates by <a href='https://www.technorabilia.com' target='_blank'>Technorabilia</a> based on data provided by <a href='https://www.linuxserver.io' target='_blank'>LinuxServer.io</a>.</p><p>Don't forget to create the volume directories on the host file system.</p><p>mkdir -p /volume1/docker/phpmyadmin/config</p>",
+        "logo": "https://raw.githubusercontent.com/linuxserver/docker-templates/master/linuxserver.io/img/phpmyadmin-logo.png",
+        "platform": "linux",
+        "type": 1,
+        "name": "PHPMyAdmin",
+        "image": "linuxserver/phpmyadmin:latest",
+        "restart_policy": "unless-stopped",
+        "ports": [
+                "88:80/tcp"
             ],
-            "restart_policy": "unless-stopped",
-            "title": "AdguardT",
-            "type": 1,
-            "volumes": [{
-                    "bind": "/portainer/Files/AppData/Adguard/Workdir",
-                    "container": "/opt/adguardhome/work"
-                },
-                {
-                    "bind": "/portainer/Files/AppData/Adguard/Conf",
-                    "container": "/opt/adguardhome/conf"
-                }
-            ]
-        },
-        {
-            "categories": [
-                "Music"
+        "volumes": [{
+                "bind": "/var/lib/docker/volumes/phpmyadmin/config",
+                "container": "/config"
+            }],
+        "env": [{
+                "default": "127.0.0.1",
+                "description": "IP of the MariaDB",
+                "label": "PMA_HOSTS",
+                "name": "PMA_HOSTS"
+            }],
+        "categories": [
+                "Must Set Up"
             ],
-            "description": "Airsonic is a free, web-based media streamer, providing ubiqutious access to your music. Use it to share your music with friends, or to listen to your own music while at work. You can stream to multiple players simultaneously, for instance to one player in your kitchen and another in your living room.",
-            "env": [{
-                    "default": "1000",
-                    "label": "PUID",
-                    "name": "PUID"
-                },
-                {
-                    "default": "100",
-                    "label": "PGID",
-                    "name": "PGID"
-                },
-                {
-                    "label": "CONTEXT_PATH",
-                    "name": "CONTEXT_PATH",
-                    "set": "airsonic"
-                },
-                {
-                    "label": "JAVA_OPTS",
-                    "name": "JAVA_OPTS",
-                    "set": "-Xms256m -Xmx512m"
-                }
-            ],
-            "image": "linuxserver/airsonic:latest",
-            "logo": "https://raw.githubusercontent.com/Qballjos/portainer_templates/master/Images/airsonic-logo.png",
-            "name": "airsonic",
-            "platform": "linux",
-            "ports": [
-                "4040:4040/tcp"
-            ],
-            "restart_policy": "unless-stopped",
-            "title": "Airsonic",
-            "type": 1,
-            "volumes": [{
-                    "bind": "/portainer/Music",
-                    "container": "/music"
-                },{
-                    "bind": "/portainer/Files/AppData/Airsonic/Playlists",
-                    "container": "/playlists"
-                },{
-                    "bind": "/portainer/Podcasts",
-                    "container": "/podcasts"
-                },{
-                    "bind": "/portainer/Files/AppData/Airsonic/Media",
-                    "container": "/media"
-                },{
-                    "bind": "/portainer/Files/AppData/Config/Airsonic/",
-                    "container": "/config"
-                }
-            ]
-        }    
+    } 
     ]
 }
