@@ -40,11 +40,11 @@
             "title": "Adguard",
             "type": 1,
             "volumes": [{
-                    "bind": "/portainer/Files/AppData/Adguard/Workdir",
+                    "bind": "/var/lib/docker/volumes/Adguard/Workdir",
                     "container": "/opt/adguardhome/work"
                 },
                 {
-                    "bind": "/portainer/Files/AppData/Adguard/Conf",
+                    "bind": "/var/lib/docker/volumes/Adguard/Conf",
                     "container": "/opt/adguardhome/conf"
                 }
             ]
@@ -93,7 +93,7 @@
             ],
             "volumes": [{
                 "container": "/config",
-                "bind": "/volume1/docker/blender/config"
+                "bind": "/var/lib/docker/volumes/blender/config"
             }],
             "restart_policy": "unless-stopped"
         }, {
@@ -129,15 +129,15 @@
             "title": "Booksonic",
             "type": 1,
             "volumes": [{
-                    "bind": "/portainer/Books",
+                    "bind": "/var/lib/docker/volumes/Booksonic/books",
                     "container": "/books"
                 },
                 {
-                    "bind": "/portainer/Files/Podcasts",
+                    "bind": "/var/lib/docker/volumes/Booksonic/podcasts",
                     "container": "/podcast"
                 },
                 {
-                    "bind": "/portainer/Files/AppData/Config/Booksonic",
+                    "bind": "/var/lib/docker/volumes/Booksonic/config",
                     "container": "/config"
                 }
             ]
@@ -183,19 +183,19 @@
             "title": "Booksonic-air",
             "type": 1,
             "volumes": [{
-                    "bind": "/volume1/docker/booksonic-air/config",
+                    "bind": "/var/lib/docker/volumes/booksonic-air/config",
                     "container": "/config"
                 },
                 {
-                    "bind": "/volume1/docker/booksonic-air/audiobooks",
+                    "bind": "/var/lib/docker/volumes/booksonic-air/audiobooks",
                     "container": "/audiobooks"
                 },
                 {
-                    "bind": "/volume1/docker/booksonic-air/podcasts",
+                    "bind": "/var/lib/docker/volumes/booksonic-air/podcasts",
                     "container": "/podcasts"
                 },
                 {
-                    "bind": "/volume1/docker/booksonic-air/othermedia",
+                    "bind": "/var/lib/docker/volumes/booksonic-air/othermedia",
                     "container": "/othermedia"
                 }
             ]
@@ -271,15 +271,15 @@
             "title": "Cloud9",
             "type": 1,
             "volumes": [{
-                    "bind": "/volume1/docker/cloud9/config",
+                    "bind": "/var/lib/docker/volumes/cloud9/config",
                     "container": "/config"
                 },
                 {
-                    "bind": "/volume1/docker/cloud9/code",
+                    "bind": "/var/lib/docker/volumes/cloud9/code",
                     "container": "/code"
                 },
                 {
-                    "bind": "/var/run/docker.sock",
+                    "bind": "/var/lib/docker/volumes/cloud9/docker.sock",
                     "container": "/var/run/docker.sock"
                 }
             ]
@@ -355,7 +355,7 @@
             "title": "Code-server",
             "type": 1,
             "volumes": [{
-                "bind": "/volume1/docker/code-server/config",
+                "bind": "/var/lib/docker/volumes/code-server/config",
                 "container": "/config"
             }]
         }, {
@@ -381,7 +381,7 @@
             "title": "Codiad",
             "type": 1,
             "volumes": [{
-                "bind": "/portainer/Files/AppData/Config/Codiad",
+                "bind": "/var/lib/docker/volumes/Codiad/config",
                 "container": "/config"
             }]
         }, {
@@ -433,7 +433,7 @@
             ],
             "volumes": [{
                 "container": "/config",
-                "bind": "/volume1/docker/digikam/config"
+                "bind": "/var/lib/docker/volumes/digikam/config"
             }],
             "restart_policy": "unless-stopped"
         }, {
@@ -469,7 +469,7 @@
             "title": "Docker-compose",
             "type": 1,
             "volumes": [{
-                "bind": "/volume1/docker/docker-compose/config",
+                "bind": "/var/lib/docker/volumes/docker-compose/config",
                 "container": "/config"
             }]
         },
@@ -510,7 +510,7 @@
             "title": "Dokuwiki",
             "type": 1,
             "volumes": [{
-                "bind": "/volume1/docker/dokuwiki/config",
+                "bind": "/var/lib/docker/volumes/dokuwiki/config",
                 "container": "/config"
             }]
         }, {
@@ -557,7 +557,7 @@
             "title": "Domoticz",
             "type": 1,
             "volumes": [{
-                "bind": "/volume1/docker/domoticz/config",
+                "bind": "/var/lib/docker/volumes/domoticz/config",
                 "container": "/config"
             }]
         },
@@ -597,11 +597,11 @@
             "title": "Doublecommander",
             "type": 1,
             "volumes": [{
-                    "bind": "/volume1/docker/doublecommander/config",
+                    "bind": "/var/lib/docker/volumes/doublecommander/config",
                     "container": "/config"
                 },
                 {
-                    "bind": "/volume1/docker/doublecommander/data",
+                    "bind": "/var/lib/docker/volumes/doublecommander/data",
                     "container": "/data"
                 }
             ]
@@ -653,7 +653,7 @@
             "title": "Duckdns",
             "type": 1,
             "volumes": [{
-                "bind": "/volume1/docker/duckdns/config",
+                "bind": "/var/lib/docker/volumes/duckdns/config",
                 "container": "/config"
             }]
         }, {
@@ -714,7 +714,7 @@
             "title": "Emulatorjs",
             "type": 1,
             "volumes": [{
-                "bind": "/volume1/docker/emulatorjs/data",
+                "bind": "/var/lib/docker/volumes/emulatorjs/data",
                 "container": "/data"
             }]
         }, {
@@ -750,7 +750,7 @@
             "title": "Firefox",
             "type": 1,
             "volumes": [{
-                "bind": "/volume1/docker/firefox/config",
+                "bind": "/var/lib/docker/volumes/firefox/config",
                 "container": "/config"
             }]
         }, {
@@ -781,19 +781,6 @@
                 }
             ]
         }, {
-            "description": "[Guacd](https://guacamole.apache.org/) - Apache Guacamole is a clientless remote desktop gateway. It supports standard protocols like VNC, RDP, and SSH. This container is only the backend server component needed to use The official or 3rd party HTML5 frontends.",
-            "image": "linuxserver/guacd:latest",
-            "logo": "https://raw.githubusercontent.com/linuxserver/docker-templates/master/linuxserver.io/img/guacd.png",
-            "name": "Guacd",
-            "note": "Portainer App Templates by <a href='https://www.technorabilia.com' target='_blank'>Technorabilia</a> based on data provided by <a href='https://www.linuxserver.io' target='_blank'>LinuxServer.io</a>.</p><p>Don't forget to create the volume directories on the host file system.</p>",
-            "platform": "linux",
-            "ports": [
-                "4822:4822/tcp"
-            ],
-            "restart_policy": "unless-stopped",
-            "title": "Guacd",
-            "type": 1
-        }, {
             "categories": [
                 "Other",
                 "Tools"
@@ -811,7 +798,7 @@
             "title": "Guacamole",
             "type": 1,
             "volumes": [{
-                "bind": "/portainer/Files/AppData/Config/Guacamole",
+                "bind": "/var/lib/docker/volumes/Guacamole/config",
                 "container": "/config"
             }]
         }, {
@@ -893,7 +880,7 @@
             "title": "Mariadb",
             "type": 1,
             "volumes": [{
-                "bind": "/volume1/docker/mariadb/config",
+                "bind": "/var/lib/docker/volumes/mariadb/config",
                 "container": "/config"
             }]
         }, {
@@ -929,11 +916,11 @@
             "title": "Mstream",
             "type": 1,
             "volumes": [{
-                    "bind": "/volume1/docker/mstream/config",
+                    "bind": "/var/lib/docker/volumes/mstream/config",
                     "container": "/config"
                 },
                 {
-                    "bind": "/volume1/docker/mstream/music",
+                    "bind": "/var/lib/docker/volumes/mstream/music",
                     "container": "/music"
                 }
             ]
@@ -970,7 +957,7 @@
             "title": "Muximux",
             "type": 1,
             "volumes": [{
-                "bind": "/volume1/docker/muximux/config",
+                "bind": "/var/lib/docker/volumes/muximux/config",
                 "container": "/config"
             }]
         }, {
@@ -1006,83 +993,14 @@
             "title": "Nextcloud",
             "type": 1,
             "volumes": [{
-                    "bind": "/volume1/docker/nextcloud/config",
+                    "bind": "/var/lib/docker/volumes/nextcloud/config",
                     "container": "/config"
                 },
                 {
-                    "bind": "/volume1/docker/nextcloud/data",
+                    "bind": "/var/lib/docker/volumes/nextcloud/data",
                     "container": "/data"
                 }
             ]
-        }, {
-            "description": "[Nginx](https://nginx.org/) is a simple webserver with php support. The config files reside in `/config` for easy user customization.",
-            "env": [{
-                    "default": "1024",
-                    "description": "for GroupID",
-                    "label": "PUID",
-                    "name": "PUID"
-                },
-                {
-                    "default": "100",
-                    "description": "for UserID",
-                    "label": "PGID",
-                    "name": "PGID"
-                },
-                {
-                    "default": "America/New_York",
-                    "description": "Specify a timezone to use for example Europe/Amsterdam",
-                    "label": "TZ",
-                    "name": "TZ"
-                }
-            ],
-            "image": "linuxserver/nginx:latest",
-            "logo": "https://raw.githubusercontent.com/linuxserver/docker-templates/master/linuxserver.io/img/nginx-banner.png",
-            "name": "Nginx",
-            "note": "Portainer App Templates by <a href='https://www.technorabilia.com' target='_blank'>Technorabilia</a> based on data provided by <a href='https://www.linuxserver.io' target='_blank'>LinuxServer.io</a>.</p><p>Don't forget to create the volume directories on the host file system.</p><p>mkdir -p /volume1/docker/nginx/config</p>",
-            "platform": "linux",
-            "ports": [
-                "80:80/tcp",
-                "443:443/tcp"
-            ],
-            "restart_policy": "unless-stopped",
-            "title": "Nginx",
-            "type": 1,
-            "volumes": [{
-                "bind": "/volume1/docker/nginx/config",
-                "container": "/config"
-            }]
-        }, {
-            "categories": [
-                "Web",
-                "Proxy"
-            ],
-            "description": "Nginx is a web server with a strong focus on high concurrency, performance and low memory usage. It can also act as a reverse proxy server for HTTP, HTTPS, SMTP, POP3, and IMAP protocols, as well as a load balancer and an HTTP cache.",
-            "env": [{
-                    "default": "1000",
-                    "label": "PUID",
-                    "name": "PUID"
-                },
-                {
-                    "default": "100",
-                    "label": "PGID",
-                    "name": "PGID"
-                }
-            ],
-            "image": "linuxserver/nginx:latest",
-            "logo": "https://raw.githubusercontent.com/mikestraney/portainer-templates/master/Images/nginx-icon.png",
-            "name": "nginx",
-            "platform": "linux",
-            "ports": [
-                "80/tcp",
-                "443/tcp"
-            ],
-            "restart_policy": "unless-stopped",
-            "title": "Nginx",
-            "type": 1,
-            "volumes": [{
-                "bind": "/portainer/Files/AppData/Config/Nginx",
-                "container": "/config"
-            }]
         }, {
             "categories": [
                 "Proxy",
@@ -1107,11 +1025,11 @@
             "title": "Nginx Proxy Manager",
             "type": 1,
             "volumes": [{
-                    "bind": "/portainer/Files/AppData/Config/Nginx-Proxy/data",
+                    "bind": "/var/lib/docker/volumes/Nginx-Proxy/data",
                     "container": "/data"
                 },
                 {
-                    "bind": "/portainer/Files/AppData/Config/Nginx-Proxy/letsencrypt",
+                    "bind": "/var/lib/docker/volumes/Nginx-Proxy/letsencrypt",
                     "container": "/etc/letsencrypt"
                 }
             ]
@@ -1211,7 +1129,7 @@
             "title": "Openvscode-server",
             "type": 1,
             "volumes": [{
-                "bind": "/volume1/docker/openvscode-server/config",
+                "bind": "/var/lib/docker/volumes/openvscode-server/config",
                 "container": "/config"
             }]
         }, {
@@ -1238,16 +1156,10 @@
                     "name": "TZ"
                 },
                 {
-                    "default": "1",
-                    "description": "Set to `1` to allow you to connect to any server. Setting to `0` will only allow you to connect to specified hosts (See Application Setup)",
-                    "label": "PMA_ARBITRARY",
-                    "name": "PMA_ARBITRARY"
-                },
-                {
-                    "default": "https://phpmyadmin.example.com",
-                    "description": "Set the URL you will use to access the web frontend",
-                    "label": "PMA_ABSOLUTE_URI",
-                    "name": "PMA_ABSOLUTE_URI"
+                    "default": "127.0.0.1",
+                    "description": "IP of the MariaDB",
+                    "label": "PMA_HOSTS",
+                    "name": "PMA_HOSTS"
                 }
             ],
             "image": "linuxserver/phpmyadmin:latest",
@@ -1256,13 +1168,13 @@
             "note": "Portainer App Templates by <a href='https://www.technorabilia.com' target='_blank'>Technorabilia</a> based on data provided by <a href='https://www.linuxserver.io' target='_blank'>LinuxServer.io</a>.</p><p>Don't forget to create the volume directories on the host file system.</p><p>mkdir -p /volume1/docker/phpmyadmin/config</p>",
             "platform": "linux",
             "ports": [
-                "80:80/tcp"
+                "88:80/tcp"
             ],
             "restart_policy": "unless-stopped",
             "title": "Phpmyadmin",
             "type": 1,
             "volumes": [{
-                "bind": "/volume1/docker/phpmyadmin/config",
+                "bind": "/var/lib/docker/volumes/phpmyadmin/config",
                 "container": "/config"
             }]
         }, {
@@ -1287,11 +1199,11 @@
             "title": "Pi-Hole",
             "type": 1,
             "volumes": [{
-                    "bind": "/portainer/Files/AppData/Config/PiHole",
+                    "bind": "/var/lib/docker/volumes/PiHole/config",
                     "container": "/etc/pihole"
                 },
                 {
-                    "bind": "/portainer/Files/AppData/Config/PiHole/DNS",
+                    "bind": "/var/lib/docker/volumes/PiHole/DNS",
                     "container": "/etc/dnsmasq.d"
                 }
             ]
@@ -1346,11 +1258,11 @@
             ],
             "volumes": [{
                     "container": "/config",
-                    "bind": "/volume1/docker/pylon/config"
+                    "bind": "/var/lib/docker/volumes/pylon/config"
                 },
                 {
                     "container": "/code",
-                    "bind": "/volume1/docker/pylon/code"
+                    "bind": "/var/lib/docker/volumes/pylon/code"
                 }
             ],
             "restart_policy": "unless-stopped"
@@ -1388,11 +1300,11 @@
             "title": "Rdesktop",
             "type": 1,
             "volumes": [{
-                    "bind": "/var/run/docker.sock",
+                    "bind": "/var/lib/docker/volumes/rdesktop/docker.sock",
                     "container": "/var/run/docker.sock"
                 },
                 {
-                    "bind": "/volume1/docker/rdesktop/config",
+                    "bind": "/var/lib/docker/volumes/rdesktop/config",
                     "container": "/config"
                 }
             ]
@@ -1429,7 +1341,7 @@
             "title": "Remmina",
             "type": 1,
             "volumes": [{
-                "bind": "/volume1/docker/remmina/config",
+                "bind": "/var/lib/docker/volumes/remmina/config",
                 "container": "/config"
             }]
         }, {
@@ -1446,7 +1358,7 @@
             ],
             "volumes": [{
                 "container": "/var/run/docker.sock",
-                "bind": "/var/run/docker.sock"
+                "bind": "/var/lib/docker/volumes/Taisun/docker.sock"
             }],
             "restart_policy": "unless-stopped"
         }, {
@@ -1461,7 +1373,7 @@
             "title": "Uptime Kuma",
             "type": 1,
             "volumes": [{
-                "bind": "/portainer/Files/AppData/Config/UptimeKuma",
+                "bind": "/var/lib/docker/volumes/UptimeKuma/config",
                 "container": "/app/data"
             }]
         }, {
@@ -1507,11 +1419,11 @@
             "title": "Webtop",
             "type": 1,
             "volumes": [{
-                    "bind": "/volume1/docker/webtop/config",
+                    "bind": "/var/lib/docker/volumes/webtop/config",
                     "container": "/config"
                 },
                 {
-                    "bind": "/var/run/docker.sock",
+                    "bind": "/var/lib/docker/volumes/webtop/docker.sock",
                     "container": "/var/run/docker.sock"
                 }
             ]
@@ -1584,11 +1496,11 @@
             "title": "Wireguard",
             "type": 1,
             "volumes": [{
-                    "bind": "/volume1/docker/wireguard/config",
+                    "bind": "/var/lib/docker/volumes/wireguard/config",
                     "container": "/config"
                 },
                 {
-                    "bind": "/lib/modules",
+                    "bind": "/var/lib/docker/volumes/wireguard/modules",
                     "container": "/lib/modules"
                 }
             ]
@@ -1626,7 +1538,7 @@
             "title": "Wireshark",
             "type": 1,
             "volumes": [{
-                "bind": "/volume1/docker/wireshark/config",
+                "bind": "/var/lib/docker/volumes/wireshark/config",
                 "container": "/config"
             }]
         }, {
@@ -1646,7 +1558,7 @@
             "title": "Whoogle",
             "type": 1,
             "volumes": [{
-                "bind": "/portainer/Files/AppData/Config/Whoogle",
+                "bind": "/var/lib/docker/volumes/Whoogle/config",
                 "container": "/config"
             }]
         }
