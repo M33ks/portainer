@@ -1,186 +1,133 @@
 {
     "version": "2",
     "templates": [{
-            "description": "[Mariadb](https://mariadb.org/) is one of the most popular database servers. Made by the original developers of MySQL.",
-            "note": "Portainer App Templates by <a href='https://www.technorabilia.com' target='_blank'>Technorabilia</a> based on data provided by <a href='https://www.linuxserver.io' target='_blank'>LinuxServer.io</a>.</p><p>Don't forget to create the volume directories on the host file system.</p><p>mkdir -p /volume1/docker/mariadb/config</p>",
-            "logo": "https://raw.githubusercontent.com/linuxserver/docker-templates/master/linuxserver.io/img/mariadb-git.png",
-            "platform": "linux",
-            "name": "MariaDB",
-            "title": "MariaDB",    
-            "image": "linuxserver/mariadb:latest",
-            "ports": [
-                "3306:3306/tcp"
+        "description": "[Mariadb](https://mariadb.org/) is one of the most popular database servers. Made by the original developers of MySQL.",
+        "note": "Portainer App Templates by <a href='https://www.technorabilia.com' target='_blank'>Technorabilia</a> based on data provided by <a href='https://www.linuxserver.io' target='_blank'>LinuxServer.io</a>.</p><p>Don't forget to create the volume directories on the host file system.</p><p>mkdir -p /volume1/docker/mariadb/config</p>",
+        "logo": "https://raw.githubusercontent.com/linuxserver/docker-templates/master/linuxserver.io/img/mariadb-git.png",
+        "platform": "linux",
+        "type": 1,
+        "name": "MariaDB",
+        "title": "MariaDB",    
+        "image": "linuxserver/mariadb:latest",
+        "restart_policy": "unless-stopped",
+        "ports": [
+                    "3306:3306/tcp"
             ],
-            "restart_policy": "unless-stopped",
-            "type": 1,
-            "volumes": [{
+        "volumes": [{
                 "bind": "/var/lib/docker/volumes/mariadb/config",
                 "container": "/config"
             }],
-            "env": [{
-                    "default": "1024",
-                    "description": "for GroupID",
-                    "label": "PUID",
-                    "name": "PUID"
-                },
-                {
-                    "default": "100",
-                    "description": "for UserID",
-                    "label": "PGID",
-                    "name": "PGID"
-                },
-                {
-                    "default": "America/New_York",
-                    "description": "Specify a timezone to use for example Europe/Amsterdam",
-                    "label": "TZ",
-                    "name": "TZ"
-                }
-            ]
-        }, {
-            "categories": [
-                "System Tools"
+        "categories": [
+                    "Must Set Up"
             ],
-            "description": "[Phpmyadmin](https://github.com/phpmyadmin/phpmyadmin/) is a free software tool written in PHP, intended to handle the administration of MySQL over the Web. phpMyAdmin supports a wide range of operations on MySQL and MariaDB.",
-            "env": [{
-                    "default": "1024",
-                    "description": "for GroupID",
-                    "label": "PUID",
-                    "name": "PUID"
-                },
-                {
-                    "default": "100",
-                    "description": "for UserID",
-                    "label": "PGID",
-                    "name": "PGID"
-                },
-                {
-                    "default": "America/New_York",
-                    "description": "Specify a timezone to use for example Europe/Amsterdam",
-                    "label": "TZ",
-                    "name": "TZ"
-                },
-                {
-                    "default": "127.0.0.1",
-                    "description": "IP of the MariaDB",
-                    "label": "PMA_HOSTS",
-                    "name": "PMA_HOSTS"
-                }
-            ],
-            "image": "linuxserver/phpmyadmin:latest",
-            "logo": "https://raw.githubusercontent.com/linuxserver/docker-templates/master/linuxserver.io/img/phpmyadmin-logo.png",
-            "name": "PHPMyAdmin",
-            "note": "Portainer App Templates by <a href='https://www.technorabilia.com' target='_blank'>Technorabilia</a> based on data provided by <a href='https://www.linuxserver.io' target='_blank'>LinuxServer.io</a>.</p><p>Don't forget to create the volume directories on the host file system.</p><p>mkdir -p /volume1/docker/phpmyadmin/config</p>",
-            "platform": "linux",
-            "ports": [
+    }, {
+        "description": "[Phpmyadmin](https://github.com/phpmyadmin/phpmyadmin/) is a free software tool written in PHP, intended to handle the administration of MySQL over the Web. phpMyAdmin supports a wide range of operations on MySQL and MariaDB.",
+        "note": "Portainer App Templates by <a href='https://www.technorabilia.com' target='_blank'>Technorabilia</a> based on data provided by <a href='https://www.linuxserver.io' target='_blank'>LinuxServer.io</a>.</p><p>Don't forget to create the volume directories on the host file system.</p><p>mkdir -p /volume1/docker/phpmyadmin/config</p>",
+        "logo": "https://raw.githubusercontent.com/linuxserver/docker-templates/master/linuxserver.io/img/phpmyadmin-logo.png",
+        "platform": "linux",
+        "type": 1,
+        "name": "PHPMyAdmin",
+        "title": "PHPMyAdmin",
+        "image": "linuxserver/phpmyadmin:latest",
+        "restart_policy": "unless-stopped",
+        "ports": [
                 "88:80/tcp"
             ],
-            "restart_policy": "unless-stopped",
-            "title": "PHPMyAdmin",
-            "type": 1,
-            "volumes": [{
+        "volumes": [{
                 "bind": "/var/lib/docker/volumes/phpmyadmin/config",
                 "container": "/config"
-            }]
-        }, {
-            "categories": [
-                "Proxy",
-                "Tools"
-            ],
-            "description": "Nginx Proxy Manager enables you to easily forward to your websites running at home or otherwise, including free SSL, without having to know too much about Nginx or Letsencrypt.",
-            "env": [{
-                "default": "/data/database.sqlite",
-                "label": "DB_SQLITE_FILE",
-                "name": "DB_SQLITE_FILE"
             }],
-            "image": "jc21/nginx-proxy-manager",
-            "logo": "https://raw.githubusercontent.com/Qballjos/portainer_templates/master/Images/proxy_mgr.png",
-            "name": "NGINX",
-            "platform": "linux",
-            "ports": [
+        "env": [{
+                "default": "127.0.0.1",
+                "description": "IP of the MariaDB",
+                "label": "PMA_HOSTS",
+                "name": "PMA_HOSTS"
+            }],
+        "categories": [
+                "Must Set Up"
+            ],
+    }, {
+        "description": "[Nginx Proxy Manager] enables you to easily forward to your websites running at home or otherwise, including free SSL, without having to know too much about Nginx or Letsencrypt.",
+        "logo": "https://raw.githubusercontent.com/Qballjos/portainer_templates/master/Images/proxy_mgr.png",
+        "platform": "linux",
+        "type": 1,
+        "name": "NGINX",
+        "title": "NGINX",
+        "image": "jc21/nginx-proxy-manager",
+        "restart_policy": "unless-stopped",
+        "ports": [
                 "80:80/tcp",
                 "81:81/tcp",
                 "443:443/tcp"
             ],
-            "restart_policy": "unless-stopped",
-            "title": "NGINX",
-            "type": 1,
-            "volumes": [{
-                    "bind": "/var/lib/docker/volumes/nginx/data",
-                    "container": "/data"
-                },
-                {
-                    "bind": "/var/lib/docker/volumes/nginx/letsencrypt",
-                    "container": "/etc/letsencrypt"
-                }
-            ]
-        }, {
-            "categories": [
-                "Other",
+        "volumes": [{
+                "bind": "/var/lib/docker/volumes/nginx/data",
+                "container": "/data"
+            },{
+                "bind": "/var/lib/docker/volumes/nginx/letsencrypt",
+                "container": "/etc/letsencrypt"
+            }],
+        "env": [{
+                "default": "/data/database.sqlite",
+                "label": "DB_SQLITE_FILE",
+                "name": "DB_SQLITE_FILE"
+            }],
+        "categories": [
+                "Proxy",
                 "Tools"
-            ],
-            "description": "A clientless remote desktop gateway.",
-            "image": "oznu/guacamole:latest",
-            "logo": "https://raw.githubusercontent.com/Qballjos/portainer_templates/master/Images/guacamole.png",
-            "name": "Guacamole",
-            "note": "The default login will be guacadmin/guacadmin. It is common practice to add a new admin user and remove the default user for Guacamole.",
-            "platform": "linux",
-            "ports": [
+            ]
+    }, {
+        "description": "[Guacamole] is A clientless remote desktop gateway.",
+        "note": "The default login will be guacadmin/guacadmin. It is common practice to add a new admin user and remove the default user for Guacamole.",
+        "logo": "https://raw.githubusercontent.com/Qballjos/portainer_templates/master/Images/guacamole.png",
+        "platform": "linux",
+        "type": 1,
+        "name": "Guacamole",
+        "title": "Guacamole",
+        "image": "oznu/guacamole:latest",
+        "restart_policy": "unless-stopped",
+        "ports": [
                 "8080:8080/tcp"
             ],
-            "restart_policy": "unless-stopped",
-            "title": "Guacamole",
-            "type": 1,
-            "volumes": [{
+        "volumes": [{
                 "bind": "/var/lib/docker/volumes/guacamole/config",
                 "container": "/config"
-            }]
-        }, {
-            "categories": [
+            }],
+        "categories": [
                 "Other",
-                "Wiki"
-            ],
-            "description": "MediaWiki is free and open-source wiki software. Originally developed by Magnus Manske and improved by Lee Daniel Crocker, it runs on many websites, including Wikipedia, Wiktionary and Wikimedia Commons. It is written in the PHP programming language and stores the contents into a database. Like WordPress, which is based on a similar licensing and architecture, it has become the dominant software in its category.",
-            "image": "linuxserver/mediawiki:latest",
-            "logo": "https://raw.githubusercontent.com/docker-library/docs/27b797857efd9253c0981c09696f579a167062d4/mediawiki/logo.svg",
-            "name": "MediaWiki",
-            "note": "The default login will be guacadmin/guacadmin. It is common practice to add a new admin user and remove the default user for Guacamole.",
-            "platform": "linux",
-            "ports": [
+                "Tools"
+            ]
+    }, {
+        "description": "[MediaWiki] is free and open-source wiki software. Originally developed by Magnus Manske and improved by Lee Daniel Crocker, it runs on many websites, including Wikipedia, Wiktionary and Wikimedia Commons. It is written in the PHP programming language and stores the contents into a database. Like WordPress, which is based on a similar licensing and architecture, it has become the dominant software in its category.",
+        "note": "The default login will be guacadmin/guacadmin. It is common practice to add a new admin user and remove the default user for Guacamole.",
+        "logo": "https://raw.githubusercontent.com/docker-library/docs/27b797857efd9253c0981c09696f579a167062d4/mediawiki/logo.svg",
+        "platform": "linux",
+        "type": 1,
+        "name": "MediaWiki",
+        "title": "MediaWiki",
+        "image": "linuxserver/mediawiki:latest",
+        "restart_policy": "unless-stopped",
+        "ports": [
                 "89:80/tcp"
             ],
-            "restart_policy": "unless-stopped",
-            "title": "MediaWiki",
-            "type": 1,
-            "volumes": [{
+        "volumes": [{
                 "bind": "/var/lib/docker/volumes/mediawiki/html",
                 "container": "/var/www/html"
-            }]
-        }, {
-            "categories": [
-                "Other"
-            ],
-            "description": "AdGuard Home is a network-wide software for blocking ads & tracking. After you set it up, it’ll cover ALL your home devices, and you don’t need any client-side software for that. With the rise of Internet-Of-Things and connected devices, it becomes more and more important to be able to control your whole network.",
-            "env": [{
-                    "default": "1000",
-                    "label": "PUID",
-                    "name": "PUID"
-                },
-                {
-                    "default": "100",
-                    "label": "PGID",
-                    "name": "PGID"
-                },
-                {
-                    "label": "CONTEXT_PATH",
-                    "name": "CONTEXT_PATH",
-                    "set": "adguard home"
-                }
-            ],
-            "image": "adguard/adguardhome:latest",
-            "logo": "https://raw.githubusercontent.com/Qballjos/portainer_templates/master/Images/adguard.png",
-            "name": "AdGuard",
-            "platform": "linux",
-            "ports": [
+            }],
+        "categories": [
+                "Other",
+                "Wiki"
+            ]
+    }, {
+        "description": "[AdGuard] Home is a network-wide software for blocking ads & tracking. After you set it up, it’ll cover ALL your home devices, and you don’t need any client-side software for that. With the rise of Internet-Of-Things and connected devices, it becomes more and more important to be able to control your whole network.",
+        "logo": "https://raw.githubusercontent.com/Qballjos/portainer_templates/master/Images/adguard.png",
+        "platform": "linux",
+        "type": 1,
+        "name": "AdGuard",
+        "title": "AdGuard",
+        "image": "adguard/adguardhome:latest",
+        "restart_policy": "unless-stopped",
+        "ports": [
                 "53:53/tcp",
                 "53:53/udp",
                 "67:67/udp",
@@ -191,112 +138,79 @@
                 "853:853/tcp",
                 "3000:3000/tcp"
             ],
-            "restart_policy": "unless-stopped",
-            "title": "AdGuard",
-            "type": 1,
-            "volumes": [{
-                    "bind": "/var/lib/docker/volumes/adguard/workdir",
-                    "container": "/opt/adguardhome/work"
-                },
-                {
-                    "bind": "/var/lib/docker/volumes/adguard/conf",
-                    "container": "/opt/adguardhome/conf"
-                }
+        "volumes": [{
+                "bind": "/var/lib/docker/volumes/adguard/workdir",
+                "container": "/opt/adguardhome/work"
+            },{
+                "bind": "/var/lib/docker/volumes/adguard/conf",
+                "container": "/opt/adguardhome/conf"
+            }],
+        "env": [{
+                "label": "CONTEXT_PATH",
+                "name": "CONTEXT_PATH",
+                "set": "adguard home"
+            }],
+        "categories": [
+                "Other"
             ]
-        }, {
-            "type": 1,
-            "title": "Blender",
-            "name": "Blender",
-            "note": "Portainer App Templates by <a href='https://www.technorabilia.com' target='_blank'>Technorabilia</a> based on data provided by <a href='https://www.linuxserver.io' target='_blank'>LinuxServer.io</a>.</p><p>Don't forget to create the volume directories on the host file system.</p><p>mkdir -p /volume1/docker/blender/config</p>",
-            "description": "[Blender](https://www.blender.org/) is a free and open-source 3D computer graphics software toolset used for creating animated films, visual effects, art, 3D printed models, motion graphics, interactive 3D applications, virtual reality, and computer games. **This image does not support GPU rendering out of the box only accelerated workspace experience**",
-            "platform": "linux",
-            "logo": "https://raw.githubusercontent.com/linuxserver/docker-templates/master/linuxserver.io/img/blender-logo.png",
-            "image": "linuxserver/blender:latest",
-            "env": [{
-                    "name": "PUID",
-                    "label": "PUID",
-                    "default": "1024",
-                    "description": "for UserID"
-                },
-                {
-                    "name": "PGID",
-                    "label": "PGID",
-                    "default": "100",
-                    "description": "for GroupID"
-                },
-                {
-                    "name": "TZ",
-                    "label": "TZ",
-                    "default": "America/New_York",
-                    "description": "Specify a timezone to use for example Europe/Amsterdam"
-                },
-                {
-                    "name": "SUBFOLDER",
-                    "label": "SUBFOLDER",
-                    "default": "/",
-                    "description": "Specify a subfolder to use with reverse proxies, IE `/subfolder/`"
-                },
-                {
-                    "name": "KEYBOARD",
-                    "label": "KEYBOARD",
-                    "default": "en-us-qwerty",
-                    "description": "See the keyboard layouts section for more information and options."
-                }
-            ],
-            "ports": [
+    }, {
+        "description": "[Blender](https://www.blender.org/) is a free and open-source 3D computer graphics software toolset used for creating animated films, visual effects, art, 3D printed models, motion graphics, interactive 3D applications, virtual reality, and computer games. **This image does not support GPU rendering out of the box only accelerated workspace experience**",
+        "note": "Portainer App Templates by <a href='https://www.technorabilia.com' target='_blank'>Technorabilia</a> based on data provided by <a href='https://www.linuxserver.io' target='_blank'>LinuxServer.io</a>.</p><p>Don't forget to create the volume directories on the host file system.</p><p>mkdir -p /volume1/docker/blender/config</p>",
+        "logo": "https://raw.githubusercontent.com/linuxserver/docker-templates/master/linuxserver.io/img/blender-logo.png",
+        "platform": "linux",
+        "type": 1,
+        "name": "Blender",
+        "title": "Blender",
+        "image": "linuxserver/blender:latest",
+        "restart_policy": "unless-stopped",
+        "ports": [
                 "3000:3000/tcp"
             ],
-            "volumes": [{
+        "volumes": [{
                 "bind": "/var/lib/docker/volumes/blender/config",
                 "container": "/config"
             }],
-            "restart_policy": "unless-stopped"
-        }, {
-            "categories": [
-                "Books",
+        "env": [{
+                "name": "SUBFOLDER",
+                "label": "SUBFOLDER",
+                "default": "/",
+                "description": "Specify a subfolder to use with reverse proxies, IE `/subfolder/`"
+            }],
+        "categories": [
                 "Other"
-            ],
-            "description": "Booksonic is a server and an app for streaming your audiobooks to any pc or android phone. Most of the functionality is also availiable on other platforms that have apps for subsonic.",
-            "env": [{
-                    "default": "1000",
-                    "label": "PUID",
-                    "name": "PUID"
-                },
-                {
-                    "default": "100",
-                    "label": "PGID",
-                    "name": "PGID"
-                },
-                {
-                    "default": "booksonic",
-                    "label": "CONTEXT_PATH",
-                    "name": "CONTEXT_PATH"
-                }
-            ],
-            "image": "linuxserver/booksonic:latest",
-            "logo": "https://raw.githubusercontent.com/Qballjos/portainer_templates/master/Images/booksonic.png",
-            "name": "booksonic",
-            "platform": "linux",
-            "ports": [
+            ]
+    }, {
+        "description": "Booksonic is a server and an app for streaming your audiobooks to any pc or android phone. Most of the functionality is also availiable on other platforms that have apps for subsonic.",
+        "logo": "https://raw.githubusercontent.com/Qballjos/portainer_templates/master/Images/booksonic.png",
+        "platform": "linux",
+        "type": 1,
+        "name": "booksonic",
+        "title": "Booksonic",
+        "image": "linuxserver/booksonic:latest",
+        "restart_policy": "unless-stopped",
+        "ports": [
                 "4040:4040/tcp"
             ],
-            "restart_policy": "unless-stopped",
-            "title": "Booksonic",
-            "type": 1,
-            "volumes": [{
-                    "bind": "/var/lib/docker/volumes/Booksonic/books",
-                    "container": "/books"
-                },
-                {
-                    "bind": "/var/lib/docker/volumes/Booksonic/podcasts",
-                    "container": "/podcast"
-                },
-                {
-                    "bind": "/var/lib/docker/volumes/Booksonic/config",
-                    "container": "/config"
-                }
+        "volumes": [{
+                "bind": "/var/lib/docker/volumes/Booksonic/books",
+                "container": "/books"
+            },{
+                "bind": "/var/lib/docker/volumes/Booksonic/podcasts",
+                "container": "/podcast"
+            },{
+                "bind": "/var/lib/docker/volumes/Booksonic/config",
+                "container": "/config"
+            }],
+        "env": [{
+                "default": "booksonic",
+                "label": "CONTEXT_PATH",
+                "name": "CONTEXT_PATH"
+            }],
+        "categories": [
+                "Books",
+                "Other"
             ]
-        }, {
+    }, {
             "categories": [
                 "Audio"
             ],
