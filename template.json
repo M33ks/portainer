@@ -2,12 +2,12 @@
     "version": "2",
     "templates": [{
             "description": "[Mariadb](https://mariadb.org/) is one of the most popular database servers. Made by the original developers of MySQL.",
-            "image": "linuxserver/mariadb:latest",
-            "logo": "https://raw.githubusercontent.com/linuxserver/docker-templates/master/linuxserver.io/img/mariadb-git.png",
-            "name": "MariaDB",
-            "title": "MariaDB",
             "note": "Portainer App Templates by <a href='https://www.technorabilia.com' target='_blank'>Technorabilia</a> based on data provided by <a href='https://www.linuxserver.io' target='_blank'>LinuxServer.io</a>.</p><p>Don't forget to create the volume directories on the host file system.</p><p>mkdir -p /volume1/docker/mariadb/config</p>",
+            "logo": "https://raw.githubusercontent.com/linuxserver/docker-templates/master/linuxserver.io/img/mariadb-git.png",
             "platform": "linux",
+            "name": "MariaDB",
+            "title": "MariaDB",    
+            "image": "linuxserver/mariadb:latest",
             "ports": [
                 "3306:3306/tcp"
             ],
