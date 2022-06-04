@@ -24,7 +24,7 @@
             ],
             "image": "adguard/adguardhome:latest",
             "logo": "https://raw.githubusercontent.com/Qballjos/portainer_templates/master/Images/adguard.png",
-            "name": "adguard",
+            "name": "adguardN",
             "platform": "linux",
             "ports": [
                 "53:53/tcp",
@@ -38,7 +38,7 @@
                 "3000:3000/tcp"
             ],
             "restart_policy": "unless-stopped",
-            "title": "Adguard",
+            "title": "AdguardT",
             "type": 1,
             "volumes": [{
                     "bind": "/portainer/Files/AppData/Adguard/Workdir",
