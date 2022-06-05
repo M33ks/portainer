@@ -734,7 +734,7 @@
                 "label": "INTERFACE",
                 "name": "INTERFACE",
                 "set": "eth0"
-            },
+            }],
         "category": [
                 "Other"
             ]
