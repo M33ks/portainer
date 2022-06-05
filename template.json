@@ -262,7 +262,7 @@
         "volumes": [{
                 "bind": "/var/lib/docker/volumes/caddy/config",
                 "container": "/root/.caddy"
-            }]
+            }],
         "categories": [
                 "webserver"
             ]
@@ -374,7 +374,7 @@
         "volumes": [{
                 "bind": "/var/lib/docker/volumes/Codiad/config",
                 "container": "/config"
-            }]
+            }],
         "categories": [
                 "Code Server"
             ]
@@ -640,7 +640,7 @@
                 "80/tcp"
             ],
         "volumes": [{
-                "bind": "/var/lib/docker/volumes/Httpd/htdocs"
+                "bind": "/var/lib/docker/volumes/Httpd/htdocs",
                 "container": "/usr/local/apache2/htdocs/"
             }],
         "categories": [
