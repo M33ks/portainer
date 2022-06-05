@@ -903,7 +903,7 @@
         "type": 1,
         "name": "Taisun",
         "image": "linuxserver/taisun:latest",
-        "restart_policy": "unless-stopped"
+        "restart_policy": "unless-stopped",
         "ports": [
                 "3000:3000/tcp"
             ],
