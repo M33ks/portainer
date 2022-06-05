@@ -904,18 +904,18 @@
         "image": "linuxserver/smokeping:latest",
         "restart_policy": "unless-stopped",
         "ports": [
-				"80/tcp"
-			],
+		"80/tcp"
+	    ],
         "volumes": [{
                 "bind": "/var/lib/docker/volumes/smokeping/config",
-		        "container": "/config"
-		    },{
+		"container": "/config"
+	    },{
                 "bind": "/var/lib/docker/volumes/smokeping/data",
-			    "container": "/data"
-		    }],
+		"container": "/data"
+ 	    }],
         "category": [
-				"Management"
-			],
+		"Management"
+	    ]
     },{
         "title": "Solr",
         "description": "Open-source enterprise search platform",
@@ -928,12 +928,12 @@
         "ports": [
                 "8983/tcp"
             ],
-        "volumes": [
-            "bind": "/var/lib/docker/volumes/Solr/mydata",
-            "container": "/opt/solr/mydata"]
-            },
+        "volumes": [{
+            	"bind": "/var/lib/docker/volumes/Solr/mydata",
+            	"container": "/opt/solr/mydata"
+	    }],
         "categories": [
-                  "search-engine"
+               	"search-engine"
             ]       
     },{
         "title": "Taisun",
