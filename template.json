@@ -895,6 +895,47 @@
                 "Tools"
             ]
     },{
+        "title": "SmokePing",
+        "description": "Smokeping keeps track of your network latency.",
+        "logo": "https://raw.githubusercontent.com/thesugarat/portainer_templates-1/master/Images/smokeping-icon.png",
+        "platform": "linux",
+        "type": 1,
+        "name": "SmokePing",
+        "image": "linuxserver/smokeping:latest",
+        "restart_policy": "unless-stopped",
+        "ports": [
+				"80/tcp"
+			],
+        "volumes": [{
+                "bind": "/var/lib/docker/volumes/smokeping/config",
+		        "container": "/config"
+		    },{
+                "bind": "/var/lib/docker/volumes/smokeping/data",
+			    "container": "/data"
+		    }],
+        "category": [
+				"Management"
+			],
+    },{
+        "title": "Solr",
+        "description": "Open-source enterprise search platform",
+        "logo": "https://portainer-io-assets.sfo2.digitaloceanspaces.com/logos/solr.png",
+        "platform": "linux",
+        "type": 1,
+        "name": "Solr",
+        "image": "solr:latest",
+        "restart_policy": "unless-stopped",
+        "ports": [
+                "8983/tcp"
+            ],
+        "volumes": [
+            "bind": "/var/lib/docker/volumes/Solr/mydata",
+            "container": "/opt/solr/mydata"]
+            },
+        "categories": [
+                  "search-engine"
+            ]       
+    },{
         "title": "Taisun",
         "description": "[Taisun](https://www.taisun.io/) is an application for a Docker enabled device with an emphasis on providing a web based interface for managing a single server. Taisun allows you to: - Deploy and manage web based virtual desktops. - Deploy Taisun specific stacks of applications - Browse available images on popular Docker repositories - Import a Docker project from any git repository and start developing on your choice of web based IDE or full Linux desktop - Spinup a developer container based on popular frameworks and work from a web based IDE - Single click remote server access to Taisun and your Docker applications",
         "note": "Portainer App Templates by <a href='https://www.technorabilia.com' target='_blank'>Technorabilia</a> based on data provided by <a href='https://www.linuxserver.io' target='_blank'>LinuxServer.io</a>.</p><p>Don't forget to create the volume directories on the host file system.</p><p></p>",
