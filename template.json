@@ -405,8 +405,6 @@
         "categories": [
                 "Photography"
             ]
-    
-    
     },{
         "title": "Docker-Compose",
         "description": "This container needs special attention. Please check https://hub.docker.com/r/linuxserver/docker-compose for details.",
@@ -934,7 +932,7 @@
                 "container": "/app/data"
             }],
         "categories": [
-                "Other
+                "Other"
             ]
     },{
         "title": "WebTop",
