@@ -164,7 +164,7 @@
         "image": "linuxserver/blender:latest",
         "restart_policy": "unless-stopped",
         "ports": [
-                "3000:3000/tcp"
+                "3010:3000/tcp"
             ],
         "volumes": [{
                 "bind": "/var/lib/docker/volumes/blender/config",
@@ -221,7 +221,7 @@
         "image": "linuxserver/booksonic-air:latest",
         "restart_policy": "unless-stopped",
         "ports": [
-                "4040:4040/tcp"
+                "4041:4040/tcp"
             ],
         "volumes": [{
                 "bind": "/var/lib/docker/volumes/booksonic-air/config",
@@ -277,7 +277,7 @@
         "image": "linuxserver/cloud9:latest",
         "restart_policy": "unless-stopped",
         "ports": [
-                "8000:8000/tcp"
+                "8001:8000/tcp"
             ],
         "volumes": [{
                 "bind": "/var/lib/docker/volumes/cloud9/config",
@@ -369,7 +369,7 @@
         "image": "linuxserver/codiad:latest",
         "restart_policy": "unless-stopped",
         "ports": [
-                "80/tcp"
+                "90:80/tcp"
             ],
         "volumes": [{
                 "bind": "/var/lib/docker/volumes/Codiad/config",
@@ -390,7 +390,7 @@
         "restart_policy": "unless-stopped",
         "network": "host",
         "ports": [
-                "3000:3000/tcp"
+                "3011:3000/tcp"
             ],
         "volumes": [{
                 "bind": "/var/lib/docker/volumes/digikam/config",
@@ -416,7 +416,7 @@
         "image": "linuxserver/docker-compose:latest",
         "restart_policy": "unless-stopped",
         "ports": [
-                "80:80/tcp"
+                "91:80/tcp"
             ],
         "volumes": [{
                 "bind": "/var/lib/docker/volumes/docker-compose/config",
@@ -457,7 +457,7 @@
         "image": "linuxserver/domoticz:latest",
         "restart_policy": "unless-stopped",
         "ports": [
-                "8080:8080/tcp",
+                "8081:8080/tcp",
                 "6144:6144/tcp",
                 "1443:1443/tcp"
             ],
@@ -485,7 +485,7 @@
         "image": "linuxserver/doublecommander:latest",
         "restart_policy": "unless-stopped",
         "ports": [
-                "3000:3000/tcp"
+                "3012:3000/tcp"
             ],
         "volumes": [{
                 "bind": "/var/lib/docker/volumes/doublecommander/config",
@@ -561,8 +561,8 @@
         "image": "linuxserver/emulatorjs:latest",
         "restart_policy": "unless-stopped",
         "ports": [
-                "3000:3000/tcp",
-                "80:80/tcp",
+                "3013:3000/tcp",
+                "92:80/tcp",
                 "4001:4001/tcp"
             ],
         "volumes": [{
@@ -609,8 +609,8 @@
         "image": "gitlab/gitlab-ce:latest",
         "restart_policy": "unless-stopped",
         "ports": [
-                "80/tcp",
-                "443/tcp",
+                "93/tcp",
+                "444/tcp",
                 "22/tcp"
             ],
         "volumes": [{
@@ -637,7 +637,7 @@
         "image": "httpd:latest",
         "restart_policy": "unless-stopped",
         "ports": [
-                "80/tcp"
+                "87/tcp"
             ],
         "volumes": [{
                 "bind": "/var/lib/docker/volumes/Httpd/htdocs",
@@ -657,7 +657,7 @@
         "image": "linuxserver/mstream:latest",
         "restart_policy": "unless-stopped",
         "ports": [
-                "3000:3000/tcp"
+                "3014:3000/tcp"
             ],
         "volumes": [{
                 "bind": "/var/lib/docker/volumes/mstream/config",
@@ -680,7 +680,7 @@
         "image": "linuxserver/muximux:latest",
         "restart_policy": "unless-stopped",
         "ports": [
-                "80:80/tcp"
+                "86:80/tcp"
             ],
         "volumes": [{
                 "bind": "/var/lib/docker/volumes/muximux/config",
@@ -700,7 +700,7 @@
         "image": "linuxserver/nextcloud:latest",
         "restart_policy": "unless-stopped",
         "ports": [
-                "443:443/tcp"
+                "445:443/tcp"
             ],
         "volumes": [{
                 "bind": "/var/lib/docker/volumes/nextcloud/config",
@@ -749,7 +749,7 @@
         "image": "linuxserver/openvscode-server:latest",
         "restart_policy": "unless-stopped",
         "ports": [
-                "3000:3000/tcp"
+                "3002:3000/tcp"
             ],
         "volumes": [{
                 "bind": "/var/lib/docker/volumes/openvscode-server/config",
@@ -791,10 +791,10 @@
         "image": "pihole/pihole:latest",
         "restart_policy": "unless-stopped",
         "ports": [
-                "53:53/tcp",
-                "53:53/udp",
+                "54:53/tcp",
+                "54:53/udp",
                 "67:67/udp",
-                "1010:80/tcp",
+                "85:80/tcp",
                 "4443:443/tcp"
             ],
         "volumes": [{
@@ -884,7 +884,7 @@
         "image": "linuxserver/remmina:latest",
         "restart_policy": "unless-stopped",
         "ports": [
-                "3000:3000/tcp"
+                "3005:3000/tcp"
             ],
         "volumes": [{
                 "bind": "/var/lib/docker/volumes/remmina/config",
@@ -904,7 +904,7 @@
         "image": "linuxserver/smokeping:latest",
         "restart_policy": "unless-stopped",
         "ports": [
-		"80/tcp"
+		"84/tcp"
 	    ],
         "volumes": [{
                 "bind": "/var/lib/docker/volumes/smokeping/config",
@@ -946,7 +946,7 @@
         "image": "linuxserver/taisun:latest",
         "restart_policy": "unless-stopped",
         "ports": [
-                "3000:3000/tcp"
+                "3004:3000/tcp"
             ],
         "volumes": [{
                 "container": "/var/run/docker.sock",
@@ -983,11 +983,11 @@
         "platform": "linux",
         "type": 1,
         "name": "WebTop",
-        "image": "linuxserver/webtop:latest",
+        "image": "linuxserver/webtop:ubuntu-kde",
         "restart_policy": "unless-stopped",
         "privileged": true,
         "ports": [
-                "3000:3000/tcp"
+                "3003:/tcp"
             ],
         "volumes": [{
                 "bind": "/var/lib/docker/volumes/webtop/config",
@@ -1071,7 +1071,7 @@
         "restart_policy": "unless-stopped",
         "network": "host",
         "ports": [
-                "3000:3000/tcp"
+                "3015:3000/tcp"
             ],
         "volumes": [{
                 "bind": "/var/lib/docker/volumes/wireshark/config",
