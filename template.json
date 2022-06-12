@@ -589,7 +589,7 @@
         "image": "linuxserver/firefox:latest",
         "restart_policy": "unless-stopped",
         "ports": [
-                "3000:3000/tcp"
+                "3001:3000/tcp"
             ],
         "volumes": [{
                 "bind": "/var/lib/docker/volumes/firefox/config",
