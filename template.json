@@ -436,8 +436,8 @@
         "image": "linuxserver/dokuwiki:latest",
         "restart_policy": "unless-stopped",
         "ports": [
-                "80:80/tcp",
-                "443:443/tcp"
+                "85:80/tcp",
+                "445:443/tcp"
             ],
         "volumes": [{
                 "bind": "/var/lib/docker/volumes/dokuwiki/config",
@@ -680,7 +680,7 @@
         "image": "linuxserver/muximux:latest",
         "restart_policy": "unless-stopped",
         "ports": [
-                "86:80/tcp"
+                "96:80/tcp"
             ],
         "volumes": [{
                 "bind": "/var/lib/docker/volumes/muximux/config",
@@ -794,7 +794,7 @@
                 "54:53/tcp",
                 "54:53/udp",
                 "67:67/udp",
-                "85:80/tcp",
+                "97:80/tcp",
                 "4443:443/tcp"
             ],
         "volumes": [{
