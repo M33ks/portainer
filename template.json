@@ -105,7 +105,7 @@
         "platform": "linux",
         "type": 1,
         "name": "MediaWiki",
-        "image": "linuxserver/mediawiki:latest",
+        "image": "mediawiki:latest",
         "restart_policy": "unless-stopped",
         "ports": [
                 "89:80/tcp"
