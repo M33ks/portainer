@@ -128,7 +128,7 @@
         "image": "php:8.1.3RC1-apache",
         "restart_policy": "unless-stopped",
         "ports": [
-                "82:80/tcp",
+                "82:80/tcp"
             ],
         "categories": [
                 "Other"
