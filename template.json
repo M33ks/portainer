@@ -1040,7 +1040,7 @@
                 "name": "YOURLS_PASS",
                 "label": "YOURLS_PASS",
                 "default": "example_password",
-                "description": "Password for YOURLS
+                "description": "Password for YOURLS"
             }],
         "categories": [
                 "Other"
