@@ -18,7 +18,8 @@
             "container": "/config"
         }],
         "categories": [
-            "Need"
+            "Need",
+            "Database"
         ]
     },{
         "title": "PHPMyAdmin",
@@ -49,7 +50,8 @@
             "name": "UPLOAD_LIMIT"
         }],
         "categories": [
-            "Need"
+            "Need",
+            "Database"
         ]
     },{
         "title": "MediaWiki",
@@ -69,7 +71,7 @@
             "container": "/var/www/html"
         }],
         "categories": [
-            "Other",
+            "Need",
             "Wiki"
         ]
     },{
@@ -89,7 +91,9 @@
             "container": "usr/share/hue/desktop/conf"
         }],
         "categories": [
-            "Need"
+            "Need",
+            "Database",
+            "Monitoring"
         ]
     },{
         "title": "Firefox",
@@ -120,7 +124,8 @@
             "name": "DARK_MODE"
         }],
         "categories": [
-            "Need"
+            "Need",
+            "Browser"
         ]
     },{
         "title": "Ubuntu",
@@ -179,7 +184,8 @@
             "shm_size": 1073741824
         },
         "categories": [
-            "Need"
+            "Need",
+            "Linux"
         ]
     },{
         "title": "Uptime Kuma",
@@ -198,7 +204,8 @@
             "container": "/app/data"
         }],
         "categories": [
-            "Need"
+            "Need",
+            "Monitoring"
         ]
     },{
         "title": "Guacamole",
@@ -218,13 +225,14 @@
             "container": "/config"
         }],
         "categories": [
-            "Need"
+            "Need",
+            "VNC"
         ]
     },{
         "title": "Dozzle",
-        "description": "[Guacamole] is A clientless remote desktop gateway.",
-        "note": "The default login will be guacadmin/guacadmin. It is common practice to add a new admin user and remove the default user for Guacamole.",
-        "logo": "https://raw.githubusercontent.com/Qballjos/portainer_templates/master/Images/guacamole.png",
+        "description": "View Logs for Docker Containers",
+        "note": "",
+        "logo": "",
         "platform": "linux",
         "type": 1,
         "name": "Dozzle",
@@ -249,7 +257,8 @@
             "name": "password "
         }],
         "categories": [
-            "Need"
+            "Need",
+            "Monitoring"
         ]
     },{
         "title": "Splunk",
@@ -285,7 +294,8 @@
             "name": "SPLUNK_PASSWORD "
         }],
         "categories": [
-            "Need"
+            "Need",
+            "Monitoring"
         ]
     },{
         "title": "AdGuard",
@@ -320,7 +330,7 @@
             "set": "adguard home"
         }],
         "categories": [
-            "Other"
+            "Ad-Blocker"
         ]
     },{
         "title": "Booksonic",
@@ -369,8 +379,7 @@
             "name": "TZ"
         }],
         "categories": [
-            "Books",
-            "Other"
+            "Audiobooks"
         ]
     },{
         "title": "Booksonic-Air",
@@ -420,7 +429,52 @@
             "name": "TZ"
         }],
         "categories": [
-            "Audio"
+            "Audiobooks"
+        ]
+    },{
+        "title": "Blender",
+        "description": "[Blender](https://www.blender.org/) is a free and open-source 3D computer graphics software toolset used for creating animated films, visual effects, art, 3D printed models, motion graphics, interactive 3D applications, virtual reality, and computer games. **This image does not support GPU rendering out of the box only accelerated workspace experience**",
+        "note": "Portainer App Templates by <a href='https://www.technorabilia.com' target='_blank'>Technorabilia</a> based on data provided by <a href='https://www.linuxserver.io' target='_blank'>LinuxServer.io</a>.</p><p>Don't forget to create the volume directories on the host file system.</p><p>mkdir -p /volume1/docker/blender/config</p>",
+        "logo": "https://raw.githubusercontent.com/linuxserver/docker-templates/master/linuxserver.io/img/blender-logo.png",
+        "platform": "linux",
+        "type": 1,
+        "name": "Blender",
+        "image": "linuxserver/blender:latest",
+        "restart_policy": "unless-stopped",
+        "ports": [
+            "3010:3000/tcp"
+        ],
+        "volumes": [{
+            "bind": "/var/lib/docker/volumes/Blender",
+            "container": "/config"
+        }],
+        "env": [{
+            "name": "SUBFOLDER",
+            "label": "SUBFOLDER",
+            "default": "/",
+            "description": "Specify a subfolder to use with reverse proxies, IE `/subfolder/`"
+        }],
+        "categories": [
+            "Photography"
+        ]
+    },{
+        "title": "Caddy",
+        "description": "HTTP/2 web server with automatic HTTPS",
+        "logo": "https://portainer-io-assets.sfo2.digitaloceanspaces.com/logos/caddy.png",
+        "platform": "linux",
+        "type": 1,
+        "name": "Caddy",
+        "image": "caddy:latest",
+        "restart_policy": "unless-stopped",
+        "ports": [
+            "80:80/tcp"
+        ],
+        "volumes": [{
+            "bind": "/var/lib/docker/volumes/Caddy",
+            "container": "/data"
+        }],
+        "categories": [
+            "Webserver"
         ]
     },{
         "title": "Chromium",
@@ -468,7 +522,49 @@
             "shm_size": 1073741824
         },
         "categories": [
-            "Other"
+            "Browser"
+        ]
+    },{
+        "title": "Cloud9",
+        "description": "[Cloud9](https://github.com/c9/core) Cloud9 is a complete web based IDE with terminal access. This container is for running their core SDK locally and developing plugins.",
+        "note": "Portainer App Templates by <a href='https://www.technorabilia.com' target='_blank'>Technorabilia</a> based on data provided by <a href='https://www.linuxserver.io' target='_blank'>LinuxServer.io</a>.</p><p>Don't forget to create the volume directories on the host file system.</p><p>mkdir -p /volume1/docker/cloud9/config<br>mkdir -p /volume1/docker/cloud9/code<br></p>",
+        "logo": "https://raw.githubusercontent.com/linuxserver/docker-templates/master/linuxserver.io/img/cloud9.png",
+        "platform": "linux",
+        "type": 1,
+        "name": "Cloud9",
+        "image": "linuxserver/cloud9:latest",
+        "restart_policy": "unless-stopped",
+        "ports": [
+            "8001:8000/tcp"
+        ],
+        "volumes": [{
+            "bind": "/var/lib/docker/volumes/Cloud9-Config",
+            "container": "/config"
+        },{
+            "bind": "/var/lib/docker/volumes/Cloud9-Code",
+            "container": "/code"
+        },{
+            "bind": "/var/run/docker.sock",
+            "container": "/var/run/docker.sock"
+        }],
+        "env": [{
+            "default": "https://github.com/linuxserver/docker-cloud9.git",
+            "description": "Specify a git repo to checkout on first startup",
+            "label": "GITURL",
+            "name": "GITURL"
+        },{
+            "default": "",
+            "description": "Optionally specify a username for http auth",
+            "label": "USERNAME",
+            "name": "USERNAME"
+        },{
+            "default": "",
+            "description": "Optionally specify a password for http auth (if USERNAME and PASSWORD are not set, there will be no http auth)",
+            "label": "PASSWORD",
+            "name": "PASSWORD"
+        }],
+        "categories": [
+            "Development"
         ]
     },{
         "title": "Code-Server",
@@ -522,6 +618,25 @@
             "Development"
         ]
     },{
+        "title": "Codiad",
+        "description": "Codiad is a web-based IDE framework with a small footprint and minimal requirements.",
+        "logo": "https://raw.githubusercontent.com/Qballjos/portainer_templates/master/Images/codiad-icon.png",
+        "platform": "linux",
+        "type": 1,
+        "name": "Cdiad",
+        "image": "linuxserver/codiad:latest",
+        "restart_policy": "unless-stopped",
+        "ports": [
+            "90:80/tcp"
+        ],
+        "volumes": [{
+            "bind": "/var/lib/docker/volumes/Codiad",
+            "container": "/config"
+        }],
+        "categories": [
+            "Development"
+        ]
+    },{
         "title": "CommandBox",
         "description": "ColdFusion (CFML) CLI",
         "logo": "https://portainer-io-assets.sfo2.digitaloceanspaces.com/logos/ortussolutions-commandbox.png",
@@ -540,7 +655,7 @@
             "preset": true
         }],
         "categories": [
-            "development"
+            "Development"
         ]
     },{
         
@@ -579,7 +694,7 @@
         "categories": [
             "CMS"
         ]
-      },{
+    },{
         "title": "CrateDB",
         "description": "An open-source distributed SQL database",
         "logo": "https://portainer-io-assets.sfo2.digitaloceanspaces.com/logos/cratedb.png",
@@ -597,345 +712,7 @@
             "container": "/data"
         }],
         "categories": [
-            "database"
-        ]
-      },{
-        "title": "NextCloud",
-        "description": "[Nextcloud](https://nextcloud.com/) gives you access to all your files wherever you are. Where are your photos and documents? With Nextcloud you pick a server of your choice, at home, in a data center or at a provider. And that is where your files will be. Nextcloud runs on that server, protecting your data and giving you access from your desktop or mobile devices. Through Nextcloud you also access, sync and share your existing data on that FTP drive at the office, a Dropbox or a NAS you have at home.",
-        "note": "Portainer App Templates by <a href='https://www.technorabilia.com' target='_blank'>Technorabilia</a> based on data provided by <a href='https://www.linuxserver.io' target='_blank'>LinuxServer.io</a>.</p><p>Don't forget to create the volume directories on the host file system.</p><p>mkdir -p /volume1/docker/nextcloud/config<br>mkdir -p /volume1/docker/nextcloud/data</p>",
-        "logo": "https://raw.githubusercontent.com/linuxserver/docker-templates/master/linuxserver.io/img/nextcloud-icon.png",
-        "platform": "linux",
-        "type": 1,
-        "name": "NextCloud",
-        "image": "linuxserver/nextcloud:latest",
-        "restart_policy": "unless-stopped",
-        "ports": [
-            "8443:443/tcp"
-        ],
-        "volumes": [{
-            "bind": "/var/lib/docker/volumes/NextCloud/Config",
-            "container": "/config"
-        },{
-            "bind": "/var/lib/docker/volumes/NextCloud/Data",
-            "container": "/data"
-        }],
-        "env": [{
-            "default": "1000",
-            "description": "PUID",
-            "label": "PUID",
-            "name": "PUID"
-        },{
-            "default": "1000",
-            "description": "PGID",
-            "label": "PGID",
-            "name": "PGID"
-        },{
-            "default": "Etc/UTC",
-            "description": "TZ",
-            "label": "TZ",
-            "name": "TZ"
-        }],
-        "categories": [
-                "Other"
-        ]
-    },{
-        "title": "OpenVSCode-Server",
-        "description": "[Openvscode-server](https://github.com/gitpod-io/openvscode-server) provides a version of VS Code that runs a server on a remote machine and allows access through a modern web browser.",
-        "note": "Portainer App Templates by <a href='https://www.technorabilia.com' target='_blank'>Technorabilia</a> based on data provided by <a href='https://www.linuxserver.io' target='_blank'>LinuxServer.io</a>.</p><p>Don't forget to create the volume directories on the host file system.</p><p>mkdir -p /volume1/docker/openvscode-server/config</p>",
-        "logo": "https://raw.githubusercontent.com/linuxserver/docker-templates/master/linuxserver.io/img/openvscode-server-logo.png",
-        "platform": "linux",
-        "type": 1,
-        "name": "VSCode",
-        "image": "linuxserver/openvscode-server:latest",
-        "restart_policy": "unless-stopped",
-        "ports": [
-                "8443:8443/tcp"
-        ],
-        "volumes": [{
-                "bind": "/var/lib/docker/volumes/VSCode",
-                "container": "/config"
-        }],
-        "env": [{
-            "default": "PASSWORD",
-            "description": "To Access the site",
-            "label": "PASSWORD",
-            "name": "PASSWORD"
-        },{
-            "default": "SUDO_PASSWORD",
-            "description": "For Sudo Commands",
-            "label": "SUDO_PASSWORD",
-            "name": "SUDO_PASSWORD"
-        },{
-            "default": "1000",
-            "description": "PUID",
-            "label": "PUID",
-            "name": "PUID"
-        },{
-            "default": "1000",
-            "description": "PGID",
-            "label": "PGID",
-            "name": "PGID"
-        },{
-            "default": "Etc/UTC",
-            "description": "TZ",
-            "label": "TZ",
-            "name": "TZ"
-        },{
-            "default": "/config/workspace",
-            "description": "DEFAULT_WORKSPACE",
-            "label": "DEFAULT_WORKSPACE",
-            "name": "DEFAULT_WORKSPACE"
-        }],
-        "categories": [
-            "Other"
-        ]
-    },{
-        "title": "Opera",
-        "description": "Opera",
-        "logo": "",
-        "platform": "linux",
-        "type": 1,
-        "name": "Opera",
-        "image": "linuxserver/opera:latest",
-        "restart_policy": "unless-stopped",
-        "security_opt": [
-            "seccomp=unconfined"
-        ],
-        "ports": [
-            "3004:3000/tcp"
-        ],
-        "env": [{
-            "default": "admin",
-            "description": "Username",
-            "label": "CUSTOM_USER",
-            "name": "CUSTOM_USER"
-        },{
-            "default": "admin",
-            "description": "To Access the site",
-            "label": "PASSWORD",
-            "name": "PASSWORD"
-        },{
-            "default": "1000",
-            "description": "PUID",
-            "label": "PUID",
-            "name": "PUID"
-        },{
-            "default": "1000",
-            "description": "PGID",
-            "label": "PGID",
-            "name": "PGID"
-        },{
-            "default": "Etc/UTC",
-            "description": "TZ",
-            "label": "TZ",
-            "name": "TZ"
-        }],
-        "host_config": {
-            "shm_size": 1073741824
-        },
-        "categories": [
-            "Other"
-        ]
-    },{
-        "title": "Pi-Hole",
-        "description": "A Linux network-level advertisement and Internet tracker blocking application which acts as a DNS sinkhole.",
-        "note": "When the installation is complete, navigate to your.ip.goes.here:1010/admin. Follow the article <a href='https://medium.com/@niktrix/getting-rid-of-systemd-resolved-consuming-port-53-605f0234f32f'>here</a> if you run into issues binding to port 53.",
-        "logo": "https://raw.githubusercontent.com/Qballjos/portainer_templates/master/Images/pihole.png",
-        "platform": "linux",
-        "type": 1,
-        "name": "PiHole",
-        "image": "pihole/pihole:latest",
-        "restart_policy": "unless-stopped",
-        "ports": [
-            "54:53/tcp",
-            "54:53/udp",
-            "67:67/udp",
-            "97:80/tcp",
-            "4443:443/tcp"
-        ],
-        "volumes": [{
-            "bind": "/var/lib/docker/volumes/PiHole/config",
-            "container": "/etc/pihole"
-        },{
-            "bind": "/var/lib/docker/volumes/PiHole/DNS",
-            "container": "/etc/dnsmasq.d"
-        }],
-        "categories": [
-            "Other",
-            "Tools"
-        ]
-    },{
-        "title": "Remina",
-        "description": "[Remmina](https://remmina.org/) is a remote desktop client written in GTK, aiming to be useful for system administrators and travellers, who need to work with lots of remote computers in front of either large or tiny screens. Remmina supports multiple network protocols, in an integrated and consistent user interface. Currently RDP, VNC, SPICE, NX, XDMCP, SSH and EXEC are supported.",
-        "note": "Portainer App Templates by <a href='https://www.technorabilia.com' target='_blank'>Technorabilia</a> based on data provided by <a href='https://www.linuxserver.io' target='_blank'>LinuxServer.io</a>.</p><p>Don't forget to create the volume directories on the host file system.</p><p>mkdir -p /volume1/docker/remmina/config</p>",
-        "logo": "https://raw.githubusercontent.com/linuxserver/docker-templates/master/linuxserver.io/img/remmina-icon.png",
-        "platform": "linux",
-        "type": 1,
-        "name": "Remina",
-        "image": "linuxserver/remmina:latest",
-        "restart_policy": "unless-stopped",
-        "ports": [
-            "3003:3000/tcp"
-        ],
-        "volumes": [{
-            "bind": "/var/lib/docker/volumes/Remina",
-            "container": "/config"
-        }],
-        "env": [{
-            "default": "admin",
-            "description": "Username",
-            "label": "CUSTOM_USER",
-            "name": "CUSTOM_USER"
-        },{
-            "default": "admin",
-            "description": "To Access the site",
-            "label": "PASSWORD",
-            "name": "PASSWORD"
-        },{
-            "default": "1000",
-            "description": "PUID",
-            "label": "PUID",
-            "name": "PUID"
-        },{
-            "default": "1000",
-            "description": "PGID",
-            "label": "PGID",
-            "name": "PGID"
-        },{
-            "default": "Etc/UTC",
-            "description": "TZ",
-            "label": "TZ",
-            "name": "TZ"
-        }],
-        "categories": [
-            "Other"
-        ]
-    },{
-        "title": "Taisun",
-        "description": "[Taisun](https://www.taisun.io/) is an application for a Docker enabled device with an emphasis on providing a web based interface for managing a single server. Taisun allows you to: - Deploy and manage web based virtual desktops. - Deploy Taisun specific stacks of applications - Browse available images on popular Docker repositories - Import a Docker project from any git repository and start developing on your choice of web based IDE or full Linux desktop - Spinup a developer container based on popular frameworks and work from a web based IDE - Single click remote server access to Taisun and your Docker applications",
-        "note": "Portainer App Templates by <a href='https://www.technorabilia.com' target='_blank'>Technorabilia</a> based on data provided by <a href='https://www.linuxserver.io' target='_blank'>LinuxServer.io</a>.</p><p>Don't forget to create the volume directories on the host file system.</p><p></p>",
-        "logo": "https://raw.githubusercontent.com/Taisun-Docker/taisun/master/public/favicon/apple-icon-180x180.png",
-        "platform": "linux",
-        "type": 1,
-        "name": "Taisun",
-        "image": "linuxserver/taisun:latest",
-        "restart_policy": "unless-stopped",
-        "ports": [
-            "3004:3000/tcp"
-        ],
-        "volumes": [{
-            "container": "/var/run/docker.sock",
-            "bind": "/var/lib/docker/volumes/Taisun/docker.sock"
-        }],
-        "categories": [
-            "Other",
-            "Tools"
-        ]
-    },{
-        "title": "Blender",
-        "description": "[Blender](https://www.blender.org/) is a free and open-source 3D computer graphics software toolset used for creating animated films, visual effects, art, 3D printed models, motion graphics, interactive 3D applications, virtual reality, and computer games. **This image does not support GPU rendering out of the box only accelerated workspace experience**",
-        "note": "Portainer App Templates by <a href='https://www.technorabilia.com' target='_blank'>Technorabilia</a> based on data provided by <a href='https://www.linuxserver.io' target='_blank'>LinuxServer.io</a>.</p><p>Don't forget to create the volume directories on the host file system.</p><p>mkdir -p /volume1/docker/blender/config</p>",
-        "logo": "https://raw.githubusercontent.com/linuxserver/docker-templates/master/linuxserver.io/img/blender-logo.png",
-        "platform": "linux",
-        "type": 1,
-        "name": "Blender",
-        "image": "linuxserver/blender:latest",
-        "restart_policy": "unless-stopped",
-        "ports": [
-            "3010:3000/tcp"
-        ],
-        "volumes": [{
-            "bind": "/var/lib/docker/volumes/Blender",
-            "container": "/config"
-        }],
-        "env": [{
-            "name": "SUBFOLDER",
-            "label": "SUBFOLDER",
-            "default": "/",
-            "description": "Specify a subfolder to use with reverse proxies, IE `/subfolder/`"
-        }],
-        "categories": [
-            "Other"
-        ]
-    },{
-        "title": "Caddy",
-        "description": "HTTP/2 web server with automatic HTTPS",
-        "logo": "https://portainer-io-assets.sfo2.digitaloceanspaces.com/logos/caddy.png",
-        "platform": "linux",
-        "type": 1,
-        "name": "Caddy",
-        "image": "caddy:latest",
-        "restart_policy": "unless-stopped",
-        "ports": [
-            "80:80/tcp"
-        ],
-        "volumes": [{
-            "bind": "/var/lib/docker/volumes/Caddy",
-            "container": "/data"
-        }],
-        "categories": [
-            "webserver"
-        ]
-    },{
-        "title": "Cloud9",
-        "description": "[Cloud9](https://github.com/c9/core) Cloud9 is a complete web based IDE with terminal access. This container is for running their core SDK locally and developing plugins.",
-        "note": "Portainer App Templates by <a href='https://www.technorabilia.com' target='_blank'>Technorabilia</a> based on data provided by <a href='https://www.linuxserver.io' target='_blank'>LinuxServer.io</a>.</p><p>Don't forget to create the volume directories on the host file system.</p><p>mkdir -p /volume1/docker/cloud9/config<br>mkdir -p /volume1/docker/cloud9/code<br></p>",
-        "logo": "https://raw.githubusercontent.com/linuxserver/docker-templates/master/linuxserver.io/img/cloud9.png",
-        "platform": "linux",
-        "type": 1,
-        "name": "Cloud9",
-        "image": "linuxserver/cloud9:latest",
-        "restart_policy": "unless-stopped",
-        "ports": [
-            "8001:8000/tcp"
-        ],
-        "volumes": [{
-            "bind": "/var/lib/docker/volumes/Cloud9-Config",
-            "container": "/config"
-        },{
-            "bind": "/var/lib/docker/volumes/Cloud9-Code",
-            "container": "/code"
-        },{
-            "bind": "/var/run/docker.sock",
-            "container": "/var/run/docker.sock"
-        }],
-        "env": [{
-            "default": "https://github.com/linuxserver/docker-cloud9.git",
-            "description": "Specify a git repo to checkout on first startup",
-            "label": "GITURL",
-            "name": "GITURL"
-        },{
-            "default": "",
-            "description": "Optionally specify a username for http auth",
-            "label": "USERNAME",
-            "name": "USERNAME"
-        },{
-            "default": "",
-            "description": "Optionally specify a password for http auth (if USERNAME and PASSWORD are not set, there will be no http auth)",
-            "label": "PASSWORD",
-            "name": "PASSWORD"
-        }],
-        "categories": [
-            "Development"
-        ]
-    },{
-        "title": "Codiad",
-        "description": "Codiad is a web-based IDE framework with a small footprint and minimal requirements.",
-        "logo": "https://raw.githubusercontent.com/Qballjos/portainer_templates/master/Images/codiad-icon.png",
-        "platform": "linux",
-        "type": 1,
-        "name": "Cdiad",
-        "image": "linuxserver/codiad:latest",
-        "restart_policy": "unless-stopped",
-        "ports": [
-            "90:80/tcp"
-        ],
-        "volumes": [{
-            "bind": "/var/lib/docker/volumes/Codiad",
-            "container": "/config"
-        }],
-        "categories": [
-            "Code Server"
+            "Database"
         ]
     },{
         "title": "Datadog agent",
@@ -1167,7 +944,7 @@
             "name": "TZ"
         }],
         "categories": [
-            "database"
+            "Database"
         ]
     },{
         "title": "Drupal",
@@ -1206,7 +983,7 @@
             "container": "/usr/share/elasticsearch/data"
         }],
         "categories": [
-            "database"
+            "Database"
         ]
     },{
         "title": "EmulatorJS",
@@ -1234,7 +1011,7 @@
             "name": "SUBFOLDER"
         }],
         "categories": [
-            "Other"
+            "Emulator"
         ]
     },{
         "title": "File Browser",
@@ -1258,8 +1035,8 @@
             "container": "/srv"
         }],
         "categories": [
-            "filesystem", 
-            "storage"
+            "Filesystem", 
+            "Storage"
         ]
     },{
         "title": "Gitlab CE",
@@ -1287,8 +1064,8 @@
             "container": "/var/opt/gitlab"
         }],
         "categories": [
-            "development",
-            "project-management"
+            "Development",
+            "Project-Management"
         ]
     },{
         
@@ -1309,7 +1086,7 @@
             "container": "/var/lib/ghost/content"
         }],
         "categories": [
-            "blog"
+            "Blog"
         ]
     },{
         "title": "Httpd",
@@ -1328,7 +1105,7 @@
             "container": "/usr/local/apache2/htdocs/"
         }],
         "categories": [
-            "webserver"
+            "Webserver"
         ]
     },{
         "title": "IT Tools",
@@ -1340,10 +1117,10 @@
         "image": "corentinth/it-tools:latest",
         "restart_policy": "unless-stopped",
         "ports": [
-                "8082:80/tcp"
+            "8082:80/tcp"
         ],
         "categories": [
-                "Other"
+            "Management"
         ]
     },{
         "title": "Jenkins",
@@ -1363,7 +1140,7 @@
             "container": "/var/jenkins_home"
         }],
         "categories": [
-            "continuous-integration"
+            "Continuous-Integration"
         ]
     },{
         "title": "Joomla",
@@ -1416,7 +1193,7 @@
             "label": "Root password"
         }],
         "categories": [
-            "database"
+            "Database"
         ]
     },{
         "title": "Mautic",
@@ -1445,7 +1222,7 @@
             "label": "Database password"
         }],
         "categories": [
-            "marketing"
+            "Marketing"
         ]
     },{
         "title": "Minio",
@@ -1478,7 +1255,7 @@
             "label": "Root password"
         }],
         "categories": [
-            "storage"
+            "Storage"
         ]
     },{
         "title": "Mongo",
@@ -1497,7 +1274,7 @@
             "container": "/data/db"
         }],
         "categories": [
-            "database"
+            "Database"
         ]
     },{
         "title": "MStream",
@@ -1520,7 +1297,7 @@
             "container": "/music"
         }],
         "categories": [
-            "Other"
+            "Music"
         ]
     },{
         "title": "Muximux",
@@ -1540,7 +1317,7 @@
             "container": "/config"
         }],
         "categories": [
-            "Other"
+            "Management"
         ]
     },{
         "title": "MySQL",
@@ -1568,7 +1345,47 @@
             "preset": true
         }],
         "categories": [
-            "database"
+            "Database"
+        ]
+    },{
+        "title": "NextCloud",
+        "description": "[Nextcloud](https://nextcloud.com/) gives you access to all your files wherever you are. Where are your photos and documents? With Nextcloud you pick a server of your choice, at home, in a data center or at a provider. And that is where your files will be. Nextcloud runs on that server, protecting your data and giving you access from your desktop or mobile devices. Through Nextcloud you also access, sync and share your existing data on that FTP drive at the office, a Dropbox or a NAS you have at home.",
+        "note": "Portainer App Templates by <a href='https://www.technorabilia.com' target='_blank'>Technorabilia</a> based on data provided by <a href='https://www.linuxserver.io' target='_blank'>LinuxServer.io</a>.</p><p>Don't forget to create the volume directories on the host file system.</p><p>mkdir -p /volume1/docker/nextcloud/config<br>mkdir -p /volume1/docker/nextcloud/data</p>",
+        "logo": "https://raw.githubusercontent.com/linuxserver/docker-templates/master/linuxserver.io/img/nextcloud-icon.png",
+        "platform": "linux",
+        "type": 1,
+        "name": "NextCloud",
+        "image": "linuxserver/nextcloud:latest",
+        "restart_policy": "unless-stopped",
+        "ports": [
+            "8443:443/tcp"
+        ],
+        "volumes": [{
+            "bind": "/var/lib/docker/volumes/NextCloud/Config",
+            "container": "/config"
+        },{
+            "bind": "/var/lib/docker/volumes/NextCloud/Data",
+            "container": "/data"
+        }],
+        "env": [{
+            "default": "1000",
+            "description": "PUID",
+            "label": "PUID",
+            "name": "PUID"
+        },{
+            "default": "1000",
+            "description": "PGID",
+            "label": "PGID",
+            "name": "PGID"
+        },{
+            "default": "Etc/UTC",
+            "description": "TZ",
+            "label": "TZ",
+            "name": "TZ"
+        }],
+        "categories": [
+            "Filesystem", 
+            "Storage"
         ]
     },{
         "title": "NGINX",
@@ -1592,7 +1409,7 @@
             "container": "/etc/letsencrypt"
         }],
         "categories": [
-            "Need"
+            "Proxy"
         ]
     },{
         "title": "NodeJS",
@@ -1606,7 +1423,7 @@
         "interactive": true,
         "command": "/bin/bash",
         "categories": [
-            "development"
+            "Development"
         ]
     },{
         "title": "OPC Router",
@@ -1654,7 +1471,58 @@
             }]
         }],
         "categories": [
-            "edge"
+            "Edge"
+        ]
+    },{
+        "title": "OpenVSCode-Server",
+        "description": "[Openvscode-server](https://github.com/gitpod-io/openvscode-server) provides a version of VS Code that runs a server on a remote machine and allows access through a modern web browser.",
+        "note": "Portainer App Templates by <a href='https://www.technorabilia.com' target='_blank'>Technorabilia</a> based on data provided by <a href='https://www.linuxserver.io' target='_blank'>LinuxServer.io</a>.</p><p>Don't forget to create the volume directories on the host file system.</p><p>mkdir -p /volume1/docker/openvscode-server/config</p>",
+        "logo": "https://raw.githubusercontent.com/linuxserver/docker-templates/master/linuxserver.io/img/openvscode-server-logo.png",
+        "platform": "linux",
+        "type": 1,
+        "name": "VSCode",
+        "image": "linuxserver/openvscode-server:latest",
+        "restart_policy": "unless-stopped",
+        "ports": [
+                "8443:8443/tcp"
+        ],
+        "volumes": [{
+                "bind": "/var/lib/docker/volumes/VSCode",
+                "container": "/config"
+        }],
+        "env": [{
+            "default": "PASSWORD",
+            "description": "To Access the site",
+            "label": "PASSWORD",
+            "name": "PASSWORD"
+        },{
+            "default": "SUDO_PASSWORD",
+            "description": "For Sudo Commands",
+            "label": "SUDO_PASSWORD",
+            "name": "SUDO_PASSWORD"
+        },{
+            "default": "1000",
+            "description": "PUID",
+            "label": "PUID",
+            "name": "PUID"
+        },{
+            "default": "1000",
+            "description": "PGID",
+            "label": "PGID",
+            "name": "PGID"
+        },{
+            "default": "Etc/UTC",
+            "description": "TZ",
+            "label": "TZ",
+            "name": "TZ"
+        },{
+            "default": "/config/workspace",
+            "description": "DEFAULT_WORKSPACE",
+            "label": "DEFAULT_WORKSPACE",
+            "name": "DEFAULT_WORKSPACE"
+        }],
+        "categories": [
+            "Development"
         ]
     },{
         "title": "OpenVPN-AS",
@@ -1696,7 +1564,81 @@
                 "name": "TZ"
             }],
         "category": [
-            "Other"
+            "VPN"
+        ]
+    },{
+        "title": "Opera",
+        "description": "Opera",
+        "logo": "",
+        "platform": "linux",
+        "type": 1,
+        "name": "Opera",
+        "image": "linuxserver/opera:latest",
+        "restart_policy": "unless-stopped",
+        "security_opt": [
+            "seccomp=unconfined"
+        ],
+        "ports": [
+            "3004:3000/tcp"
+        ],
+        "env": [{
+            "default": "admin",
+            "description": "Username",
+            "label": "CUSTOM_USER",
+            "name": "CUSTOM_USER"
+        },{
+            "default": "admin",
+            "description": "To Access the site",
+            "label": "PASSWORD",
+            "name": "PASSWORD"
+        },{
+            "default": "1000",
+            "description": "PUID",
+            "label": "PUID",
+            "name": "PUID"
+        },{
+            "default": "1000",
+            "description": "PGID",
+            "label": "PGID",
+            "name": "PGID"
+        },{
+            "default": "Etc/UTC",
+            "description": "TZ",
+            "label": "TZ",
+            "name": "TZ"
+        }],
+        "host_config": {
+            "shm_size": 1073741824
+        },
+        "categories": [
+            "Browser"
+        ]
+    },{
+        "title": "Pi-Hole",
+        "description": "A Linux network-level advertisement and Internet tracker blocking application which acts as a DNS sinkhole.",
+        "note": "When the installation is complete, navigate to your.ip.goes.here:1010/admin. Follow the article <a href='https://medium.com/@niktrix/getting-rid-of-systemd-resolved-consuming-port-53-605f0234f32f'>here</a> if you run into issues binding to port 53.",
+        "logo": "https://raw.githubusercontent.com/Qballjos/portainer_templates/master/Images/pihole.png",
+        "platform": "linux",
+        "type": 1,
+        "name": "PiHole",
+        "image": "pihole/pihole:latest",
+        "restart_policy": "unless-stopped",
+        "ports": [
+            "54:53/tcp",
+            "54:53/udp",
+            "67:67/udp",
+            "97:80/tcp",
+            "4443:443/tcp"
+        ],
+        "volumes": [{
+            "bind": "/var/lib/docker/volumes/PiHole/config",
+            "container": "/etc/pihole"
+        },{
+            "bind": "/var/lib/docker/volumes/PiHole/DNS",
+            "container": "/etc/dnsmasq.d"
+        }],
+        "categories": [
+            "Adblocker"
         ]
     },{
         "title": "Plone",
@@ -1744,7 +1686,7 @@
             "label": "Superuser password"
         }],
         "categories": [
-            "database"
+            "Database"
         ]
       },{
         "title": "Pylon",
@@ -1783,8 +1725,7 @@
             "description": "Specify a basic auth password."
         }],
         "categories": [
-            "Other",
-            "Tools"
+            "Development"
         ]
     },{
         "title": "RabbitMQ",
@@ -1804,7 +1745,7 @@
             "container": "/var/lib/rabbitmq"
         }],
         "categories": [
-            "messaging"
+            "Messaging"
         ]
     },{
         "title": "Redmine",
@@ -1824,7 +1765,53 @@
             "container": "/usr/src/redmine/files"
         }],
         "categories": [
-            "project-management"
+            "Project-Management"
+        ]
+    },{
+        "title": "Remina",
+        "description": "[Remmina](https://remmina.org/) is a remote desktop client written in GTK, aiming to be useful for system administrators and travellers, who need to work with lots of remote computers in front of either large or tiny screens. Remmina supports multiple network protocols, in an integrated and consistent user interface. Currently RDP, VNC, SPICE, NX, XDMCP, SSH and EXEC are supported.",
+        "note": "Portainer App Templates by <a href='https://www.technorabilia.com' target='_blank'>Technorabilia</a> based on data provided by <a href='https://www.linuxserver.io' target='_blank'>LinuxServer.io</a>.</p><p>Don't forget to create the volume directories on the host file system.</p><p>mkdir -p /volume1/docker/remmina/config</p>",
+        "logo": "https://raw.githubusercontent.com/linuxserver/docker-templates/master/linuxserver.io/img/remmina-icon.png",
+        "platform": "linux",
+        "type": 1,
+        "name": "Remina",
+        "image": "linuxserver/remmina:latest",
+        "restart_policy": "unless-stopped",
+        "ports": [
+            "3003:3000/tcp"
+        ],
+        "volumes": [{
+            "bind": "/var/lib/docker/volumes/Remina",
+            "container": "/config"
+        }],
+        "env": [{
+            "default": "admin",
+            "description": "Username",
+            "label": "CUSTOM_USER",
+            "name": "CUSTOM_USER"
+        },{
+            "default": "admin",
+            "description": "To Access the site",
+            "label": "PASSWORD",
+            "name": "PASSWORD"
+        },{
+            "default": "1000",
+            "description": "PUID",
+            "label": "PUID",
+            "name": "PUID"
+        },{
+            "default": "1000",
+            "description": "PGID",
+            "label": "PGID",
+            "name": "PGID"
+        },{
+            "default": "Etc/UTC",
+            "description": "TZ",
+            "label": "TZ",
+            "name": "TZ"
+        }],
+        "categories": [
+            "VNC"
         ]
     },{
         "title": "RDesktop",
@@ -1848,8 +1835,7 @@
             "container": "/config"
         }],
         "categories": [
-            "Other",
-            "Tools"
+            "VNC"
         ]
     },{
         "title": "Scality S3",
@@ -1880,7 +1866,7 @@
             "label": "Scality S3 secret key"
         }],
         "categories": [
-            "storage"
+            "Storage"
         ]
       },{
         
@@ -1949,7 +1935,7 @@
             "container": "/opt/solr/mydata"
 	    }],
         "categories": [
-            "search-engine"
+            "Search-Engine"
         ]
     },{
         "title": "SQL Server",
@@ -1974,7 +1960,7 @@
             "label": "SA password"
         }],
         "categories": [
-            "database"
+            "Database"
         ]
       },{
         "title": "SQL Server Dev",
@@ -2003,7 +1989,7 @@
             "label": "SA password"
         }],
         "categories": [
-            "database"
+            "Database"
         ]
       },{
         "title": "SQL Server Express",
@@ -2032,9 +2018,29 @@
             "label": "SA password"
         }],
         "categories": [
-            "database"
+            "Database"
         ]
       },{
+        "title": "Taisun",
+        "description": "[Taisun](https://www.taisun.io/) is an application for a Docker enabled device with an emphasis on providing a web based interface for managing a single server. Taisun allows you to: - Deploy and manage web based virtual desktops. - Deploy Taisun specific stacks of applications - Browse available images on popular Docker repositories - Import a Docker project from any git repository and start developing on your choice of web based IDE or full Linux desktop - Spinup a developer container based on popular frameworks and work from a web based IDE - Single click remote server access to Taisun and your Docker applications",
+        "note": "Portainer App Templates by <a href='https://www.technorabilia.com' target='_blank'>Technorabilia</a> based on data provided by <a href='https://www.linuxserver.io' target='_blank'>LinuxServer.io</a>.</p><p>Don't forget to create the volume directories on the host file system.</p><p></p>",
+        "logo": "https://raw.githubusercontent.com/Taisun-Docker/taisun/master/public/favicon/apple-icon-180x180.png",
+        "platform": "linux",
+        "type": 1,
+        "name": "Taisun",
+        "image": "linuxserver/taisun:latest",
+        "restart_policy": "unless-stopped",
+        "ports": [
+            "3004:3000/tcp"
+        ],
+        "volumes": [{
+            "container": "/var/run/docker.sock",
+            "bind": "/var/lib/docker/volumes/Taisun/docker.sock"
+        }],
+        "categories": [
+            "Management"
+        ]
+    },{
         
         "title": "Ubuntu",
         "description": "Debian-based Linux operating system with no VNC",
@@ -2047,7 +2053,7 @@
         "interactive": true,
         "command": "/bin/bash",
         "categories": [
-            "operating-system"
+            "OS"
         ]
       },{
         "title": "YOURLS",
@@ -2102,7 +2108,7 @@
             "description": "Password for YOURLS"
         }],
         "categories": [
-            "Other"
+            "URL-Shortener"
         ]
     },{
         "title": "Website",
@@ -2121,7 +2127,7 @@
             "container": "/var/www/html"
         }],
         "categories": [
-            "Other"
+            "Webserver"
         ]
     },{
         "title": "WireGuard",
