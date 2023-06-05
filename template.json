@@ -351,7 +351,7 @@
             "set": "adguard home"
         }],
         "categories": [
-            "Ad-Blocker"
+            "AdBlocker"
         ]
     },{
         "title": "Booksonic",
@@ -866,7 +866,7 @@
             "container": "/config"
         }],
         "categories": [
-            "Productivity"
+            "Wiki"
         ]
     },{
         "title": "Domoticz",
@@ -1243,7 +1243,7 @@
             "label": "Database password"
         }],
         "categories": [
-            "Marketing"
+            "Tools"
         ]
     },{
         "title": "Minio",
@@ -1492,7 +1492,7 @@
             }]
         }],
         "categories": [
-            "Edge"
+            "Tools"
         ]
     },{
         "title": "OpenVSCode-Server",
@@ -2053,7 +2053,7 @@
         "interactive": true,
         "command": "/bin/bash",
         "categories": [
-            "OS"
+            "Linux"
         ]
       },{
         "title": "YOURLS",
@@ -2108,7 +2108,7 @@
             "description": "Password for YOURLS"
         }],
         "categories": [
-            "URL-Shortener"
+            "Tools"
         ]
     },{
         "title": "Website",
@@ -2278,5 +2278,51 @@
         "categories": [
             "Search"
         ]
-    }
+    },{
+        "title": "WordPress",
+        "description": "WordPress setup with a MySQL database",
+        "note": "Deploys a WordPress instance connected to a MySQL database.",
+        "logo": "https://portainer-io-assets.sfo2.digitaloceanspaces.com/logos/wordpress.png",
+        "platform": "linux",
+        "type": 2,
+        "name": "WordPress",
+        "restart_policy": "unless-stopped",
+        "repository": {
+          "url": "https://github.com/portainer/templates",
+          "stackfile": "stacks/wordpress/docker-stack.yml"
+        },
+        "env": [{
+            "default": "admin",
+            "name": "MYSQL_DATABASE_PASSWORD",
+            "label": "Database root password",
+            "description": "Password used by the MySQL root user."
+        }],
+        "categories": [
+            "CMS",
+            "Webserver"
+        ]
+      },{
+        "title": "WordPress",
+        "description": "WordPress setup with a MySQL database",
+        "note": "Deploys a WordPress instance connected to a MySQL database.",
+        "logo": "https://portainer-io-assets.sfo2.digitaloceanspaces.com/logos/wordpress.png",
+        "platform": "linux",
+        "type": 3,
+        "name": "WordPress",
+        "restart_policy": "unless-stopped",
+        "repository": {
+          "url": "https://github.com/portainer/templates",
+          "stackfile": "stacks/wordpress/docker-compose.yml"
+        },
+        "env": [{
+            "default": "admin",
+            "name": "MYSQL_DATABASE_PASSWORD",
+            "label": "Database root password",
+            "description": "Password used by the MySQL root user."
+        }],
+        "categories": [
+            "CMS",
+            "Webserver"
+        ]
+      }
 ]}
