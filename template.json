@@ -110,7 +110,7 @@
             "container": "/config"
         }],
         "env": [{
-            "default": "VNC PASSWORD",
+            "default": "admin",
             "description": "VNC_PASSWORD",
             "label": "VNC_PASSWORD",
             "name": "VNC_PASSWORD"
@@ -235,12 +235,12 @@
                 "container": "/var/run/docker.sock"
             }],
             "env": [{
-                    "default": "username ",
+                    "default": "admin",
                     "description": "username ",
                     "label": "username ",
                     "name": "username "
                 },{
-                    "default": "password ",
+                    "default": "admin",
                     "description": "password ",
                     "label": "password ",
                     "name": "password "
@@ -276,7 +276,7 @@
                     "label": "SPLUNK_START_ARGS ",
                     "name": "SPLUNK_START_ARGS "
                 },{
-                    "default": "SPLUNK_PASSWORD ",
+                    "default": "admin ",
                     "description": "SPLUNK_PASSWORD ",
                     "label": "SPLUNK_PASSWORD ",
                     "name": "SPLUNK_PASSWORD "
