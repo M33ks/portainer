@@ -1,5 +1,5 @@
 {
-    "version": "3",
+    "version": "2",
     "templates": [{
         "title": "MariaDB",   
         "description": "[Mariadb](https://mariadb.org/) is one of the most popular database servers. Made by the original developers of MySQL.",
@@ -11,15 +11,15 @@
         "image": "linuxserver/mariadb:latest",
         "restart_policy": "unless-stopped",
         "ports": [
-                    "3306:3306/tcp"
-            ],
+            "3306:3306/tcp"
+        ],
         "volumes": [{
-                "bind": "/var/lib/docker/volumes/MariaDB",
-                "container": "/config"
-            }],
+            "bind": "/var/lib/docker/volumes/MariaDB",
+            "container": "/config"
+        }],
         "categories": [
-                "Need"
-            ]
+            "Need"
+        ]
     },{
         "title": "PHPMyAdmin",
         "description": "[Phpmyadmin](https://github.com/phpmyadmin/phpmyadmin/) is a free software tool written in PHP, intended to handle the administration of MySQL over the Web. phpMyAdmin supports a wide range of operations on MySQL and MariaDB.",
@@ -31,26 +31,26 @@
         "image": "linuxserver/phpmyadmin:latest",
         "restart_policy": "unless-stopped",
         "ports": [
-                "88:80/tcp"
-            ],
+            "88:80/tcp"
+        ],
         "volumes": [{
-                "bind": "/var/lib/docker/volumes/PHPMyAdmin",
-                "container": "/config"
-            }],
+            "bind": "/var/lib/docker/volumes/PHPMyAdmin",
+            "container": "/config"
+        }],
         "env": [{
-                "default": "127.0.0.1",
-                "description": "IP of the MariaDB",
-                "label": "PMA_HOSTS",
-                "name": "PMA_HOSTS"
-            },{
-                "default": "99999999999999",
-                "description": "Max Upload File Size",
-                "label": "UPLOAD_LIMIT",
-                "name": "UPLOAD_LIMIT"
-            }],
+            "default": "127.0.0.1",
+            "description": "IP of the MariaDB",
+            "label": "PMA_HOSTS",
+            "name": "PMA_HOSTS"
+        },{
+            "default": "99999999999999",
+            "description": "Max Upload File Size",
+            "label": "UPLOAD_LIMIT",
+            "name": "UPLOAD_LIMIT"
+        }],
         "categories": [
-                "Need"
-            ]
+            "Need"
+        ]
     },{
         "title": "MediaWiki",
         "description": "[MediaWiki] is free and open-source wiki software. Originally developed by Magnus Manske and improved by Lee Daniel Crocker, it runs on many websites, including Wikipedia, Wiktionary and Wikimedia Commons. It is written in the PHP programming language and stores the contents into a database. Like WordPress, which is based on a similar licensing and architecture, it has become the dominant software in its category.",
@@ -62,16 +62,16 @@
         "image": "mediawiki:latest",
         "restart_policy": "unless-stopped",
         "ports": [
-                "89:80/tcp"
-            ],
+            "89:80/tcp"
+        ],
         "volumes": [{
-                "bind": "/var/lib/docker/volumes/MediaWiki",
-                "container": "/var/www/html"
-            }],
+            "bind": "/var/lib/docker/volumes/MediaWiki",
+            "container": "/var/www/html"
+        }],
         "categories": [
-                "Other",
-                "Wiki"
-            ]
+            "Other",
+            "Wiki"
+        ]
     },{
         "title": "Hue",
         "description": "A Container running Hue",
@@ -82,15 +82,15 @@
         "image": "gethue/hue:latest",
         "restart_policy": "unless-stopped",
         "ports": [
-                "8888:8888/tcp"
-            ],
+            "8888:8888/tcp"
+        ],
         "volumes": [{
-                "bind": "/var/lib/docker/volumes/Hue",
-                "container": "usr/share/hue/desktop/conf"
-            }],
+            "bind": "/var/lib/docker/volumes/Hue",
+            "container": "usr/share/hue/desktop/conf"
+        }],
         "categories": [
-                "Need"
-            ]
+            "Need"
+        ]
     },{
         "title": "Firefox",
         "description": "[Firefox](https://www.mozilla.org/en-US/firefox/) Browser, also known as Mozilla Firefox or simply Firefox, is a free and open-source web browser developed by the Mozilla Foundation and its subsidiary, the Mozilla Corporation. Firefox uses the Gecko layout engine to render web pages, which implements current and anticipated web standards.",
@@ -102,8 +102,8 @@
         "image": " jlesage/firefox",
         "restart_policy": "unless-stopped",
         "ports": [
-                "5800:5800/tcp"
-            ],
+            "5800:5800/tcp"
+        ],
         "volumes": [{
             "bind": "/var/lib/docker/volumes/Firefox",
             "container": "/config"
@@ -118,10 +118,10 @@
             "description": "DARK_MODE",
             "label": "DARK_MODE",
             "name": "DARK_MODE"
-    }],
+        }],
         "categories": [
-                "Need"
-            ]
+            "Need"
+        ]
     },{
         "title": "Ubuntu",
         "description": "[Webtop](https://github.com/linuxserver/docker-webtop) - Alpine, Ubuntu, Fedora, and Arch based containers containing full desktop environments in officially supported flavors accessible via any modern web browser.",
@@ -135,52 +135,52 @@
         "privileged": true,
         "security_opt": ["seccomp=unconfined"],
         "ports": [
-                "3002:3000/tcp"
-            ],
+            "3002:3000/tcp"
+        ],
         "volumes": [{
-                "bind": "/var/lib/docker/volumes/Ubuntu",
-                "container": "/config"
-            },{
-                "bind": "/var/lib/docker/volumes/webtop/docker.sock",
-                "container": "/var/run/docker.sock"
-            }],
+            "bind": "/var/lib/docker/volumes/Ubuntu",
+            "container": "/config"
+        },{
+            "bind": "/var/lib/docker/volumes/webtop/docker.sock",
+            "container": "/var/run/docker.sock"
+        }],
         "env": [{
-                "default": "1000",
-                "description": "PUID",
-                "label": "PUID",
-                "name": "PUID"
-            },{
-                "default": "1000",
-                "description": "PGID",
-                "label": "PGID",
-                "name": "PGID"
-            },{
-                "default": "Etc/UTC",
-                "description": "TZ",
-                "label": "TZ",
-                "name": "TZ"
-            },{
-                "default": "Page Title",
-                "description": "TITLE",
-                "label": "TITLE",
-                "name": "TITLE"
-            },{
-                "default": "Admin",
-                "description": "CUSTOM_USER",
-                "label": "CUSTOM_USER",
-                "name": "CUSTOM_USER"
-            },{
-                "default": "Admin",
-                "description": "PASSWORD",
-                "label": "PASSWORD",
-                "name": "PASSWORD"
-            }],
+            "default": "1000",
+            "description": "PUID",
+            "label": "PUID",
+            "name": "PUID"
+        },{
+            "default": "1000",
+            "description": "PGID",
+            "label": "PGID",
+            "name": "PGID"
+        },{
+            "default": "Etc/UTC",
+            "description": "TZ",
+            "label": "TZ",
+            "name": "TZ"
+        },{
+            "default": "Page Title",
+            "description": "TITLE",
+            "label": "TITLE",
+            "name": "TITLE"
+        },{
+            "default": "Admin",
+            "description": "CUSTOM_USER",
+            "label": "CUSTOM_USER",
+            "name": "CUSTOM_USER"
+        },{
+            "default": "Admin",
+            "description": "PASSWORD",
+            "label": "PASSWORD",
+            "name": "PASSWORD"
+        }],
         "host_config": {
             "shm_size": 1073741824
         },
-         "categories": [
-                "Need"
-            ]
+        "categories": [
+            "Need"
+        ]
     },{
         "title": "Uptime Kuma",
         "description": "It is a self-hosted monitoring tool like Uptime Robot",
@@ -191,15 +191,15 @@
         "image": "louislam/uptime-kuma:latest",
         "restart_policy": "always",
         "ports": [
-                "3001:3001/tcp"
-            ],
+            "3001:3001/tcp"
+        ],
         "volumes": [{
-                "bind": "/var/lib/docker/volumes/UptimeKuma",
-                "container": "/app/data"
-            }],
+            "bind": "/var/lib/docker/volumes/UptimeKuma",
+            "container": "/app/data"
+        }],
         "categories": [
-                "Need"
-            ]
+            "Need"
+        ]
     },{
         "title": "Guacamole",
         "description": "[Guacamole] is A clientless remote desktop gateway.",
@@ -211,15 +211,15 @@
         "image": "oznu/guacamole:latest",
         "restart_policy": "unless-stopped",
         "ports": [
-                "8080:8080/tcp"
-            ],
+            "8080:8080/tcp"
+        ],
         "volumes": [{
-                "bind": "/var/lib/docker/volumes/Guacamole",
-                "container": "/config"
-            }],
+            "bind": "/var/lib/docker/volumes/Guacamole",
+            "container": "/config"
+        }],
         "categories": [
-                "Need"
-            ]
+            "Need"
+        ]
     },{
         "title": "Dozzle",
         "description": "[Guacamole] is A clientless remote desktop gateway.",
@@ -231,26 +231,26 @@
         "image": "amir20/dozzle",
         "restart_policy": "unless-stopped",
         "ports": [
-                "8081:8080/tcp"
-            ],
+            "8081:8080/tcp"
+        ],
         "volumes": [{
-                "bind": "/var/run/docker.sock",
-                "container": "/var/run/docker.sock"
-            }],
-            "env": [{
-                    "default": "admin",
-                    "description": "username ",
-                    "label": "username ",
-                    "name": "username "
-                },{
-                    "default": "admin",
-                    "description": "password ",
-                    "label": "password ",
-                    "name": "password "
-                }],
+            "bind": "/var/run/docker.sock",
+            "container": "/var/run/docker.sock"
+        }],
+        "env": [{
+            "default": "admin",
+            "description": "username ",
+            "label": "username ",
+            "name": "username "
+        },{
+            "default": "admin",
+            "description": "password ",
+            "label": "password ",
+            "name": "password "
+        }],
         "categories": [
-                "Need"
-            ]
+            "Need"
+        ]
     },{
         "title": "Splunk",
         "description": "Splunk",
@@ -262,31 +262,31 @@
         "image": "splunk/splunk:latest",
         "restart_policy": "unless-stopped",
         "ports": [
-                "8000:8000/tcp",
-                "8088:8088/tcp",
-                "8089:8089/tcp",
-                "8191:8191/tcp",
-                "9887:9887/tcp",
-                "9997:9997/tcp"
-            ],
+            "8000:8000/tcp",
+            "8088:8088/tcp",
+            "8089:8089/tcp",
+            "8191:8191/tcp",
+            "9887:9887/tcp",
+            "9997:9997/tcp"
+        ],
         "volumes": [{
-                "bind": "/var/run/docker.sock",
-                "container": "/var/run/docker.sock"
-            }],
-            "env": [{
-                    "default": "--accept-license ",
-                    "description": "SPLUNK_START_ARGS ",
-                    "label": "SPLUNK_START_ARGS ",
-                    "name": "SPLUNK_START_ARGS "
-                },{
-                    "default": "admin ",
-                    "description": "SPLUNK_PASSWORD ",
-                    "label": "SPLUNK_PASSWORD ",
-                    "name": "SPLUNK_PASSWORD "
-                }],
+            "bind": "/var/run/docker.sock",
+            "container": "/var/run/docker.sock"
+        }],
+        "env": [{
+            "default": "--accept-license ",
+            "description": "SPLUNK_START_ARGS ",
+            "label": "SPLUNK_START_ARGS ",
+            "name": "SPLUNK_START_ARGS "
+        },{
+            "default": "admin ",
+            "description": "SPLUNK_PASSWORD ",
+            "label": "SPLUNK_PASSWORD ",
+            "name": "SPLUNK_PASSWORD "
+        }],
         "categories": [
-                "Need"
-            ]
+            "Need"
+        ]
     },{
         "title": "AdGuard",
         "description": "[AdGuard] Home is a network-wide software for blocking ads & tracking. After you set it up, it’ll cover ALL your home devices, and you don’t need any client-side software for that. With the rise of Internet-Of-Things and connected devices, it becomes more and more important to be able to control your whole network.",
@@ -297,31 +297,31 @@
         "image": "adguard/adguardhome:latest",
         "restart_policy": "unless-stopped",
         "ports": [
-                "53:53/tcp",
-                "53:53/udp",
-                "67:67/udp",
-                "68:68/tcp",
-                "68:68/udp",
-                "80:80/tcp",
-                "443:443/tcp",
-                "853:853/tcp",
-                "3000:3000/tcp"
-            ],
+            "53:53/tcp",
+            "53:53/udp",
+            "67:67/udp",
+            "68:68/tcp",
+            "68:68/udp",
+            "80:80/tcp",
+            "443:443/tcp",
+            "853:853/tcp",
+            "3000:3000/tcp"
+        ],
         "volumes": [{
-                "bind": "/var/lib/docker/volumes/adguard/workdir",
-                "container": "/opt/adguardhome/work"
-            },{
-                "bind": "/var/lib/docker/volumes/adguard/conf",
-                "container": "/opt/adguardhome/conf"
-            }],
+            "bind": "/var/lib/docker/volumes/adguard/workdir",
+            "container": "/opt/adguardhome/work"
+        },{
+            "bind": "/var/lib/docker/volumes/adguard/conf",
+            "container": "/opt/adguardhome/conf"
+        }],
         "env": [{
-                "label": "CONTEXT_PATH",
-                "name": "CONTEXT_PATH",
-                "set": "adguard home"
-            }],
+            "label": "CONTEXT_PATH",
+            "name": "CONTEXT_PATH",
+            "set": "adguard home"
+        }],
         "categories": [
-                "Other"
-            ]
+            "Other"
+        ]
     },{
         "title": "Booksonic",
         "description": "Booksonic is a server and an app for streaming your audiobooks to any pc or android phone. Most of the functionality is also availiable on other platforms that have apps for subsonic.",
@@ -332,46 +332,46 @@
         "image": "linuxserver/booksonic:latest",
         "restart_policy": "unless-stopped",
         "ports": [
-                "4040:4040/tcp"
-            ],
-            "volumes": [{
-                "bind": "/var/lib/docker/volumes/Booksonic-Config",
-                "container": "/config"
-            },{
-                "bind": "/var/lib/docker/volumes/Booksonic-Audiobooks",
-                "container": "/audiobooks"
-            },{
-                "bind": "/var/lib/docker/volumes/Booksonic-Podcasts",
-                "container": "/podcasts"
-            },{
-                "bind": "/var/lib/docker/volumes/Booksonic-Othermedia",
-                "container": "/othermedia"
-            }],
+            "4040:4040/tcp"
+        ],
+        "volumes": [{
+            "bind": "/var/lib/docker/volumes/Booksonic-Config",
+            "container": "/config"
+        },{
+            "bind": "/var/lib/docker/volumes/Booksonic-Audiobooks",
+            "container": "/audiobooks"
+        },{
+            "bind": "/var/lib/docker/volumes/Booksonic-Podcasts",
+            "container": "/podcasts"
+        },{
+            "bind": "/var/lib/docker/volumes/Booksonic-Othermedia",
+            "container": "/othermedia"
+        }],
         "env": [{
-                "default": "url-base",
-                "description": "Base url for use with reverse proxies etc.",
-                "label": "CONTEXT_PATH",
-                "name": "CONTEXT_PATH"
-            },{
-                "default": "1000",
-                "description": "PUID",
-                "label": "PUID",
-                "name": "PUID"
-            },{
-                "default": "1000",
-                "description": "PGID",
-                "label": "PGID",
-                "name": "PGID"
-            },{
-                "default": "Etc/UTC",
-                "description": "TZ",
-                "label": "TZ",
-                "name": "TZ"
-            }],
+            "default": "url-base",
+            "description": "Base url for use with reverse proxies etc.",
+            "label": "CONTEXT_PATH",
+            "name": "CONTEXT_PATH"
+        },{
+            "default": "1000",
+            "description": "PUID",
+            "label": "PUID",
+            "name": "PUID"
+        },{
+            "default": "1000",
+            "description": "PGID",
+            "label": "PGID",
+            "name": "PGID"
+        },{
+            "default": "Etc/UTC",
+            "description": "TZ",
+            "label": "TZ",
+            "name": "TZ"
+        }],
         "categories": [
-                "Books",
-                "Other"
-            ]
+            "Books",
+            "Other"
+        ]
     },{
         "title": "Booksonic-Air",
         "description": "[Booksonic-air](http://booksonic.org) is a platform for accessing the audibooks you own wherever you are. At the moment the platform consists of Booksonic Air - A server for streaming your audiobooks, successor to the original Booksonic server and based on Airsonic. Booksonic App - An DSub based Android app for connection to Booksonic-Air servers. .",
@@ -383,45 +383,45 @@
         "image": "linuxserver/booksonic-air:latest",
         "restart_policy": "unless-stopped",
         "ports": [
-                "4041:4040/tcp"
-            ],
+            "4041:4040/tcp"
+        ],
         "volumes": [{
-                "bind": "/var/lib/docker/volumes/Booksonic-Air-Config",
-                "container": "/config"
-            },{
-                "bind": "/var/lib/docker/volumes/Booksonic-Air-Audiobooks",
-                "container": "/audiobooks"
-            },{
-                "bind": "/var/lib/docker/volumes/Booksonic-Air-Podcasts",
-                "container": "/podcasts"
-            },{
-                "bind": "/var/lib/docker/volumes/Booksonic-Air-Othermedia",
-                "container": "/othermedia"
-            }],
+            "bind": "/var/lib/docker/volumes/Booksonic-Air-Config",
+            "container": "/config"
+        },{
+            "bind": "/var/lib/docker/volumes/Booksonic-Air-Audiobooks",
+            "container": "/audiobooks"
+        },{
+            "bind": "/var/lib/docker/volumes/Booksonic-Air-Podcasts",
+            "container": "/podcasts"
+        },{
+            "bind": "/var/lib/docker/volumes/Booksonic-Air-Othermedia",
+            "container": "/othermedia"
+        }],
         "env": [{
-                "default": "url-base",
-                "description": "Base url for use with reverse proxies etc.",
-                "label": "CONTEXT_PATH",
-                "name": "CONTEXT_PATH"
-            },{
-                "default": "1000",
-                "description": "PUID",
-                "label": "PUID",
-                "name": "PUID"
-            },{
-                "default": "1000",
-                "description": "PGID",
-                "label": "PGID",
-                "name": "PGID"
-            },{
-                "default": "Etc/UTC",
-                "description": "TZ",
-                "label": "TZ",
-                "name": "TZ"
-            }],
+            "default": "url-base",
+            "description": "Base url for use with reverse proxies etc.",
+            "label": "CONTEXT_PATH",
+            "name": "CONTEXT_PATH"
+        },{
+            "default": "1000",
+            "description": "PUID",
+            "label": "PUID",
+            "name": "PUID"
+        },{
+            "default": "1000",
+            "description": "PGID",
+            "label": "PGID",
+            "name": "PGID"
+        },{
+            "default": "Etc/UTC",
+            "description": "TZ",
+            "label": "TZ",
+            "name": "TZ"
+        }],
         "categories": [
-                "Audio"
-            ]
+            "Audio"
+        ]
     },{
         "title": "Chromium",
         "description": "PHP is a server-side scripting language designed for web development, but which can also be used as a general-purpose programming language. PHP can be added to straight HTML or it can be used with a variety of templating engines and web frameworks. PHP code is usually processed by an interpreter, which is either implemented as a native module on the web-server or as a common gateway interface (CGI).",
@@ -432,8 +432,8 @@
         "image": "linuxserver/chromium:latest",
         "restart_policy": "unless-stopped",
         "ports": [
-                "90:80/tcp"
-            ],
+            "90:80/tcp"
+        ],
         "volumes": [{
             "bind": "/var/lib/docker/volumes/Chrome",
             "container": "/config"
@@ -463,12 +463,13 @@
             "description": "TZ",
             "label": "TZ",
             "name": "TZ"
-        }],"host_config": {
+        }],
+        "host_config": {
             "shm_size": 1073741824
         },
         "categories": [
-                "Other"
-            ]
+            "Other"
+        ]
     },{
         "title": "Code-Server",
         "description": "[Code-Server](https://coder.com) is VS Code running on a remote server, accessible through the browser. - Code on your Chromebook, tablet, and laptop with a consistent dev environment. - If you have a Windows or Mac workstation, more easily develop for Linux. - Take advantage of large cloud servers to speed up tests, compilations, downloads, and more. - Preserve battery life when you're on the go. - All intensive computation runs on your server. - You're no longer running excess instances of Chrome.",
@@ -480,46 +481,46 @@
         "image": "linuxserver/code-server:latest",
         "restart_policy": "unless-stopped",
         "ports": [
-                "8443:8443/tcp"
-            ],
+            "8443:8443/tcp"
+        ],
         "volumes": [{
-                "bind": "/var/lib/docker/volumes/Code-Server",
-                "container": "/config"
-            }],
+            "bind": "/var/lib/docker/volumes/Code-Server",
+            "container": "/config"
+        }],
         "env": [{
-                "default": "password",
-                "description": "Optional web gui password, if `PASSWORD` or `HASHED_PASSWORD` is not provided, there will be no auth.",
-                "label": "PASSWORD",
-                "name": "PASSWORD"
-            },{
-                "default": "",
-                "description": "Optional web gui password, overrides `PASSWORD`, instructions on how to create it is below.",
-                "label": "HASHED_PASSWORD",
-                "name": "HASHED_PASSWORD"
-            },{
-                "default": "password",
-                "description": "If this optional variable is set, user will have sudo access in the code-server terminal with the specified password.",
-                "label": "SUDO_PASSWORD",
-                "name": "SUDO_PASSWORD"
-            },{
-                "default": "",
-                "description": "Optionally set sudo password via hash (takes priority over `SUDO_PASSWORD` var). Format is `$type$salt$hashed`.",
-                "label": "SUDO_PASSWORD_HASH",
-                "name": "SUDO_PASSWORD_HASH"
-            },{
-                "default": "code-server.my.domain",
-                "description": "If this optional variable is set, this domain will be proxied for subdomain proxying. See [Documentation](https://github.com/cdr/code-server/blob/master/docs/FAQ.md#sub-domains)",
-                "label": "PROXY_DOMAIN",
-                "name": "PROXY_DOMAIN"
-            },{
-                "default": "/config/workspace",
-                "description": "If this optional variable is set, code-server will open this directory by default",
-                "label": "DEFAULT_WORKSPACE",
-                "name": "DEFAULT_WORKSPACE"
-            }],
+            "default": "password",
+            "description": "Optional web gui password, if `PASSWORD` or `HASHED_PASSWORD` is not provided, there will be no auth.",
+            "label": "PASSWORD",
+            "name": "PASSWORD"
+        },{
+            "default": "",
+            "description": "Optional web gui password, overrides `PASSWORD`, instructions on how to create it is below.",
+            "label": "HASHED_PASSWORD",
+            "name": "HASHED_PASSWORD"
+        },{
+            "default": "password",
+            "description": "If this optional variable is set, user will have sudo access in the code-server terminal with the specified password.",
+            "label": "SUDO_PASSWORD",
+            "name": "SUDO_PASSWORD"
+        },{
+            "default": "",
+            "description": "Optionally set sudo password via hash (takes priority over `SUDO_PASSWORD` var). Format is `$type$salt$hashed`.",
+            "label": "SUDO_PASSWORD_HASH",
+            "name": "SUDO_PASSWORD_HASH"
+        },{
+            "default": "code-server.my.domain",
+            "description": "If this optional variable is set, this domain will be proxied for subdomain proxying. See [Documentation](https://github.com/cdr/code-server/blob/master/docs/FAQ.md#sub-domains)",
+            "label": "PROXY_DOMAIN",
+            "name": "PROXY_DOMAIN"
+        },{
+            "default": "/config/workspace",
+            "description": "If this optional variable is set, code-server will open this directory by default",
+            "label": "DEFAULT_WORKSPACE",
+            "name": "DEFAULT_WORKSPACE"
+        }],
         "categories": [
-                "Development"
-            ]
+            "Development"
+        ]
     },{
         "title": "CommandBox",
         "description": "ColdFusion (CFML) CLI",
@@ -563,17 +564,17 @@
             "container": "/app/includes/shared/media"
         }],
         "env": [{
-              "default": "true",
-              "name": "express",
-              "preset": true
+            "default": "true",
+            "name": "express",
+            "preset": true
         },{
-              "default": "true",
-              "name": "install",
-              "preset": true
+            "default": "true",
+            "name": "install",
+            "preset": true
         },{
-              "default": "lucee@4.5",
-              "name": "CFENGINE",
-              "preset": true
+            "default": "lucee@4.5",
+            "name": "CFENGINE",
+            "preset": true
         }],
         "categories": [
             "CMS"
@@ -594,7 +595,7 @@
         "volumes": [{
             "bind": "/var/lib/docker/volumes/CrateDB",
             "container": "/data"
-          }],
+        }],
         "categories": [
             "database"
         ]
@@ -609,34 +610,34 @@
         "image": "linuxserver/nextcloud:latest",
         "restart_policy": "unless-stopped",
         "ports": [
-                "8443:443/tcp"
-            ],
+            "8443:443/tcp"
+        ],
         "volumes": [{
-                "bind": "/var/lib/docker/volumes/NextCloud/Config",
-                "container": "/config"
-            },{
-                "bind": "/var/lib/docker/volumes/NextCloud/Data",
-                "container": "/data"
-            }],
-            "env": [{
-                "default": "1000",
-                "description": "PUID",
-                "label": "PUID",
-                "name": "PUID"
-            },{
-                "default": "1000",
-                "description": "PGID",
-                "label": "PGID",
-                "name": "PGID"
-            },{
-                "default": "Etc/UTC",
-                "description": "TZ",
-                "label": "TZ",
-                "name": "TZ"
-            }],
+            "bind": "/var/lib/docker/volumes/NextCloud/Config",
+            "container": "/config"
+        },{
+            "bind": "/var/lib/docker/volumes/NextCloud/Data",
+            "container": "/data"
+        }],
+        "env": [{
+            "default": "1000",
+            "description": "PUID",
+            "label": "PUID",
+            "name": "PUID"
+        },{
+            "default": "1000",
+            "description": "PGID",
+            "label": "PGID",
+            "name": "PGID"
+        },{
+            "default": "Etc/UTC",
+            "description": "TZ",
+            "label": "TZ",
+            "name": "TZ"
+        }],
         "categories": [
                 "Other"
-            ]
+        ]
     },{
         "title": "OpenVSCode-Server",
         "description": "[Openvscode-server](https://github.com/gitpod-io/openvscode-server) provides a version of VS Code that runs a server on a remote machine and allows access through a modern web browser.",
@@ -649,11 +650,11 @@
         "restart_policy": "unless-stopped",
         "ports": [
                 "8443:8443/tcp"
-            ],
+        ],
         "volumes": [{
                 "bind": "/var/lib/docker/volumes/VSCode",
                 "container": "/config"
-            }],
+        }],
         "env": [{
             "default": "PASSWORD",
             "description": "To Access the site",
@@ -686,8 +687,8 @@
             "name": "DEFAULT_WORKSPACE"
         }],
         "categories": [
-                "Other"
-            ]
+            "Other"
+        ]
     },{
         "title": "Opera",
         "description": "Opera",
@@ -701,8 +702,8 @@
             "seccomp=unconfined"
         ],
         "ports": [
-                "3004:3000/tcp"
-            ],
+            "3004:3000/tcp"
+        ],
         "env": [{
             "default": "admin",
             "description": "Username",
@@ -733,8 +734,8 @@
             "shm_size": 1073741824
         },
         "categories": [
-                "Other"
-            ]
+            "Other"
+        ]
     },{
         "title": "Pi-Hole",
         "description": "A Linux network-level advertisement and Internet tracker blocking application which acts as a DNS sinkhole.",
@@ -746,23 +747,23 @@
         "image": "pihole/pihole:latest",
         "restart_policy": "unless-stopped",
         "ports": [
-                "54:53/tcp",
-                "54:53/udp",
-                "67:67/udp",
-                "97:80/tcp",
-                "4443:443/tcp"
-            ],
+            "54:53/tcp",
+            "54:53/udp",
+            "67:67/udp",
+            "97:80/tcp",
+            "4443:443/tcp"
+        ],
         "volumes": [{
-                "bind": "/var/lib/docker/volumes/PiHole/config",
-                "container": "/etc/pihole"
-            },{
-                "bind": "/var/lib/docker/volumes/PiHole/DNS",
-                "container": "/etc/dnsmasq.d"
-            }],
+            "bind": "/var/lib/docker/volumes/PiHole/config",
+            "container": "/etc/pihole"
+        },{
+            "bind": "/var/lib/docker/volumes/PiHole/DNS",
+            "container": "/etc/dnsmasq.d"
+        }],
         "categories": [
-                "Other",
-                "Tools"
-            ]
+            "Other",
+            "Tools"
+        ]
     },{
         "title": "Remina",
         "description": "[Remmina](https://remmina.org/) is a remote desktop client written in GTK, aiming to be useful for system administrators and travellers, who need to work with lots of remote computers in front of either large or tiny screens. Remmina supports multiple network protocols, in an integrated and consistent user interface. Currently RDP, VNC, SPICE, NX, XDMCP, SSH and EXEC are supported.",
@@ -774,8 +775,8 @@
         "image": "linuxserver/remmina:latest",
         "restart_policy": "unless-stopped",
         "ports": [
-                "3003:3000/tcp"
-            ],
+            "3003:3000/tcp"
+        ],
         "volumes": [{
             "bind": "/var/lib/docker/volumes/Remina",
             "container": "/config"
@@ -807,8 +808,8 @@
             "name": "TZ"
         }],
         "categories": [
-                "Other"
-            ]
+            "Other"
+        ]
     },{
         "title": "Taisun",
         "description": "[Taisun](https://www.taisun.io/) is an application for a Docker enabled device with an emphasis on providing a web based interface for managing a single server. Taisun allows you to: - Deploy and manage web based virtual desktops. - Deploy Taisun specific stacks of applications - Browse available images on popular Docker repositories - Import a Docker project from any git repository and start developing on your choice of web based IDE or full Linux desktop - Spinup a developer container based on popular frameworks and work from a web based IDE - Single click remote server access to Taisun and your Docker applications",
@@ -820,16 +821,16 @@
         "image": "linuxserver/taisun:latest",
         "restart_policy": "unless-stopped",
         "ports": [
-                "3004:3000/tcp"
-            ],
+            "3004:3000/tcp"
+        ],
         "volumes": [{
-                "container": "/var/run/docker.sock",
-                "bind": "/var/lib/docker/volumes/Taisun/docker.sock"
-            }],
+            "container": "/var/run/docker.sock",
+            "bind": "/var/lib/docker/volumes/Taisun/docker.sock"
+        }],
         "categories": [
-                "Other",
-                "Tools"
-            ]
+            "Other",
+            "Tools"
+        ]
     },{
         "title": "Blender",
         "description": "[Blender](https://www.blender.org/) is a free and open-source 3D computer graphics software toolset used for creating animated films, visual effects, art, 3D printed models, motion graphics, interactive 3D applications, virtual reality, and computer games. **This image does not support GPU rendering out of the box only accelerated workspace experience**",
@@ -841,21 +842,21 @@
         "image": "linuxserver/blender:latest",
         "restart_policy": "unless-stopped",
         "ports": [
-                "3010:3000/tcp"
-            ],
+            "3010:3000/tcp"
+        ],
         "volumes": [{
-                "bind": "/var/lib/docker/volumes/Blender",
-                "container": "/config"
-            }],
+            "bind": "/var/lib/docker/volumes/Blender",
+            "container": "/config"
+        }],
         "env": [{
-                "name": "SUBFOLDER",
-                "label": "SUBFOLDER",
-                "default": "/",
-                "description": "Specify a subfolder to use with reverse proxies, IE `/subfolder/`"
-            }],
+            "name": "SUBFOLDER",
+            "label": "SUBFOLDER",
+            "default": "/",
+            "description": "Specify a subfolder to use with reverse proxies, IE `/subfolder/`"
+        }],
         "categories": [
-                "Other"
-            ]
+            "Other"
+        ]
     },{
         "title": "Caddy",
         "description": "HTTP/2 web server with automatic HTTPS",
@@ -866,15 +867,15 @@
         "image": "caddy:latest",
         "restart_policy": "unless-stopped",
         "ports": [
-                "80:80/tcp"
-            ],
+            "80:80/tcp"
+        ],
         "volumes": [{
-                "bind": "/var/lib/docker/volumes/Caddy",
-                "container": "/data"
-            }],
+            "bind": "/var/lib/docker/volumes/Caddy",
+            "container": "/data"
+        }],
         "categories": [
-                "webserver"
-            ]
+            "webserver"
+        ]
     },{
         "title": "Cloud9",
         "description": "[Cloud9](https://github.com/c9/core) Cloud9 is a complete web based IDE with terminal access. This container is for running their core SDK locally and developing plugins.",
@@ -886,37 +887,37 @@
         "image": "linuxserver/cloud9:latest",
         "restart_policy": "unless-stopped",
         "ports": [
-                "8001:8000/tcp"
-            ],
+            "8001:8000/tcp"
+        ],
         "volumes": [{
-                "bind": "/var/lib/docker/volumes/Cloud9-Config",
-                "container": "/config"
-            },{
-                "bind": "/var/lib/docker/volumes/Cloud9-Code",
-                "container": "/code"
-            },{
-                "bind": "/var/run/docker.sock",
-                "container": "/var/run/docker.sock"
-            }],
+            "bind": "/var/lib/docker/volumes/Cloud9-Config",
+            "container": "/config"
+        },{
+            "bind": "/var/lib/docker/volumes/Cloud9-Code",
+            "container": "/code"
+        },{
+            "bind": "/var/run/docker.sock",
+            "container": "/var/run/docker.sock"
+        }],
         "env": [{
-                "default": "https://github.com/linuxserver/docker-cloud9.git",
-                "description": "Specify a git repo to checkout on first startup",
-                "label": "GITURL",
-                "name": "GITURL"
-            },{
-                "default": "",
-                "description": "Optionally specify a username for http auth",
-                "label": "USERNAME",
-                "name": "USERNAME"
-            },{
-                "default": "",
-                "description": "Optionally specify a password for http auth (if USERNAME and PASSWORD are not set, there will be no http auth)",
-                "label": "PASSWORD",
-                "name": "PASSWORD"
-            }],
+            "default": "https://github.com/linuxserver/docker-cloud9.git",
+            "description": "Specify a git repo to checkout on first startup",
+            "label": "GITURL",
+            "name": "GITURL"
+        },{
+            "default": "",
+            "description": "Optionally specify a username for http auth",
+            "label": "USERNAME",
+            "name": "USERNAME"
+        },{
+            "default": "",
+            "description": "Optionally specify a password for http auth (if USERNAME and PASSWORD are not set, there will be no http auth)",
+            "label": "PASSWORD",
+            "name": "PASSWORD"
+        }],
         "categories": [
-                "Development"
-            ]
+            "Development"
+        ]
     },{
         "title": "Codiad",
         "description": "Codiad is a web-based IDE framework with a small footprint and minimal requirements.",
@@ -927,15 +928,15 @@
         "image": "linuxserver/codiad:latest",
         "restart_policy": "unless-stopped",
         "ports": [
-                "90:80/tcp"
-            ],
+            "90:80/tcp"
+        ],
         "volumes": [{
-                "bind": "/var/lib/docker/volumes/Codiad",
-                "container": "/config"
-            }],
+            "bind": "/var/lib/docker/volumes/Codiad",
+            "container": "/config"
+        }],
         "categories": [
-                "Code Server"
-            ]
+            "Code Server"
+        ]
     },{
         "title": "Datadog agent",
         "description": "Collect events and metrics",
@@ -978,21 +979,21 @@
         "restart_policy": "unless-stopped",
         "network": "host",
         "ports": [
-                "3011:3000/tcp"
-            ],
+            "3011:3000/tcp"
+        ],
         "volumes": [{
-                "bind": "/var/lib/docker/volumes/Digikam",
-                "container": "/config"
-            }],
+            "bind": "/var/lib/docker/volumes/Digikam",
+            "container": "/config"
+        }],
         "env": [{
-                "default": "/",
-                "name": "SUBFOLDER",
-                "label": "SUBFOLDER",
-                "description": "Specify a subfolder to use with reverse proxies, IE `/subfolder/`"
-            }],
+            "default": "/",
+            "name": "SUBFOLDER",
+            "label": "SUBFOLDER",
+            "description": "Specify a subfolder to use with reverse proxies, IE `/subfolder/`"
+        }],
         "categories": [
-                "Photography"
-            ]
+            "Photography"
+        ]
     },{
         "title": "Docker-Compose",
         "description": "This container needs special attention. Please check https://hub.docker.com/r/linuxserver/docker-compose for details.",
@@ -1004,15 +1005,15 @@
         "image": "linuxserver/docker-compose:latest",
         "restart_policy": "unless-stopped",
         "ports": [
-                "91:80/tcp"
-            ],
+            "91:80/tcp"
+        ],
         "volumes": [{
-                "bind": "/var/lib/docker/volumes/Docker-Compose",
-                "container": "/config"
-            }],
+            "bind": "/var/lib/docker/volumes/Docker-Compose",
+            "container": "/config"
+        }],
         "categories": [
-                "Productivity"
-            ]
+            "Productivity"
+        ]
     },{
         "title": "Dokku",
         "description": "Dokku setup as a container",
@@ -1028,11 +1029,11 @@
             "443/tcp"
         ],
         "volumes": [{
-          "container": "/mnt/dokku",
-          "bind": "/var/lib/dokku"
+            "container": "/mnt/dokku",
+            "bind": "/var/lib/dokku"
         },{
-          "container": "/var/run/docker.sock",
-          "bind": "/var/run/docker.sock"
+            "container": "/var/run/docker.sock",
+            "bind": "/var/run/docker.sock"
         }],
         "env":[{
             "default": "admin",
@@ -1059,16 +1060,16 @@
         "image": "linuxserver/dokuwiki:latest",
         "restart_policy": "unless-stopped",
         "ports": [
-                "85:80/tcp",
-                "445:443/tcp"
-            ],
+            "85:80/tcp",
+            "445:443/tcp"
+        ],
         "volumes": [{
-                "bind": "/var/lib/docker/volumes/DokuWiki",
-                "container": "/config"
-            }],
+            "bind": "/var/lib/docker/volumes/DokuWiki",
+            "container": "/config"
+        }],
         "categories": [
-                "Productivity"
-            ]
+            "Productivity"
+        ]
     },{
         "title": "Domoticz",
         "description": "[Domoticz](https://www.domoticz.com) is a Home Automation System that lets you monitor and configure various devices like: Lights, Switches, various sensors/meters like Temperature, Rain, Wind, UV, Electra, Gas, Water and much more. Notifications/Alerts can be sent to any mobile device.",
@@ -1080,23 +1081,23 @@
         "image": "linuxserver/domoticz:latest",
         "restart_policy": "unless-stopped",
         "ports": [
-                "8081:8080/tcp",
-                "6144:6144/tcp",
-                "1443:1443/tcp"
-            ],
+            "8081:8080/tcp",
+            "6144:6144/tcp",
+            "1443:1443/tcp"
+        ],
         "volumes": [{
-                "bind": "/var/lib/docker/volumes/Domoticz",
-                "container": "/config"
-            }],
+            "bind": "/var/lib/docker/volumes/Domoticz",
+            "container": "/config"
+        }],
         "env": [{
-                "default": "domoticz",
-                "description": "Sets webroot to domoticz for usage with subfolder reverse proxy. Not needed unless reverse proxying.",
-                "label": "WEBROOT",
-                "name": "WEBROOT"
-            }],
+            "default": "domoticz",
+            "description": "Sets webroot to domoticz for usage with subfolder reverse proxy. Not needed unless reverse proxying.",
+            "label": "WEBROOT",
+            "name": "WEBROOT"
+        }],
         "categories": [
-                "Automation"
-            ]
+            "Automation"
+        ]
     },{
         "title": "DoubleCommander",
         "description": "[Double Commander](https://doublecmd.sourceforge.io/) is a free cross platform open source file manager with two panels side by side. It is inspired by Total Commander and features some new ideas.",
@@ -1108,18 +1109,18 @@
         "image": "linuxserver/doublecommander:latest",
         "restart_policy": "unless-stopped",
         "ports": [
-                "3012:3000/tcp"
-            ],
+            "3012:3000/tcp"
+        ],
         "volumes": [{
-                "bind": "/var/lib/docker/volumes/DoubleCommander-Config",
-                "container": "/config"
-            },{
-                "bind": "/var/lib/docker/volumes/DoubleCommander-Data",
-                "container": "/data"
-            }],
+            "bind": "/var/lib/docker/volumes/DoubleCommander-Config",
+            "container": "/config"
+        },{
+            "bind": "/var/lib/docker/volumes/DoubleCommander-Data",
+            "container": "/data"
+        }],
         "categories": [
-                "File Management"
-            ]
+            "File Management"
+        ]
     },{
         "title": "DuckDNS",
         "description": "[Duckdns](https://duckdns.org/) is a free service which will point a DNS (sub domains of duckdns.org) to an IP of your choice. The service is completely free, and doesn't require reactivation or forum posts to maintain its existence.",
@@ -1131,43 +1132,43 @@
         "image": "linuxserver/duckdns:latest",
         "restart_policy": "unless-stopped",
         "volumes": [{
-                "bind": "/var/lib/docker/volumes/DuckDNS",
-                "container": "/config"
-            }],
+            "bind": "/var/lib/docker/volumes/DuckDNS",
+            "container": "/config"
+        }],
         "env": [{
-                "default": "subdomain1,subdomain2",
-                "description": "multiple subdomains allowed, comma separated, no spaces",
-                "label": "SUBDOMAINS",
-                "name": "SUBDOMAINS"
-            },{
-                "default": "token",
-                "description": "DuckDNS token",
-                "label": "TOKEN",
-                "name": "TOKEN"
-            },{
-                "default": "false",
-                "description": "Set to `true` to log to file (also need to map /config).",
-                "label": "LOG_FILE",
-                "name": "LOG_FILE"
-            },{
-                "default": "1000",
-                "description": "PUID",
-                "label": "PUID",
-                "name": "PUID"
-            },{
-                "default": "1000",
-                "description": "PGID",
-                "label": "PGID",
-                "name": "PGID"
-            },{
-                "default": "Etc/UTC",
-                "description": "TZ",
-                "label": "TZ",
-                "name": "TZ"
-            }],
+            "default": "subdomain1,subdomain2",
+            "description": "multiple subdomains allowed, comma separated, no spaces",
+            "label": "SUBDOMAINS",
+            "name": "SUBDOMAINS"
+        },{
+            "default": "token",
+            "description": "DuckDNS token",
+            "label": "TOKEN",
+            "name": "TOKEN"
+        },{
+            "default": "false",
+            "description": "Set to `true` to log to file (also need to map /config).",
+            "label": "LOG_FILE",
+            "name": "LOG_FILE"
+        },{
+            "default": "1000",
+            "description": "PUID",
+            "label": "PUID",
+            "name": "PUID"
+        },{
+            "default": "1000",
+            "description": "PGID",
+            "label": "PGID",
+            "name": "PGID"
+        },{
+            "default": "Etc/UTC",
+            "description": "TZ",
+            "label": "TZ",
+            "name": "TZ"
+        }],
         "categories": [
-                "database"
-            ]
+            "database"
+        ]
     },{
         "title": "Drupal",
         "description": "Open-source content management framework",
@@ -1197,16 +1198,16 @@
         "image": "elasticsearch:7.15.1",
         "restart_policy": "unless-stopped",
         "ports": [
-                "9200:9200/tcp",
-                "9300:9300/tcp"
-            ],
+            "9200:9200/tcp",
+            "9300:9300/tcp"
+        ],
         "volumes": [{
-                "bind": "/var/lib/docker/volumes/ElasticSearch",
-                "container": "/usr/share/elasticsearch/data"
-            }],
+            "bind": "/var/lib/docker/volumes/ElasticSearch",
+            "container": "/usr/share/elasticsearch/data"
+        }],
         "categories": [
-                "database"
-            ]
+            "database"
+        ]
     },{
         "title": "EmulatorJS",
         "description": "[Emulatorjs](https://github.com/linuxserver/emulatorjs) - In browser web based emulation portable to nearly any device for many retro consoles. A mix of emulators is used between Libretro and EmulatorJS.",
@@ -1218,25 +1219,24 @@
         "image": "linuxserver/emulatorjs:latest",
         "restart_policy": "unless-stopped",
         "ports": [
-                "3013:3000/tcp",
-                "92:80/tcp",
-                "4001:4001/tcp"
-            ],
+            "3013:3000/tcp",
+            "92:80/tcp",
+            "4001:4001/tcp"
+        ],
         "volumes": [{
-                "bind": "/var/lib/docker/volumes/EmulatorJS",
-                "container": "/data"
-            }],
+            "bind": "/var/lib/docker/volumes/EmulatorJS",
+            "container": "/data"
+        }],
         "env": [{
-                "default": "/",
-                "description": "Specify a subfolder for reverse proxies IE '/FOLDER/'",
-                "label": "SUBFOLDER",
-                "name": "SUBFOLDER"
-            }],
+            "default": "/",
+            "description": "Specify a subfolder for reverse proxies IE '/FOLDER/'",
+            "label": "SUBFOLDER",
+            "name": "SUBFOLDER"
+        }],
         "categories": [
-                "Other"
-            ]
+            "Other"
+        ]
     },{
-        
         "title": "File Browser",
         "description": "A web file manager",
         "note": "Default credentials: admin/admin",
@@ -1253,11 +1253,10 @@
         "volumes": [{
             "bind": "/var/lib/docker/volumes/File-Browser-Data",
             "container": "/data"
-          },{
+        },{
             "bind": "/var/lib/docker/volumes/File-Browser-Srv",
             "container": "/srv"
-          }],
-        
+        }],
         "categories": [
             "filesystem", 
             "storage"
@@ -1273,24 +1272,24 @@
         "image": "gitlab/gitlab-ce:latest",
         "restart_policy": "unless-stopped",
         "ports": [
-                "93:80/tcp",
-                "444:443/tcp",
-                "22:22/tcp"
-            ],
+            "93:80/tcp",
+            "444:443/tcp",
+            "22:22/tcp"
+        ],
         "volumes": [{
-                "bind": "/var/lib/docker/volumes/Gitlab-ETC",
-                "container": "/etc/gitlab"
-            },{
-                "bind": "/var/lib/docker/volumes/Gitlab-Log",
-                "container": "/var/log/gitlab"
-            },{
-                "bind": "/var/lib/docker/volumes/Gitlab-OPT",
-                "container": "/var/opt/gitlab"
-            }],
+            "bind": "/var/lib/docker/volumes/Gitlab-ETC",
+            "container": "/etc/gitlab"
+        },{
+            "bind": "/var/lib/docker/volumes/Gitlab-Log",
+            "container": "/var/log/gitlab"
+        },{
+            "bind": "/var/lib/docker/volumes/Gitlab-OPT",
+            "container": "/var/opt/gitlab"
+        }],
         "categories": [
-                "development",
-                "project-management"
-            ]
+            "development",
+            "project-management"
+        ]
     },{
         
         "title": "Ghost",
@@ -1322,15 +1321,15 @@
         "image": "httpd:latest",
         "restart_policy": "unless-stopped",
         "ports": [
-                "87:80/tcp"
-            ],
+            "87:80/tcp"
+        ],
         "volumes": [{
-                "bind": "/var/lib/docker/volumes/Httpd",
-                "container": "/usr/local/apache2/htdocs/"
-            }],
+            "bind": "/var/lib/docker/volumes/Httpd",
+            "container": "/usr/local/apache2/htdocs/"
+        }],
         "categories": [
-                "webserver"
-            ]
+            "webserver"
+        ]
     },{
         "title": "IT Tools",
         "description": "IT Tools",
@@ -1342,10 +1341,10 @@
         "restart_policy": "unless-stopped",
         "ports": [
                 "8082:80/tcp"
-            ],
+        ],
         "categories": [
                 "Other"
-            ]
+        ]
     },{
         "title": "Jenkins",
         "description": "Open-source continuous integration tool",
@@ -1387,7 +1386,7 @@
             "name": "JOOMLA_DB_HOST",
             "label": "MySQL database host",
             "type": "container"
-          },{
+        },{
             "default": "admin",
             "name": "JOOMLA_DB_PASSWORD",
             "label": "Database password"
@@ -1410,12 +1409,12 @@
         "volumes": [{
             "bind": "/var/lib/docker/volumes/MariaDB",
             "container": "/var/lib/mysql"
-          }],
+        }],
         "env": [{
             "default": "admin",
             "name": "MYSQL_ROOT_PASSWORD",
             "label": "Root password"
-          }],
+        }],
         "categories": [
             "database"
         ]
@@ -1465,10 +1464,10 @@
         "volumes": [{
             "bind": "/var/lib/docker/volumes/Minio-Data",
             "container": "/data"
-          },{
+        },{
             "bind": "/var/lib/docker/volumes/Minio",
             "container": "/root/.minio"
-          }],
+        }],
         "env": [{
             "default": "admin",
             "name": "MINIO_ROOT_USER",
@@ -1496,7 +1495,7 @@
         "volumes": [{
             "bind": "/var/lib/docker/volumes/Mongo",
             "container": "/data/db"
-          }],
+        }],
         "categories": [
             "database"
         ]
@@ -1511,18 +1510,18 @@
         "image": "linuxserver/mstream:latest",
         "restart_policy": "unless-stopped",
         "ports": [
-                "3014:3000/tcp"
-            ],
+            "3014:3000/tcp"
+        ],
         "volumes": [{
-                "bind": "/var/lib/docker/volumes/MStream-Config",
-                "container": "/config"
-            },{
-                "bind": "/var/lib/docker/volumes/MStream-Music",
-                "container": "/music"
-            }],
+            "bind": "/var/lib/docker/volumes/MStream-Config",
+            "container": "/config"
+        },{
+            "bind": "/var/lib/docker/volumes/MStream-Music",
+            "container": "/music"
+        }],
         "categories": [
-                "Other"
-            ]
+            "Other"
+        ]
     },{
         "title": "Muximux",
         "description": "[Muximux](https://github.com/mescon/Muximux) is a lightweight portal to view & manage your HTPC apps without having to run anything more than a PHP enabled webserver. With Muximux you don't need to keep multiple tabs open, or bookmark the URL to all of your apps.",
@@ -1534,12 +1533,12 @@
         "image": "linuxserver/muximux:latest",
         "restart_policy": "unless-stopped",
         "ports": [
-                "96:80/tcp"
-            ],
+            "96:80/tcp"
+        ],
         "volumes": [{
-                "bind": "/var/lib/docker/volumes/Muximux",
-                "container": "/config"
-            }],
+            "bind": "/var/lib/docker/volumes/Muximux",
+            "container": "/config"
+        }],
         "categories": [
             "Other"
         ]
@@ -1558,16 +1557,16 @@
         "volumes": [{
             "bind": "/var/lib/docker/volumes/MySQL",
             "container": "/var/lib/mysql"
-          }],
+        }],
         "env": [{
             "default": "admin",
             "name": "MYSQL_ROOT_PASSWORD",
             "label": "Root password"
-          },{
+        },{
             "default": "%",
             "name": "MYSQL_ROOT_HOST",
             "preset": true
-          }],
+        }],
         "categories": [
             "database"
         ]
@@ -1581,20 +1580,20 @@
         "image": "jc21/nginx-proxy-manager",
         "restart_policy": "unless-stopped",
         "ports": [
-                "80:80/tcp",
-                "81:81/tcp",
-                "443:443/tcp"
-            ],
+            "80:80/tcp",
+            "81:81/tcp",
+            "443:443/tcp"
+        ],
         "volumes": [{
-                "bind": "/var/lib/docker/volumes/NGINX/Data",
-                "container": "/data"
-            },{
-                "bind": "/var/lib/docker/volumes/NGINX/LetsEncrypt",
-                "container": "/etc/letsencrypt"
-            }],
+            "bind": "/var/lib/docker/volumes/NGINX/Data",
+            "container": "/data"
+        },{
+            "bind": "/var/lib/docker/volumes/NGINX/LetsEncrypt",
+            "container": "/etc/letsencrypt"
+        }],
         "categories": [
-                "Need"
-            ]
+            "Need"
+        ]
     },{
         "title": "NodeJS",
         "description": "JavaScript-based platform for server-side and networking applications",
@@ -1667,38 +1666,38 @@
         "image": "linuxserver/openvpn-as:latest",
         "restart_policy": "unless-stopped",
         "ports": [
-                "943:943/tcp",
-                "9444:9443/tcp",
-                "1194:1194/udp"
-            ],
+            "943:943/tcp",
+            "9444:9443/tcp",
+            "1194:1194/udp"
+        ],
         "volumes": [{
-                "bind": "/var/lib/docker/volumes/OpenVPN",
-                "container": "/config"
+            "bind": "/var/lib/docker/volumes/OpenVPN",
+            "container": "/config"
+        }],
+        "env": [{
+                "default": "eth0",
+                "description": "INTERFACE",
+                "label": "INTERFACE",
+                "name": "INTERFACE"
+            },{
+                "default": "1000",
+                "description": "PUID",
+                "label": "PUID",
+                "name": "PUID"
+            },{
+                "default": "1000",
+                "description": "PGID",
+                "label": "PGID",
+                "name": "PGID"
+            },{
+                "default": "Etc/UTC",
+                "description": "TZ",
+                "label": "TZ",
+                "name": "TZ"
             }],
-            "env": [{
-                    "default": "eth0",
-                    "description": "INTERFACE",
-                    "label": "INTERFACE",
-                    "name": "INTERFACE"
-                },{
-                    "default": "1000",
-                    "description": "PUID",
-                    "label": "PUID",
-                    "name": "PUID"
-                },{
-                    "default": "1000",
-                    "description": "PGID",
-                    "label": "PGID",
-                    "name": "PGID"
-                },{
-                    "default": "Etc/UTC",
-                    "description": "TZ",
-                    "label": "TZ",
-                    "name": "TZ"
-                }],
         "category": [
-                "Other"
-            ]
+            "Other"
+        ]
     },{
         "title": "Plone",
         "description": "A free and open-source CMS built on top of Zope",
@@ -1734,16 +1733,16 @@
         "volumes": [{
             "bind": "/var/lib/docker/volumes/PostgreSQL",
             "container": "/var/lib/postgresql/data"
-          }],
+        }],
         "env": [{
             "default": "admin",
             "name": "POSTGRES_USER",
             "label": "Superuser"
-          },{
+        },{
             "default": "admin",
             "name": "POSTGRES_PASSWORD",
             "label": "Superuser password"
-          }],
+        }],
         "categories": [
             "database"
         ]
@@ -1758,35 +1757,35 @@
         "image": "linuxserver/pylon:latest",
         "restart_policy": "unless-stopped",
         "ports": [
-                "3131:3131/tcp"
-            ],
+            "3131:3131/tcp"
+        ],
         "volumes": [{
-                "bind": "/var/lib/docker/volumes/Pylon-Config",
-                "container": "/config"
-            },{
-                "bind": "/var/lib/docker/volumes/Pylon-Code",
-                "container": "/code"
-            }],
+            "bind": "/var/lib/docker/volumes/Pylon-Config",
+            "container": "/config"
+        },{
+            "bind": "/var/lib/docker/volumes/Pylon-Code",
+            "container": "/code"
+        }],
         "env": [{
-                "name": "GITURL",
-                "label": "GITURL",
-                "default": "https://github.com/linuxserver/docker-pylon.git",
-                "description": "Specify a git repo to checkout on first startup"
-            },{
-                "name": "PYUSER",
-                "label": "PYUSER",
-                "default": "myuser",
-                "description": "Specify a basic auth user."
-            },{
-                "name": "PYPASS",
-                "label": "PYPASS",
-                "default": "mypass",
-                "description": "Specify a basic auth password."
-            }],
+            "name": "GITURL",
+            "label": "GITURL",
+            "default": "https://github.com/linuxserver/docker-pylon.git",
+            "description": "Specify a git repo to checkout on first startup"
+        },{
+            "name": "PYUSER",
+            "label": "PYUSER",
+            "default": "myuser",
+            "description": "Specify a basic auth user."
+        },{
+            "name": "PYPASS",
+            "label": "PYPASS",
+            "default": "mypass",
+            "description": "Specify a basic auth password."
+        }],
         "categories": [
-                "Other",
-                "Tools"
-            ]
+            "Other",
+            "Tools"
+        ]
     },{
         "title": "RabbitMQ",
         "description": "Highly reliable enterprise messaging system",
@@ -1839,19 +1838,19 @@
         "restart_policy": "unless-stopped",
         "privileged": true,
         "ports": [
-                "3389:3389/tcp"
-            ],
+            "3389:3389/tcp"
+        ],
         "volumes": [{
-                "bind": "/var/run/docker.sock",
-                "container": "/var/run/docker.sock"
-            },{
-                "bind": "/var/lib/docker/volumes/RDesktop",
-                "container": "/config"
-            }],
+            "bind": "/var/run/docker.sock",
+            "container": "/var/run/docker.sock"
+        },{
+            "bind": "/var/lib/docker/volumes/RDesktop",
+            "container": "/config"
+        }],
         "categories": [
-                "Other",
-                "Tools"
-            ]
+            "Other",
+            "Tools"
+        ]
     },{
         "title": "Scality S3",
         "description": "Standalone AWS S3 protocol server",
@@ -1867,10 +1866,10 @@
         "volumes": [{
             "bind": "/var/lib/docker/volumes/Scality-Data",
             "container": "/usr/src/app/localData"
-          },{
+        },{
             "bind": "/var/lib/docker/volumes/Scality-MetaData",
             "container": "/usr/src/app/localMetadata"
-          }],
+        }],
         "env": [{
             "default": "admin",
             "name": "SCALITY_ACCESS_KEY",
@@ -1924,10 +1923,10 @@
 		    "8084:80/tcp"
 	    ],
         "volumes": [{
-                "bind": "/var/lib/docker/volumes/SmokePing-Config",
+            "bind": "/var/lib/docker/volumes/SmokePing-Config",
 		    "container": "/config"
 	    },{
-                "bind": "/var/lib/docker/volumes/SmokePing-Data",
+            "bind": "/var/lib/docker/volumes/SmokePing-Data",
 		    "container": "/data"
  	    }],
         "category": [
@@ -1943,15 +1942,15 @@
         "image": "solr:latest",
         "restart_policy": "unless-stopped",
         "ports": [
-                "8983:8983/tcp"
-            ],
+            "8983:8983/tcp"
+        ],
         "volumes": [{
-            	"bind": "/var/lib/docker/volumes/Solr",
-            	"container": "/opt/solr/mydata"
+            "bind": "/var/lib/docker/volumes/Solr",
+            "container": "/opt/solr/mydata"
 	    }],
         "categories": [
-               	"search-engine"
-            ]       
+            "search-engine"
+        ]
     },{
         "title": "SQL Server",
         "description": "Microsoft SQL Server on Linux",
@@ -1969,16 +1968,15 @@
             "default": "Y",
             "name": "ACCEPT_EULA",
             "preset": true
-          },{
+        },{
             "default": "admin",
             "name": "SA_PASSWORD",
             "label": "SA password"
-          }],
+        }],
         "categories": [
             "database"
         ]
       },{
-        
         "title": "SQL Server Dev",
         "description": "Microsoft SQL Server Developer for Windows containers",
         "note": "Password needs to include at least 8 characters including uppercase, lowercase letters, base-10 digits and/or non-alphanumeric symbols.",
@@ -2023,12 +2021,12 @@
         "volumes": [{
             "bind": "/var/lib/docker/volumes/SQLServerExpress",
             "container": "C:/temp/"
-          }],
+        }],
         "env": [{
             "default": "Y",
             "name": "ACCEPT_EULA",
             "preset": true
-          },{
+        },{
             "default": "admin",
             "name": "sa_password",
             "label": "SA password"
@@ -2061,51 +2059,51 @@
         "image": "yourls:latest",
         "restart_policy": "unless-stopped",
         "ports": [
-                "96:80/tcp"
-            ],
+            "96:80/tcp"
+        ],
         "volumes": [{
-                "bind": "/var/lib/docker/volumes/YOURLS",
-                "container": "/app/data"
-            }],
+            "bind": "/var/lib/docker/volumes/YOURLS",
+            "container": "/app/data"
+        }],
         "env": [{
-                "name": "YOURLS_DB_HOST",
-                "label": "YOURLS_DB_HOST",
-                "default": "1.1.1.1",
-                "description": "The address for your Database"
-            },{
-                "name": "YOURLS_DB_USER",
-                "label": "YOURLS_DB_USER",
-                "default": "example",
-                "description": "The Username for your database"
-            },{
-                "name": "YOURLS_DB_PASS",
-                "label": "YOURLS_DB_PASS",
-                "default": "example",
-                "description": "Your password for your database"
-            },{
-                "name": "YOURLS_DB_PREFIX",
-                "label": "YOURLS_DB_PREFIX",
-                "default": "myuser",
-                "description": "Specify a basic auth user."
-            },{
-                "name": "YOURLS_SITE",
-                "label": "YOURLS_SITE",
-                "default": "https://example.com",
-                "description": "Web Address for YOURLS"
-            },{
-                "name": "YOURLS_USER",
-                "label": "YOURLS_USER",
-                "default": "admin",
-                "description": "Username for YOURLS"
-            },{
-                "name": "YOURLS_PASS",
-                "label": "YOURLS_PASS",
-                "default": "admin",
-                "description": "Password for YOURLS"
-            }],
+            "name": "YOURLS_DB_HOST",
+            "label": "YOURLS_DB_HOST",
+            "default": "1.1.1.1",
+            "description": "The address for your Database"
+        },{
+            "name": "YOURLS_DB_USER",
+            "label": "YOURLS_DB_USER",
+            "default": "example",
+            "description": "The Username for your database"
+        },{
+            "name": "YOURLS_DB_PASS",
+            "label": "YOURLS_DB_PASS",
+            "default": "example",
+            "description": "Your password for your database"
+        },{
+            "name": "YOURLS_DB_PREFIX",
+            "label": "YOURLS_DB_PREFIX",
+            "default": "myuser",
+            "description": "Specify a basic auth user."
+        },{
+            "name": "YOURLS_SITE",
+            "label": "YOURLS_SITE",
+            "default": "https://example.com",
+            "description": "Web Address for YOURLS"
+        },{
+            "name": "YOURLS_USER",
+            "label": "YOURLS_USER",
+            "default": "admin",
+            "description": "Username for YOURLS"
+        },{
+            "name": "YOURLS_PASS",
+            "label": "YOURLS_PASS",
+            "default": "admin",
+            "description": "Password for YOURLS"
+        }],
         "categories": [
-                "Other"
-            ]
+            "Other"
+        ]
     },{
         "title": "Website",
         "description": "PHP is a server-side scripting language designed for web development, but which can also be used as a general-purpose programming language. PHP can be added to straight HTML or it can be used with a variety of templating engines and web frameworks. PHP code is usually processed by an interpreter, which is either implemented as a native module on the web-server or as a common gateway interface (CGI).",
@@ -2116,15 +2114,15 @@
         "image": "php:8.1.3RC1-apache",
         "restart_policy": "unless-stopped",
         "ports": [
-                "90:80/tcp"
-            ],
+            "90:80/tcp"
+        ],
         "volumes": [{
             "bind": "/var/lib/docker/volumes/Website",
             "container": "/var/www/html"
         }],
         "categories": [
-                "Other"
-            ]
+            "Other"
+        ]
     },{
         "title": "WireGuard",
         "description": "[WireGuard®](https://www.wireguard.com/) is an extremely simple yet fast and modern VPN that utilizes state-of-the-art cryptography. It aims to be faster, simpler, leaner, and more useful than IPsec, while avoiding the massive headache. It intends to be considerably more performant than OpenVPN. WireGuard is designed as a general purpose VPN for running on embedded interfaces and super computers alike, fit for many different circumstances. Initially released for the Linux kernel, it is now cross-platform (Windows, macOS, BSD, iOS, Android) and widely deployable. It is currently under heavy development, but already it might be regarded as the most secure, easiest to use, and simplest VPN solution in the industry.",
@@ -2136,49 +2134,49 @@
         "image": "linuxserver/wireguard:latest",
         "restart_policy": "unless-stopped",
         "ports": [
-                "51820:51820/udp"
-            ],
+            "51820:51820/udp"
+        ],
         "volumes": [{
-                "bind": "/var/lib/docker/volumes/WireGuard-Config",
-                "container": "/config"
-            },{
-                "bind": "/var/lib/docker/volumes/WireGuard-Modules",
-                "container": "/lib/modules"
-            }],
+            "bind": "/var/lib/docker/volumes/WireGuard-Config",
+            "container": "/config"
+        },{
+            "bind": "/var/lib/docker/volumes/WireGuard-Modules",
+            "container": "/lib/modules"
+        }],
         "env": [{
-                "default": "wireguard.domain.com",
-                "description": "External IP or domain name for docker host. Used in server mode. If set to `auto`, the container will try to determine and set the external IP automatically",
-                "label": "SERVERURL",
-                "name": "SERVERURL"
-            },{
-                "default": "51820",
-                "description": "External port for docker host. Used in server mode.",
-                "label": "SERVERPORT",
-                "name": "SERVERPORT"
-            },{
-                "default": "1",
-                "description": "Number of peers to create confs for. Required for server mode. Can also be a list of names: `myPC,myPhone,myTablet` (alphanumeric only)",
-                "label": "PEERS",
-                "name": "PEERS"
-            },{
-                "default": "auto",
-                "description": "DNS server set in peer/client configs (can be set as `8.8.8.8`). Used in server mode. Defaults to `auto`, which uses wireguard docker host's DNS via included CoreDNS forward.",
-                "label": "PEERDNS",
-                "name": "PEERDNS"
-            },{
-                "default": "10.13.13.0",
-                "description": "Internal subnet for the wireguard and server and peers (only change if it clashes). Used in server mode.",
-                "label": "INTERNAL_SUBNET",
-                "name": "INTERNAL_SUBNET"
-            },{
-                "default": "0.0.0.0/0",
-                "description": "The IPs/Ranges that the peers will be able to reach using the VPN connection. If not specified the default value is: '0.0.0.0/0, ::0/0' This will cause ALL traffic to route through the VPN, if you want split tunneling, set this to only the IPs you would like to use the tunnel AND the ip of the server's WG ip, such as 10.13.13.1.",
-                "label": "ALLOWEDIPS",
-                "name": "ALLOWEDIPS"
-            }],
+            "default": "wireguard.domain.com",
+            "description": "External IP or domain name for docker host. Used in server mode. If set to `auto`, the container will try to determine and set the external IP automatically",
+            "label": "SERVERURL",
+            "name": "SERVERURL"
+        },{
+            "default": "51820",
+            "description": "External port for docker host. Used in server mode.",
+            "label": "SERVERPORT",
+            "name": "SERVERPORT"
+        },{
+            "default": "1",
+            "description": "Number of peers to create confs for. Required for server mode. Can also be a list of names: `myPC,myPhone,myTablet` (alphanumeric only)",
+            "label": "PEERS",
+            "name": "PEERS"
+        },{
+            "default": "auto",
+            "description": "DNS server set in peer/client configs (can be set as `8.8.8.8`). Used in server mode. Defaults to `auto`, which uses wireguard docker host's DNS via included CoreDNS forward.",
+            "label": "PEERDNS",
+            "name": "PEERDNS"
+        },{
+            "default": "10.13.13.0",
+            "description": "Internal subnet for the wireguard and server and peers (only change if it clashes). Used in server mode.",
+            "label": "INTERNAL_SUBNET",
+            "name": "INTERNAL_SUBNET"
+        },{
+            "default": "0.0.0.0/0",
+            "description": "The IPs/Ranges that the peers will be able to reach using the VPN connection. If not specified the default value is: '0.0.0.0/0, ::0/0' This will cause ALL traffic to route through the VPN, if you want split tunneling, set this to only the IPs you would like to use the tunnel AND the ip of the server's WG ip, such as 10.13.13.1.",
+            "label": "ALLOWEDIPS",
+            "name": "ALLOWEDIPS"
+        }],
         "categories": [
-                "VPN"
-            ]
+            "VPN"
+        ]
     },{
         "title": "WireShark",
         "description": "[Wireshark](https://www.wireshark.org/) is the world’s foremost and widely-used network protocol analyzer. It lets you see what’s happening on your network at a microscopic level and is the de facto (and often de jure) standard across many commercial and non-profit enterprises, government agencies, and educational institutions. Wireshark development thrives thanks to the volunteer contributions of networking experts around the globe and is the continuation of a project started by Gerald Combs in 1998.",
@@ -2190,56 +2188,60 @@
         "image": "linuxserver/wireshark:latest",
         "restart_policy": "unless-stopped",
         "network": "host",
-        "security_opt": ["seccomp=unconfined"],
-        "cap_add": ["NET_ADMIN"],
+        "security_opt": [
+            "seccomp=unconfined"
+        ],
+        "cap_add": [
+            "NET_ADMIN"
+        ],
         "ports": [
-                "3015:3000/tcp"
-            ],
+            "3015:3000/tcp"
+        ],
         "volumes": [{
-                "bind": "/var/lib/docker/volumes/WireShark",
-                "container": "/config"
+            "bind": "/var/lib/docker/volumes/WireShark",
+            "container": "/config"
         },{
-                "bind": "/var/run/docker.sock",
-                "container": "/var/run/docker.sock"
-            },{
-                "bind": "/home/user/docker-data",
-                "container": "/var/lib/docker"
-            }],
+            "bind": "/var/run/docker.sock",
+            "container": "/var/run/docker.sock"
+        },{
+            "bind": "/home/user/docker-data",
+            "container": "/var/lib/docker"
+        }],
         "env": [{
-                "default": "admin",
-                "description": "CUSTOM_USER",
-                "label": "CUSTOM_USER",
-                "name": "CUSTOM_USER"
-            },{
-                "default": "admin",
-                "description": "PASSWORD",
-                "label": "PASSWORD",
-                "name": "PASSWORD"
-            },{
-                "default": "WireShark",
-                "description": "TITLE",
-                "label": "TITLE",
-                "name": "TITLE"
-            },{
-                "default": "1000",
-                "description": "PUID",
-                "label": "PUID",
-                "name": "PUID"
-            },{
-                "default": "1000",
-                "description": "PGID",
-                "label": "PGID",
-                "name": "PGID"
-            },{
-                "default": "Etc/UTC",
-                "description": "TZ",
-                "label": "TZ",
-                "name": "TZ"
-            }],
+            "default": "admin",
+            "description": "CUSTOM_USER",
+            "label": "CUSTOM_USER",
+            "name": "CUSTOM_USER"
+        },{
+            "default": "admin",
+            "description": "PASSWORD",
+            "label": "PASSWORD",
+            "name": "PASSWORD"
+        },{
+            "default": "WireShark",
+            "description": "TITLE",
+            "label": "TITLE",
+            "name": "TITLE"
+        },{
+            "default": "1000",
+            "description": "PUID",
+            "label": "PUID",
+            "name": "PUID"
+        },{
+            "default": "1000",
+            "description": "PGID",
+            "label": "PGID",
+            "name": "PGID"
+        },{
+            "default": "Etc/UTC",
+            "description": "TZ",
+            "label": "TZ",
+            "name": "TZ"
+        }],
         "categories": [
-                "Security",
-                "Tools"
-            ]
+            "Security",
+            "Tools"
+        ]
     },{
         "title": "Whoogle",
         "description": "Self-hosted, ad-free, privacy-respecting Google metasearch engine.",
@@ -2253,22 +2255,22 @@
                 "5001:5000/tcp"
             ],
         "volumes": [{
-                "bind": "/var/lib/docker/volumes/Whoogle",
-                "container": "/config"
+            "bind": "/var/lib/docker/volumes/Whoogle",
+            "container": "/config"
+        }],
+        "env": [{
+                "default": "admin",
+                "description": "WHOOGLE_USER",
+                "label": "WHOOGLE_USER",
+                "name": "WHOOGLE_USER"
+            },{
+                "default": "admin",
+                "description": "WHOOGLE_PASS",
+                "label": "WHOOGLE_PASS",
+                "name": "WHOOGLE_PASS"
             }],
-            "env": [{
-                    "default": "admin",
-                    "description": "WHOOGLE_USER",
-                    "label": "WHOOGLE_USER",
-                    "name": "WHOOGLE_USER"
-                },{
-                    "default": "admin",
-                    "description": "WHOOGLE_PASS",
-                    "label": "WHOOGLE_PASS",
-                    "name": "WHOOGLE_PASS"
-                }],
         "categories": [
-                "Search"
-            ]
+            "Search"
+        ]
     }
 ]}
