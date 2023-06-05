@@ -133,6 +133,7 @@
         "image": "linuxserver/webtop:ubuntu-kde",
         "restart_policy": "unless-stopped",
         "privileged": true,
+        "security_opt": ["seccomp=unconfined"],
         "ports": [
                 "3002:3000/tcp"
             ],
@@ -175,8 +176,7 @@
                 "name": "PASSWORD"
             }],
         "host_config": {
-            "shm_size": 1073741824,
-            "security_opt": ["seccomp:unconfined"]
+            "shm_size": 1073741824
         },
          "categories": [
                 "Need"
@@ -287,6 +287,301 @@
         "categories": [
                 "Need"
             ]
+    },
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    {
+        "title": "AdGuard",
+        "description": "[AdGuard] Home is a network-wide software for blocking ads & tracking. After you set it up, it’ll cover ALL your home devices, and you don’t need any client-side software for that. With the rise of Internet-Of-Things and connected devices, it becomes more and more important to be able to control your whole network.",
+        "logo": "https://raw.githubusercontent.com/Qballjos/portainer_templates/master/Images/adguard.png",
+        "platform": "linux",
+        "type": 1,
+        "name": "AdGuard",
+        "image": "adguard/adguardhome:latest",
+        "restart_policy": "unless-stopped",
+        "ports": [
+                "53:53/tcp",
+                "53:53/udp",
+                "67:67/udp",
+                "68:68/tcp",
+                "68:68/udp",
+                "80:80/tcp",
+                "443:443/tcp",
+                "853:853/tcp",
+                "3000:3000/tcp"
+            ],
+        "volumes": [{
+                "bind": "/var/lib/docker/volumes/adguard/workdir",
+                "container": "/opt/adguardhome/work"
+            },{
+                "bind": "/var/lib/docker/volumes/adguard/conf",
+                "container": "/opt/adguardhome/conf"
+            }],
+        "env": [{
+                "label": "CONTEXT_PATH",
+                "name": "CONTEXT_PATH",
+                "set": "adguard home"
+            }],
+        "categories": [
+                "Other"
+            ]
+    },{
+        "title": "Booksonic",
+        "description": "Booksonic is a server and an app for streaming your audiobooks to any pc or android phone. Most of the functionality is also availiable on other platforms that have apps for subsonic.",
+        "logo": "https://raw.githubusercontent.com/Qballjos/portainer_templates/master/Images/booksonic.png",
+        "platform": "linux",
+        "type": 1,
+        "name": "booksonic",
+        "image": "linuxserver/booksonic:latest",
+        "restart_policy": "unless-stopped",
+        "ports": [
+                "4040:4040/tcp"
+            ],
+            "volumes": [{
+                "bind": "/var/lib/docker/volumes/Booksonic-Config",
+                "container": "/config"
+            },{
+                "bind": "/var/lib/docker/volumes/Booksonic-Audiobooks",
+                "container": "/audiobooks"
+            },{
+                "bind": "/var/lib/docker/volumes/Booksonic-Podcasts",
+                "container": "/podcasts"
+            },{
+                "bind": "/var/lib/docker/volumes/Booksonic-Othermedia",
+                "container": "/othermedia"
+            }],
+        "env": [{
+                "default": "url-base",
+                "description": "Base url for use with reverse proxies etc.",
+                "label": "CONTEXT_PATH",
+                "name": "CONTEXT_PATH"
+            },{
+                "default": "1000",
+                "description": "PUID",
+                "label": "PUID",
+                "name": "PUID"
+            },{
+                "default": "1000",
+                "description": "PGID",
+                "label": "PGID",
+                "name": "PGID"
+            },{
+                "default": "Etc/UTC",
+                "description": "TZ",
+                "label": "TZ",
+                "name": "TZ"
+            }],
+        "categories": [
+                "Books",
+                "Other"
+            ]
+    },{
+        "title": "Booksonic-Air",
+        "description": "[Booksonic-air](http://booksonic.org) is a platform for accessing the audibooks you own wherever you are. At the moment the platform consists of Booksonic Air - A server for streaming your audiobooks, successor to the original Booksonic server and based on Airsonic. Booksonic App - An DSub based Android app for connection to Booksonic-Air servers. .",
+        "note": "Portainer App Templates by <a href='https://www.technorabilia.com' target='_blank'>Technorabilia</a> based on data provided by <a href='https://www.linuxserver.io' target='_blank'>LinuxServer.io</a>.</p><p>Don't forget to create the volume directories on the host file system.</p><p>mkdir -p /volume1/docker/booksonic-air/config<br>mkdir -p /volume1/docker/booksonic-air/audiobooks<br>mkdir -p /volume1/docker/booksonic-air/podcasts<br>mkdir -p /volume1/docker/booksonic-air/othermedia</p>", 
+        "logo": "https://raw.githubusercontent.com/linuxserver/docker-templates/master/linuxserver.io/img/booksonic-air.png",
+        "platform": "linux",
+        "type": 1,
+        "name": "Booksonic-Air",
+        "image": "linuxserver/booksonic-air:latest",
+        "restart_policy": "unless-stopped",
+        "ports": [
+                "4041:4040/tcp"
+            ],
+        "volumes": [{
+                "bind": "/var/lib/docker/volumes/Booksonic-Air-Config",
+                "container": "/config"
+            },{
+                "bind": "/var/lib/docker/volumes/Booksonic-Air-Audiobooks",
+                "container": "/audiobooks"
+            },{
+                "bind": "/var/lib/docker/volumes/Booksonic-Air-Podcasts",
+                "container": "/podcasts"
+            },{
+                "bind": "/var/lib/docker/volumes/Booksonic-Air-Othermedia",
+                "container": "/othermedia"
+            }],
+        "env": [{
+                "default": "url-base",
+                "description": "Base url for use with reverse proxies etc.",
+                "label": "CONTEXT_PATH",
+                "name": "CONTEXT_PATH"
+            },{
+                "default": "1000",
+                "description": "PUID",
+                "label": "PUID",
+                "name": "PUID"
+            },{
+                "default": "1000",
+                "description": "PGID",
+                "label": "PGID",
+                "name": "PGID"
+            },{
+                "default": "Etc/UTC",
+                "description": "TZ",
+                "label": "TZ",
+                "name": "TZ"
+            }],
+        "categories": [
+                "Audio"
+            ]
+    },{
+        "title": "Chromium",
+        "description": "PHP is a server-side scripting language designed for web development, but which can also be used as a general-purpose programming language. PHP can be added to straight HTML or it can be used with a variety of templating engines and web frameworks. PHP code is usually processed by an interpreter, which is either implemented as a native module on the web-server or as a common gateway interface (CGI).",
+        "logo": "https://raw.githubusercontent.com/docker-library/docs/01c12653951b2fe592c1f93a13b4e289ada0e3a1/php/logo.png",
+        "platform": "linux",
+        "type": 1,
+        "name": "Chromium",
+        "image": "linuxserver/chromium:latest",
+        "restart_policy": "unless-stopped",
+        "ports": [
+                "90:80/tcp"
+            ],
+        "volumes": [{
+            "bind": "/var/lib/docker/volumes/Chrome",
+            "container": "/config"
+        }],
+        "env": [{
+            "default": "admin",
+            "description": "Username",
+            "label": "CUSTOM_USER",
+            "name": "CUSTOM_USER"
+        },{
+            "default": "admin",
+            "description": "To Access the site",
+            "label": "PASSWORD",
+            "name": "PASSWORD"
+        },{
+            "default": "1000",
+            "description": "PUID",
+            "label": "PUID",
+            "name": "PUID"
+        },{
+            "default": "1000",
+            "description": "PGID",
+            "label": "PGID",
+            "name": "PGID"
+        },{
+            "default": "Etc/UTC",
+            "description": "TZ",
+            "label": "TZ",
+            "name": "TZ"
+        }],"host_config": {
+            "shm_size": 1073741824
+        },
+        "categories": [
+                "Other"
+            ]
+    },{
+        "title": "Code-Server",
+        "description": "[Code-Server](https://coder.com) is VS Code running on a remote server, accessible through the browser. - Code on your Chromebook, tablet, and laptop with a consistent dev environment. - If you have a Windows or Mac workstation, more easily develop for Linux. - Take advantage of large cloud servers to speed up tests, compilations, downloads, and more. - Preserve battery life when you're on the go. - All intensive computation runs on your server. - You're no longer running excess instances of Chrome.",
+        "note": "Portainer App Templates by <a href='https://www.technorabilia.com' target='_blank'>Technorabilia</a> based on data provided by <a href='https://www.linuxserver.io' target='_blank'>LinuxServer.io</a>.</p><p>Don't forget to create the volume directories on the host file system.</p><p>mkdir -p /volume1/docker/code-server/config</p>",
+        "logo": "https://raw.githubusercontent.com/linuxserver/docker-templates/master/linuxserver.io/img/code-server-banner.png",
+        "platform": "linux",
+        "type": 1,
+        "name": "Code-Server",
+        "image": "linuxserver/code-server:latest",
+        "restart_policy": "unless-stopped",
+        "ports": [
+                "8443:8443/tcp"
+            ],
+        "volumes": [{
+                "bind": "/var/lib/docker/volumes/Code-Server",
+                "container": "/config"
+            }],
+        "env": [{
+                "default": "password",
+                "description": "Optional web gui password, if `PASSWORD` or `HASHED_PASSWORD` is not provided, there will be no auth.",
+                "label": "PASSWORD",
+                "name": "PASSWORD"
+            },{
+                "default": "",
+                "description": "Optional web gui password, overrides `PASSWORD`, instructions on how to create it is below.",
+                "label": "HASHED_PASSWORD",
+                "name": "HASHED_PASSWORD"
+            },{
+                "default": "password",
+                "description": "If this optional variable is set, user will have sudo access in the code-server terminal with the specified password.",
+                "label": "SUDO_PASSWORD",
+                "name": "SUDO_PASSWORD"
+            },{
+                "default": "",
+                "description": "Optionally set sudo password via hash (takes priority over `SUDO_PASSWORD` var). Format is `$type$salt$hashed`.",
+                "label": "SUDO_PASSWORD_HASH",
+                "name": "SUDO_PASSWORD_HASH"
+            },{
+                "default": "code-server.my.domain",
+                "description": "If this optional variable is set, this domain will be proxied for subdomain proxying. See [Documentation](https://github.com/cdr/code-server/blob/master/docs/FAQ.md#sub-domains)",
+                "label": "PROXY_DOMAIN",
+                "name": "PROXY_DOMAIN"
+            },{
+                "default": "/config/workspace",
+                "description": "If this optional variable is set, code-server will open this directory by default",
+                "label": "DEFAULT_WORKSPACE",
+                "name": "DEFAULT_WORKSPACE"
+            }],
+        "categories": [
+                "Development"
+            ]
+    },{
+        "title": "NextCloud",
+        "description": "[Nextcloud](https://nextcloud.com/) gives you access to all your files wherever you are. Where are your photos and documents? With Nextcloud you pick a server of your choice, at home, in a data center or at a provider. And that is where your files will be. Nextcloud runs on that server, protecting your data and giving you access from your desktop or mobile devices. Through Nextcloud you also access, sync and share your existing data on that FTP drive at the office, a Dropbox or a NAS you have at home.",
+        "note": "Portainer App Templates by <a href='https://www.technorabilia.com' target='_blank'>Technorabilia</a> based on data provided by <a href='https://www.linuxserver.io' target='_blank'>LinuxServer.io</a>.</p><p>Don't forget to create the volume directories on the host file system.</p><p>mkdir -p /volume1/docker/nextcloud/config<br>mkdir -p /volume1/docker/nextcloud/data</p>",
+        "logo": "https://raw.githubusercontent.com/linuxserver/docker-templates/master/linuxserver.io/img/nextcloud-icon.png",
+        "platform": "linux",
+        "type": 1,
+        "name": "NextCloud",
+        "image": "linuxserver/nextcloud:latest",
+        "restart_policy": "unless-stopped",
+        "ports": [
+                "8443:443/tcp"
+            ],
+        "volumes": [{
+                "bind": "/var/lib/docker/volumes/NextCloud/Config",
+                "container": "/config"
+            },{
+                "bind": "/var/lib/docker/volumes/NextCloud/Data",
+                "container": "/data"
+            }],
+            "env": [{
+                "default": "1000",
+                "description": "PUID",
+                "label": "PUID",
+                "name": "PUID"
+            },{
+                "default": "1000",
+                "description": "PGID",
+                "label": "PGID",
+                "name": "PGID"
+            },{
+                "default": "Etc/UTC",
+                "description": "TZ",
+                "label": "TZ",
+                "name": "TZ"
+            }],
+        "categories": [
+                "Other"
+            ]
     },{
         "title": "OpenVSCode-Server",
         "description": "[Openvscode-server](https://github.com/gitpod-io/openvscode-server) provides a version of VS Code that runs a server on a remote machine and allows access through a modern web browser.",
@@ -339,64 +634,18 @@
                 "Other"
             ]
     },{
-        "title": "Website",
-        "description": "PHP is a server-side scripting language designed for web development, but which can also be used as a general-purpose programming language. PHP can be added to straight HTML or it can be used with a variety of templating engines and web frameworks. PHP code is usually processed by an interpreter, which is either implemented as a native module on the web-server or as a common gateway interface (CGI).",
-        "logo": "https://raw.githubusercontent.com/docker-library/docs/01c12653951b2fe592c1f93a13b4e289ada0e3a1/php/logo.png",
+        "title": "Opera",
+        "description": "Opera",
+        "logo": "",
         "platform": "linux",
         "type": 1,
-        "name": "Website",
-        "image": "php:8.1.3RC1-apache",
+        "name": "Opera",
+        "image": "linuxserver/opera:latest",
         "restart_policy": "unless-stopped",
+        "security_opt": ["seccomp=unconfined"],
         "ports": [
-                "90:80/tcp"
+                "3004:3000/tcp"
             ],
-        "volumes": [{
-            "bind": "/var/lib/docker/volumes/Website",
-            "container": "/var/www/html"
-        }],
-        "categories": [
-                "Other"
-            ]
-    },{
-        "title": "NGINX",
-        "description": "[Nginx Proxy Manager] enables you to easily forward to your websites running at home or otherwise, including free SSL, without having to know too much about Nginx or Letsencrypt.",
-        "logo": "https://raw.githubusercontent.com/Qballjos/portainer_templates/master/Images/proxy_mgr.png",
-        "platform": "linux",
-        "type": 1,
-        "name": "NGINX",
-        "image": "jc21/nginx-proxy-manager",
-        "restart_policy": "unless-stopped",
-        "ports": [
-                "80:80/tcp",
-                "81:81/tcp",
-                "443:443/tcp"
-            ],
-        "volumes": [{
-                "bind": "/var/lib/docker/volumes/NGINX/Data",
-                "container": "/data"
-            },{
-                "bind": "/var/lib/docker/volumes/NGINX/LetsEncrypt",
-                "container": "/etc/letsencrypt"
-            }],
-        "categories": [
-                "Need"
-            ]
-    },{
-        "title": "Chromium",
-        "description": "PHP is a server-side scripting language designed for web development, but which can also be used as a general-purpose programming language. PHP can be added to straight HTML or it can be used with a variety of templating engines and web frameworks. PHP code is usually processed by an interpreter, which is either implemented as a native module on the web-server or as a common gateway interface (CGI).",
-        "logo": "https://raw.githubusercontent.com/docker-library/docs/01c12653951b2fe592c1f93a13b4e289ada0e3a1/php/logo.png",
-        "platform": "linux",
-        "type": 1,
-        "name": "Chromium",
-        "image": "linuxserver/chromium:latest",
-        "restart_policy": "unless-stopped",
-        "ports": [
-                "90:80/tcp"
-            ],
-        "volumes": [{
-            "bind": "/var/lib/docker/volumes/Chrome",
-            "container": "/config"
-        }],
         "env": [{
             "default": "admin",
             "description": "Username",
@@ -422,16 +671,46 @@
             "description": "TZ",
             "label": "TZ",
             "name": "TZ"
-        }],"host_config": {
+        }],
+        "host_config": {
             "shm_size": 1073741824
         },
         "categories": [
                 "Other"
             ]
     },{
+        "title": "Pi-Hole",
+        "description": "A Linux network-level advertisement and Internet tracker blocking application which acts as a DNS sinkhole.",
+        "note": "When the installation is complete, navigate to your.ip.goes.here:1010/admin. Follow the article <a href='https://medium.com/@niktrix/getting-rid-of-systemd-resolved-consuming-port-53-605f0234f32f'>here</a> if you run into issues binding to port 53.",
+        "logo": "https://raw.githubusercontent.com/Qballjos/portainer_templates/master/Images/pihole.png",
+        "platform": "linux",
+        "type": 1,
+        "name": "PiHole",
+        "image": "pihole/pihole:latest",
+        "restart_policy": "unless-stopped",
+        "ports": [
+                "54:53/tcp",
+                "54:53/udp",
+                "67:67/udp",
+                "97:80/tcp",
+                "4443:443/tcp"
+            ],
+        "volumes": [{
+                "bind": "/var/lib/docker/volumes/PiHole/config",
+                "container": "/etc/pihole"
+            },{
+                "bind": "/var/lib/docker/volumes/PiHole/DNS",
+                "container": "/etc/dnsmasq.d"
+            }],
+        "categories": [
+                "Other",
+                "Tools"
+            ]
+    },{
         "title": "Remina",
-        "description": "PHP is a server-side scripting language designed for web development, but which can also be used as a general-purpose programming language. PHP can be added to straight HTML or it can be used with a variety of templating engines and web frameworks. PHP code is usually processed by an interpreter, which is either implemented as a native module on the web-server or as a common gateway interface (CGI).",
-        "logo": "https://raw.githubusercontent.com/docker-library/docs/01c12653951b2fe592c1f93a13b4e289ada0e3a1/php/logo.png",
+        "description": "[Remmina](https://remmina.org/) is a remote desktop client written in GTK, aiming to be useful for system administrators and travellers, who need to work with lots of remote computers in front of either large or tiny screens. Remmina supports multiple network protocols, in an integrated and consistent user interface. Currently RDP, VNC, SPICE, NX, XDMCP, SSH and EXEC are supported.",
+        "note": "Portainer App Templates by <a href='https://www.technorabilia.com' target='_blank'>Technorabilia</a> based on data provided by <a href='https://www.linuxserver.io' target='_blank'>LinuxServer.io</a>.</p><p>Don't forget to create the volume directories on the host file system.</p><p>mkdir -p /volume1/docker/remmina/config</p>",
+        "logo": "https://raw.githubusercontent.com/linuxserver/docker-templates/master/linuxserver.io/img/remmina-icon.png",
         "platform": "linux",
         "type": 1,
         "name": "Remina",
@@ -474,138 +753,25 @@
                 "Other"
             ]
     },{
-        "title": "NextCloud",
-        "description": "[Nextcloud](https://nextcloud.com/) gives you access to all your files wherever you are. Where are your photos and documents? With Nextcloud you pick a server of your choice, at home, in a data center or at a provider. And that is where your files will be. Nextcloud runs on that server, protecting your data and giving you access from your desktop or mobile devices. Through Nextcloud you also access, sync and share your existing data on that FTP drive at the office, a Dropbox or a NAS you have at home.",
-        "note": "Portainer App Templates by <a href='https://www.technorabilia.com' target='_blank'>Technorabilia</a> based on data provided by <a href='https://www.linuxserver.io' target='_blank'>LinuxServer.io</a>.</p><p>Don't forget to create the volume directories on the host file system.</p><p>mkdir -p /volume1/docker/nextcloud/config<br>mkdir -p /volume1/docker/nextcloud/data</p>",
-        "logo": "https://raw.githubusercontent.com/linuxserver/docker-templates/master/linuxserver.io/img/nextcloud-icon.png",
+        "title": "Taisun",
+        "description": "[Taisun](https://www.taisun.io/) is an application for a Docker enabled device with an emphasis on providing a web based interface for managing a single server. Taisun allows you to: - Deploy and manage web based virtual desktops. - Deploy Taisun specific stacks of applications - Browse available images on popular Docker repositories - Import a Docker project from any git repository and start developing on your choice of web based IDE or full Linux desktop - Spinup a developer container based on popular frameworks and work from a web based IDE - Single click remote server access to Taisun and your Docker applications",
+        "note": "Portainer App Templates by <a href='https://www.technorabilia.com' target='_blank'>Technorabilia</a> based on data provided by <a href='https://www.linuxserver.io' target='_blank'>LinuxServer.io</a>.</p><p>Don't forget to create the volume directories on the host file system.</p><p></p>",
+        "logo": "https://raw.githubusercontent.com/Taisun-Docker/taisun/master/public/favicon/apple-icon-180x180.png",
         "platform": "linux",
         "type": 1,
-        "name": "NextCloud",
-        "image": "linuxserver/nextcloud:latest",
-        "restart_policy": "unless-stopped",
-        "ports": [
-                "8443:443/tcp"
-            ],
-        "volumes": [{
-                "bind": "/var/lib/docker/volumes/NextCloud/Config",
-                "container": "/config"
-            },{
-                "bind": "/var/lib/docker/volumes/NextCloud/Data",
-                "container": "/data"
-            }],
-            "env": [{
-                "default": "1000",
-                "description": "PUID",
-                "label": "PUID",
-                "name": "PUID"
-            },{
-                "default": "1000",
-                "description": "PGID",
-                "label": "PGID",
-                "name": "PGID"
-            },{
-                "default": "Etc/UTC",
-                "description": "TZ",
-                "label": "TZ",
-                "name": "TZ"
-            }],
-        "categories": [
-                "Other"
-            ]
-    },{
-        "title": "IT Tools",
-        "description": "IT Tools",
-        "logo": "",
-        "platform": "linux",
-        "type": 1,
-        "name": "IT-Tools",
-        "image": "corentinth/it-tools:latest",
-        "restart_policy": "unless-stopped",
-        "ports": [
-                "8082:80/tcp"
-            ],
-        "categories": [
-                "Other"
-            ]
-    },{
-        "title": "Opera",
-        "description": "Opera",
-        "logo": "",
-        "platform": "linux",
-        "type": 1,
-        "name": "Opera",
-        "image": "linuxserver/opera:latest",
+        "name": "Taisun",
+        "image": "linuxserver/taisun:latest",
         "restart_policy": "unless-stopped",
         "ports": [
                 "3004:3000/tcp"
             ],
-        "env": [{
-            "default": "admin",
-            "description": "Username",
-            "label": "CUSTOM_USER",
-            "name": "CUSTOM_USER"
-        },{
-            "default": "admin",
-            "description": "To Access the site",
-            "label": "PASSWORD",
-            "name": "PASSWORD"
-        },{
-            "default": "1000",
-            "description": "PUID",
-            "label": "PUID",
-            "name": "PUID"
-        },{
-            "default": "1000",
-            "description": "PGID",
-            "label": "PGID",
-            "name": "PGID"
-        },{
-            "default": "Etc/UTC",
-            "description": "TZ",
-            "label": "TZ",
-            "name": "TZ"
-        }],
-        "host_config": {
-            "shm_size": 1073741824,
-            "security_opt": ["seccomp:unconfined"]
-        },
-        "categories": [
-                "Other"
-            ]
-    },{
-        "title": "AdGuard",
-        "description": "[AdGuard] Home is a network-wide software for blocking ads & tracking. After you set it up, it’ll cover ALL your home devices, and you don’t need any client-side software for that. With the rise of Internet-Of-Things and connected devices, it becomes more and more important to be able to control your whole network.",
-        "logo": "https://raw.githubusercontent.com/Qballjos/portainer_templates/master/Images/adguard.png",
-        "platform": "linux",
-        "type": 1,
-        "name": "AdGuard",
-        "image": "adguard/adguardhome:latest",
-        "restart_policy": "unless-stopped",
-        "ports": [
-                "53:53/tcp",
-                "53:53/udp",
-                "67:67/udp",
-                "68:68/tcp",
-                "68:68/udp",
-                "80:80/tcp",
-                "443:443/tcp",
-                "853:853/tcp",
-                "3000:3000/tcp"
-            ],
         "volumes": [{
-                "bind": "/var/lib/docker/volumes/adguard/workdir",
-                "container": "/opt/adguardhome/work"
-            },{
-                "bind": "/var/lib/docker/volumes/adguard/conf",
-                "container": "/opt/adguardhome/conf"
-            }],
-        "env": [{
-                "label": "CONTEXT_PATH",
-                "name": "CONTEXT_PATH",
-                "set": "adguard home"
+                "container": "/var/run/docker.sock",
+                "bind": "/var/lib/docker/volumes/Taisun/docker.sock"
             }],
         "categories": [
-                "Other"
+                "Other",
+                "Tools"
             ]
     },{
         "title": "Blender",
@@ -621,7 +787,7 @@
                 "3010:3000/tcp"
             ],
         "volumes": [{
-                "bind": "/var/lib/docker/volumes/blender/config",
+                "bind": "/var/lib/docker/volumes/Blender",
                 "container": "/config"
             }],
         "env": [{
@@ -634,72 +800,6 @@
                 "Other"
             ]
     },{
-        "title": "Booksonic",
-        "description": "Booksonic is a server and an app for streaming your audiobooks to any pc or android phone. Most of the functionality is also availiable on other platforms that have apps for subsonic.",
-        "logo": "https://raw.githubusercontent.com/Qballjos/portainer_templates/master/Images/booksonic.png",
-        "platform": "linux",
-        "type": 1,
-        "name": "booksonic",
-        "image": "linuxserver/booksonic:latest",
-        "restart_policy": "unless-stopped",
-        "ports": [
-                "4040:4040/tcp"
-            ],
-        "volumes": [{
-                "bind": "/var/lib/docker/volumes/Booksonic/books",
-                "container": "/books"
-            },{
-                "bind": "/var/lib/docker/volumes/Booksonic/podcasts",
-                "container": "/podcast"
-            },{
-                "bind": "/var/lib/docker/volumes/Booksonic/config",
-                "container": "/config"
-            }],
-        "env": [{
-                "default": "booksonic",
-                "label": "CONTEXT_PATH",
-                "name": "CONTEXT_PATH"
-            }],
-        "categories": [
-                "Books",
-                "Other"
-            ]
-    },{
-        "title": "Booksonic-air",
-        "description": "[Booksonic-air](http://booksonic.org) is a platform for accessing the audibooks you own wherever you are. At the moment the platform consists of Booksonic Air - A server for streaming your audiobooks, successor to the original Booksonic server and based on Airsonic. Booksonic App - An DSub based Android app for connection to Booksonic-Air servers. .",
-        "note": "Portainer App Templates by <a href='https://www.technorabilia.com' target='_blank'>Technorabilia</a> based on data provided by <a href='https://www.linuxserver.io' target='_blank'>LinuxServer.io</a>.</p><p>Don't forget to create the volume directories on the host file system.</p><p>mkdir -p /volume1/docker/booksonic-air/config<br>mkdir -p /volume1/docker/booksonic-air/audiobooks<br>mkdir -p /volume1/docker/booksonic-air/podcasts<br>mkdir -p /volume1/docker/booksonic-air/othermedia</p>", 
-        "logo": "https://raw.githubusercontent.com/linuxserver/docker-templates/master/linuxserver.io/img/booksonic-air.png",
-        "platform": "linux",
-        "type": 1,
-        "name": "Booksonic-air",
-        "image": "linuxserver/booksonic-air:latest",
-        "restart_policy": "unless-stopped",
-        "ports": [
-                "4041:4040/tcp"
-            ],
-        "volumes": [{
-                "bind": "/var/lib/docker/volumes/booksonic-air/config",
-                "container": "/config"
-            },{
-                "bind": "/var/lib/docker/volumes/booksonic-air/audiobooks",
-                "container": "/audiobooks"
-            },{
-                "bind": "/var/lib/docker/volumes/booksonic-air/podcasts",
-                "container": "/podcasts"
-            },{
-                "bind": "/var/lib/docker/volumes/booksonic-air/othermedia",
-                "container": "/othermedia"
-            }],
-        "env": [{
-                "default": "url-base",
-                "description": "Base url for use with reverse proxies etc.",
-                "label": "CONTEXT_PATH",
-                "name": "CONTEXT_PATH"
-            }],
-        "categories": [
-                "Audio"
-            ]
-    },{
         "title": "Caddy",
         "description": "HTTP/2 web server with automatic HTTPS",
         "logo": "https://portainer-io-assets.sfo2.digitaloceanspaces.com/logos/caddy.png",
@@ -709,9 +809,9 @@
         "image": "abiosoft/caddy:latest",
         "restart_policy": "unless-stopped",
         "ports": [
-                "80/tcp",
-                "443/tcp",
-                "2015/tcp"
+                "80:80/tcp",
+                "443:443/tcp",
+                "2015:2015/tcp"
             ],
         "volumes": [{
                 "bind": "/var/lib/docker/volumes/caddy/config",
@@ -734,13 +834,13 @@
                 "8001:8000/tcp"
             ],
         "volumes": [{
-                "bind": "/var/lib/docker/volumes/cloud9/config",
+                "bind": "/var/lib/docker/volumes/Cloud9-Config",
                 "container": "/config"
             },{
-                "bind": "/var/lib/docker/volumes/cloud9/code",
+                "bind": "/var/lib/docker/volumes/Cloud9-Code",
                 "container": "/code"
             },{
-                "bind": "/var/lib/docker/volumes/cloud9/docker.sock",
+                "bind": "/var/run/docker.sock",
                 "container": "/var/run/docker.sock"
             }],
         "env": [{
@@ -763,57 +863,6 @@
                 "Development"
             ]
     },{
-        "title": "Code-Server",
-        "description": "[Code-Server](https://coder.com) is VS Code running on a remote server, accessible through the browser. - Code on your Chromebook, tablet, and laptop with a consistent dev environment. - If you have a Windows or Mac workstation, more easily develop for Linux. - Take advantage of large cloud servers to speed up tests, compilations, downloads, and more. - Preserve battery life when you're on the go. - All intensive computation runs on your server. - You're no longer running excess instances of Chrome.",
-        "note": "Portainer App Templates by <a href='https://www.technorabilia.com' target='_blank'>Technorabilia</a> based on data provided by <a href='https://www.linuxserver.io' target='_blank'>LinuxServer.io</a>.</p><p>Don't forget to create the volume directories on the host file system.</p><p>mkdir -p /volume1/docker/code-server/config</p>",
-        "logo": "https://raw.githubusercontent.com/linuxserver/docker-templates/master/linuxserver.io/img/code-server-banner.png",
-        "platform": "linux",
-        "type": 1,
-        "name": "Code-Server",
-        "image": "linuxserver/code-server:latest",
-        "restart_policy": "unless-stopped",
-        "ports": [
-                "8443:8443/tcp"
-            ],
-        "volumes": [{
-                "bind": "/var/lib/docker/volumes/code-server/config",
-                "container": "/config"
-            }],
-        "env": [{
-                "default": "password",
-                "description": "Optional web gui password, if `PASSWORD` or `HASHED_PASSWORD` is not provided, there will be no auth.",
-                "label": "PASSWORD",
-                "name": "PASSWORD"
-            },{
-                "default": "",
-                "description": "Optional web gui password, overrides `PASSWORD`, instructions on how to create it is below.",
-                "label": "HASHED_PASSWORD",
-                "name": "HASHED_PASSWORD"
-            },{
-                "default": "password",
-                "description": "If this optional variable is set, user will have sudo access in the code-server terminal with the specified password.",
-                "label": "SUDO_PASSWORD",
-                "name": "SUDO_PASSWORD"
-            },{
-                "default": "",
-                "description": "Optionally set sudo password via hash (takes priority over `SUDO_PASSWORD` var). Format is `$type$salt$hashed`.",
-                "label": "SUDO_PASSWORD_HASH",
-                "name": "SUDO_PASSWORD_HASH"
-            },{
-                "default": "code-server.my.domain",
-                "description": "If this optional variable is set, this domain will be proxied for subdomain proxying. See [Documentation](https://github.com/cdr/code-server/blob/master/docs/FAQ.md#sub-domains)",
-                "label": "PROXY_DOMAIN",
-                "name": "PROXY_DOMAIN"
-            },{
-                "default": "/config/workspace",
-                "description": "If this optional variable is set, code-server will open this directory by default",
-                "label": "DEFAULT_WORKSPACE",
-                "name": "DEFAULT_WORKSPACE"
-            }],
-        "categories": [
-                "Development"
-            ]
-    },{
         "title": "Codiad",
         "description": "Codiad is a web-based IDE framework with a small footprint and minimal requirements.",
         "logo": "https://raw.githubusercontent.com/Qballjos/portainer_templates/master/Images/codiad-icon.png",
@@ -826,7 +875,7 @@
                 "90:80/tcp"
             ],
         "volumes": [{
-                "bind": "/var/lib/docker/volumes/Codiad/config",
+                "bind": "/var/lib/docker/volumes/Codiad",
                 "container": "/config"
             }],
         "categories": [
@@ -847,7 +896,7 @@
                 "3011:3000/tcp"
             ],
         "volumes": [{
-                "bind": "/var/lib/docker/volumes/digikam/config",
+                "bind": "/var/lib/docker/volumes/Digikam",
                 "container": "/config"
             }],
         "env": [{
@@ -873,7 +922,7 @@
                 "91:80/tcp"
             ],
         "volumes": [{
-                "bind": "/var/lib/docker/volumes/docker-compose/config",
+                "bind": "/var/lib/docker/volumes/Docker-Compose",
                 "container": "/config"
             }],
         "categories": [
@@ -894,7 +943,7 @@
                 "445:443/tcp"
             ],
         "volumes": [{
-                "bind": "/var/lib/docker/volumes/dokuwiki/config",
+                "bind": "/var/lib/docker/volumes/DokuWiki",
                 "container": "/config"
             }],
         "categories": [
@@ -916,7 +965,7 @@
                 "1443:1443/tcp"
             ],
         "volumes": [{
-                "bind": "/var/lib/docker/volumes/domoticz/config",
+                "bind": "/var/lib/docker/volumes/Domoticz",
                 "container": "/config"
             }],
         "env": [{
@@ -942,10 +991,10 @@
                 "3012:3000/tcp"
             ],
         "volumes": [{
-                "bind": "/var/lib/docker/volumes/doublecommander/config",
+                "bind": "/var/lib/docker/volumes/DoubleCommander-Config",
                 "container": "/config"
             },{
-                "bind": "/var/lib/docker/volumes/doublecommander/data",
+                "bind": "/var/lib/docker/volumes/DoubleCommander-Data",
                 "container": "/data"
             }],
         "categories": [
@@ -962,7 +1011,7 @@
         "image": "linuxserver/duckdns:latest",
         "restart_policy": "unless-stopped",
         "volumes": [{
-                "bind": "/var/lib/docker/volumes/duckdns/config",
+                "bind": "/var/lib/docker/volumes/DuckDNS",
                 "container": "/config"
             }],
         "env": [{
@@ -980,6 +1029,21 @@
                 "description": "Set to `true` to log to file (also need to map /config).",
                 "label": "LOG_FILE",
                 "name": "LOG_FILE"
+            },{
+                "default": "1000",
+                "description": "PUID",
+                "label": "PUID",
+                "name": "PUID"
+            },{
+                "default": "1000",
+                "description": "PGID",
+                "label": "PGID",
+                "name": "PGID"
+            },{
+                "default": "Etc/UTC",
+                "description": "TZ",
+                "label": "TZ",
+                "name": "TZ"
             }],
         "categories": [
                 "database"
@@ -991,14 +1055,14 @@
         "platform": "linux",
         "type": 1,
         "name": "ElasticSearch",
-        "image": "elasticsearch:latest",
+        "image": "elasticsearch:8.7.1",
         "restart_policy": "unless-stopped",
         "ports": [
-                "9200/tcp",
-                "9300/tcp"
+                "9200:9200/tcp",
+                "9300:9300/tcp"
             ],
         "volumes": [{
-                "bind": "/var/lib/docker/volumes/elasticsearch/data",
+                "bind": "/var/lib/docker/volumes/ElasticSearch",
                 "container": "/usr/share/elasticsearch/data"
             }],
         "categories": [
@@ -1020,7 +1084,7 @@
                 "4001:4001/tcp"
             ],
         "volumes": [{
-                "bind": "/var/lib/docker/volumes/emulatorjs/data",
+                "bind": "/var/lib/docker/volumes/EmulatorJS",
                 "container": "/data"
             }],
         "env": [{
@@ -1039,22 +1103,22 @@
         "logo": "https://portainer-io-assets.sfo2.digitaloceanspaces.com/logos/gitlab_ce.png",
         "platform": "linux",
         "type": 1,
-        "name": "Gitlab CE",
+        "name": "Gitlab",
         "image": "gitlab/gitlab-ce:latest",
         "restart_policy": "unless-stopped",
         "ports": [
-                "93/tcp",
-                "444/tcp",
-                "22/tcp"
+                "93:93/tcp",
+                "444:444/tcp",
+                "22:22/tcp"
             ],
         "volumes": [{
-                "bind": "/var/lib/docker/volumes/gitlab/etc",
+                "bind": "/var/lib/docker/volumes/Gitlab-ETC",
                 "container": "/etc/gitlab"
             },{
-                "bind": "/var/lib/docker/volumes/gitlab/log",
+                "bind": "/var/lib/docker/volumes/Gitlab-Log",
                 "container": "/var/log/gitlab"
             },{
-                "bind": "/var/lib/docker/volumes/gitlab/opt",
+                "bind": "/var/lib/docker/volumes/Gitlab-OPT",
                 "container": "/var/opt/gitlab"
             }],
         "categories": [
@@ -1071,14 +1135,53 @@
         "image": "httpd:latest",
         "restart_policy": "unless-stopped",
         "ports": [
-                "87/tcp"
+                "87:80/tcp"
             ],
         "volumes": [{
-                "bind": "/var/lib/docker/volumes/Httpd/htdocs",
+                "bind": "/var/lib/docker/volumes/Httpd",
                 "container": "/usr/local/apache2/htdocs/"
             }],
         "categories": [
                 "webserver"
+            ]
+    },{
+        "title": "IT Tools",
+        "description": "IT Tools",
+        "logo": "",
+        "platform": "linux",
+        "type": 1,
+        "name": "IT-Tools",
+        "image": "corentinth/it-tools:latest",
+        "restart_policy": "unless-stopped",
+        "ports": [
+                "8082:80/tcp"
+            ],
+        "categories": [
+                "Other"
+            ]
+    },{
+        "title": "NGINX",
+        "description": "[Nginx Proxy Manager] enables you to easily forward to your websites running at home or otherwise, including free SSL, without having to know too much about Nginx or Letsencrypt.",
+        "logo": "https://raw.githubusercontent.com/Qballjos/portainer_templates/master/Images/proxy_mgr.png",
+        "platform": "linux",
+        "type": 1,
+        "name": "NGINX",
+        "image": "jc21/nginx-proxy-manager",
+        "restart_policy": "unless-stopped",
+        "ports": [
+                "80:80/tcp",
+                "81:81/tcp",
+                "443:443/tcp"
+            ],
+        "volumes": [{
+                "bind": "/var/lib/docker/volumes/NGINX/Data",
+                "container": "/data"
+            },{
+                "bind": "/var/lib/docker/volumes/NGINX/LetsEncrypt",
+                "container": "/etc/letsencrypt"
+            }],
+        "categories": [
+                "Need"
             ]
     },{
         "title": "MStream",
@@ -1094,10 +1197,10 @@
                 "3014:3000/tcp"
             ],
         "volumes": [{
-                "bind": "/var/lib/docker/volumes/mstream/config",
+                "bind": "/var/lib/docker/volumes/MStream-Config",
                 "container": "/config"
             },{
-                "bind": "/var/lib/docker/volumes/mstream/music",
+                "bind": "/var/lib/docker/volumes/MStream-Music",
                 "container": "/music"
             }],
         "categories": [
@@ -1117,7 +1220,7 @@
                 "96:80/tcp"
             ],
         "volumes": [{
-                "bind": "/var/lib/docker/volumes/muximux/config",
+                "bind": "/var/lib/docker/volumes/Muximux",
                 "container": "/config"
             }],
         "categories": [
@@ -1129,53 +1232,41 @@
         "logo": "https://raw.githubusercontent.com/thesugarat/portainer_templates-1/master/Images/openvpn-as-icon.png",    
         "platform": "linux",
         "type": 1,
-        "name": "OpenVPN-AS",
+        "name": "OpenVPN",
         "image": "linuxserver/openvpn-as:latest",
         "restart_policy": "unless-stopped",
         "ports": [
-                "943/tcp",
-                "9443/tcp",
-                "1194/udp"
+                "943:943/tcp",
+                "9444:9443/tcp",
+                "1194:1194/udp"
             ],
         "volumes": [{
-                "bind": "/var/lib/docker/volumes/openvpn/config",
+                "bind": "/var/lib/docker/volumes/OpenVPN",
                 "container": "/config"
             }],
-        "env": [{
-                "label": "INTERFACE",
-                "name": "INTERFACE",
-                "set": "eth0"
-            }],
+            "env": [{
+                    "default": "eth0",
+                    "description": "INTERFACE",
+                    "label": "INTERFACE",
+                    "name": "INTERFACE"
+                },{
+                    "default": "1000",
+                    "description": "PUID",
+                    "label": "PUID",
+                    "name": "PUID"
+                },{
+                    "default": "1000",
+                    "description": "PGID",
+                    "label": "PGID",
+                    "name": "PGID"
+                },{
+                    "default": "Etc/UTC",
+                    "description": "TZ",
+                    "label": "TZ",
+                    "name": "TZ"
+                }],
         "category": [
                 "Other"
-            ]
-    },{
-        "title": "Pi-Hole",
-        "description": "A Linux network-level advertisement and Internet tracker blocking application which acts as a DNS sinkhole.",
-        "note": "When the installation is complete, navigate to your.ip.goes.here:1010/admin. Follow the article <a href='https://medium.com/@niktrix/getting-rid-of-systemd-resolved-consuming-port-53-605f0234f32f'>here</a> if you run into issues binding to port 53.",
-        "logo": "https://raw.githubusercontent.com/Qballjos/portainer_templates/master/Images/pihole.png",
-        "platform": "linux",
-        "type": 1,
-        "name": "PiHole",
-        "image": "pihole/pihole:latest",
-        "restart_policy": "unless-stopped",
-        "ports": [
-                "54:53/tcp",
-                "54:53/udp",
-                "67:67/udp",
-                "97:80/tcp",
-                "4443:443/tcp"
-            ],
-        "volumes": [{
-                "bind": "/var/lib/docker/volumes/PiHole/config",
-                "container": "/etc/pihole"
-            },{
-                "bind": "/var/lib/docker/volumes/PiHole/DNS",
-                "container": "/etc/dnsmasq.d"
-            }],
-        "categories": [
-                "Other",
-                "Tools"
             ]
     },{
         "title": "Pylon",
@@ -1192,10 +1283,10 @@
             ],
         "volumes": [{
                 "container": "/config",
-                "bind": "/var/lib/docker/volumes/pylon/config"
+                "bind": "/var/lib/docker/volumes/Pylon-Config"
             },{
                 "container": "/code",
-                "bind": "/var/lib/docker/volumes/pylon/code"
+                "bind": "/var/lib/docker/volumes/Pylon-Code"
             }],
         "env": [{
                 "name": "GITURL",
@@ -1224,7 +1315,7 @@
         "logo": "https://raw.githubusercontent.com/linuxserver/docker-templates/master/linuxserver.io/img/rdesktop.png",
         "platform": "linux",
         "type": 1,
-        "name": "Rdesktop",
+        "name": "RDesktop",
         "image": "linuxserver/rdesktop:latest",
         "restart_policy": "unless-stopped",
         "privileged": true,
@@ -1232,31 +1323,10 @@
                 "3389:3389/tcp"
             ],
         "volumes": [{
-                "bind": "/var/lib/docker/volumes/rdesktop/docker.sock",
+                "bind": "/var/run/docker.sock",
                 "container": "/var/run/docker.sock"
             },{
-                "bind": "/var/lib/docker/volumes/rdesktop/config",
-                "container": "/config"
-            }],
-        "categories": [
-                "Other",
-                "Tools"
-            ]
-    },{
-        "title": "Remmina",
-        "description": "[Remmina](https://remmina.org/) is a remote desktop client written in GTK, aiming to be useful for system administrators and travellers, who need to work with lots of remote computers in front of either large or tiny screens. Remmina supports multiple network protocols, in an integrated and consistent user interface. Currently RDP, VNC, SPICE, NX, XDMCP, SSH and EXEC are supported.",
-        "note": "Portainer App Templates by <a href='https://www.technorabilia.com' target='_blank'>Technorabilia</a> based on data provided by <a href='https://www.linuxserver.io' target='_blank'>LinuxServer.io</a>.</p><p>Don't forget to create the volume directories on the host file system.</p><p>mkdir -p /volume1/docker/remmina/config</p>",
-        "logo": "https://raw.githubusercontent.com/linuxserver/docker-templates/master/linuxserver.io/img/remmina-icon.png",
-        "platform": "linux",
-        "type": 1,
-        "name": "Remmina",
-        "image": "linuxserver/remmina:latest",
-        "restart_policy": "unless-stopped",
-        "ports": [
-                "3005:3000/tcp"
-            ],
-        "volumes": [{
-                "bind": "/var/lib/docker/volumes/remmina/config",
+                "bind": "/var/lib/docker/volumes/RDesktop",
                 "container": "/config"
             }],
         "categories": [
@@ -1273,13 +1343,13 @@
         "image": "linuxserver/smokeping:latest",
         "restart_policy": "unless-stopped",
         "ports": [
-		"84/tcp"
+		    "8084:80/tcp"
 	    ],
         "volumes": [{
-                "bind": "/var/lib/docker/volumes/smokeping/config",
+                "bind": "/var/lib/docker/volumes/SmokePing-Config",
 		"container": "/config"
 	    },{
-                "bind": "/var/lib/docker/volumes/smokeping/data",
+                "bind": "/var/lib/docker/volumes/SmokePing-Data",
 		"container": "/data"
  	    }],
         "category": [
@@ -1295,36 +1365,15 @@
         "image": "solr:latest",
         "restart_policy": "unless-stopped",
         "ports": [
-                "8983/tcp"
+                "8983:8983/tcp"
             ],
         "volumes": [{
-            	"bind": "/var/lib/docker/volumes/Solr/mydata",
+            	"bind": "/var/lib/docker/volumes/Solr",
             	"container": "/opt/solr/mydata"
 	    }],
         "categories": [
                	"search-engine"
             ]       
-    },{
-        "title": "Taisun",
-        "description": "[Taisun](https://www.taisun.io/) is an application for a Docker enabled device with an emphasis on providing a web based interface for managing a single server. Taisun allows you to: - Deploy and manage web based virtual desktops. - Deploy Taisun specific stacks of applications - Browse available images on popular Docker repositories - Import a Docker project from any git repository and start developing on your choice of web based IDE or full Linux desktop - Spinup a developer container based on popular frameworks and work from a web based IDE - Single click remote server access to Taisun and your Docker applications",
-        "note": "Portainer App Templates by <a href='https://www.technorabilia.com' target='_blank'>Technorabilia</a> based on data provided by <a href='https://www.linuxserver.io' target='_blank'>LinuxServer.io</a>.</p><p>Don't forget to create the volume directories on the host file system.</p><p></p>",
-        "logo": "https://raw.githubusercontent.com/Taisun-Docker/taisun/master/public/favicon/apple-icon-180x180.png",
-        "platform": "linux",
-        "type": 1,
-        "name": "Taisun",
-        "image": "linuxserver/taisun:latest",
-        "restart_policy": "unless-stopped",
-        "ports": [
-                "3004:3000/tcp"
-            ],
-        "volumes": [{
-                "container": "/var/run/docker.sock",
-                "bind": "/var/lib/docker/volumes/Taisun/docker.sock"
-            }],
-        "categories": [
-                "Other",
-                "Tools"
-            ]
     },{
         "title": "YOURLS",
         "description": "YOURLS is a set of PHP scripts that will allow you to run Your Own URL Shortener. You'll have full control over your data, detailed stats, analytics, plugins, and more. It's free.",
@@ -1369,14 +1418,33 @@
             },{
                 "name": "YOURLS_USER",
                 "label": "YOURLS_USER",
-                "default": "example_username",
+                "default": "admin",
                 "description": "Username for YOURLS"
             },{
                 "name": "YOURLS_PASS",
                 "label": "YOURLS_PASS",
-                "default": "example_password",
+                "default": "admin",
                 "description": "Password for YOURLS"
             }],
+        "categories": [
+                "Other"
+            ]
+    },{
+        "title": "Website",
+        "description": "PHP is a server-side scripting language designed for web development, but which can also be used as a general-purpose programming language. PHP can be added to straight HTML or it can be used with a variety of templating engines and web frameworks. PHP code is usually processed by an interpreter, which is either implemented as a native module on the web-server or as a common gateway interface (CGI).",
+        "logo": "https://raw.githubusercontent.com/docker-library/docs/01c12653951b2fe592c1f93a13b4e289ada0e3a1/php/logo.png",
+        "platform": "linux",
+        "type": 1,
+        "name": "Website",
+        "image": "php:8.1.3RC1-apache",
+        "restart_policy": "unless-stopped",
+        "ports": [
+                "90:80/tcp"
+            ],
+        "volumes": [{
+            "bind": "/var/lib/docker/volumes/Website",
+            "container": "/var/www/html"
+        }],
         "categories": [
                 "Other"
             ]
@@ -1394,10 +1462,10 @@
                 "51820:51820/udp"
             ],
         "volumes": [{
-                "bind": "/var/lib/docker/volumes/wireguard/config",
+                "bind": "/var/lib/docker/volumes/WireGuard-Config",
                 "container": "/config"
             },{
-                "bind": "/var/lib/docker/volumes/wireguard/modules",
+                "bind": "/var/lib/docker/volumes/WireGuard-Modules",
                 "container": "/lib/modules"
             }],
         "env": [{
@@ -1432,7 +1500,7 @@
                 "name": "ALLOWEDIPS"
             }],
         "categories": [
-                "Utilities"
+                "VPN"
             ]
     },{
         "title": "WireShark",
@@ -1445,15 +1513,54 @@
         "image": "linuxserver/wireshark:latest",
         "restart_policy": "unless-stopped",
         "network": "host",
+        "security_opt": ["seccomp=unconfined"],
+        "cap_add": ["NET_ADMIN"],
         "ports": [
                 "3015:3000/tcp"
             ],
         "volumes": [{
-                "bind": "/var/lib/docker/volumes/wireshark/config",
+                "bind": "/var/lib/docker/volumes/WireShark",
                 "container": "/config"
+        },{
+                "bind": "/var/run/docker.sock",
+                "container": "/var/run/docker.sock"
+            },{
+                "bind": "/home/user/docker-data",
+                "container": "/var/lib/docker"
+            }],
+        "env": [{
+                "default": "admin",
+                "description": "CUSTOM_USER",
+                "label": "CUSTOM_USER",
+                "name": "CUSTOM_USER"
+            },{
+                "default": "admin",
+                "description": "PASSWORD",
+                "label": "PASSWORD",
+                "name": "PASSWORD"
+            },{
+                "default": "WireShark",
+                "description": "TITLE",
+                "label": "TITLE",
+                "name": "TITLE"
+            },{
+                "default": "1000",
+                "description": "PUID",
+                "label": "PUID",
+                "name": "PUID"
+            },{
+                "default": "1000",
+                "description": "PGID",
+                "label": "PGID",
+                "name": "PGID"
+            },{
+                "default": "Etc/UTC",
+                "description": "TZ",
+                "label": "TZ",
+                "name": "TZ"
             }],
         "categories": [
-                "Other",
+                "Security",
                 "Tools"
             ]
     },{
@@ -1469,12 +1576,22 @@
                 "5001:5000/tcp"
             ],
         "volumes": [{
-                "bind": "/var/lib/docker/volumes/Whoogle/config",
+                "bind": "/var/lib/docker/volumes/Whoogle",
                 "container": "/config"
             }],
+            "env": [{
+                    "default": "admin",
+                    "description": "WHOOGLE_USER",
+                    "label": "WHOOGLE_USER",
+                    "name": "WHOOGLE_USER"
+                },{
+                    "default": "admin",
+                    "description": "WHOOGLE_PASS",
+                    "label": "WHOOGLE_PASS",
+                    "name": "WHOOGLE_PASS"
+                }],
         "categories": [
-                "Other",
-                "Tools"
+                "Search"
             ]
     }
 ]}
