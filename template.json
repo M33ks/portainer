@@ -1,3 +1,4 @@
+
 {
     "version": "2",
     "templates": [{
@@ -14,7 +15,7 @@
                     "3306:3306/tcp"
             ],
         "volumes": [{
-                "bind": "/var/lib/docker/volumes/mariadb/config",
+                "bind": "/var/lib/docker/volumes/MariaDB",
                 "container": "/config"
             }],
         "categories": [
@@ -34,7 +35,7 @@
                 "88:80/tcp"
             ],
         "volumes": [{
-                "bind": "/var/lib/docker/volumes/phpmyadmin/config",
+                "bind": "/var/lib/docker/volumes/PHPMyAdmin",
                 "container": "/config"
             }],
         "env": [{
@@ -42,9 +43,316 @@
                 "description": "IP of the MariaDB",
                 "label": "PMA_HOSTS",
                 "name": "PMA_HOSTS"
+            },{
+                "default": "99999999999999",
+                "description": "Max Upload File Size",
+                "label": "UPLOAD_LIMIT",
+                "name": "UPLOAD_LIMIT"
             }],
         "categories": [
                 "Need"
+            ]
+    },{
+        "title": "MediaWiki",
+        "description": "[MediaWiki] is free and open-source wiki software. Originally developed by Magnus Manske and improved by Lee Daniel Crocker, it runs on many websites, including Wikipedia, Wiktionary and Wikimedia Commons. It is written in the PHP programming language and stores the contents into a database. Like WordPress, which is based on a similar licensing and architecture, it has become the dominant software in its category.",
+        "note": "The default login will be guacadmin/guacadmin. It is common practice to add a new admin user and remove the default user for Guacamole.",
+        "logo": "https://raw.githubusercontent.com/docker-library/docs/27b797857efd9253c0981c09696f579a167062d4/mediawiki/logo.svg",
+        "platform": "linux",
+        "type": 1,
+        "name": "MediaWiki",
+        "image": "mediawiki:latest",
+        "restart_policy": "unless-stopped",
+        "ports": [
+                "89:80/tcp"
+            ],
+        "volumes": [{
+                "bind": "/var/lib/docker/volumes/MediaWiki",
+                "container": "/var/www/html"
+            }],
+        "categories": [
+                "Other",
+                "Wiki"
+            ]
+    },{
+        "title": "Hue",
+        "description": "A Container running Hue",
+        "logo": "",
+        "platform": "linux",
+        "type": 1,
+        "name": "Hue",
+        "image": "gethue/hue:latest",
+        "restart_policy": "unless-stopped",
+        "ports": [
+                "8888:8888/tcp"
+            ],
+        "volumes": [{
+                "bind": "/var/lib/docker/volumes/Hue",
+                "container": "usr/share/hue/desktop/conf"
+            }],
+        "categories": [
+                "Need"
+            ]
+    },{
+        "title": "Firefox",
+        "description": "[Firefox](https://www.mozilla.org/en-US/firefox/) Browser, also known as Mozilla Firefox or simply Firefox, is a free and open-source web browser developed by the Mozilla Foundation and its subsidiary, the Mozilla Corporation. Firefox uses the Gecko layout engine to render web pages, which implements current and anticipated web standards.",
+        "note": "Portainer App Templates by <a href='https://www.technorabilia.com' target='_blank'>Technorabilia</a> based on data provided by <a href='https://www.linuxserver.io' target='_blank'>LinuxServer.io</a>.</p><p>Don't forget to create the volume directories on the host file system.</p><p>mkdir -p /volume1/docker/firefox/config</p>",
+        "logo": "https://raw.githubusercontent.com/linuxserver/docker-templates/master/linuxserver.io/img/firefox-logo.png",
+        "platform": "linux",
+        "type": 1,
+        "name": "Firefox",
+        "image": " jlesage/firefox",
+        "restart_policy": "unless-stopped",
+        "ports": [
+                "5800:5800/tcp"
+            ],
+        "volumes": [{
+            "bind": "/var/lib/docker/volumes/Firefox",
+            "container": "/config"
+        }],
+        "env": [{
+            "default": "VNC PASSWORD",
+            "description": "VNC_PASSWORD",
+            "label": "VNC_PASSWORD",
+            "name": "VNC_PASSWORD"
+        },{
+            "default": "1",
+            "description": "DARK_MODE",
+            "label": "DARK_MODE",
+            "name": "DARK_MODE"
+    }],
+        "categories": [
+                "Need"
+            ]
+    },{
+        "title": "Ubuntu",
+        "description": "[Webtop](https://github.com/linuxserver/docker-webtop) - Alpine, Ubuntu, Fedora, and Arch based containers containing full desktop environments in officially supported flavors accessible via any modern web browser.",
+        "note": "Portainer App Templates by <a href='https://www.technorabilia.com' target='_blank'>Technorabilia</a> based on data provided by <a href='https://www.linuxserver.io' target='_blank'>LinuxServer.io</a>.</p><p>Don't forget to create the volume directories on the host file system.</p><p>mkdir -p /volume1/docker/webtop/config<br></p>",
+        "logo": "https://raw.githubusercontent.com/linuxserver/docker-templates/master/linuxserver.io/img/webtop-logo.png",
+        "platform": "linux",
+        "type": 1,
+        "name": "Ubuntu",
+        "image": "linuxserver/webtop:ubuntu-kde",
+        "restart_policy": "unless-stopped",
+        "privileged": true,
+        "ports": [
+                "3002:3000/tcp"
+            ],
+        "volumes": [{
+                "bind": "/var/lib/docker/volumes/Ubuntu",
+                "container": "/config"
+            },{
+                "bind": "/var/lib/docker/volumes/webtop/docker.sock",
+                "container": "/var/run/docker.sock"
+            }],
+        "env": [{
+                "default": "1000",
+                "description": "PUID",
+                "label": "PUID",
+                "name": "PUID"
+            },{
+                "default": "1000",
+                "description": "PGID",
+                "label": "PGID",
+                "name": "PGID"
+            },{
+                "default": "Etc/UTC",
+                "description": "TZ",
+                "label": "TZ",
+                "name": "TZ"
+            },{
+                "default": "Page Title",
+                "description": "TITLE",
+                "label": "TITLE",
+                "name": "TITLE"
+            },{
+                "default": "Admin",
+                "description": "CUSTOM_USER",
+                "label": "CUSTOM_USER",
+                "name": "CUSTOM_USER"
+            },{
+                "default": "Admin",
+                "description": "PASSWORD",
+                "label": "PASSWORD",
+                "name": "PASSWORD"
+            }],
+         "categories": [
+                "Need"
+            ]
+    },{
+        "title": "Uptime Kuma",
+        "description": "It is a self-hosted monitoring tool like Uptime Robot",
+        "logo": "https://images.opencollective.com/uptime-kuma/29c5113/logo/256.png",
+        "platform": "linux",
+        "type": 1,
+        "name": "Uptime-Kuma",
+        "image": "louislam/uptime-kuma:latest",
+        "restart_policy": "always",
+        "ports": [
+                "3001:3001/tcp"
+            ],
+        "volumes": [{
+                "bind": "/var/lib/docker/volumes/UptimeKuma",
+                "container": "/app/data"
+            }],
+        "categories": [
+                "Need"
+            ]
+    },{
+        "title": "Guacamole",
+        "description": "[Guacamole] is A clientless remote desktop gateway.",
+        "note": "The default login will be guacadmin/guacadmin. It is common practice to add a new admin user and remove the default user for Guacamole.",
+        "logo": "https://raw.githubusercontent.com/Qballjos/portainer_templates/master/Images/guacamole.png",
+        "platform": "linux",
+        "type": 1,
+        "name": "Guacamole",
+        "image": "oznu/guacamole:latest",
+        "restart_policy": "unless-stopped",
+        "ports": [
+                "8080:8080/tcp"
+            ],
+        "volumes": [{
+                "bind": "/var/lib/docker/volumes/Guacamole",
+                "container": "/config"
+            }],
+        "categories": [
+                "Need"
+            ]
+    },{
+        "title": "Dozzle",
+        "description": "[Guacamole] is A clientless remote desktop gateway.",
+        "note": "The default login will be guacadmin/guacadmin. It is common practice to add a new admin user and remove the default user for Guacamole.",
+        "logo": "https://raw.githubusercontent.com/Qballjos/portainer_templates/master/Images/guacamole.png",
+        "platform": "linux",
+        "type": 1,
+        "name": "Dozzle",
+        "image": "amir20/dozzle",
+        "restart_policy": "unless-stopped",
+        "ports": [
+                "8081:8080/tcp"
+            ],
+        "volumes": [{
+                "bind": "/var/run/docker.sock",
+                "container": "/var/run/docker.sock"
+            }],
+            "env": [{
+                    "default": "username ",
+                    "description": "username ",
+                    "label": "username ",
+                    "name": "username "
+                },{
+                    "default": "password ",
+                    "description": "password ",
+                    "label": "password ",
+                    "name": "password "
+                }],
+        "categories": [
+                "Need"
+            ]
+    },{
+        "title": "Splunk",
+        "description": "Splunk",
+        "note": "Run Splunk on Docker",
+        "logo": "",
+        "platform": "linux",
+        "type": 1,
+        "name": "Splunk",
+        "image": "splunk/splunk:latest",
+        "restart_policy": "unless-stopped",
+        "ports": [
+                "8000:8000/tcp",
+                "8088:8088/tcp",
+                "8089:8089/tcp",
+                "8191:8191/tcp",
+                "9887:9887/tcp",
+                "9997:9997/tcp"
+            ],
+        "volumes": [{
+                "bind": "/var/run/docker.sock",
+                "container": "/var/run/docker.sock"
+            }],
+            "env": [{
+                    "default": "--accept-license ",
+                    "description": "SPLUNK_START_ARGS ",
+                    "label": "SPLUNK_START_ARGS ",
+                    "name": "SPLUNK_START_ARGS "
+                },{
+                    "default": "SPLUNK_PASSWORD ",
+                    "description": "SPLUNK_PASSWORD ",
+                    "label": "SPLUNK_PASSWORD ",
+                    "name": "SPLUNK_PASSWORD "
+                }],
+        "categories": [
+                "Need"
+            ]
+    },{
+        "title": "OpenVSCode-Server",
+        "description": "[Openvscode-server](https://github.com/gitpod-io/openvscode-server) provides a version of VS Code that runs a server on a remote machine and allows access through a modern web browser.",
+        "note": "Portainer App Templates by <a href='https://www.technorabilia.com' target='_blank'>Technorabilia</a> based on data provided by <a href='https://www.linuxserver.io' target='_blank'>LinuxServer.io</a>.</p><p>Don't forget to create the volume directories on the host file system.</p><p>mkdir -p /volume1/docker/openvscode-server/config</p>",
+        "logo": "https://raw.githubusercontent.com/linuxserver/docker-templates/master/linuxserver.io/img/openvscode-server-logo.png",
+        "platform": "linux",
+        "type": 1,
+        "name": "VSCode",
+        "image": "linuxserver/openvscode-server:latest",
+        "restart_policy": "unless-stopped",
+        "ports": [
+                "8443:8443/tcp"
+            ],
+        "volumes": [{
+                "bind": "/var/lib/docker/volumes/VSCode",
+                "container": "/config"
+            }],
+        "env": [{
+            "default": "PASSWORD",
+            "description": "To Access the site",
+            "label": "PASSWORD",
+            "name": "PASSWORD"
+        },{
+            "default": "SUDO_PASSWORD",
+            "description": "For Sudo Commands",
+            "label": "SUDO_PASSWORD",
+            "name": "SUDO_PASSWORD"
+        },{
+            "default": "1000",
+            "description": "PUID",
+            "label": "PUID",
+            "name": "PUID"
+        },{
+            "default": "1000",
+            "description": "PGID",
+            "label": "PGID",
+            "name": "PGID"
+        },{
+            "default": "Etc/UTC",
+            "description": "TZ",
+            "label": "TZ",
+            "name": "TZ"
+        },{
+            "default": "/config/workspace",
+            "description": "DEFAULT_WORKSPACE",
+            "label": "DEFAULT_WORKSPACE",
+            "name": "DEFAULT_WORKSPACE"
+        }],
+        "categories": [
+                "Other"
+            ]
+    },{
+        "title": "Website",
+        "description": "PHP is a server-side scripting language designed for web development, but which can also be used as a general-purpose programming language. PHP can be added to straight HTML or it can be used with a variety of templating engines and web frameworks. PHP code is usually processed by an interpreter, which is either implemented as a native module on the web-server or as a common gateway interface (CGI).",
+        "logo": "https://raw.githubusercontent.com/docker-library/docs/01c12653951b2fe592c1f93a13b4e289ada0e3a1/php/logo.png",
+        "platform": "linux",
+        "type": 1,
+        "name": "Website",
+        "image": "php:8.1.3RC1-apache",
+        "restart_policy": "unless-stopped",
+        "ports": [
+                "90:80/tcp"
+            ],
+        "volumes": [{
+            "bind": "/var/lib/docker/volumes/Website",
+            "container": "/var/www/html"
+        }],
+        "categories": [
+                "Other"
             ]
     },{
         "title": "NGINX",
@@ -61,75 +369,212 @@
                 "443:443/tcp"
             ],
         "volumes": [{
-                "bind": "/var/lib/docker/volumes/nginx/data",
+                "bind": "/var/lib/docker/volumes/NGINX/Data",
                 "container": "/data"
             },{
-                "bind": "/var/lib/docker/volumes/nginx/letsencrypt",
+                "bind": "/var/lib/docker/volumes/NGINX/LetsEncrypt",
                 "container": "/etc/letsencrypt"
             }],
-        "env": [{
-                "default": "/data/database.sqlite",
-                "label": "DB_SQLITE_FILE",
-                "name": "DB_SQLITE_FILE"
-            }],
         "categories": [
-                "Proxy",
-                "Tools"
+                "Need"
             ]
     },{
-        "title": "Guacamole",
-        "description": "[Guacamole] is A clientless remote desktop gateway.",
-        "note": "The default login will be guacadmin/guacadmin. It is common practice to add a new admin user and remove the default user for Guacamole.",
-        "logo": "https://raw.githubusercontent.com/Qballjos/portainer_templates/master/Images/guacamole.png",
-        "platform": "linux",
-        "type": 1,
-        "name": "Guacamole",
-        "image": "oznu/guacamole:latest",
-        "restart_policy": "unless-stopped",
-        "ports": [
-                "8080:8080/tcp"
-            ],
-        "volumes": [{
-                "bind": "/var/lib/docker/volumes/guacamole/config",
-                "container": "/config"
-            }],
-        "categories": [
-                "Other",
-                "Tools"
-            ]
-    },{
-        "title": "MediaWiki",
-        "description": "[MediaWiki] is free and open-source wiki software. Originally developed by Magnus Manske and improved by Lee Daniel Crocker, it runs on many websites, including Wikipedia, Wiktionary and Wikimedia Commons. It is written in the PHP programming language and stores the contents into a database. Like WordPress, which is based on a similar licensing and architecture, it has become the dominant software in its category.",
-        "note": "The default login will be guacadmin/guacadmin. It is common practice to add a new admin user and remove the default user for Guacamole.",
-        "logo": "https://raw.githubusercontent.com/docker-library/docs/27b797857efd9253c0981c09696f579a167062d4/mediawiki/logo.svg",
-        "platform": "linux",
-        "type": 1,
-        "name": "MediaWiki",
-        "image": "mediawiki:latest",
-        "restart_policy": "unless-stopped",
-        "ports": [
-                "89:80/tcp"
-            ],
-        "volumes": [{
-                "bind": "/var/lib/docker/volumes/mediawiki/html",
-                "container": "/var/www/html"
-            }],
-        "categories": [
-                "Other",
-                "Wiki"
-            ]
-    },{
-        "title": "Website",
+        "title": "Chromium",
         "description": "PHP is a server-side scripting language designed for web development, but which can also be used as a general-purpose programming language. PHP can be added to straight HTML or it can be used with a variety of templating engines and web frameworks. PHP code is usually processed by an interpreter, which is either implemented as a native module on the web-server or as a common gateway interface (CGI).",
         "logo": "https://raw.githubusercontent.com/docker-library/docs/01c12653951b2fe592c1f93a13b4e289ada0e3a1/php/logo.png",
         "platform": "linux",
         "type": 1,
-        "name": "Website",
-        "image": "php:8.1.3RC1-apache",
+        "name": "Chromium",
+        "image": "linuxserver/chromium:latest",
         "restart_policy": "unless-stopped",
         "ports": [
-                "82:80/tcp"
+                "90:80/tcp"
             ],
+        "volumes": [{
+            "bind": "/var/lib/docker/volumes/Chrome",
+            "container": "/config"
+        }],
+        "env": [{
+            "default": "admin",
+            "description": "Username",
+            "label": "CUSTOM_USER",
+            "name": "CUSTOM_USER"
+        },{
+            "default": "admin",
+            "description": "To Access the site",
+            "label": "PASSWORD",
+            "name": "PASSWORD"
+        },{
+            "default": "1000",
+            "description": "PUID",
+            "label": "PUID",
+            "name": "PUID"
+        },{
+            "default": "1000",
+            "description": "PGID",
+            "label": "PGID",
+            "name": "PGID"
+        },{
+            "default": "Etc/UTC",
+            "description": "TZ",
+            "label": "TZ",
+            "name": "TZ"
+        },{
+            "default": "1gb",
+            "description": "shm-size",
+            "label": "shm-size",
+            "name": "shm-size"
+        }],
+        "categories": [
+                "Other"
+            ]
+    },{
+        "title": "Remina",
+        "description": "PHP is a server-side scripting language designed for web development, but which can also be used as a general-purpose programming language. PHP can be added to straight HTML or it can be used with a variety of templating engines and web frameworks. PHP code is usually processed by an interpreter, which is either implemented as a native module on the web-server or as a common gateway interface (CGI).",
+        "logo": "https://raw.githubusercontent.com/docker-library/docs/01c12653951b2fe592c1f93a13b4e289ada0e3a1/php/logo.png",
+        "platform": "linux",
+        "type": 1,
+        "name": "Remina",
+        "image": "linuxserver/remmina:latest",
+        "restart_policy": "unless-stopped",
+        "ports": [
+                "3003:3000/tcp"
+            ],
+        "volumes": [{
+            "bind": "/var/lib/docker/volumes/Remina",
+            "container": "/config"
+        }],
+        "env": [{
+            "default": "admin",
+            "description": "Username",
+            "label": "CUSTOM_USER",
+            "name": "CUSTOM_USER"
+        },{
+            "default": "admin",
+            "description": "To Access the site",
+            "label": "PASSWORD",
+            "name": "PASSWORD"
+        },{
+            "default": "1000",
+            "description": "PUID",
+            "label": "PUID",
+            "name": "PUID"
+        },{
+            "default": "1000",
+            "description": "PGID",
+            "label": "PGID",
+            "name": "PGID"
+        },{
+            "default": "Etc/UTC",
+            "description": "TZ",
+            "label": "TZ",
+            "name": "TZ"
+        }],
+        "categories": [
+                "Other"
+            ]
+    },{
+        "title": "NextCloud",
+        "description": "[Nextcloud](https://nextcloud.com/) gives you access to all your files wherever you are. Where are your photos and documents? With Nextcloud you pick a server of your choice, at home, in a data center or at a provider. And that is where your files will be. Nextcloud runs on that server, protecting your data and giving you access from your desktop or mobile devices. Through Nextcloud you also access, sync and share your existing data on that FTP drive at the office, a Dropbox or a NAS you have at home.",
+        "note": "Portainer App Templates by <a href='https://www.technorabilia.com' target='_blank'>Technorabilia</a> based on data provided by <a href='https://www.linuxserver.io' target='_blank'>LinuxServer.io</a>.</p><p>Don't forget to create the volume directories on the host file system.</p><p>mkdir -p /volume1/docker/nextcloud/config<br>mkdir -p /volume1/docker/nextcloud/data</p>",
+        "logo": "https://raw.githubusercontent.com/linuxserver/docker-templates/master/linuxserver.io/img/nextcloud-icon.png",
+        "platform": "linux",
+        "type": 1,
+        "name": "NextCloud",
+        "image": "linuxserver/nextcloud:latest",
+        "restart_policy": "unless-stopped",
+        "ports": [
+                "8443:443/tcp"
+            ],
+        "volumes": [{
+                "bind": "/var/lib/docker/volumes/NextCloud/Config",
+                "container": "/config"
+            },{
+                "bind": "/var/lib/docker/volumes/NextCloud/Data",
+                "container": "/data"
+            }],
+            "env": [{
+                "default": "1000",
+                "description": "PUID",
+                "label": "PUID",
+                "name": "PUID"
+            },{
+                "default": "1000",
+                "description": "PGID",
+                "label": "PGID",
+                "name": "PGID"
+            },{
+                "default": "Etc/UTC",
+                "description": "TZ",
+                "label": "TZ",
+                "name": "TZ"
+            }],
+        "categories": [
+                "Other"
+            ]
+    },{
+        "title": "IT Tools",
+        "description": "IT Tools",
+        "logo": "",
+        "platform": "linux",
+        "type": 1,
+        "name": "IT-Tools",
+        "image": "corentinth/it-tools:latest",
+        "restart_policy": "unless-stopped",
+        "ports": [
+                "8082:80/tcp"
+            ],
+        "categories": [
+                "Other"
+            ]
+    },{
+        "title": "Opera",
+        "description": "Opera",
+        "logo": "",
+        "platform": "linux",
+        "type": 1,
+        "name": "Opera",
+        "image": "linuxserver/opera:latest",
+        "restart_policy": "unless-stopped",
+        "ports": [
+                "3004:3000/tcp"
+            ],
+        "env": [{
+            "default": "admin",
+            "description": "Username",
+            "label": "CUSTOM_USER",
+            "name": "CUSTOM_USER"
+        },{
+            "default": "admin",
+            "description": "To Access the site",
+            "label": "PASSWORD",
+            "name": "PASSWORD"
+        },{
+            "default": "1000",
+            "description": "PUID",
+            "label": "PUID",
+            "name": "PUID"
+        },{
+            "default": "1000",
+            "description": "PGID",
+            "label": "PGID",
+            "name": "PGID"
+        },{
+            "default": "Etc/UTC",
+            "description": "TZ",
+            "label": "TZ",
+            "name": "TZ"
+        },{
+            "default": "1gb",
+            "description": "shm-size",
+            "label": "shm-size",
+            "name": "shm-size"
+        },{
+            "default": "seccomp=unconfined",
+            "description": "security-opt",
+            "label": "security-opt",
+            "name": "security-opt"
+        }],
         "categories": [
                 "Other"
             ]
@@ -594,26 +1039,6 @@
                 "Other"
             ]
     },{
-        "title": "Firefox",
-        "description": "[Firefox](https://www.mozilla.org/en-US/firefox/) Browser, also known as Mozilla Firefox or simply Firefox, is a free and open-source web browser developed by the Mozilla Foundation and its subsidiary, the Mozilla Corporation. Firefox uses the Gecko layout engine to render web pages, which implements current and anticipated web standards.",
-        "note": "Portainer App Templates by <a href='https://www.technorabilia.com' target='_blank'>Technorabilia</a> based on data provided by <a href='https://www.linuxserver.io' target='_blank'>LinuxServer.io</a>.</p><p>Don't forget to create the volume directories on the host file system.</p><p>mkdir -p /volume1/docker/firefox/config</p>",
-        "logo": "https://raw.githubusercontent.com/linuxserver/docker-templates/master/linuxserver.io/img/firefox-logo.png",
-        "platform": "linux",
-        "type": 1,
-        "name": "Firefox",
-        "image": "linuxserver/firefox:latest",
-        "restart_policy": "unless-stopped",
-        "ports": [
-                "3001:3000/tcp"
-            ],
-        "volumes": [{
-                "bind": "/var/lib/docker/volumes/firefox/config",
-                "container": "/config"
-            }],
-        "categories": [
-                "Other"
-            ]
-    },{
         "title": "Gitlab CE",
         "description": "Open-source end-to-end software development platform",
         "note": "Default username is <b>root</b>. Check the <a href=\"https://docs.gitlab.com/omnibus/docker/README.html#after-starting-a-container\" target=\"_blank\">Gitlab documentation</a> to get started.",
@@ -705,29 +1130,6 @@
                 "Other"
             ]
     },{
-        "title": "NextCloud",
-        "description": "[Nextcloud](https://nextcloud.com/) gives you access to all your files wherever you are. Where are your photos and documents? With Nextcloud you pick a server of your choice, at home, in a data center or at a provider. And that is where your files will be. Nextcloud runs on that server, protecting your data and giving you access from your desktop or mobile devices. Through Nextcloud you also access, sync and share your existing data on that FTP drive at the office, a Dropbox or a NAS you have at home.",
-        "note": "Portainer App Templates by <a href='https://www.technorabilia.com' target='_blank'>Technorabilia</a> based on data provided by <a href='https://www.linuxserver.io' target='_blank'>LinuxServer.io</a>.</p><p>Don't forget to create the volume directories on the host file system.</p><p>mkdir -p /volume1/docker/nextcloud/config<br>mkdir -p /volume1/docker/nextcloud/data</p>",
-        "logo": "https://raw.githubusercontent.com/linuxserver/docker-templates/master/linuxserver.io/img/nextcloud-icon.png",
-        "platform": "linux",
-        "type": 1,
-        "name": "NextCloud",
-        "image": "linuxserver/nextcloud:latest",
-        "restart_policy": "unless-stopped",
-        "ports": [
-                "445:443/tcp"
-            ],
-        "volumes": [{
-                "bind": "/var/lib/docker/volumes/nextcloud/config",
-                "container": "/config"
-            },{
-                "bind": "/var/lib/docker/volumes/nextcloud/data",
-                "container": "/data"
-            }],
-        "categories": [
-                "Other"
-            ]
-    },{
         "title": "OpenVPN-AS",
         "description": "OpenVPN Access Server is a full featured secure network tunneling VPN software solution that integrates OpenVPN server capabilities, enterprise management capabilities, simplified OpenVPN Connect UI, and OpenVPN Client software packages that accommodate Windows, MAC, Linux, Android, and iOS environments.",
         "logo": "https://raw.githubusercontent.com/thesugarat/portainer_templates-1/master/Images/openvpn-as-icon.png",    
@@ -752,48 +1154,6 @@
             }],
         "category": [
                 "Other"
-            ]
-    },{
-        "title": "OpenVSCode-Server",
-        "description": "[Openvscode-server](https://github.com/gitpod-io/openvscode-server) provides a version of VS Code that runs a server on a remote machine and allows access through a modern web browser.",
-        "note": "Portainer App Templates by <a href='https://www.technorabilia.com' target='_blank'>Technorabilia</a> based on data provided by <a href='https://www.linuxserver.io' target='_blank'>LinuxServer.io</a>.</p><p>Don't forget to create the volume directories on the host file system.</p><p>mkdir -p /volume1/docker/openvscode-server/config</p>",
-        "logo": "https://raw.githubusercontent.com/linuxserver/docker-templates/master/linuxserver.io/img/openvscode-server-logo.png",
-        "platform": "linux",
-        "type": 1,
-        "name": "OpenVSCode-Server",
-        "image": "linuxserver/openvscode-server:latest",
-        "restart_policy": "unless-stopped",
-        "ports": [
-                "3002:3000/tcp"
-            ],
-        "volumes": [{
-                "bind": "/var/lib/docker/volumes/openvscode-server/config",
-                "container": "/config"
-            }],
-        "env": [{
-                "default": "supersecrettoken",
-                "description": "Optional security token for accessing the Web UI.",
-                "label": "CONNECTION_TOKEN",
-                "name": "CONNECTION_TOKEN"
-            },{
-                "default": "",
-                "description": "Optional path to a file inside the container that contains the security token for accessing the Web UI (ie. `/path/to/file`). Overrides `CONNECTION_TOKEN`.",
-                "label": "CONNECTION_SECRET",
-                "name": "CONNECTION_SECRET"
-            },{
-                "default": "password",
-                "description": "If this optional variable is set, user will have sudo access in the openvscode-server terminal with the specified password.",
-                "label": "SUDO_PASSWORD",
-                "name": "SUDO_PASSWORD"
-            },{
-                "default": "",
-                "description": "Optionally set sudo password via hash (takes priority over `SUDO_PASSWORD` var). Format is `$type$salt$hashed`.",
-                "label": "SUDO_PASSWORD_HASH",
-                "name": "SUDO_PASSWORD_HASH"
-            }],
-        "categories": [
-                "Other",
-                "Tools"
             ]
     },{
         "title": "Pi-Hole",
@@ -972,25 +1332,6 @@
                 "Tools"
             ]
     },{
-        "title": "Uptime Kuma",
-        "description": "It is a self-hosted monitoring tool like Uptime Robot",
-        "logo": "https://images.opencollective.com/uptime-kuma/29c5113/logo/256.png",
-        "platform": "linux",
-        "type": 1,
-        "name": "Uptime-Kuma",
-        "image": "louislam/uptime-kuma:latest",
-        "restart_policy": "always",
-        "ports": [
-                "3001:3001/tcp"
-            ],
-        "volumes": [{
-                "bind": "/var/lib/docker/volumes/UptimeKuma/config",
-                "container": "/app/data"
-            }],
-        "categories": [
-                "Other"
-            ]
-    },{
         "title": "YOURLS",
         "description": "YOURLS is a set of PHP scripts that will allow you to run Your Own URL Shortener. You'll have full control over your data, detailed stats, analytics, plugins, and more. It's free.",
         "logo": "https://raw.githubusercontent.com/docker-library/docs/1b75e08d68679797623d98ba82ca80090f5a26d2/yourls/logo.svg?sanitize=true",
@@ -1044,36 +1385,6 @@
             }],
         "categories": [
                 "Other"
-            ]
-    },{
-        "title": "WebTop",
-        "description": "[Webtop](https://github.com/linuxserver/docker-webtop) - Alpine, Ubuntu, Fedora, and Arch based containers containing full desktop environments in officially supported flavors accessible via any modern web browser.",
-        "note": "Portainer App Templates by <a href='https://www.technorabilia.com' target='_blank'>Technorabilia</a> based on data provided by <a href='https://www.linuxserver.io' target='_blank'>LinuxServer.io</a>.</p><p>Don't forget to create the volume directories on the host file system.</p><p>mkdir -p /volume1/docker/webtop/config<br></p>",
-        "logo": "https://raw.githubusercontent.com/linuxserver/docker-templates/master/linuxserver.io/img/webtop-logo.png",
-        "platform": "linux",
-        "type": 1,
-        "name": "WebTop",
-        "image": "linuxserver/webtop:ubuntu-kde",
-        "restart_policy": "unless-stopped",
-        "privileged": true,
-        "ports": [
-                "3003:/tcp"
-            ],
-        "volumes": [{
-                "bind": "/var/lib/docker/volumes/webtop/config",
-                "container": "/config"
-            },{
-                "bind": "/var/lib/docker/volumes/webtop/docker.sock",
-                "container": "/var/run/docker.sock"
-            }],
-        "env": [{
-                "default": "/",
-                "description": "Specify a subfolder to use with reverse proxies, IE `/subfolder/`",
-                "label": "SUBFOLDER",
-                "name": "SUBFOLDER"
-            }],
-         "categories": [
-                "Utilities"
             ]
     },{
         "title": "WireGuard",
