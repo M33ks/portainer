@@ -146,7 +146,7 @@
             "bind": "/var/lib/docker/volumes/Ubuntu",
             "container": "/config"
         },{
-            "bind": "/var/lib/docker/volumes/webtop/docker.sock",
+            "bind": "/var/run/docker.sock",
             "container": "/var/run/docker.sock"
         }],
         "env": [{
@@ -296,6 +296,26 @@
         "categories": [
             "Need",
             "Monitoring"
+        ]
+    },{
+        "title": "Taisun",
+        "description": "[Taisun](https://www.taisun.io/) is an application for a Docker enabled device with an emphasis on providing a web based interface for managing a single server. Taisun allows you to: - Deploy and manage web based virtual desktops. - Deploy Taisun specific stacks of applications - Browse available images on popular Docker repositories - Import a Docker project from any git repository and start developing on your choice of web based IDE or full Linux desktop - Spinup a developer container based on popular frameworks and work from a web based IDE - Single click remote server access to Taisun and your Docker applications",
+        "note": "Portainer App Templates by <a href='https://www.technorabilia.com' target='_blank'>Technorabilia</a> based on data provided by <a href='https://www.linuxserver.io' target='_blank'>LinuxServer.io</a>.</p><p>Don't forget to create the volume directories on the host file system.</p><p></p>",
+        "logo": "https://raw.githubusercontent.com/Taisun-Docker/taisun/master/public/favicon/apple-icon-180x180.png",
+        "platform": "linux",
+        "type": 1,
+        "name": "Taisun",
+        "image": "linuxserver/taisun:latest",
+        "restart_policy": "unless-stopped",
+        "ports": [
+            "3004:3000/tcp"
+        ],
+        "volumes": [{
+            "container": "/var/run/docker.sock",
+            "bind": "/var/run/docker.sock"
+        }],
+        "categories": [
+            "Management"
         ]
     },{
         "title": "AdGuard",
@@ -2021,27 +2041,6 @@
             "Database"
         ]
       },{
-        "title": "Taisun",
-        "description": "[Taisun](https://www.taisun.io/) is an application for a Docker enabled device with an emphasis on providing a web based interface for managing a single server. Taisun allows you to: - Deploy and manage web based virtual desktops. - Deploy Taisun specific stacks of applications - Browse available images on popular Docker repositories - Import a Docker project from any git repository and start developing on your choice of web based IDE or full Linux desktop - Spinup a developer container based on popular frameworks and work from a web based IDE - Single click remote server access to Taisun and your Docker applications",
-        "note": "Portainer App Templates by <a href='https://www.technorabilia.com' target='_blank'>Technorabilia</a> based on data provided by <a href='https://www.linuxserver.io' target='_blank'>LinuxServer.io</a>.</p><p>Don't forget to create the volume directories on the host file system.</p><p></p>",
-        "logo": "https://raw.githubusercontent.com/Taisun-Docker/taisun/master/public/favicon/apple-icon-180x180.png",
-        "platform": "linux",
-        "type": 1,
-        "name": "Taisun",
-        "image": "linuxserver/taisun:latest",
-        "restart_policy": "unless-stopped",
-        "ports": [
-            "3004:3000/tcp"
-        ],
-        "volumes": [{
-            "container": "/var/run/docker.sock",
-            "bind": "/var/lib/docker/volumes/Taisun/docker.sock"
-        }],
-        "categories": [
-            "Management"
-        ]
-    },{
-        
         "title": "Ubuntu",
         "description": "Debian-based Linux operating system with no VNC",
         "logo": "https://portainer-io-assets.sfo2.digitaloceanspaces.com/logos/ubuntu.png",
