@@ -287,30 +287,7 @@
         "categories": [
                 "Need"
             ]
-    },
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    {
+    },{
         "title": "AdGuard",
         "description": "[AdGuard] Home is a network-wide software for blocking ads & tracking. After you set it up, it’ll cover ALL your home devices, and you don’t need any client-side software for that. With the rise of Internet-Of-Things and connected devices, it becomes more and more important to be able to control your whole network.",
         "logo": "https://raw.githubusercontent.com/Qballjos/portainer_templates/master/Images/adguard.png",
@@ -1285,7 +1262,7 @@
             "filesystem", 
             "storage"
         ]
-      },{
+    },{
         "title": "Gitlab CE",
         "description": "Open-source end-to-end software development platform",
         "note": "Default username is <b>root</b>. Check the <a href=\"https://docs.gitlab.com/omnibus/docker/README.html#after-starting-a-container\" target=\"_blank\">Gitlab documentation</a> to get started.",
@@ -1335,7 +1312,7 @@
         "categories": [
             "blog"
         ]
-      },{
+    },{
         "title": "Httpd",
         "description": "Open-source HTTP server",
         "logo": "https://portainer-io-assets.sfo2.digitaloceanspaces.com/logos/httpd.png",
@@ -1389,7 +1366,7 @@
         "categories": [
             "continuous-integration"
         ]
-      },{
+    },{
         "title": "Joomla",
         "description": "Another free and open-source CMS",
         "logo": "https://portainer-io-assets.sfo2.digitaloceanspaces.com/logos/joomla.png",
@@ -1418,7 +1395,7 @@
         "categories": [
             "CMS"
         ]
-      },{
+    },{
         "title": "MariaDB",
         "description": "Performance beyond MySQL",
         "logo": "https://portainer-io-assets.sfo2.digitaloceanspaces.com/logos/mariadb.png",
@@ -1442,7 +1419,7 @@
         "categories": [
             "database"
         ]
-      },{
+    },{
         "title": "Mautic",
         "description": "Open-source marketing automation platform",
         "logo": "https://portainer-io-assets.sfo2.digitaloceanspaces.com/logos/mautic.png",
@@ -1471,7 +1448,7 @@
         "categories": [
             "marketing"
         ]
-      },{
+    },{
         "title": "Minio",
         "description": "A distributed object storage server built for cloud applications and devops",
         "logo": "https://portainer-io-assets.sfo2.digitaloceanspaces.com/logos/minio.png",
@@ -1504,7 +1481,7 @@
         "categories": [
             "storage"
         ]
-      },{
+    },{
         "title": "Mongo",
         "description": "Open-source document-oriented database",
         "logo": "https://portainer-io-assets.sfo2.digitaloceanspaces.com/logos/mongo.png",
@@ -1523,7 +1500,7 @@
         "categories": [
             "database"
         ]
-      },{
+    },{
         "title": "MStream",
         "description": "[Mstream](https://mstream.io/) is a personal music streaming server. You can use mStream to stream your music from your home computer to any device, anywhere. There are mobile apps available for both Android and iPhone.",
         "note": "Portainer App Templates by <a href='https://www.technorabilia.com' target='_blank'>Technorabilia</a> based on data provided by <a href='https://www.linuxserver.io' target='_blank'>LinuxServer.io</a>.</p><p>Don't forget to create the volume directories on the host file system.</p><p>mkdir -p /volume1/docker/mstream/config<br>mkdir -p /volume1/docker/mstream/music</p>",
@@ -1594,7 +1571,7 @@
         "categories": [
             "database"
         ]
-      },{
+    },{
         "title": "NGINX",
         "description": "[Nginx Proxy Manager] enables you to easily forward to your websites running at home or otherwise, including free SSL, without having to know too much about Nginx or Letsencrypt.",
         "logo": "https://raw.githubusercontent.com/Qballjos/portainer_templates/master/Images/proxy_mgr.png",
@@ -1619,7 +1596,6 @@
                 "Need"
             ]
     },{
-        
         "title": "NodeJS",
         "description": "JavaScript-based platform for server-side and networking applications",
         "logo": "https://portainer-io-assets.sfo2.digitaloceanspaces.com/logos/node.png",
@@ -1634,7 +1610,6 @@
             "development"
         ]
     },{
-        
         "title": "OPC Router",
         "description": "No-code middleware for industrial applications. The OPC Router connects PLCs, PCS, SCADA, MES, SQL databases and servers, label printers, e-mail servers and erp-systems via OPC UA, MQTT, REST, CSV and many others without any programming effort",
         "note": "More information about the <a href=\"https://www.opc-router.com/terms-of-use-and-eula/?utm_source=DockerHub_runtime&utm_medium=click&utm_campaign=TermsOfUseAndEula\" target=\"_blank\">EULA</a>.",
@@ -1682,7 +1657,7 @@
         "categories": [
             "edge"
         ]
-      },{
+    },{
         "title": "OpenVPN-AS",
         "description": "OpenVPN Access Server is a full featured secure network tunneling VPN software solution that integrates OpenVPN server capabilities, enterprise management capabilities, simplified OpenVPN Connect UI, and OpenVPN Client software packages that accommodate Windows, MAC, Linux, Android, and iOS environments.",
         "logo": "https://raw.githubusercontent.com/thesugarat/portainer_templates-1/master/Images/openvpn-as-icon.png",    
@@ -1833,72 +1808,6 @@
             "messaging"
         ]
     },{
-        
-        "title": "Redis",
-        "description": "Open-source in-memory data structure store",
-        "logo": "https://portainer-io-assets.sfo2.digitaloceanspaces.com/logos/redis.png",
-        "platform": "linux",
-        "type": 1,
-        "name": "Redis",
-        "image": "redis:latest",
-        "restart_policy": "unless-stopped",
-        "ports": [
-            "6379:6379/tcp"
-        ],
-        "volumes": [{
-            "bind": "/var/lib/docker/volumes/Redis",
-            "container": "/data"
-          }],
-        "categories": [
-            "database"
-        ]
-            },{
-                "title": "Swarm Monitoring",
-                "description": "Monitor your cluster performances with Prometheus & Grafana",
-                "note": "Requires Docker version 19.03.0+. <b>Make sure to add the <code>monitoring == true</code> one of your Swarm manager node before deploying this stack.</b>",
-                "logo": "https://portainer-io-assets.sfo2.digitaloceanspaces.com/logos/portainer.png",
-                "platform": "linux",
-                "type": 2,
-                "name": "Redis-Swarm-Monitoring",
-                "repository": {
-                    "url": "https://github.com/portainer/templates",
-                    "stackfile": "swarm/monitoring/docker-compose.yml"
-                },
-                "env": [{
-                    "default": "admin",
-                    "name": "GRAFANA_USER",
-                    "label": "Grafana admin user"
-                    
-                },{
-                    "default": "admin",
-                    "name": "GRAFANA_PASSWORD",
-                    "label": "Grafana admin password"
-                }],
-                "categories": [
-                    "Monitoring"
-                ]
-            },{
-                
-                "title": "Redis Cluster",
-                "description": "Open-source in-memory data structure store - Cluster mode",
-                "logo": "https://portainer-io-assets.sfo2.digitaloceanspaces.com/logos/redis.png",
-                "platform": "linux",
-                "type": 2,
-                "name": "Redis-Cluster",
-                "repository": {
-                "url": "https://github.com/portainer/templates",
-                "stackfile": "stacks/redis-cluster/docker-stack.yaml"
-                },
-                "env": [{
-                    "default": "admin",
-                    "name": "REDIS_PASSWD",
-                    "label": "Redis password"
-                }],
-                "categories": [
-                    "database"
-                ]
-            },
-    {
         "title": "Redmine",
         "description": "Open-source project management tool",
         "note": "Default user and password are admin/admin",
