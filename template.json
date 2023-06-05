@@ -75,27 +75,6 @@
             "Wiki"
         ]
     },{
-        "title": "Hue",
-        "description": "A Container running Hue",
-        "logo": "",
-        "platform": "linux",
-        "type": 1,
-        "name": "Hue",
-        "image": "gethue/hue:latest",
-        "restart_policy": "unless-stopped",
-        "ports": [
-            "8888:8888/tcp"
-        ],
-        "volumes": [{
-            "bind": "/var/lib/docker/volumes/Hue",
-            "container": "usr/share/hue/desktop/conf"
-        }],
-        "categories": [
-            "Need",
-            "Database",
-            "Monitoring"
-        ]
-    },{
         "title": "Firefox",
         "description": "[Firefox](https://www.mozilla.org/en-US/firefox/) Browser, also known as Mozilla Firefox or simply Firefox, is a free and open-source web browser developed by the Mozilla Foundation and its subsidiary, the Mozilla Corporation. Firefox uses the Gecko layout engine to render web pages, which implements current and anticipated web standards.",
         "note": "Portainer App Templates by <a href='https://www.technorabilia.com' target='_blank'>Technorabilia</a> based on data provided by <a href='https://www.linuxserver.io' target='_blank'>LinuxServer.io</a>.</p><p>Don't forget to create the volume directories on the host file system.</p><p>mkdir -p /volume1/docker/firefox/config</p>",
@@ -188,26 +167,6 @@
             "Linux"
         ]
     },{
-        "title": "Uptime Kuma",
-        "description": "It is a self-hosted monitoring tool like Uptime Robot",
-        "logo": "https://images.opencollective.com/uptime-kuma/29c5113/logo/256.png",
-        "platform": "linux",
-        "type": 1,
-        "name": "Uptime-Kuma",
-        "image": "louislam/uptime-kuma:latest",
-        "restart_policy": "always",
-        "ports": [
-            "3001:3001/tcp"
-        ],
-        "volumes": [{
-            "bind": "/var/lib/docker/volumes/UptimeKuma",
-            "container": "/app/data"
-        }],
-        "categories": [
-            "Need",
-            "Monitoring"
-        ]
-    },{
         "title": "Guacamole",
         "description": "[Guacamole] is A clientless remote desktop gateway.",
         "note": "The default login will be guacadmin/guacadmin. It is common practice to add a new admin user and remove the default user for Guacamole.",
@@ -229,35 +188,24 @@
             "VNC"
         ]
     },{
-        "title": "Dozzle",
-        "description": "View Logs for Docker Containers",
-        "note": "",
+        "title": "Hue",
+        "description": "A Container running Hue",
         "logo": "",
         "platform": "linux",
         "type": 1,
-        "name": "Dozzle",
-        "image": "amir20/dozzle",
+        "name": "Hue",
+        "image": "gethue/hue:latest",
         "restart_policy": "unless-stopped",
         "ports": [
-            "8081:8080/tcp"
+            "8888:8888/tcp"
         ],
         "volumes": [{
-            "bind": "/var/run/docker.sock",
-            "container": "/var/run/docker.sock"
-        }],
-        "env": [{
-            "default": "admin",
-            "description": "username ",
-            "label": "username ",
-            "name": "username "
-        },{
-            "default": "admin",
-            "description": "password ",
-            "label": "password ",
-            "name": "password "
+            "bind": "/var/lib/docker/volumes/Hue",
+            "container": "usr/share/hue/desktop/conf"
         }],
         "categories": [
             "Need",
+            "Database",
             "Monitoring"
         ]
     },{
@@ -315,7 +263,60 @@
             "bind": "/var/run/docker.sock"
         }],
         "categories": [
-            "Management"
+            "Management",
+            "Need"
+        ]
+    },{
+        "title": "Uptime Kuma",
+        "description": "It is a self-hosted monitoring tool like Uptime Robot",
+        "logo": "https://images.opencollective.com/uptime-kuma/29c5113/logo/256.png",
+        "platform": "linux",
+        "type": 1,
+        "name": "Uptime-Kuma",
+        "image": "louislam/uptime-kuma:latest",
+        "restart_policy": "always",
+        "ports": [
+            "3001:3001/tcp"
+        ],
+        "volumes": [{
+            "bind": "/var/lib/docker/volumes/UptimeKuma",
+            "container": "/app/data"
+        }],
+        "categories": [
+            "Need",
+            "Monitoring"
+        ]
+    },{
+        "title": "Dozzle",
+        "description": "View Logs for Docker Containers",
+        "note": "",
+        "logo": "",
+        "platform": "linux",
+        "type": 1,
+        "name": "Dozzle",
+        "image": "amir20/dozzle",
+        "restart_policy": "unless-stopped",
+        "ports": [
+            "8081:8080/tcp"
+        ],
+        "volumes": [{
+            "bind": "/var/run/docker.sock",
+            "container": "/var/run/docker.sock"
+        }],
+        "env": [{
+            "default": "admin",
+            "description": "username ",
+            "label": "username ",
+            "name": "username "
+        },{
+            "default": "admin",
+            "description": "password ",
+            "label": "password ",
+            "name": "password "
+        }],
+        "categories": [
+            "Need",
+            "Monitoring"
         ]
     },{
         "title": "AdGuard",
