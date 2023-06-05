@@ -1035,6 +1035,27 @@
             "Emulator"
         ]
     },{
+        "title": "FDO",
+        "description": "FDO",
+        "logo": "https://portainer-io-assets.sfo2.digitaloceanspaces.com/logos/intel.png",
+        "platform": "linux",
+        "type": 3,
+        "name": "FDO",
+        "restart_policy": "unless-stopped",
+        "repository": {
+          "url": "https://github.com/portainer/templates",
+          "stackfile": "stacks/fdo/docker-stack.yml"
+        },
+        "env": [{
+            "default": "admin",
+            "name": "owner_api_user",
+            "label": "API Username"
+        },{
+            "default": "admin",
+            "name": "owner_api_password",
+            "label": "API Password"
+        }]
+    },{
         "title": "File Browser",
         "description": "A web file manager",
         "note": "Default credentials: admin/admin",
@@ -1193,6 +1214,27 @@
             "CMS"
         ]
     },{
+        
+        "title": "LiveSwitch",
+        "description": "A basic LiveSwitch compose with gateway, caching, database and media server",
+        "logo": "https://portainer-io-assets.sfo2.digitaloceanspaces.com/logos/liveswitch.png",
+        "platform": "linux",
+        "type": 3,
+        "name": "LiveSwitch",
+        "restart_policy": "unless-stopped",
+        "repository": {
+          "url": "https://github.com/portainer/templates",
+          "stackfile": "stacks/liveswitch/docker-compose.yml"
+        },
+        "env": [{
+            "default": "admin",
+            "name": "POSTGRES_PASSWORD",
+            "label": "Postgres password"
+        }],
+        "categories": [
+            "media"
+        ]
+      },{
         "title": "MariaDB",
         "description": "Performance beyond MySQL",
         "logo": "https://portainer-io-assets.sfo2.digitaloceanspaces.com/logos/mariadb.png",
@@ -1495,6 +1537,54 @@
             "Tools"
         ]
     },{
+        "title": "OpenAMT",
+        "description": "OpenAMT Cloud Toolkit",
+        "note": "MPS password needs to be 8-32 characters including one uppercase, one lowercase letters, one base-10 digit and one special character.",
+        "logo": "https://portainer-io-assets.sfo2.digitaloceanspaces.com/logos/intel.png",
+        "platform": "linux",
+        "type": 3,
+        "name": "OpenAMT",
+        "restart_policy": "unless-stopped",
+        "repository": {
+          "url": "https://github.com/portainer/templates",
+          "stackfile": "stacks/openamt/docker-compose.yml"
+        },
+        "env": [{
+            "default": "admin",
+            "name": "POSTGRES_USER",
+            "label": "Database user"
+        },{
+            "default": "admin",
+            "name": "POSTGRES_PASSWORD",
+            "label": "Database password"
+        },{
+            "default": "admin",
+            "name": "MPS_USER",
+            "label": "MPS user"
+        },{
+            "default": "admin",
+            "name": "MPS_PASSWORD",
+            "label": "MPS password"
+        },{
+            "default": "admin",
+            "name": "MPS_COMMON_NAME",
+            "label": "MPS URL",
+            "description": "Used to connect to the MPS API."
+        },{
+            "default": "admin",
+            "name": "MPS_SECRET",
+            "label": "MPS Secret",
+            "description": "Strong secret key used to log into MPS."
+        },{
+            "default": "admin",
+            "name": "VAULT_SECRET",
+            "label": "Vault secret",
+            "description": "Secret token used to log into Vault (don't include '.' character)."
+        }],
+        "categories": [
+            "Cloud"
+        ]
+      },{
         "title": "OpenVSCode-Server",
         "description": "[Openvscode-server](https://github.com/gitpod-io/openvscode-server) provides a version of VS Code that runs a server on a remote machine and allows access through a modern web browser.",
         "note": "Portainer App Templates by <a href='https://www.technorabilia.com' target='_blank'>Technorabilia</a> based on data provided by <a href='https://www.linuxserver.io' target='_blank'>LinuxServer.io</a>.</p><p>Don't forget to create the volume directories on the host file system.</p><p>mkdir -p /volume1/docker/openvscode-server/config</p>",
@@ -1512,12 +1602,12 @@
                 "container": "/config"
         }],
         "env": [{
-            "default": "PASSWORD",
+            "default": "admin",
             "description": "To Access the site",
             "label": "PASSWORD",
             "name": "PASSWORD"
         },{
-            "default": "SUDO_PASSWORD",
+            "default": "admin",
             "description": "For Sudo Commands",
             "label": "SUDO_PASSWORD",
             "name": "SUDO_PASSWORD"
@@ -2042,6 +2132,26 @@
             "Database"
         ]
       },{
+        "title": "TOSIBOX Lock for Container",
+        "description": "Lock for Container brings secure connectivity inside your industrial IoT devices",
+        "logo": "https://portainer-io-assets.sfo2.digitaloceanspaces.com/logos/tosibox.png",
+        "platform": "linux",
+        "type": 3,
+        "name": "TOSIBOX",
+        "restart_policy": "unless-stopped",
+        "repository": {
+          "url": "https://github.com/portainer/templates",
+          "stackfile": "stacks/tosibox/docker-compose.yml"
+        },
+        "env": [{
+            "default": "admin",
+            "name": "LICENSE_KEY",
+            "label": "License key"
+        }],
+        "categories": [
+            "edge"
+        ]
+      },{
         "title": "Ubuntu",
         "description": "Debian-based Linux operating system with no VNC",
         "logo": "https://portainer-io-assets.sfo2.digitaloceanspaces.com/logos/ubuntu.png",
@@ -2284,29 +2394,6 @@
         "note": "Deploys a WordPress instance connected to a MySQL database.",
         "logo": "https://portainer-io-assets.sfo2.digitaloceanspaces.com/logos/wordpress.png",
         "platform": "linux",
-        "type": 2,
-        "name": "WordPress",
-        "restart_policy": "unless-stopped",
-        "repository": {
-          "url": "https://github.com/portainer/templates",
-          "stackfile": "stacks/wordpress/docker-stack.yml"
-        },
-        "env": [{
-            "default": "admin",
-            "name": "MYSQL_DATABASE_PASSWORD",
-            "label": "Database root password",
-            "description": "Password used by the MySQL root user."
-        }],
-        "categories": [
-            "CMS",
-            "Webserver"
-        ]
-      },{
-        "title": "WordPress",
-        "description": "WordPress setup with a MySQL database",
-        "note": "Deploys a WordPress instance connected to a MySQL database.",
-        "logo": "https://portainer-io-assets.sfo2.digitaloceanspaces.com/logos/wordpress.png",
-        "platform": "linux",
         "type": 3,
         "name": "WordPress",
         "restart_policy": "unless-stopped",
@@ -2324,5 +2411,5 @@
             "CMS",
             "Webserver"
         ]
-      }
+    }
 ]}
