@@ -3,7 +3,6 @@
     "templates": [{
         "title": "MariaDB",   
         "description": "[Mariadb](https://mariadb.org/) is one of the most popular database servers. Made by the original developers of MySQL.",
-        "note": "Portainer App Templates by <a href='https://www.technorabilia.com' target='_blank'>Technorabilia</a> based on data provided by <a href='https://www.linuxserver.io' target='_blank'>LinuxServer.io</a>.</p><p>Don't forget to create the volume directories on the host file system.</p><p>mkdir -p /volume1/docker/mariadb/config</p>",
         "logo": "https://raw.githubusercontent.com/linuxserver/docker-templates/master/linuxserver.io/img/mariadb-git.png",
         "platform": "linux",
         "type": 1,
@@ -24,7 +23,6 @@
     },{
         "title": "PHPMyAdmin",
         "description": "[Phpmyadmin](https://github.com/phpmyadmin/phpmyadmin/) is a free software tool written in PHP, intended to handle the administration of MySQL over the Web. phpMyAdmin supports a wide range of operations on MySQL and MariaDB.",
-        "note": "Portainer App Templates by <a href='https://www.technorabilia.com' target='_blank'>Technorabilia</a> based on data provided by <a href='https://www.linuxserver.io' target='_blank'>LinuxServer.io</a>.</p><p>Don't forget to create the volume directories on the host file system.</p><p>mkdir -p /volume1/docker/phpmyadmin/config</p>",
         "logo": "https://raw.githubusercontent.com/linuxserver/docker-templates/master/linuxserver.io/img/phpmyadmin-logo.png",
         "platform": "linux",
         "type": 1,
@@ -77,7 +75,6 @@
     },{
         "title": "Firefox",
         "description": "[Firefox](https://www.mozilla.org/en-US/firefox/) Browser, also known as Mozilla Firefox or simply Firefox, is a free and open-source web browser developed by the Mozilla Foundation and its subsidiary, the Mozilla Corporation. Firefox uses the Gecko layout engine to render web pages, which implements current and anticipated web standards.",
-        "note": "Portainer App Templates by <a href='https://www.technorabilia.com' target='_blank'>Technorabilia</a> based on data provided by <a href='https://www.linuxserver.io' target='_blank'>LinuxServer.io</a>.</p><p>Don't forget to create the volume directories on the host file system.</p><p>mkdir -p /volume1/docker/firefox/config</p>",
         "logo": "https://raw.githubusercontent.com/linuxserver/docker-templates/master/linuxserver.io/img/firefox-logo.png",
         "platform": "linux",
         "type": 1,
@@ -109,7 +106,6 @@
     },{
         "title": "Ubuntu",
         "description": "[Webtop](https://github.com/linuxserver/docker-webtop) - Alpine, Ubuntu, Fedora, and Arch based containers containing full desktop environments in officially supported flavors accessible via any modern web browser.",
-        "note": "Portainer App Templates by <a href='https://www.technorabilia.com' target='_blank'>Technorabilia</a> based on data provided by <a href='https://www.linuxserver.io' target='_blank'>LinuxServer.io</a>.</p><p>Don't forget to create the volume directories on the host file system.</p><p>mkdir -p /volume1/docker/webtop/config<br></p>",
         "logo": "https://raw.githubusercontent.com/linuxserver/docker-templates/master/linuxserver.io/img/webtop-logo.png",
         "platform": "linux",
         "type": 1,
@@ -246,27 +242,6 @@
             "Monitoring"
         ]
     },{
-        "title": "Taisun",
-        "description": "[Taisun](https://www.taisun.io/) is an application for a Docker enabled device with an emphasis on providing a web based interface for managing a single server. Taisun allows you to: - Deploy and manage web based virtual desktops. - Deploy Taisun specific stacks of applications - Browse available images on popular Docker repositories - Import a Docker project from any git repository and start developing on your choice of web based IDE or full Linux desktop - Spinup a developer container based on popular frameworks and work from a web based IDE - Single click remote server access to Taisun and your Docker applications",
-        "note": "Portainer App Templates by <a href='https://www.technorabilia.com' target='_blank'>Technorabilia</a> based on data provided by <a href='https://www.linuxserver.io' target='_blank'>LinuxServer.io</a>.</p><p>Don't forget to create the volume directories on the host file system.</p><p></p>",
-        "logo": "https://raw.githubusercontent.com/Taisun-Docker/taisun/master/public/favicon/apple-icon-180x180.png",
-        "platform": "linux",
-        "type": 1,
-        "name": "Taisun",
-        "image": "linuxserver/taisun:latest",
-        "restart_policy": "unless-stopped",
-        "ports": [
-            "3004:3000/tcp"
-        ],
-        "volumes": [{
-            "container": "/var/run/docker.sock",
-            "bind": "/var/run/docker.sock"
-        }],
-        "categories": [
-            "Management",
-            "Need"
-        ]
-    },{
         "title": "Uptime Kuma",
         "description": "It is a self-hosted monitoring tool like Uptime Robot",
         "logo": "https://images.opencollective.com/uptime-kuma/29c5113/logo/256.png",
@@ -319,6 +294,55 @@
             "Monitoring"
         ]
     },{
+        "title": "Booksonic-Air",
+        "description": "[Booksonic-air](http://booksonic.org) is a platform for accessing the audibooks you own wherever you are. At the moment the platform consists of Booksonic Air - A server for streaming your audiobooks, successor to the original Booksonic server and based on Airsonic. Booksonic App - An DSub based Android app for connection to Booksonic-Air servers. .",
+        "logo": "https://raw.githubusercontent.com/linuxserver/docker-templates/master/linuxserver.io/img/booksonic-air.png",
+        "platform": "linux",
+        "type": 1,
+        "name": "Booksonic-Air",
+        "image": "linuxserver/booksonic-air:latest",
+        "restart_policy": "unless-stopped",
+        "ports": [
+            "4041:4040/tcp"
+        ],
+        "volumes": [{
+            "bind": "/var/lib/docker/volumes/BooksonicAir/Config",
+            "container": "/config"
+        },{
+            "bind": "/var/lib/docker/volumes/BooksonicAir/Audiobooks",
+            "container": "/audiobooks"
+        },{
+            "bind": "/var/lib/docker/volumes/BooksonicAir/Podcasts",
+            "container": "/podcasts"
+        },{
+            "bind": "/var/lib/docker/volumes/BooksonicAir/Othermedia",
+            "container": "/othermedia"
+        }],
+        "env": [{
+            "default": "url-base",
+            "description": "Base url for use with reverse proxies etc.",
+            "label": "CONTEXT_PATH",
+            "name": "CONTEXT_PATH"
+        },{
+            "default": "1000",
+            "description": "PUID",
+            "label": "PUID",
+            "name": "PUID"
+        },{
+            "default": "1000",
+            "description": "PGID",
+            "label": "PGID",
+            "name": "PGID"
+        },{
+            "default": "Etc/UTC",
+            "description": "TZ",
+            "label": "TZ",
+            "name": "TZ"
+        }],
+        "categories": [
+            "Audiobooks"
+        ]
+    },{
         "title": "AdGuard",
         "description": "[AdGuard] Home is a network-wide software for blocking ads & tracking. After you set it up, it’ll cover ALL your home devices, and you don’t need any client-side software for that. With the rise of Internet-Of-Things and connected devices, it becomes more and more important to be able to control your whole network.",
         "logo": "https://raw.githubusercontent.com/Qballjos/portainer_templates/master/Images/adguard.png",
@@ -339,10 +363,10 @@
             "3000:3000/tcp"
         ],
         "volumes": [{
-            "bind": "/var/lib/docker/volumes/Adguard-WorkDIR",
+            "bind": "/var/lib/docker/volumes/Adguard/WorkDIR",
             "container": "/opt/adguardhome/work"
         },{
-            "bind": "/var/lib/docker/volumes/Adguard-Conf",
+            "bind": "/var/lib/docker/volumes/Adguard/Conf",
             "container": "/opt/adguardhome/conf"
         }],
         "env": [{
@@ -387,7 +411,7 @@
             "label": "PUID",
             "name": "PUID"
           },{
-            "default": "100",
+            "default": "1000",
             "description": "",
             "label": "PGID",
             "name": "PGID"
@@ -408,7 +432,6 @@
       },{
         "title": "Apprise-API",
         "description": "[Apprise-api](https://github.com/caronc/apprise-api) Takes advantage of [Apprise](https://github.com/caronc/apprise) through your network with a user-friendly API. * Send notifications to more then 65+ services. * An incredibly lightweight gateway to Apprise. * A production ready micro-service at your disposal. Apprise API was designed to easily fit into existing (and new) eco-systems that are looking for a simple notification solution.",
-        "note": "Portainer App Templates by <a href='https://www.technorabilia.com' target='_blank'>Technorabilia</a> based on data provided by <a href='https://www.linuxserver.io' target='_blank'>LinuxServer.io</a>.</p><p>Don't forget to create the volume directories on the host file system.</p><p>mkdir -p /volume1/docker/apprise-api/config</p>",
         "logo": "https://raw.githubusercontent.com/caronc/apprise-api/master/apprise_api/static/logo.png",
         "platform": "linux",
         "type": 1,
@@ -423,12 +446,12 @@
             "container": "/config"
         }],
         "env": [{
-            "default": "1024",
+            "default": "1000",
             "description": "for GroupID",
             "label": "PUID",
             "name": "PUID"
         },{
-            "default": "100",
+            "default": "1000",
             "description": "for UserID",
             "label": "PGID",
             "name": "PGID"
@@ -444,7 +467,6 @@
     },{
         "title": "Audacity",
         "description": "[Audacity](https://www.audacityteam.org/) is an easy-to-use, multi-track audio editor and recorder. Developed by a group of volunteers as open source.",
-        "note": "Portainer App Templates by <a href='https://www.technorabilia.com' target='_blank'>Technorabilia</a> based on data provided by <a href='https://www.linuxserver.io' target='_blank'>LinuxServer.io</a>.</p><p>Don't forget to create the volume directories on the host file system.</p><p>mkdir -p /volume1/docker/audacity/config</p>",
         "logo": "https://raw.githubusercontent.com/linuxserver/docker-templates/master/linuxserver.io/img/audacity-logo.png",
         "platform": "linux",
         "type": 1,
@@ -459,12 +481,12 @@
             "container": "/config"
         }],
         "env": [{
-            "default": "1024",
+            "default": "1000",
             "description": "for GroupID",
             "label": "PUID",
             "name": "PUID"
         },{
-            "default": "100",
+            "default": "1000",
             "description": "for UserID",
             "label": "PGID",
             "name": "PGID"
@@ -501,7 +523,7 @@
             "label": "PUID",
             "name": "PUID"
         },{
-            "default": "100",
+            "default": "1000",
             "label": "PGID",
             "name": "PGID"
         }],
@@ -511,7 +533,6 @@
     },{
         "title": "Blender",
         "description": "[Blender](https://www.blender.org/) is a free and open-source 3D computer graphics software toolset used for creating animated films, visual effects, art, 3D printed models, motion graphics, interactive 3D applications, virtual reality, and computer games. **This image does not support GPU rendering out of the box only accelerated workspace experience**",
-        "note": "Portainer App Templates by <a href='https://www.technorabilia.com' target='_blank'>Technorabilia</a> based on data provided by <a href='https://www.linuxserver.io' target='_blank'>LinuxServer.io</a>.</p><p>Don't forget to create the volume directories on the host file system.</p><p>mkdir -p /volume1/docker/blender/config</p>",
         "logo": "https://raw.githubusercontent.com/linuxserver/docker-templates/master/linuxserver.io/img/blender-logo.png",
         "platform": "linux",
         "type": 1,
@@ -586,7 +607,6 @@
     },{
         "title": "Booksonic-Air",
         "description": "[Booksonic-air](http://booksonic.org) is a platform for accessing the audibooks you own wherever you are. At the moment the platform consists of Booksonic Air - A server for streaming your audiobooks, successor to the original Booksonic server and based on Airsonic. Booksonic App - An DSub based Android app for connection to Booksonic-Air servers. .",
-        "note": "Portainer App Templates by <a href='https://www.technorabilia.com' target='_blank'>Technorabilia</a> based on data provided by <a href='https://www.linuxserver.io' target='_blank'>LinuxServer.io</a>.</p><p>Don't forget to create the volume directories on the host file system.</p><p>mkdir -p /volume1/docker/booksonic-air/config<br>mkdir -p /volume1/docker/booksonic-air/audiobooks<br>mkdir -p /volume1/docker/booksonic-air/podcasts<br>mkdir -p /volume1/docker/booksonic-air/othermedia</p>", 
         "logo": "https://raw.githubusercontent.com/linuxserver/docker-templates/master/linuxserver.io/img/booksonic-air.png",
         "platform": "linux",
         "type": 1,
@@ -636,7 +656,6 @@
     },{
         "title": "Bookstack",
         "description": "[Bookstack](https://github.com/BookStackApp/BookStack) is a free and open source Wiki designed for creating beautiful documentation. Featuring a simple, but powerful WYSIWYG editor it allows for teams to create detailed and useful documentation with ease. Powered by SQL and including a Markdown editor for those who prefer it, BookStack is geared towards making documentation more of a pleasure than a chore. For more information on BookStack visit their website and check it out: https://www.bookstackapp.com",
-        "note": "Portainer App Templates by <a href='https://www.technorabilia.com' target='_blank'>Technorabilia</a> based on data provided by <a href='https://www.linuxserver.io' target='_blank'>LinuxServer.io</a>.</p><p>Don't forget to create the volume directories on the host file system.</p><p>mkdir -p /volume1/docker/bookstack/config</p>",
         "logo": "https://s3-us-west-2.amazonaws.com/linuxserver-docs/images/bookstack-logo500x500.png",
         "platform": "linux",
         "type": 1,
@@ -651,12 +670,12 @@
             "container": "/config"
         }],
         "env": [{
-            "default": "1024",
+            "default": "1000",
             "description": "for GroupID",
             "label": "PUID",
             "name": "PUID"
         },{
-            "default": "100",
+            "default": "1000",
             "description": "for UserID",
             "label": "PGID",
             "name": "PGID"
@@ -711,7 +730,6 @@
     },{
         "title": "Calibre",
         "description": "[Calibre](https://calibre-ebook.com/) is a powerful and easy to use e-book manager. Users say it’s outstanding and a must-have. It’ll allow you to do nearly everything and it takes things a step beyond normal e-book software. It’s also completely free and open source and great for both casual users and computer experts.",
-        "note": "Portainer App Templates by <a href='https://www.technorabilia.com' target='_blank'>Technorabilia</a> based on data provided by <a href='https://www.linuxserver.io' target='_blank'>LinuxServer.io</a>.</p><p>Don't forget to create the volume directories on the host file system.</p><p>mkdir -p /volume1/docker/calibre/config</p>",
         "logo": "https://github.com/kovidgoyal/calibre/raw/master/resources/images/lt.png",
         "platform": "linux",
         "type": 1,
@@ -727,12 +745,12 @@
             "container": "/config"
         }],
         "env": [{
-            "default": "1024",
+            "default": "1000",
             "description": "for GroupID",
             "label": "PUID",
             "name": "PUID"
         },{
-            "default": "100",
+            "default": "1000",
             "description": "for UserID",
             "label": "PGID",
             "name": "PGID"
@@ -780,7 +798,7 @@
             "label": "PUID",
             "name": "PUID"
         },{
-            "default": "100",
+            "default": "1000",
             "label": "PGID",
             "name": "PGID"
         }],
@@ -791,7 +809,6 @@
     },{
         "title": "Chevereto",
         "description": "Chevereto is a powerful and fast image hosting script that allows you to create your very own full-featured image hosting website in just minutes. Please note that this offers only the free Chevereto version.",
-        "note": "Portainer App Templates by <a href='https://www.technorabilia.com' target='_blank'>Technorabilia</a> based on data provided by <a href='https://www.linuxserver.io' target='_blank'>LinuxServer.io</a>.",
         "logo": "https://raw.githubusercontent.com/thesugarat/portainer_templates-1/master/Images/Chevereto.png",
         "platform": "linux",
         "type": 1,
@@ -902,7 +919,6 @@
     },{
         "title": "Cloud9",
         "description": "[Cloud9](https://github.com/c9/core) Cloud9 is a complete web based IDE with terminal access. This container is for running their core SDK locally and developing plugins.",
-        "note": "Portainer App Templates by <a href='https://www.technorabilia.com' target='_blank'>Technorabilia</a> based on data provided by <a href='https://www.linuxserver.io' target='_blank'>LinuxServer.io</a>.</p><p>Don't forget to create the volume directories on the host file system.</p><p>mkdir -p /volume1/docker/cloud9/config<br>mkdir -p /volume1/docker/cloud9/code<br></p>",
         "logo": "https://raw.githubusercontent.com/linuxserver/docker-templates/master/linuxserver.io/img/cloud9.png",
         "platform": "linux",
         "type": 1,
@@ -944,7 +960,6 @@
     },{
         "title": "Code-Server",
         "description": "[Code-Server](https://coder.com) is VS Code running on a remote server, accessible through the browser. - Code on your Chromebook, tablet, and laptop with a consistent dev environment. - If you have a Windows or Mac workstation, more easily develop for Linux. - Take advantage of large cloud servers to speed up tests, compilations, downloads, and more. - Preserve battery life when you're on the go. - All intensive computation runs on your server. - You're no longer running excess instances of Chrome.",
-        "note": "Portainer App Templates by <a href='https://www.technorabilia.com' target='_blank'>Technorabilia</a> based on data provided by <a href='https://www.linuxserver.io' target='_blank'>LinuxServer.io</a>.</p><p>Don't forget to create the volume directories on the host file system.</p><p>mkdir -p /volume1/docker/code-server/config</p>",
         "logo": "https://raw.githubusercontent.com/linuxserver/docker-templates/master/linuxserver.io/img/code-server-banner.png",
         "platform": "linux",
         "type": 1,
@@ -1072,7 +1087,6 @@
     },{
         "title": "Cops",
         "description": "Cops by Sébastien Lucas, stands for Calibre OPDS (and HTML) Php Server. COPS links to your Calibre library database and allows downloading and emailing of books directly from a web browser and provides an OPDS feed to connect to your devices. Changes in your Calibre library are reflected immediately in your COPS pages. See COPS's home for more details. Don't forget to check the Wiki.\n\n## Why? (taken from the author's site)\nIn my opinion, Calibre is a marvelous tool but is too big and has too many dependencies to be used for its content server. That's the main reason why I coded this OPDS server. I needed a simple tool to be installed on a small server (Seagate Dockstar in my case). I initially thought of Calibre2OPDS, but as it generates static files, no search was possible. Later I added a simple HTML catalog that should be usable on my Kobo. So COPS's main advantages are:\n\n* No need for many dependencies.\n* No need for a lot of CPU or RAM.\n* Not much code.\n* Search is available.\n* With Dropbox/owncloud, it's very easy to have an up-to-date OPDS server.\n* It was fun to code.\n\nIf you want to use the OPDS feed, don't forget to specify feed.php at the end of your URL.",
-        "note": "Portainer App Templates by <a href='https://www.technorabilia.com' target='_blank'>Technorabilia</a> based on data provided by <a href='https://www.linuxserver.io' target='_blank'>LinuxServer.io</a>.</p><p>Don't forget to create the volume directories on the host file system.</p><p>mkdir -p /volume1/docker/cops/config<br>mkdir -p /volume1/docker/cops/books</p>",
         "logo": "https://raw.githubusercontent.com/linuxserver/docker-templates/master/linuxserver.io/img/cops-icon.png",
         "platform": "linux",
         "type": 1,
@@ -1090,12 +1104,12 @@
             "container": "/books"
         }],
         "env": [{
-            "default": "1024",
+            "default": "1000",
             "description": "for GroupID",
             "label": "PUID",
             "name": "PUID"
         },{
-            "default": "100",
+            "default": "1000",
             "description": "for UserID",
             "label": "PGID",
             "name": "PGID"
@@ -1111,7 +1125,6 @@
     },{
         "title": "CouchPotato",
         "description": "Couchpotato is an automatic NZB and torrent downloader. You can keep a 'movies I want' list and it will search for NZBs/torrents of these movies every X hours. Once a movie is found, it will send it to SABnzbd or download the torrent to a specified directory.",
-        "note": "Portainer App Templates by <a href='https://www.technorabilia.com' target='_blank'>Technorabilia</a> based on data provided by <a href='https://www.linuxserver.io' target='_blank'>LinuxServer.io</a>.</p><p>Don't forget to create the volume directories on the host file system.</p><p>mkdir -p /volume1/docker/couchpotato/config<br>mkdir -p /volume1/docker/couchpotato/downloads<br>mkdir -p /volume1/docker/couchpotato/movies</p>",
         "logo": "https://couchpota.to/media/images/full.png",
         "platform": "linux",
         "type": 1,
@@ -1132,12 +1145,12 @@
             "container": "/movies"
         }],
         "env": [{
-            "default": "1024",
+            "default": "1000",
             "description": "for GroupID",
             "label": "PUID",
             "name": "PUID"
         },{
-            "default": "100",
+            "default": "1000",
             "description": "for UserID",
             "label": "PGID",
             "name": "PGID"
@@ -1173,7 +1186,6 @@
     },{
         "title": "Daapd",
         "description": "[Daapd](https://owntone.github.io/owntone-server/) (iTunes) media server with support for AirPlay devices, Apple Remote (and compatibles), Chromecast, MPD and internet radio.",
-        "note": "Portainer App Templates by <a href='https://www.technorabilia.com' target='_blank'>Technorabilia</a> based on data provided by <a href='https://www.linuxserver.io' target='_blank'>LinuxServer.io</a>.</p><p>Don't forget to create the volume directories on the host file system.</p><p>mkdir -p /volume1/docker/daapd/config<br>mkdir -p /volume1/docker/daapd/music</p>",
         "logo": "https://raw.githubusercontent.com/linuxserver/beta-templates/master/lsiodev/img/daapd-git.png",
         "platform": "linux",
         "type": 1,
@@ -1240,7 +1252,6 @@
       },{
         "title": "DarkTable",
         "description": "[darktable](https://www.darktable.org/) is an open source photography workflow application and raw developer. A virtual lighttable and darkroom for photographers. It manages your digital negatives in a database, lets you view them through a zoomable lighttable and enables you to develop raw images and enhance them.",
-        "note": "Portainer App Templates by <a href='https://www.technorabilia.com' target='_blank'>Technorabilia</a> based on data provided by <a href='https://www.linuxserver.io' target='_blank'>LinuxServer.io</a>.</p><p>Don't forget to create the volume directories on the host file system.</p><p>mkdir -p /volume1/docker/darktable/config</p>",
         "logo": "https://raw.githubusercontent.com/linuxserver/docker-templates/master/linuxserver.io/img/darktable-logo.png",
         "platform": "linux",
         "type": 1,
@@ -1255,12 +1266,12 @@
             "container": "/config"
         }],
         "env": [{
-            "default": "1024",
+            "default": "1000",
             "description": "for GroupID",
             "label": "PUID",
             "name": "PUID"
         },{
-            "default": "100",
+            "default": "1000",
             "description": "for UserID",
             "label": "PGID",
             "name": "PGID"
@@ -1276,7 +1287,6 @@
     },{
         "title": "Davos",
         "description": "[Davos](https://github.com/linuxserver/davos) is an FTP automation tool that periodically scans given host locations for new files. It can be configured for various purposes, including listening for specific files to appear in the host location, ready for it to download and then move, if required. It also supports completion notifications as well as downstream API calls, to further the workflow.",
-        "note": "Portainer App Templates by <a href='https://www.technorabilia.com' target='_blank'>Technorabilia</a> based on data provided by <a href='https://www.linuxserver.io' target='_blank'>LinuxServer.io</a>.</p><p>Don't forget to create the volume directories on the host file system.</p><p>mkdir -p /volume1/docker/davos/config<br>mkdir -p /volume1/docker/davos/download</p>",
         "logo": "https://raw.githubusercontent.com/linuxserver/davos/master/docs/list.PNG",
         "platform": "linux",
         "type": 1,
@@ -1294,12 +1304,12 @@
             "container": "/download"
         }],
         "env": [{
-            "default": "1024",
+            "default": "1000",
             "description": "for GroupID",
             "label": "PUID",
             "name": "PUID"
         },{
-            "default": "100",
+            "default": "1000",
             "description": "for UserID",
             "label": "PGID",
             "name": "PGID"
@@ -1315,7 +1325,6 @@
     },{
         "title": "DDClient",
         "description": "[Ddclient](https://github.com/ddclient/ddclient) is a Perl client used to update dynamic DNS entries for accounts on Dynamic DNS Network Service Provider. It was originally written by Paul Burry and is now mostly by wimpunk. It has the capability to update more than just dyndns and it can fetch your WAN-ipaddress in a few different ways.",
-        "note": "Portainer App Templates by <a href='https://www.technorabilia.com' target='_blank'>Technorabilia</a> based on data provided by <a href='https://www.linuxserver.io' target='_blank'>LinuxServer.io</a>.</p><p>Don't forget to create the volume directories on the host file system.</p><p>mkdir -p /volume1/docker/ddclient/config</p>",
         "logo": "https://raw.githubusercontent.com/linuxserver/docker-templates/master/linuxserver.io/img/ddclient-logo.png",
         "platform": "linux",
         "type": 1,
@@ -1327,12 +1336,12 @@
             "container": "/config"
         }],
         "env": [{
-            "default": "1024",
+            "default": "1000",
             "description": "for GroupID",
             "label": "PUID",
             "name": "PUID"
         },{
-            "default": "100",
+            "default": "1000",
             "description": "for UserID",
             "label": "PGID",
             "name": "PGID"
@@ -1348,7 +1357,6 @@
     },{
         "title": "Deluge",
         "description": "[Deluge](http://deluge-torrent.org/) is a lightweight, Free Software, cross-platform BitTorrent client. * Full Encryption * WebUI * Plugin System * Much more...",
-        "note": "Portainer App Templates by <a href='https://www.technorabilia.com' target='_blank'>Technorabilia</a> based on data provided by <a href='https://www.linuxserver.io' target='_blank'>LinuxServer.io</a>.</p><p>Don't forget to create the volume directories on the host file system.</p><p>mkdir -p /volume1/docker/deluge/config<br>mkdir -p /volume1/docker/deluge/downloads</p>",
         "logo": "https://avatars2.githubusercontent.com/u/6733935?v=3&s=200",
         "platform": "linux",
         "type": 1,
@@ -1368,12 +1376,12 @@
             "container": "/downloads"
         }],
         "env": [{
-            "default": "1024",
+            "default": "1000",
             "description": "for GroupID",
             "label": "PUID",
             "name": "PUID"
         },{
-            "default": "100",
+            "default": "1000",
             "description": "for UserID",
             "label": "PGID",
             "name": "PGID"
@@ -1394,7 +1402,6 @@
     },{
         "title": "Digikam",
         "description": "[digiKam](https://www.digikam.org/): Professional Photo Management with the Power of Open Source",
-        "note": "Portainer App Templates by <a href='https://www.technorabilia.com' target='_blank'>Technorabilia</a> based on data provided by <a href='https://www.linuxserver.io' target='_blank'>LinuxServer.io</a>.</p><p>Don't forget to create the volume directories on the host file system.</p><p>mkdir -p /volume1/docker/digikam/config</p>",
         "logo": "https://raw.githubusercontent.com/linuxserver/docker-templates/master/linuxserver.io/img/digikam.png",
         "platform": "linux",
         "type": 1,
@@ -1421,7 +1428,6 @@
     },{
         "title": "Dillinger",
         "description": "[Dillinger](https://github.com/joemccann/dillinger) is a cloud-enabled, mobile-ready, offline-storage, AngularJS powered HTML5 Markdown editor.",
-        "note": "Portainer App Templates by <a href='https://www.technorabilia.com' target='_blank'>Technorabilia</a> based on data provided by <a href='https://www.linuxserver.io' target='_blank'>LinuxServer.io</a>.</p><p>Don't forget to create the volume directories on the host file system.</p><p>mkdir -p /volume1/docker/dillinger/config</p>",
         "logo": "https://raw.githubusercontent.com/linuxserver/docker-templates/master/linuxserver.io/img/dillinger.png",
         "platform": "linux",
         "type": 1,
@@ -1436,12 +1442,12 @@
             "container": "/config"
         }],
         "env": [{
-            "default": "1024",
+            "default": "1000",
             "description": "for GroupID",
             "label": "PUID",
             "name": "PUID"
         },{
-            "default": "100",
+            "default": "1000",
             "description": "for UserID",
             "label": "PGID",
             "name": "PGID"
@@ -1457,7 +1463,6 @@
     },{
         "title": "Diskover",
         "description": "[Diskover](https://github.com/diskoverdata/diskover-community) is an open source file system indexer that uses Elasticsearch to index and manage data across heterogeneous storage systems.",
-        "note": "Portainer App Templates by <a href='https://www.technorabilia.com' target='_blank'>Technorabilia</a> based on data provided by <a href='https://www.linuxserver.io' target='_blank'>LinuxServer.io</a>.</p><p>Don't forget to create the volume directories on the host file system.</p><p>mkdir -p /volume1/docker/diskover/config<br>mkdir -p /volume1/docker/diskover/data</p>",
         "logo": "https://raw.githubusercontent.com/diskoverdata/diskover-community/master/diskover-web/public/images/diskover.png",
         "platform": "linux",
         "type": 1,
@@ -1475,12 +1480,12 @@
             "container": "/data"
         }],
         "env": [{
-            "default": "1024",
+            "default": "1000",
             "description": "for GroupID",
             "label": "PUID",
             "name": "PUID"
         },{
-            "default": "100",
+            "default": "1000",
             "description": "for UserID",
             "label": "PGID",
             "name": "PGID"
@@ -1516,7 +1521,6 @@
     },{
         "title": "Docker-Compose",
         "description": "This container needs special attention. Please check https://hub.docker.com/r/linuxserver/docker-compose for details.",
-        "note": "Portainer App Templates by <a href='https://www.technorabilia.com' target='_blank'>Technorabilia</a> based on data provided by <a href='https://www.linuxserver.io' target='_blank'>LinuxServer.io</a>.</p><p>Don't forget to create the volume directories on the host file system.</p><p>mkdir -p /volume1/docker/docker-compose/config</p>",
         "logo": "",
         "platform": "linux",
         "type": 1,
@@ -1571,7 +1575,6 @@
     },{
         "title": "DokuWiki",
         "description": "[Dokuwiki](https://www.dokuwiki.org/dokuwiki/) is a simple to use and highly versatile Open Source wiki software that doesn't require a database. It is loved by users for its clean and readable syntax. The ease of maintenance, backup and integration makes it an administrator's favorite. Built in access controls and authentication connectors make DokuWiki especially useful in the enterprise context and the large number of plugins contributed by its vibrant community allow for a broad range of use cases beyond a traditional wiki.",
-        "note": "Portainer App Templates by <a href='https://www.technorabilia.com' target='_blank'>Technorabilia</a> based on data provided by <a href='https://www.linuxserver.io' target='_blank'>LinuxServer.io</a>.</p><p>Don't forget to create the volume directories on the host file system.</p><p>mkdir -p /volume1/docker/dokuwiki/config</p>",
         "logo": "https://raw.githubusercontent.com/linuxserver/docker-templates/master/linuxserver.io/img/dokuwiki-icon.png",
         "platform": "linux",
         "type": 1,
@@ -1592,7 +1595,6 @@
     },{
         "title": "Domoticz",
         "description": "[Domoticz](https://www.domoticz.com) is a Home Automation System that lets you monitor and configure various devices like: Lights, Switches, various sensors/meters like Temperature, Rain, Wind, UV, Electra, Gas, Water and much more. Notifications/Alerts can be sent to any mobile device.",
-        "note": "Portainer App Templates by <a href='https://www.technorabilia.com' target='_blank'>Technorabilia</a> based on data provided by <a href='https://www.linuxserver.io' target='_blank'>LinuxServer.io</a>.</p><p>Don't forget to create the volume directories on the host file system.</p><p>mkdir -p /volume1/docker/domoticz/config</p>",
         "logo": "https://github.com/domoticz/domoticz/raw/master/www/images/logo.png",
         "platform": "linux",
         "type": 1,
@@ -1620,7 +1622,6 @@
     },{
         "title": "DoubleCommander",
         "description": "[Double Commander](https://doublecmd.sourceforge.io/) is a free cross platform open source file manager with two panels side by side. It is inspired by Total Commander and features some new ideas.",
-        "note": "Portainer App Templates by <a href='https://www.technorabilia.com' target='_blank'>Technorabilia</a> based on data provided by <a href='https://www.linuxserver.io' target='_blank'>LinuxServer.io</a>.</p><p>Don't forget to create the volume directories on the host file system.</p><p>mkdir -p /volume1/docker/doublecommander/config<br>mkdir -p /volume1/docker/doublecommander/data</p>",
         "logo": "https://raw.githubusercontent.com/linuxserver/docker-templates/master/linuxserver.io/img/doublecommander-icon.png",
         "platform": "linux",
         "type": 1,
@@ -1643,7 +1644,6 @@
     },{
         "title": "DuckDNS",
         "description": "[Duckdns](https://duckdns.org/) is a free service which will point a DNS (sub domains of duckdns.org) to an IP of your choice. The service is completely free, and doesn't require reactivation or forum posts to maintain its existence.",
-        "note": "Portainer App Templates by <a href='https://www.technorabilia.com' target='_blank'>Technorabilia</a> based on data provided by <a href='https://www.linuxserver.io' target='_blank'>LinuxServer.io</a>.</p><p>Don't forget to create the volume directories on the host file system.</p><p>mkdir -p /volume1/docker/duckdns/config</p>",
         "logo": "https://raw.githubusercontent.com/linuxserver/docker-templates/master/linuxserver.io/img/duckdns.png",
         "platform": "linux",
         "type": 1,
@@ -1691,7 +1691,6 @@
     },{
         "title": "Duplicati",
         "description": "[Duplicati](https://www.duplicati.com/) works with standard protocols like FTP, SSH, WebDAV as well as popular services like Microsoft OneDrive, Amazon Cloud Drive & S3, Google Drive, box.com, Mega, hubiC and many others.",
-        "note": "Portainer App Templates by <a href='https://www.technorabilia.com' target='_blank'>Technorabilia</a> based on data provided by <a href='https://www.linuxserver.io' target='_blank'>LinuxServer.io</a>.</p><p>Don't forget to create the volume directories on the host file system.</p><p>mkdir -p /volume1/docker/duplicati/config<br>mkdir -p /volume1/docker/duplicati/backups<br>mkdir -p /volume1/docker/duplicati/source</p>",
         "logo": "https://github.com/linuxserver/docker-templates/raw/master/linuxserver.io/img/duplicati-icon.png",
         "platform": "linux",
         "type": 1,
@@ -1712,12 +1711,12 @@
             "container": "/source"
         }],
         "env": [{
-            "default": "1024",
+            "default": "1000",
             "description": "for GroupID",
             "label": "PUID",
             "name": "PUID"
         },{
-            "default": "100",
+            "default": "1000",
             "description": "for UserID",
             "label": "PGID",
             "name": "PGID"
@@ -1777,7 +1776,6 @@
     },{
         "title": "Emby",
         "description": "[Emby](https://emby.media/) organizes video, music, live TV, and photos from personal media libraries and streams them to smart TVs, streaming boxes and mobile devices. This container is packaged as a standalone emby Media Server.",
-        "note": "Portainer App Templates by <a href='https://www.technorabilia.com' target='_blank'>Technorabilia</a> based on data provided by <a href='https://www.linuxserver.io' target='_blank'>LinuxServer.io</a>.</p><p>Don't forget to create the volume directories on the host file system.</p><p>mkdir -p /volume1/docker/emby/config<br>mkdir -p /volume1/docker/emby/data/tvshows<br>mkdir -p /volume1/docker/emby/data/movies<br></p>",
         "logo": "https://raw.githubusercontent.com/linuxserver/docker-templates/master/linuxserver.io/img/emby-logo.png",
         "platform": "linux",
         "type": 1,
@@ -1802,12 +1800,12 @@
             "container": "/opt/vc/lib"
         }],
         "env": [{
-            "default": "1024",
+            "default": "1000",
             "description": "for GroupID",
             "label": "PUID",
             "name": "PUID"
         },{
-            "default": "100",
+            "default": "1000",
             "description": "for UserID",
             "label": "PGID",
             "name": "PGID"
@@ -1823,7 +1821,6 @@
     },{
         "title": "EmbyStat",
         "description": "[Embystat](https://github.com/mregni/EmbyStat) is a personal web server that can calculate all kinds of statistics from your (local) Emby server. Just install this on your server and let him calculate all kinds of fun stuff.",
-        "note": "Portainer App Templates by <a href='https://www.technorabilia.com' target='_blank'>Technorabilia</a> based on data provided by <a href='https://www.linuxserver.io' target='_blank'>LinuxServer.io</a>.</p><p>Don't forget to create the volume directories on the host file system.</p><p>mkdir -p /volume1/docker/embystat/config</p>",
         "logo": "https://raw.githubusercontent.com/linuxserver/docker-templates/master/linuxserver.io/img/embystat-logo.png",
         "platform": "linux",
         "type": 1,
@@ -1838,12 +1835,12 @@
                 "container": "/config"
         }],
         "env": [{
-            "default": "1024",
+            "default": "1000",
             "description": "for GroupID",
             "label": "PUID",
             "name": "PUID"
         },{
-            "default": "100",
+            "default": "1000",
             "description": "for UserID",
             "label": "PGID",
             "name": "PGID"
@@ -1859,7 +1856,6 @@
     },{
         "title": "EmulatorJS",
         "description": "[Emulatorjs](https://github.com/linuxserver/emulatorjs) - In browser web based emulation portable to nearly any device for many retro consoles. A mix of emulators is used between Libretro and EmulatorJS.",
-        "note": "Portainer App Templates by <a href='https://www.technorabilia.com' target='_blank'>Technorabilia</a> based on data provided by <a href='https://www.linuxserver.io' target='_blank'>LinuxServer.io</a>.</p><p>Don't forget to create the volume directories on the host file system.</p><p>mkdir -p /volume1/docker/emulatorjs/data</p>",
         "logo": "https://raw.githubusercontent.com/linuxserver/docker-templates/master/linuxserver.io/img/emulatorjs-logo.png",
         "platform": "linux",
         "type": 1,
@@ -1887,7 +1883,6 @@
     },{
         "title": "EndleSSH",
         "description": "[Endlessh](https://github.com/skeeto/endlessh) is an SSH tarpit that very slowly sends an endless, random SSH banner. It keeps SSH clients locked up for hours or even days at a time. The purpose is to put your real SSH server on another port and then let the script kiddies get stuck in this tarpit instead of bothering a real server.",
-        "note": "Portainer App Templates by <a href='https://www.technorabilia.com' target='_blank'>Technorabilia</a> based on data provided by <a href='https://www.linuxserver.io' target='_blank'>LinuxServer.io</a>.</p><p>Don't forget to create the volume directories on the host file system.</p><p>mkdir -p /volume1/docker/endlessh/config</p>",
         "logo": "https://github.com/linuxserver/docker-templates/raw/master/linuxserver.io/img/openssh-server-logo.png",
         "platform": "linux",
         "type": 1,
@@ -1902,12 +1897,12 @@
             "container": "/config"
         }],
         "env": [{
-            "default": "1024",
+            "default": "1000",
             "description": "for GroupID",
             "label": "PUID",
             "name": "PUID"
         },{
-            "default": "100",
+            "default": "1000",
             "description": "for UserID",
             "label": "PGID",
             "name": "PGID"
@@ -1994,7 +1989,6 @@
     },{
         "title": "FileZilla",
         "description": "[FIleZilla](https://filezilla-project.org/) Client is a fast and reliable cross-platform FTP, FTPS and SFTP client with lots of useful features and an intuitive graphical user interface.",
-        "note": "Portainer App Templates by <a href='https://www.technorabilia.com' target='_blank'>Technorabilia</a> based on data provided by <a href='https://www.linuxserver.io' target='_blank'>LinuxServer.io</a>.</p><p>Don't forget to create the volume directories on the host file system.</p><p>mkdir -p /volume1/docker/filezilla/config</p>",
         "logo": "https://raw.githubusercontent.com/linuxserver/docker-templates/master/linuxserver.io/img/filezilla-logo.png",
         "platform": "linux",
         "type": 1,
@@ -2009,12 +2003,12 @@
             "container": "/config"
         }],
         "env": [{
-            "default": "1024",
+            "default": "1000",
             "description": "for GroupID",
             "label": "PUID",
             "name": "PUID"
         },{
-            "default": "100",
+            "default": "1000",
             "description": "for UserID",
             "label": "PGID",
             "name": "PGID"
@@ -2030,7 +2024,6 @@
     },{
         "title": "Fleet",
         "description": "[Fleet](https://github.com/linuxserver/fleet) provides an online web interface which displays a set of maintained images from one or more owned repositories.",
-        "note": "Portainer App Templates by <a href='https://www.technorabilia.com' target='_blank'>Technorabilia</a> based on data provided by <a href='https://www.linuxserver.io' target='_blank'>LinuxServer.io</a>.</p><p>Don't forget to create the volume directories on the host file system.</p><p>mkdir -p /volume1/docker/fleet/config</p>",
         "logo": "",
         "platform": "linux",
         "type": 1,
@@ -2045,12 +2038,12 @@
             "container": "/config"
         }],
         "env": [{
-            "default": "1024",
+            "default": "1000",
             "description": "for GroupID",
             "label": "PUID",
             "name": "PUID"
         },{
-            "default": "100",
+            "default": "1000",
             "description": "for UserID",
             "label": "PGID",
             "name": "PGID"
@@ -2086,7 +2079,6 @@
     },{
         "title": "FoldingAtHome",
         "description": "[Folding@home](https://foldingathome.org/) is a distributed computing project for simulating protein dynamics, including the process of protein folding and the movements of proteins implicated in a variety of diseases. It brings together citizen scientists who volunteer to run simulations of protein dynamics on their personal computers. Insights from this data are helping scientists to better understand biology, and providing new opportunities for developing therapeutics.",
-        "note": "Portainer App Templates by <a href='https://www.technorabilia.com' target='_blank'>Technorabilia</a> based on data provided by <a href='https://www.linuxserver.io' target='_blank'>LinuxServer.io</a>.</p><p>Don't forget to create the volume directories on the host file system.</p><p>mkdir -p /volume1/docker/foldingathome/config</p>",
         "logo": "https://foldingathome.org/wp-content/uploads/2016/09/folding-at-home-logo.png",
         "platform": "linux",
         "type": 1,
@@ -2102,12 +2094,12 @@
             "container": "/config"
         }],
         "env": [{
-            "default": "1024",
+            "default": "1000",
             "description": "for GroupID",
             "label": "PUID",
             "name": "PUID"
         },{
-            "default": "100",
+            "default": "1000",
             "description": "for UserID",
             "label": "PGID",
             "name": "PGID"
@@ -2123,7 +2115,6 @@
     },{
         "title": "FreshRSS",
         "description": "[Freshrss](https://freshrss.org/) is a free, self-hostable aggregator for rss feeds.",
-        "note": "Portainer App Templates by <a href='https://www.technorabilia.com' target='_blank'>Technorabilia</a> based on data provided by <a href='https://www.linuxserver.io' target='_blank'>LinuxServer.io</a>.</p><p>Don't forget to create the volume directories on the host file system.</p><p>mkdir -p /volume1/docker/freshrss/config</p>",
         "logo": "https://raw.githubusercontent.com/linuxserver/docker-templates/master/linuxserver.io/img/freshrss-banner.png",
         "platform": "linux",
         "type": 1,
@@ -2138,12 +2129,12 @@
             "container": "/config"
         }],
         "env": [{
-            "default": "1024",
+            "default": "1000",
             "description": "for GroupID",
             "label": "PUID",
             "name": "PUID"
         },{
-            "default": "100",
+            "default": "1000",
             "description": "for UserID",
             "label": "PGID",
             "name": "PGID"
@@ -2209,7 +2200,6 @@
     },{
         "title": "Grav",
         "description": "[Grav](https://github.com/getgrav/grav/) is a Fast, Simple, and Flexible, file-based Web-platform.",
-        "note": "Portainer App Templates by <a href='https://www.technorabilia.com' target='_blank'>Technorabilia</a> based on data provided by <a href='https://www.linuxserver.io' target='_blank'>LinuxServer.io</a>.</p><p>Don't forget to create the volume directories on the host file system.</p><p>mkdir -p /volume1/docker/grav/config</p>",
         "logo": "https://raw.githubusercontent.com/linuxserver/docker-templates/master/linuxserver.io/img/grav-logo.png",
         "platform": "linux",
         "type": 1,
@@ -2224,12 +2214,12 @@
             "container": "/config"
         }],
         "env": [{
-            "default": "1024",
+            "default": "1000",
             "description": "for GroupID",
             "label": "PUID",
             "name": "PUID"
         },{
-            "default": "100",
+            "default": "1000",
             "description": "for UserID",
             "label": "PGID",
             "name": "PGID"
@@ -2245,7 +2235,6 @@
     },{
         "title": "Grocy",
         "description": "[Grocy](https://github.com/grocy/grocy) is an ERP system for your kitchen! Cut down on food waste, and manage your chores with this brilliant utility. Keep track of your purchases, how much food you are wasting, what chores need doing and what batteries need charging with this proudly Open Source tool For more information on grocy visit their website and check it out: https://grocy.info",
-        "note": "Portainer App Templates by <a href='https://www.technorabilia.com' target='_blank'>Technorabilia</a> based on data provided by <a href='https://www.linuxserver.io' target='_blank'>LinuxServer.io</a>.</p><p>Don't forget to create the volume directories on the host file system.</p><p>mkdir -p /volume1/docker/grocy/config</p>",
         "logo": "https://grocy.info/img/grocy_logo.svg",
         "platform": "linux",
         "type": 1,
@@ -2260,12 +2249,12 @@
             "container": "/config"
         }],
         "env": [{
-            "default": "1024",
+            "default": "1000",
             "description": "for GroupID",
             "label": "PUID",
             "name": "PUID"
         },{
-            "default": "100",
+            "default": "1000",
             "description": "for UserID",
             "label": "PGID",
             "name": "PGID"
@@ -2281,7 +2270,6 @@
     },{
         "title": "Guacd",
         "description": "[Guacd](https://guacamole.apache.org/) - Apache Guacamole is a clientless remote desktop gateway. It supports standard protocols like VNC, RDP, and SSH. This container is only the backend server component needed to use The official or 3rd party HTML5 frontends.",
-        "note": "Portainer App Templates by <a href='https://www.technorabilia.com' target='_blank'>Technorabilia</a> based on data provided by <a href='https://www.linuxserver.io' target='_blank'>LinuxServer.io</a>.</p><p>Don't forget to create the volume directories on the host file system.</p>",
         "logo": "https://raw.githubusercontent.com/linuxserver/docker-templates/master/linuxserver.io/img/guacd.png",
         "platform": "linux",
         "type": 1,
@@ -2294,7 +2282,6 @@
     },{
         "title": "Habridge",
         "description": "[Habridge](http://bwssystems.com/#/habridge) emulates Philips Hue API to other home automation gateways such as an Amazon Echo/Dot Gen 1 (gen 2 has issues discovering ha-bridge) or other systems that support Philips Hue. The Bridge handles basic commands such as 'On', 'Off' and 'brightness' commands of the hue protocol. This bridge can control most devices that have a distinct API. In the cases of systems that require authorization and/or have APIs that cannot be handled in the current method, a module may need to be built. The Harmony Hub is such a module and so is the Nest module. The Bridge has helpers to build devices for the gateway for the Logitech Harmony Hub, Vera, Vera Lite or Vera Edge, Nest, Somfy Tahoma, Home Assistant, Domoticz, MQTT, HAL, Fibaro, HomeWizard, LIFX, OpenHAB, FHEM, Broadlink and the ability to proxy all of your real Hue bridges behind this bridge. This bridge was built to help put the Internet of Things together. For more information about how to use this software have a look at their Wiki [https://github.com/bwssytems/ha-bridge/wiki](https://github.com/bwssytems/ha-bridge/wiki)",
-        "note": "Portainer App Templates by <a href='https://www.technorabilia.com' target='_blank'>Technorabilia</a> based on data provided by <a href='https://www.linuxserver.io' target='_blank'>LinuxServer.io</a>.</p><p>Don't forget to create the volume directories on the host file system.</p>",
         "logo": "https://raw.githubusercontent.com/bwssytems/ha-bridge/master/src/main/resources/public/img/favicon.ico",
         "platform": "linux",
         "type": 1,
@@ -2310,12 +2297,12 @@
             "container": "/config"
         }],
         "env": [{
-            "default": "1024",
+            "default": "1000",
             "description": "for GroupID",
             "label": "PUID",
             "name": "PUID"
         },{
-            "default": "100",
+            "default": "1000",
             "description": "for UserID",
             "label": "PGID",
             "name": "PGID"
@@ -2336,7 +2323,6 @@
     },{
         "title": "Headphones",
         "description": "[Headphones](https://github.com/rembo10/headphones) is an automated music downloader for NZB and Torrent, written in Python. It supports SABnzbd, NZBget, Transmission, µTorrent and Blackhole.",
-        "note": "Portainer App Templates by <a href='https://www.technorabilia.com' target='_blank'>Technorabilia</a> based on data provided by <a href='https://www.linuxserver.io' target='_blank'>LinuxServer.io</a>.</p><p>Don't forget to create the volume directories on the host file system.</p><p>mkdir -p /volume1/docker/headphones/config<br>mkdir -p /volume1/docker/headphones/downloads<br>mkdir -p /volume1/docker/headphones/music</p>",
         "logo": "https://raw.githubusercontent.com/linuxserver/docker-templates/master/linuxserver.io/img/headphones-banner.png",
         "platform": "linux",
         "type": 1,
@@ -2357,12 +2343,12 @@
             "container": "/music"
         }],
         "env": [{
-            "default": "1024",
+            "default": "1000",
             "description": "for GroupID",
             "label": "PUID",
             "name": "PUID"
         },{
-            "default": "100",
+            "default": "1000",
             "description": "for UserID",
             "label": "PGID",
             "name": "PGID"
@@ -2378,7 +2364,6 @@
     },{
         "title": "Healthchecks",
         "description": "[Healthchecks](https://github.com/healthchecks/healthchecks) is a watchdog for your cron jobs. It's a web server that listens for pings from your cron jobs, plus a web interface.",
-        "note": "Portainer App Templates by <a href='https://www.technorabilia.com' target='_blank'>Technorabilia</a> based on data provided by <a href='https://www.linuxserver.io' target='_blank'>LinuxServer.io</a>.</p><p>Don't forget to create the volume directories on the host file system.</p><p>mkdir -p /volume1/docker/healthchecks/config</p>",
         "logo": "https://raw.githubusercontent.com/healthchecks/healthchecks/master/static/img/welcome.png",
         "platform": "linux",
         "type": 1,
@@ -2393,12 +2378,12 @@
             "container": "/config"
         }],
         "env": [{
-            "default": "1024",
+            "default": "1000",
             "description": "for GroupID",
             "label": "PUID",
             "name": "PUID"
         },{
-            "default": "100",
+            "default": "1000",
             "description": "for UserID",
             "label": "PGID",
             "name": "PGID"
@@ -2479,7 +2464,6 @@
     },{
         "title": "HedgeDoc",
         "description": "[HedgeDoc](https://hedgedoc.org/) gives you access to all your files wherever you are. HedgeDoc is a real-time, multi-platform collaborative markdown note editor. This means that you can write notes with other people on your desktop, tablet or even on the phone. You can sign-in via multiple auth providers like Facebook, Twitter, GitHub and many more on the homepage.",
-        "note": "Portainer App Templates by <a href='https://www.technorabilia.com' target='_blank'>Technorabilia</a> based on data provided by <a href='https://www.linuxserver.io' target='_blank'>LinuxServer.io</a>.</p><p>Don't forget to create the volume directories on the host file system.</p><p>mkdir -p /volume1/docker/hedgedoc/config</p>",
         "logo": "https://raw.githubusercontent.com/linuxserver/docker-templates/master/linuxserver.io/img/hedgedoc-banner.png",
         "platform": "linux",
         "type": 1,
@@ -2494,12 +2478,12 @@
             "container": "/config"
         }],
         "env": [{
-            "default": "1024",
+            "default": "1000",
             "description": "for GroupID",
             "label": "PUID",
             "name": "PUID"
         },{
-            "default": "100",
+            "default": "1000",
             "description": "for UserID",
             "label": "PGID",
             "name": "PGID"
@@ -2555,7 +2539,6 @@
     },{
         "title": "Heimdall",
         "description": "[Heimdall](https://heimdall.site) is a way to organise all those links to your most used web sites and web applications in a simple way. Simplicity is the key to Heimdall. Why not use it as your browser start page? It even has the ability to include a search bar using either Google, Bing or DuckDuckGo.",
-        "note": "Portainer App Templates by <a href='https://www.technorabilia.com' target='_blank'>Technorabilia</a> based on data provided by <a href='https://www.linuxserver.io' target='_blank'>LinuxServer.io</a>.</p><p>Don't forget to create the volume directories on the host file system.</p><p>mkdir -p /volume1/docker/heimdall/config</p>",
         "logo": "https://raw.githubusercontent.com/linuxserver/docker-templates/master/linuxserver.io/img/heimdall-banner.png",
         "platform": "linux",
         "type": 1,
@@ -2571,12 +2554,12 @@
             "container": "/config"
         }],
         "env": [{
-            "default": "1024",
+            "default": "1000",
             "description": "for GroupID",
             "label": "PUID",
             "name": "PUID"
         },{
-            "default": "100",
+            "default": "1000",
             "description": "for UserID",
             "label": "PGID",
             "name": "PGID"
@@ -2589,7 +2572,6 @@
     },{
         "title": "HomeAssistant",
         "description": "[Homeassistant](https://www.home-assistant.io/) is open source home automation that puts local control and privacy first. Powered by a worldwide community of tinkerers and DIY enthusiasts. Perfect to run on a Raspberry Pi or a local server.",
-        "note": "Portainer App Templates by <a href='https://www.technorabilia.com' target='_blank'>Technorabilia</a> based on data provided by <a href='https://www.linuxserver.io' target='_blank'>LinuxServer.io</a>.</p><p>Don't forget to create the volume directories on the host file system.</p><p>mkdir -p /volume1/docker/homeassistant/config</p>",
         "logo": "https://github.com/home-assistant/home-assistant.io/raw/next/source/images/favicon-192x192-full.png",
         "platform": "linux",
         "type": 1,
@@ -2605,12 +2587,12 @@
             "container": "/config"
         }],
         "env": [{
-            "default": "1024",
+            "default": "1000",
             "description": "for GroupID",
             "label": "PUID",
             "name": "PUID"
         },{
-            "default": "100",
+            "default": "1000",
             "description": "for UserID",
             "label": "PGID",
             "name": "PGID"
@@ -2645,7 +2627,6 @@
     },{
         "title": "IPFS",
         "description": "[Ipfs](https://ipfs.io/) - A peer-to-peer hypermedia protocol designed to make the web faster, safer, and more open.",
-        "note": "Portainer App Templates by <a href='https://www.technorabilia.com' target='_blank'>Technorabilia</a> based on data provided by <a href='https://www.linuxserver.io' target='_blank'>LinuxServer.io</a>.</p><p>Don't forget to create the volume directories on the host file system.</p><p>mkdir -p /volume1/docker/ipfs/config</p>",
         "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/18/Ipfs-logo-1024-ice-text.png/480px-Ipfs-logo-1024-ice-text.png",
         "platform": "linux",
         "type": 1,
@@ -2664,12 +2645,12 @@
             "container": "/config"
         }],
         "env": [{
-            "default": "1024",
+            "default": "1000",
             "description": "for GroupID",
             "label": "PUID",
             "name": "PUID"
         },{
-            "default": "100",
+            "default": "1000",
             "description": "for UserID",
             "label": "PGID",
             "name": "PGID"
@@ -2700,7 +2681,6 @@
     },{
         "title": "Jackett",
         "description": "[Jackett](https://github.com/Jackett/Jackett) works as a proxy server: it translates queries from apps (Sonarr, SickRage, CouchPotato, Mylar, etc) into tracker-site-specific http queries, parses the html response, then sends results back to the requesting software. This allows for getting recent uploads (like RSS) and performing searches. Jackett is a single repository of maintained indexer scraping & translation logic - removing the burden from other apps.",
-        "note": "Portainer App Templates by <a href='https://www.technorabilia.com' target='_blank'>Technorabilia</a> based on data provided by <a href='https://www.linuxserver.io' target='_blank'>LinuxServer.io</a>.</p><p>Don't forget to create the volume directories on the host file system.</p><p>mkdir -p /volume1/docker/jackett/config<br>mkdir -p /volume1/docker/jackett/downloads</p>",
         "logo": "https://raw.githubusercontent.com/linuxserver/docker-templates/master/linuxserver.io/img/jackett-banner.png",
         "platform": "linux",
         "type": 1,
@@ -2718,12 +2698,12 @@
             "container": "/downloads"
         }],
         "env": [{
-            "default": "1024",
+            "default": "1000",
             "description": "for GroupID",
             "label": "PUID",
             "name": "PUID"
         },{
-            "default": "100",
+            "default": "1000",
             "description": "for UserID",
             "label": "PGID",
             "name": "PGID"
@@ -2749,7 +2729,6 @@
     },{
         "title": "Jellyfin",
         "description": "[Jellyfin](https://jellyfin.github.io/) is a Free Software Media System that puts you in control of managing and streaming your media. It is an alternative to the proprietary Emby and Plex, to provide media from a dedicated server to end-user devices via multiple apps. Jellyfin is descended from Emby's 3.5.2 release and ported to the .NET Core framework to enable full cross-platform support. There are no strings attached, no premium licenses or features, and no hidden agendas: just a team who want to build something better and work together to achieve it.",
-        "note": "Portainer App Templates by <a href='https://www.technorabilia.com' target='_blank'>Technorabilia</a> based on data provided by <a href='https://www.linuxserver.io' target='_blank'>LinuxServer.io</a>.</p><p>Don't forget to create the volume directories on the host file system.</p><p>mkdir -p /volume1/docker/jellyfin/config<br>mkdir -p /volume1/docker/jellyfin/data/tvshows<br>mkdir -p /volume1/docker/jellyfin/data/movies</p>",
         "logo": "https://raw.githubusercontent.com/jellyfin/jellyfin-ux/master/branding/SVG/banner-logo-solid.svg?sanitize=true",
         "platform": "linux",
         "type": 1,
@@ -2773,12 +2752,12 @@
                 "container": "/data/movies"
             }],
         "env": [{
-                "default": "1024",
+                "default": "1000",
                 "description": "for GroupID",
                 "label": "PUID",
                 "name": "PUID"
             },{
-                "default": "100",
+                "default": "1000",
                 "description": "for UserID",
                 "label": "PGID",
                 "name": "PGID"
@@ -2845,7 +2824,6 @@
     },{
         "title": "Kanzi",
         "description": "[Kanzi](https://lexigr.am/), formerly titled Kodi-Alexa, this custom skill is the ultimate voice remote control for navigating Kodi. It can do anything you can think of (100+ intents). This container also contains lexigram-cli to setup Kanzi with an Amazon Developer Account and automatically deploy it to Amazon.",
-        "note": "Portainer App Templates by <a href='https://www.technorabilia.com' target='_blank'>Technorabilia</a> based on data provided by <a href='https://www.linuxserver.io' target='_blank'>LinuxServer.io</a>.</p><p>Don't forget to create the volume directories on the host file system.</p><p>mkdir -p /volume1/docker/kanzi/config</p>",
         "logo": "https://raw.githubusercontent.com/linuxserver/docker-templates/master/linuxserver.io/img/kanzi.png",
         "platform": "linux",
         "type": 1,
@@ -2860,12 +2838,12 @@
             "container": "/config"
         }],
         "env": [{
-            "default": "1024",
+            "default": "1000",
             "description": "for GroupID",
             "label": "PUID",
             "name": "PUID"
         },{
-            "default": "100",
+            "default": "1000",
             "description": "for UserID",
             "label": "PGID",
             "name": "PGID"
@@ -2891,7 +2869,6 @@
     },{
         "title": "LazyLibrarian",
         "description": "[Lazylibrarian](https://lazylibrarian.gitlab.io/) is a program to follow authors and grab metadata for all your digital reading needs. It uses a combination of Goodreads Librarything and optionally GoogleBooks as sources for author info and book info. This container is based on the DobyTang fork.",
-        "note": "Portainer App Templates by <a href='https://www.technorabilia.com' target='_blank'>Technorabilia</a> based on data provided by <a href='https://www.linuxserver.io' target='_blank'>LinuxServer.io</a>.</p><p>Don't forget to create the volume directories on the host file system.</p><p>mkdir -p /volume1/docker/lazylibrarian/config<br>mkdir -p /volume1/docker/lazylibrarian/downloads<br>mkdir -p /volume1/docker/lazylibrarian/books</p>",
         "logo": "https://raw.githubusercontent.com/linuxserver/docker-templates/master/linuxserver.io/img/lazylibrarian-icon.png",
         "platform": "linux",
         "type": 1,
@@ -2912,12 +2889,12 @@
             "container": "/books"
         }],
         "env": [{
-            "default": "1024",
+            "default": "1000",
             "description": "for GroupID",
             "label": "PUID",
             "name": "PUID"
         },{
-            "default": "100",
+            "default": "1000",
             "description": "for UserID",
             "label": "PGID",
             "name": "PGID"
@@ -2938,7 +2915,6 @@
     },{
         "title": "Ldap-auth",
         "description": "[Ldap-auth](https://github.com/nginxinc/nginx-ldap-auth) software is for authenticating users who request protected resources from servers proxied by nginx. It includes a daemon (ldap-auth) that communicates with an authentication server, and a webserver daemon that generates an authentication cookie based on the user’s credentials. The daemons are written in Python for use with a Lightweight Directory Access Protocol (LDAP) authentication server (OpenLDAP or Microsoft Windows Active Directory 2003 and 2012).",
-        "note": "Portainer App Templates by <a href='https://www.technorabilia.com' target='_blank'>Technorabilia</a> based on data provided by <a href='https://www.linuxserver.io' target='_blank'>LinuxServer.io</a>.</p><p>Don't forget to create the volume directories on the host file system.</p>",
         "logo": "https://jumpcloud.com/wp-content/uploads/2016/12/LDAP_Logo-1420591101.jpg",
         "platform": "linux",
         "type": 1,
@@ -2976,7 +2952,6 @@
     },{
         "title": "LibreOffice",
         "description": "[LibreOffice](https://www.libreoffice.org/) is a free and powerful office suite, and a successor to OpenOffice.org (commonly known as OpenOffice). Its clean interface and feature-rich tools help you unleash your creativity and enhance your productivity.",
-        "note": "Portainer App Templates by <a href='https://www.technorabilia.com' target='_blank'>Technorabilia</a> based on data provided by <a href='https://www.linuxserver.io' target='_blank'>LinuxServer.io</a>.</p><p>Don't forget to create the volume directories on the host file system.</p>",
         "logo": "https://raw.githubusercontent.com/linuxserver/docker-templates/master/linuxserver.io/img/libreoffice-logo.png",
         "platform": "linux",
         "type": 1,
@@ -2991,12 +2966,12 @@
             "container": "/config"
         }],
         "env": [{
-            "default": "1024",
+            "default": "1000",
             "description": "for GroupID",
             "label": "PUID",
             "name": "PUID"
         },{
-            "default": "100",
+            "default": "1000",
             "description": "for UserID",
             "label": "PGID",
             "name": "PGID"
@@ -3012,7 +2987,6 @@
     },{
         "title": "LibreSonic",
         "description": "Libresonic is a free, web-based media streamer, providing ubiquitous access to your music. Use it to share your music with friends or listen to your own music while at work. You can stream to multiple players simultaneously, for instance to one player in your kitchen and another in your living room. /music = Location of music. /media = Location of other media. /podcasts = Location of podcasts. /playlists = Location for playlist storage. CONTEXT_PATH is for setting url-base in reverse proxy setups - (optional) Default user/pass is admin/admin",
-        "note": "Portainer App Templates by <a href='https://www.technorabilia.com' target='_blank'>Technorabilia</a> based on data provided by <a href='https://www.linuxserver.io' target='_blank'>LinuxServer.io</a>.</p><p>Don't forget to create the volume directories on the host file system.</p><p>mkdir -p /music<br>mkdir -p /playlists<br>mkdir -p /podcasts<br>mkdir -p /media<br>mkdir -p /config</p>",
         "logo": "https://raw.githubusercontent.com/thesugarat/portainer_templates-1/master/Images/libresonic.png",
         "platform": "linux",
         "type": 1,
@@ -3065,7 +3039,6 @@
       },{
         "title": "LibreSpeed",
         "description": "[Librespeed](https://github.com/librespeed/speedtest) is a very lightweight Speedtest implemented in Javascript, using XMLHttpRequest and Web Workers. No Flash, No Java, No Websocket, No Bullshit.",
-        "note": "Portainer App Templates by <a href='https://www.technorabilia.com' target='_blank'>Technorabilia</a> based on data provided by <a href='https://www.linuxserver.io' target='_blank'>LinuxServer.io</a>.</p><p>Don't forget to create the volume directories on the host file system.</p><p>mkdir -p /volume1/docker/librespeed/config</p>",
         "logo": "https://raw.githubusercontent.com/librespeed/speedtest/master/.logo/logo3.png",
         "platform": "linux",
         "type": 1,
@@ -3080,12 +3053,12 @@
             "container": "/config"
         }],
         "env": [{
-            "default": "1024",
+            "default": "1000",
             "description": "for GroupID",
             "label": "PUID",
             "name": "PUID"
         },{
-            "default": "100",
+            "default": "1000",
             "description": "for UserID",
             "label": "PGID",
             "name": "PGID"
@@ -3141,7 +3114,6 @@
     },{
         "title": "Lidarr",
         "description": "[Lidarr](https://github.com/lidarr/Lidarr) is a music collection manager for Usenet and BitTorrent users. It can monitor multiple RSS feeds for new tracks from your favorite artists and will grab, sort and rename them. It can also be configured to automatically upgrade the quality of files already downloaded when a better quality format becomes available.",
-        "note": "Portainer App Templates by <a href='https://www.technorabilia.com' target='_blank'>Technorabilia</a> based on data provided by <a href='https://www.linuxserver.io' target='_blank'>LinuxServer.io</a>.</p><p>Don't forget to create the volume directories on the host file system.</p><p>mkdir -p /volume1/docker/lidarr/config<br>mkdir -p /volume1/docker/lidarr/music<br>mkdir -p /volume1/docker/lidarr/downloads</p>",
         "logo": "https://github.com/lidarr/Lidarr/raw/develop/Logo/400.png",
         "platform": "linux",
         "type": 1,
@@ -3162,12 +3134,12 @@
             "container": "/downloads"
         }],
         "env": [{
-            "default": "1024",
+            "default": "1000",
             "description": "for GroupID",
             "label": "PUID",
             "name": "PUID"
         },{
-            "default": "100",
+            "default": "1000",
             "description": "for UserID",
             "label": "PGID",
             "name": "PGID"
@@ -3183,7 +3155,6 @@
     },{
         "title": "Limnoria",
         "description": "[Limnoria](https://github.com/ProgVal/limnoria) A robust, full-featured, and user/programmer-friendly Python IRC bot, with many existing plugins. Successor of the well-known Supybot.",
-        "note": "Portainer App Templates by <a href='https://www.technorabilia.com' target='_blank'>Technorabilia</a> based on data provided by <a href='https://www.linuxserver.io' target='_blank'>LinuxServer.io</a>.</p><p>Don't forget to create the volume directories on the host file system.</p><p>mkdir -p /volume1/docker/limnoria/config</p>",
         "logo": "https://raw.githubusercontent.com/linuxserver/docker-limnoria/master/logo.png",
         "platform": "linux",
         "type": 1,
@@ -3198,12 +3169,12 @@
             "container": "/config"
         }],
         "env": [{
-            "default": "1024",
+            "default": "1000",
             "description": "for GroupID",
             "label": "PUID",
             "name": "PUID"
         },{
-            "default": "100",
+            "default": "1000",
             "description": "for UserID",
             "label": "PGID",
             "name": "PGID"
@@ -3239,7 +3210,6 @@
       },{
         "title": "Lychee",
         "description": "[Lychee](https://lycheeorg.github.io/) is a free photo-management tool, which runs on your server or web-space. Installing is a matter of seconds. Upload, manage and share photos like from a native application. Lychee comes with everything you need and all your photos are stored securely.' ### UPGRADE WARNING Please note that the v4 upgrade process resets ALL password-protected albums. Any albums that were made public with a password will need to be re-secured.",
-        "note": "Portainer App Templates by <a href='https://www.technorabilia.com' target='_blank'>Technorabilia</a> based on data provided by <a href='https://www.linuxserver.io' target='_blank'>LinuxServer.io</a>.</p><p>Don't forget to create the volume directories on the host file system.</p><p>mkdir -p /volume1/docker/lychee/config<br>mkdir -p /volume1/docker/lychee/pictures</p>",
         "logo": "https://raw.githubusercontent.com/linuxserver/docker-templates/master/linuxserver.io/img/lychee-icon.png",
         "platform": "linux",
         "type": 1,
@@ -3257,12 +3227,12 @@
             "container": "/pictures"
         }],
         "env": [{
-            "default": "1024",
+            "default": "1000",
             "description": "for GroupID",
             "label": "PUID",
             "name": "PUID"
         },{
-            "default": "100",
+            "default": "1000",
             "description": "for UserID",
             "label": "PGID",
             "name": "PGID"
@@ -3351,7 +3321,6 @@
     },{
         "title": "Medusa",
         "description": "[Medusa](https://pymedusa.com/) is an automatic Video Library Manager for TV Shows. It watches for new episodes of your favorite shows, and when they are posted it does its magic.",
-        "note": "Portainer App Templates by <a href='https://www.technorabilia.com' target='_blank'>Technorabilia</a> based on data provided by <a href='https://www.linuxserver.io' target='_blank'>LinuxServer.io</a>.</p><p>Don't forget to create the volume directories on the host file system.</p><p>mkdir -p /volume1/docker/medusa/config<br>mkdir -p /volume1/docker/medusa/downloads<br>mkdir -p /volume1/docker/medusa/tv</p>",
         "logo": "https://raw.githubusercontent.com/linuxserver/docker-templates/master/linuxserver.io/img/medusa-icon.png",
         "platform": "linux",
         "type": 1,
@@ -3372,12 +3341,12 @@
             "container": "/tv"
         }],
         "env": [{
-            "default": "1024",
+            "default": "1000",
             "description": "for GroupID",
             "label": "PUID",
             "name": "PUID"
         },{
-            "default": "100",
+            "default": "1000",
             "description": "for UserID",
             "label": "PGID",
             "name": "PGID"
@@ -3393,7 +3362,6 @@
     },{
         "title": "Minetest",
         "description": "[Minetest](http://www.minetest.net/) (server) is a near-infinite-world block sandbox game and a game engine, inspired by InfiniMiner, Minecraft, and the like.",
-        "note": "Portainer App Templates by <a href='https://www.technorabilia.com' target='_blank'>Technorabilia</a> based on data provided by <a href='https://www.linuxserver.io' target='_blank'>LinuxServer.io</a>.</p><p>Don't forget to create the volume directories on the host file system.</p><p>mkdir -p /volume1/docker/minetest/config/.minetest</p>",
         "logo": "https://raw.githubusercontent.com/linuxserver/beta-templates/master/lsiodev/img/minetest-icon.png",
         "platform": "linux",
         "type": 1,
@@ -3408,12 +3376,12 @@
             "container": "/config/.minetest"
         }],
         "env": [{
-            "default": "1024",
+            "default": "1000",
             "description": "for GroupID",
             "label": "PUID",
             "name": "PUID"
         },{
-            "default": "100",
+            "default": "1000",
             "description": "for UserID",
             "label": "PGID",
             "name": "PGID"
@@ -3434,7 +3402,6 @@
     },{
         "title": "Minisatip",
         "description": "[Minisatip](https://github.com/catalinii/minisatip) is a multi-threaded satip server version 1.2 that runs under Linux and it was tested with DVB-S, DVB-S2, DVB-T, DVB-T2, DVB-C, DVB-C2, ATSC and ISDB-T cards.",
-        "note": "Portainer App Templates by <a href='https://www.technorabilia.com' target='_blank'>Technorabilia</a> based on data provided by <a href='https://www.linuxserver.io' target='_blank'>LinuxServer.io</a>.</p><p>Don't forget to create the volume directories on the host file system.</p><p>mkdir -p /volume1/docker/minisatip/config</p>",
         "logo": "https://raw.githubusercontent.com/linuxserver/docker-templates/master/linuxserver.io/img/minisatip-icon.png",
         "platform": "linux",
         "type": 1,
@@ -3451,12 +3418,12 @@
             "container": "/config"
         }],
         "env": [{
-            "default": "1024",
+            "default": "1000",
             "description": "for GroupID",
             "label": "PUID",
             "name": "PUID"
         },{
-            "default": "100",
+            "default": "1000",
             "description": "for UserID",
             "label": "PGID",
             "name": "PGID"
@@ -3529,7 +3496,6 @@
     },{
         "title": "MStream",
         "description": "[Mstream](https://mstream.io/) is a personal music streaming server. You can use mStream to stream your music from your home computer to any device, anywhere. There are mobile apps available for both Android and iPhone.",
-        "note": "Portainer App Templates by <a href='https://www.technorabilia.com' target='_blank'>Technorabilia</a> based on data provided by <a href='https://www.linuxserver.io' target='_blank'>LinuxServer.io</a>.</p><p>Don't forget to create the volume directories on the host file system.</p><p>mkdir -p /volume1/docker/mstream/config<br>mkdir -p /volume1/docker/mstream/music</p>",
         "logo": "https://raw.githubusercontent.com/linuxserver/docker-templates/master/linuxserver.io/img/mstream-icon.png",
         "platform": "linux",
         "type": 1,
@@ -3552,7 +3518,6 @@
     },{
         "title": "Muximux",
         "description": "[Muximux](https://github.com/mescon/Muximux) is a lightweight portal to view & manage your HTPC apps without having to run anything more than a PHP enabled webserver. With Muximux you don't need to keep multiple tabs open, or bookmark the URL to all of your apps.",
-        "note": "Portainer App Templates by <a href='https://www.technorabilia.com' target='_blank'>Technorabilia</a> based on data provided by <a href='https://www.linuxserver.io' target='_blank'>LinuxServer.io</a>.</p><p>Don't forget to create the volume directories on the host file system.</p><p>mkdir -p /volume1/docker/muximux/config</p>",
         "logo": "https://raw.githubusercontent.com/linuxserver/docker-templates/master/linuxserver.io/img/muximux-icon.png",
         "platform": "linux",
         "type": 1,
@@ -3572,7 +3537,6 @@
     },{
         "title": "Mylar3",
         "description": "[Mylar3](https://github.com/mylar3/mylar3) is an automated Comic Book downloader (cbr/cbz) for use with NZB and torrents written in python. It supports SABnzbd, NZBGET, and many torrent clients in addition to DDL.",
-        "note": "Portainer App Templates by <a href='https://www.technorabilia.com' target='_blank'>Technorabilia</a> based on data provided by <a href='https://www.linuxserver.io' target='_blank'>LinuxServer.io</a>.</p><p>Don't forget to create the volume directories on the host file system.</p><p>mkdir -p /volume1/docker/mylar3/config<br>mkdir -p /volume1/docker/mylar3/comics<br>mkdir -p /volume1/docker/mylar3/downloads</p>",
         "logo": "https://raw.githubusercontent.com/linuxserver/docker-templates/master/linuxserver.io/img/mylar-icon.png",
         "platform": "linux",
         "type": 1,
@@ -3593,12 +3557,12 @@
             "container": "/downloads"
         }],
         "env": [{
-            "default": "1024",
+            "default": "1000",
             "description": "for GroupID",
             "label": "PUID",
             "name": "PUID"
         },{
-            "default": "100",
+            "default": "1000",
             "description": "for UserID",
             "label": "PGID",
             "name": "PGID"
@@ -3637,7 +3601,6 @@
     },{
         "title": "MySQL-Workbench",
         "description": "[MySQL Workbench](https://www.mysql.com/products/workbench/) is a unified visual tool for database architects, developers, and DBAs. MySQL Workbench provides data modeling, SQL development, and comprehensive administration tools for server configuration, user administration, backup, and much more.",
-        "note": "Portainer App Templates by <a href='https://www.technorabilia.com' target='_blank'>Technorabilia</a> based on data provided by <a href='https://www.linuxserver.io' target='_blank'>LinuxServer.io</a>.</p><p>Don't forget to create the volume directories on the host file system.</p><p>mkdir -p /volume1/docker/mysql-workbench/config</p>",
         "logo": "https://raw.githubusercontent.com/linuxserver/docker-templates/master/linuxserver.io/img/mysql-workbench-icon.png",
         "platform": "linux",
         "type": 1,
@@ -3652,12 +3615,12 @@
             "container": "/config"
         }],
         "env": [{
-            "default": "1024",
+            "default": "1000",
             "description": "for GroupID",
             "label": "PUID",
             "name": "PUID"
         },{
-            "default": "100",
+            "default": "1000",
             "description": "for UserID",
             "label": "PGID",
             "name": "PGID"
@@ -3673,7 +3636,6 @@
     },{
         "title": "NetBootXYZ",
         "description": "[Netbootxyz](https://netboot.xyz) is a way to PXE boot various operating system installers or utilities from one place within the BIOS without the need of having to go retrieve the media to run the tool. iPXE is used to provide a user friendly menu from within the BIOS that lets you easily choose the operating system you want along with any specific types of versions or bootable flags.",
-        "note": "Portainer App Templates by <a href='https://www.technorabilia.com' target='_blank'>Technorabilia</a> based on data provided by <a href='https://www.linuxserver.io' target='_blank'>LinuxServer.io</a>.</p><p>Don't forget to create the volume directories on the host file system.</p><p>mkdir -p /volume1/docker/netbootxyz/config<br>mkdir -p /volume1/docker/netbootxyz/assets</p>",
         "logo": "https://netboot.xyz/images/netboot.xyz.gif",
         "platform": "linux",
         "type": 1,
@@ -3693,12 +3655,12 @@
             "container": "/assets"
         }],
         "env": [{
-            "default": "1024",
+            "default": "1000",
             "description": "for GroupID",
             "label": "PUID",
             "name": "PUID"
         },{
-            "default": "100",
+            "default": "1000",
             "description": "for UserID",
             "label": "PGID",
             "name": "PGID"
@@ -3724,7 +3686,6 @@
     },{
         "title": "NetBox",
         "description": "[Netbox](https://github.com/netbox-community/netbox) is an IP address management (IPAM) and data center infrastructure management (DCIM) tool. Initially conceived by the network engineering team at DigitalOcean, NetBox was developed specifically to address the needs of network and infrastructure engineers. It is intended to function as a domain-specific source of truth for network operations.",
-        "note": "Portainer App Templates by <a href='https://www.technorabilia.com' target='_blank'>Technorabilia</a> based on data provided by <a href='https://www.linuxserver.io' target='_blank'>LinuxServer.io</a>.</p><p>Don't forget to create the volume directories on the host file system.</p><p>mkdir -p /volume1/docker/netbox/config</p>",
         "logo": "https://raw.githubusercontent.com/netbox-community/netbox/develop/docs/netbox_logo.svg",
         "platform": "linux",
         "type": 1,
@@ -3739,12 +3700,12 @@
             "container": "/config"
         }],
         "env": [{
-            "default": "1024",
+            "default": "1000",
             "description": "for GroupID",
             "label": "PUID",
             "name": "PUID"
         },{
-            "default": "100",
+            "default": "1000",
             "description": "for UserID",
             "label": "PGID",
             "name": "PGID"
@@ -3860,7 +3821,6 @@
     },{
         "title": "NextCloud",
         "description": "[Nextcloud](https://nextcloud.com/) gives you access to all your files wherever you are. Where are your photos and documents? With Nextcloud you pick a server of your choice, at home, in a data center or at a provider. And that is where your files will be. Nextcloud runs on that server, protecting your data and giving you access from your desktop or mobile devices. Through Nextcloud you also access, sync and share your existing data on that FTP drive at the office, a Dropbox or a NAS you have at home.",
-        "note": "Portainer App Templates by <a href='https://www.technorabilia.com' target='_blank'>Technorabilia</a> based on data provided by <a href='https://www.linuxserver.io' target='_blank'>LinuxServer.io</a>.</p><p>Don't forget to create the volume directories on the host file system.</p><p>mkdir -p /volume1/docker/nextcloud/config<br>mkdir -p /volume1/docker/nextcloud/data</p>",
         "logo": "https://raw.githubusercontent.com/linuxserver/docker-templates/master/linuxserver.io/img/nextcloud-icon.png",
         "platform": "linux",
         "type": 1,
@@ -3924,7 +3884,6 @@
     },{
         "title": "Ngircd",
         "description": "[Ngircd](https://ngircd.barton.de/) is a free, portable and lightweight Internet Relay Chat server for small or private networks, developed under the GNU General Public License (GPL). It is easy to configure, can cope with dynamic IP addresses, and supports IPv6, SSL-protected connections as well as PAM for authentication. It is written from scratch and not based on the original IRCd.",
-        "note": "Portainer App Templates by <a href='https://www.technorabilia.com' target='_blank'>Technorabilia</a> based on data provided by <a href='https://www.linuxserver.io' target='_blank'>LinuxServer.io</a>.</p><p>Don't forget to create the volume directories on the host file system.</p><p>mkdir -p /volume1/docker/ngircd/config</p>",
         "logo": "https://raw.githubusercontent.com/linuxserver/docker-templates/master/linuxserver.io/img/ngircd-logo.png",
         "platform": "linux",
         "type": 1,
@@ -3939,12 +3898,12 @@
             "container": "/config"
         }],
         "env": [{
-            "default": "1024",
+            "default": "1000",
             "description": "for GroupID",
             "label": "PUID",
             "name": "PUID"
         },{
-            "default": "100",
+            "default": "1000",
             "description": "for UserID",
             "label": "PGID",
             "name": "PGID"
@@ -4070,7 +4029,6 @@
       },{
         "title": "Openssh-server",
         "description": "[Openssh-server](https://www.openssh.com/) is a sandboxed environment that allows ssh access without giving keys to the entire server. Giving ssh access via private key often means giving full access to the server. This container creates a limited and sandboxed environment that others can ssh into. The users only have access to the folders mapped and the processes running inside this container.",
-        "note": "Portainer App Templates by <a href='https://www.technorabilia.com' target='_blank'>Technorabilia</a> based on data provided by <a href='https://www.linuxserver.io' target='_blank'>LinuxServer.io</a>.</p><p>Don't forget to create the volume directories on the host file system.</p><p>mkdir -p /volume1/docker/openssh-server/config</p>",
         "logo": "https://upload.wikimedia.org/wikipedia/en/6/65/OpenSSH_logo.png",
         "platform": "linux",
         "type": 1,
@@ -4085,12 +4043,12 @@
             "container": "/config"
         }],
         "env": [{
-            "default": "1024",
+            "default": "1000",
             "description": "for GroupID",
             "label": "PUID",
             "name": "PUID"
         },{
-            "default": "100",
+            "default": "1000",
             "description": "for UserID",
             "label": "PGID",
             "name": "PGID"
@@ -4151,7 +4109,6 @@
     },{
         "title": "OpenVSCode-Server",
         "description": "[Openvscode-server](https://github.com/gitpod-io/openvscode-server) provides a version of VS Code that runs a server on a remote machine and allows access through a modern web browser.",
-        "note": "Portainer App Templates by <a href='https://www.technorabilia.com' target='_blank'>Technorabilia</a> based on data provided by <a href='https://www.linuxserver.io' target='_blank'>LinuxServer.io</a>.</p><p>Don't forget to create the volume directories on the host file system.</p><p>mkdir -p /volume1/docker/openvscode-server/config</p>",
         "logo": "https://raw.githubusercontent.com/linuxserver/docker-templates/master/linuxserver.io/img/openvscode-server-logo.png",
         "platform": "linux",
         "type": 1,
@@ -4291,7 +4248,6 @@
     },{
         "title": "Paperless-NG",
         "description": "[Paperless-ng](https://github.com/jonaswinkler/paperless-ng) is an application by Daniel Quinn and contributors that indexes your scanned documents and allows you to easily search for documents and store metadata alongside your documents.",
-        "note": "Portainer App Templates by <a href='https://www.technorabilia.com' target='_blank'>Technorabilia</a> based on data provided by <a href='https://www.linuxserver.io' target='_blank'>LinuxServer.io</a>.</p><p>Don't forget to create the volume directories on the host file system.</p><p>mkdir -p /volume1/docker/paperless-ng/config<br>mkdir -p /volume1/docker/paperless-ng/data</p>",
         "logo": "",
         "platform": "linux",
         "type": 1,
@@ -4309,12 +4265,12 @@
             "container": "/data"
         }],
         "env": [{
-            "default": "1024",
+            "default": "1000",
             "description": "for GroupID",
             "label": "PUID",
             "name": "PUID"
         },{
-            "default": "100",
+            "default": "1000",
             "description": "for UserID",
             "label": "PGID",
             "name": "PGID"
@@ -4335,7 +4291,6 @@
     },{
         "title": "PaperMerge",
         "description": "[Papermerge](https://www.papermerge.com/) is an open source document management system (DMS) primarily designed for archiving and retrieving your digital documents. Instead of having piles of paper documents all over your desk, office or drawers - you can quickly scan them and configure your scanner to directly upload to Papermerge DMS.",
-        "note": "Portainer App Templates by <a href='https://www.technorabilia.com' target='_blank'>Technorabilia</a> based on data provided by <a href='https://www.linuxserver.io' target='_blank'>LinuxServer.io</a>.</p><p>Don't forget to create the volume directories on the host file system.</p><p>mkdir -p /volume1/docker/papermerge/config<br>mkdir -p /volume1/docker/papermerge/data</p>",
         "logo": "https://raw.githubusercontent.com/linuxserver/docker-templates/master/linuxserver.io/img/papermerge-icon.png",
         "platform": "linux",
         "type": 1,
@@ -4353,12 +4308,12 @@
                 "container": "/data"
             }],
         "env": [{
-            "default": "1024",
+            "default": "1000",
             "description": "for GroupID",
             "label": "PUID",
             "name": "PUID"
         },{
-            "default": "100",
+            "default": "1000",
             "description": "for UserID",
             "label": "PGID",
             "name": "PGID"
@@ -4379,7 +4334,6 @@
     },{
         "title": "PhotoShow",
         "description": "[Photoshow](https://github.com/thibaud-rohmer/PhotoShow) is gallery software at its easiest, it doesn't even require a database.",
-        "note": "Portainer App Templates by <a href='https://www.technorabilia.com' target='_blank'>Technorabilia</a> based on data provided by <a href='https://www.linuxserver.io' target='_blank'>LinuxServer.io</a>.</p><p>Don't forget to create the volume directories on the host file system.</p><p>mkdir -p /volume1/docker/photoshow/config<br>mkdir -p /volume1/docker/photoshow/Pictures:ro<br>mkdir -p /volume1/docker/photoshow/Thumbs</p>",
         "logo": "https://raw.githubusercontent.com/linuxserver/docker-templates/master/linuxserver.io/img/photoshow-icon.png",
         "platform": "linux",
         "type": 1,
@@ -4400,12 +4354,12 @@
                 "container": "/Thumbs"
             }],
         "env": [{
-            "default": "1024",
+            "default": "1000",
             "description": "for GroupID",
             "label": "PUID",
             "name": "PUID"
         },{
-            "default": "100",
+            "default": "1000",
             "description": "for UserID",
             "label": "PGID",
             "name": "PGID"
@@ -4446,7 +4400,6 @@
     },{
         "title": "Piwigo",
         "description": "[Piwigo](http://piwigo.org/) is a photo gallery software for the web that comes with powerful features to publish and manage your collection of pictures.",
-        "note": "Portainer App Templates by <a href='https://www.technorabilia.com' target='_blank'>Technorabilia</a> based on data provided by <a href='https://www.linuxserver.io' target='_blank'>LinuxServer.io</a>.</p><p>Don't forget to create the volume directories on the host file system.</p><p>mkdir -p /volume1/docker/piwigo/config<br>mkdir -p /volume1/docker/piwigo/gallery</p>",
         "logo": "https://raw.githubusercontent.com/linuxserver/docker-templates/master/linuxserver.io/img/piwigo-banner.png",
         "platform": "linux",
         "type": 1,
@@ -4464,12 +4417,12 @@
                 "container": "/gallery"
             }],
         "env": [{
-                "default": "1024",
+                "default": "1000",
                 "description": "for GroupID",
                 "label": "PUID",
                 "name": "PUID"
             },{
-                "default": "100",
+                "default": "1000",
                 "description": "for UserID",
                 "label": "PGID",
                 "name": "PGID"
@@ -4485,7 +4438,6 @@
     },{
         "title": "Pixapop",
         "description": "[Pixapop](https://github.com/bierdok/pixapop) is an open-source single page application to view your photos in the easiest way possible.",
-        "note": "Portainer App Templates by <a href='https://www.technorabilia.com' target='_blank'>Technorabilia</a> based on data provided by <a href='https://www.linuxserver.io' target='_blank'>LinuxServer.io</a>.</p><p>Don't forget to create the volume directories on the host file system.</p><p>mkdir -p /volume1/docker/pixapop/config<br>mkdir -p /volume1/docker/pixapop/photos</p>",
         "logo": "https://raw.githubusercontent.com/linuxserver/docker-templates/master/linuxserver.io/img/pixapop.png",
         "platform": "linux",
         "type": 1,
@@ -4503,12 +4455,12 @@
             "container": "/photos"
         }],
         "env": [{
-            "default": "1024",
+            "default": "1000",
             "description": "for GroupID",
             "label": "PUID",
             "name": "PUID"
         },{
-            "default": "100",
+            "default": "1000",
             "description": "for UserID",
             "label": "PGID",
             "name": "PGID"
@@ -4534,7 +4486,6 @@
     },{
         "title": "Plex",
         "description": "[Plex](https://plex.tv) organizes video, music and photos from personal media libraries and streams them to smart TVs, streaming boxes and mobile devices. This container is packaged as a standalone Plex Media Server. has always been a top priority. Straightforward design and bulk actions mean getting things done faster.",
-        "note": "Portainer App Templates by <a href='https://www.technorabilia.com' target='_blank'>Technorabilia</a> based on data provided by <a href='https://www.linuxserver.io' target='_blank'>LinuxServer.io</a>.</p><p>Don't forget to create the volume directories on the host file system.</p><p>mkdir -p /volume1/docker/plex/config<br>mkdir -p /volume1/docker/plex/tv<br>mkdir -p /volume1/docker/plex/movies</p>",
         "logo": "http://the-gadgeteer.com/wp-content/uploads/2015/10/plex-logo-e1446990678679.png",
         "platform": "linux",
         "type": 1,
@@ -4553,12 +4504,12 @@
             "container": "/movies"
         }],
         "env": [{
-            "default": "1024",
+            "default": "1000",
             "description": "for GroupID",
             "label": "PUID",
             "name": "PUID"
         },{
-            "default": "100",
+            "default": "1000",
             "description": "for UserID",
             "label": "PGID",
             "name": "PGID"
@@ -4627,7 +4578,6 @@
       },{
         "title": "ProjectSend",
         "description": "[Projectsend](http://www.projectsend.org) is a self-hosted application that lets you upload files and assign them to specific clients that you create yourself. Secure, private and easy. No more depending on external services or e-mail to send those files.",
-        "note": "Portainer App Templates by <a href='https://www.technorabilia.com' target='_blank'>Technorabilia</a> based on data provided by <a href='https://www.linuxserver.io' target='_blank'>LinuxServer.io</a>.</p><p>Don't forget to create the volume directories on the host file system.</p><p>mkdir -p /volume1/docker/projectsend/config<br>mkdir -p /volume1/docker/projectsend/data</p>",
         "logo": "http://www.projectsend.org/wp-content/themes/projectsend/img/screenshots.png",
         "platform": "linux",
         "type": 1,
@@ -4645,12 +4595,12 @@
             "container": "/data"
         }],
         "env": [{
-            "default": "1024",
+            "default": "1000",
             "description": "for GroupID",
             "label": "PUID",
             "name": "PUID"
         },{
-            "default": "100",
+            "default": "1000",
             "description": "for UserID",
             "label": "PGID",
             "name": "PGID"
@@ -4671,7 +4621,6 @@
     },{
         "title": "PWNDrop",
         "description": "[Pwndrop](https://github.com/kgretzky/pwndrop) is a self-deployable file hosting service for sending out red teaming payloads or securely sharing your private files over HTTP and WebDAV.",
-        "note": "Portainer App Templates by <a href='https://www.technorabilia.com' target='_blank'>Technorabilia</a> based on data provided by <a href='https://www.linuxserver.io' target='_blank'>LinuxServer.io</a>.</p><p>Don't forget to create the volume directories on the host file system.</p><p>mkdir -p /volume1/docker/pwndrop/config</p>",
         "logo": "https://raw.githubusercontent.com/kgretzky/pwndrop/master/media/pwndrop-logo-512.png",
         "platform": "linux",
         "type": 1,
@@ -4686,12 +4635,12 @@
             "container": "/config"
         }],
         "env": [{
-            "default": "1024",
+            "default": "1000",
             "description": "for GroupID",
             "label": "PUID",
             "name": "PUID"
         },{
-            "default": "100",
+            "default": "1000",
             "description": "for UserID",
             "label": "PGID",
             "name": "PGID"
@@ -4709,7 +4658,6 @@
     },{
         "title": "Pydio-cells",
         "description": "[Pydio-cells](https://pydio.com/) is the nextgen file sharing platform for organizations. It is a full rewrite of the Pydio project using the Go language following a micro-service architecture.",
-        "note": "Portainer App Templates by <a href='https://www.technorabilia.com' target='_blank'>Technorabilia</a> based on data provided by <a href='https://www.linuxserver.io' target='_blank'>LinuxServer.io</a>.</p><p>Don't forget to create the volume directories on the host file system.</p><p>mkdir -p /volume1/docker/pydio-cells/config</p>",
         "logo": "https://raw.githubusercontent.com/wiki/pydio/cells/images/PydioCellsColor.png",
         "platform": "linux",
         "type": 1,
@@ -4725,12 +4673,12 @@
                 "container": "/config"
             }],
         "env": [{
-                "default": "1024",
+                "default": "1000",
                 "description": "for GroupID",
                 "label": "PUID",
                 "name": "PUID"
             },{
-                "default": "100",
+                "default": "1000",
                 "description": "for UserID",
                 "label": "PGID",
                 "name": "PGID"
@@ -4756,7 +4704,6 @@
     },{
         "title": "PyLoad",
         "description": "[Pyload](https://pyload.net/) is a Free and Open Source download manager written in Python and designed to be extremely lightweight, easily extensible and fully manageable via web.",
-        "note": "Portainer App Templates by <a href='https://www.technorabilia.com' target='_blank'>Technorabilia</a> based on data provided by <a href='https://www.linuxserver.io' target='_blank'>LinuxServer.io</a>.</p><p>Don't forget to create the volume directories on the host file system.</p><p>mkdir -p /volume1/docker/pyload/config<br>mkdir -p /volume1/docker/pyload/downloads</p>",
         "logo": "https://raw.githubusercontent.com/linuxserver/docker-templates/master/linuxserver.io/img/pyload-icon.png",
         "platform": "linux",
         "type": 1,
@@ -4775,12 +4722,12 @@
             "container": "/downloads"
         }],
         "env": [{
-            "default": "1024",
+            "default": "1000",
             "description": "for GroupID",
             "label": "PUID",
             "name": "PUID"
         },{
-            "default": "100",
+            "default": "1000",
             "description": "for UserID",
             "label": "PGID",
             "name": "PGID"
@@ -4796,7 +4743,6 @@
     },{
         "title": "Pylon",
         "description": "[Pylon](https://github.com/pylonide/pylon) is a web based integrated development environment built with Node.js as a backend and with a supercharged JavaScript/HTML5 frontend, licensed under GPL version 3. This project originates from Cloud9 v2 project.",
-        "note": "Portainer App Templates by <a href='https://www.technorabilia.com' target='_blank'>Technorabilia</a> based on data provided by <a href='https://www.linuxserver.io' target='_blank'>LinuxServer.io</a>.</p><p>Don't forget to create the volume directories on the host file system.</p><p>mkdir -p /volume1/docker/pylon/config<br>mkdir -p /volume1/docker/pylon/code</p>",
         "logo": "https://raw.githubusercontent.com/pylonide/pylon/master/doc/screenshot02.png",
         "platform": "linux",
         "type": 1,
@@ -4835,7 +4781,6 @@
     },{
         "title": "QBitTorrent",
         "description": "The [Qbittorrent](https://www.qbittorrent.org/) project aims to provide an open-source software alternative to µTorrent. qBittorrent is based on the Qt toolkit and libtorrent-rasterbar library.",
-        "note": "Portainer App Templates by <a href='https://www.technorabilia.com' target='_blank'>Technorabilia</a> based on data provided by <a href='https://www.linuxserver.io' target='_blank'>LinuxServer.io</a>.</p><p>Don't forget to create the volume directories on the host file system.</p><p>mkdir -p /volume1/docker/qbittorrent/config<br>mkdir -p /volume1/docker/qbittorrent/downloads</p>",
         "logo": "https://github.com/linuxserver/docker-templates/raw/master/linuxserver.io/img/qbittorrent-icon.png",
         "platform": "linux",
         "type": 1,
@@ -4855,12 +4800,12 @@
                 "container": "/downloads"
             }],
         "env": [{
-                "default": "1024",
+                "default": "1000",
                 "description": "for GroupID",
                 "label": "PUID",
                 "name": "PUID"
             },{
-                "default": "100",
+                "default": "1000",
                 "description": "for UserID",
                 "label": "PGID",
                 "name": "PGID"
@@ -4881,7 +4826,6 @@
     },{
         "title": "Quassel-core",
         "description": "[Quassel-core](http://quassel-irc.org/) is a modern, cross-platform, distributed IRC client, meaning that one (or multiple) client(s) can attach to and detach from a central core. This container handles the IRC connection (quasselcore) and requires a desktop client (quasselclient) to be used and configured. It is designed to be always on and will keep your identity present in IRC even when your clients cannot be online. Backlog (history) is downloaded by your client upon reconnection allowing infinite scrollback through time.",
-        "note": "Portainer App Templates by <a href='https://www.technorabilia.com' target='_blank'>Technorabilia</a> based on data provided by <a href='https://www.linuxserver.io' target='_blank'>LinuxServer.io</a>.</p><p>Don't forget to create the volume directories on the host file system.</p><p>mkdir -p /volume1/docker/quassel-core/config</p>",
         "logo": "http://icons.iconarchive.com/icons/oxygen-icons.org/oxygen/256/Apps-quassel-icon.png",
         "platform": "linux",
         "type": 1,
@@ -4897,12 +4841,12 @@
             "container": "/config"
         }],
         "env": [{
-            "default": "1024",
+            "default": "1000",
             "description": "for GroupID",
             "label": "PUID",
             "name": "PUID"
         },{
-            "default": "100",
+            "default": "1000",
             "description": "for UserID",
             "label": "PGID",
             "name": "PGID"
@@ -4943,7 +4887,6 @@
     },{
         "title": "Radarr",
         "description": "[Radarr](https://github.com/Radarr/Radarr) - A fork of Sonarr to work with movies à la Couchpotato.",
-        "note": "Portainer App Templates by <a href='https://www.technorabilia.com' target='_blank'>Technorabilia</a> based on data provided by <a href='https://www.linuxserver.io' target='_blank'>LinuxServer.io</a>.</p><p>Don't forget to create the volume directories on the host file system.</p><p>mkdir -p /volume1/docker/radarr/config<br>mkdir -p /volume1/docker/radarr/movies<br>mkdir -p /volume1/docker/radarr/downloads</p>",
         "logo": "https://raw.githubusercontent.com/linuxserver/docker-templates/master/linuxserver.io/img/radarr.png",
         "platform": "linux",
         "type": 1,
@@ -4964,12 +4907,12 @@
             "container": "/downloads"
         }],
         "env": [{
-            "default": "1024",
+            "default": "1000",
             "description": "for GroupID",
             "label": "PUID",
             "name": "PUID"
         },{
-            "default": "100",
+            "default": "1000",
             "description": "for UserID",
             "label": "PGID",
             "name": "PGID"
@@ -4985,7 +4928,6 @@
       },{
         "title": "Raneto",
         "description": "[Raneto](http://raneto.com/) - is an open source Knowledgebase platform that uses static Markdown files to power your Knowledgebase.",
-        "note": "Portainer App Templates by <a href='https://www.technorabilia.com' target='_blank'>Technorabilia</a> based on data provided by <a href='https://www.linuxserver.io' target='_blank'>LinuxServer.io</a>.</p><p>Don't forget to create the volume directories on the host file system.</p><p>mkdir -p /volume1/docker/raneto/config</p>",
         "logo": "https://raw.githubusercontent.com/gilbitron/Raneto/master/logo/logo_readme.png",
         "platform": "linux",
         "type": 1,
@@ -5000,12 +4942,12 @@
             "container": "/config"
         }],
         "env": [{
-            "default": "1024",
+            "default": "1000",
             "description": "for GroupID",
             "label": "PUID",
             "name": "PUID"
         },{
-            "default": "100",
+            "default": "1000",
             "description": "for UserID",
             "label": "PGID",
             "name": "PGID"
@@ -5041,7 +4983,6 @@
     },{
         "title": "Remina",
         "description": "[Remmina](https://remmina.org/) is a remote desktop client written in GTK, aiming to be useful for system administrators and travellers, who need to work with lots of remote computers in front of either large or tiny screens. Remmina supports multiple network protocols, in an integrated and consistent user interface. Currently RDP, VNC, SPICE, NX, XDMCP, SSH and EXEC are supported.",
-        "note": "Portainer App Templates by <a href='https://www.technorabilia.com' target='_blank'>Technorabilia</a> based on data provided by <a href='https://www.linuxserver.io' target='_blank'>LinuxServer.io</a>.</p><p>Don't forget to create the volume directories on the host file system.</p><p>mkdir -p /volume1/docker/remmina/config</p>",
         "logo": "https://raw.githubusercontent.com/linuxserver/docker-templates/master/linuxserver.io/img/remmina-icon.png",
         "platform": "linux",
         "type": 1,
@@ -5087,7 +5028,6 @@
     },{
         "title": "Requestrr",
         "description": "[Requestrr](https://github.com/darkalfx/requestrr) is a chatbot used to simplify using services like Sonarr/Radarr/Ombi via the use of chat.",
-        "note": "Portainer App Templates by <a href='https://www.technorabilia.com' target='_blank'>Technorabilia</a> based on data provided by <a href='https://www.linuxserver.io' target='_blank'>LinuxServer.io</a>.</p><p>Don't forget to create the volume directories on the host file system.</p><p>mkdir -p /volume1/docker/requestrr/config</p>",
         "logo": "https://github.com/darkalfx/requestrr/raw/master/Logos/requestrr_discord_Icon_512.png",
         "platform": "linux",
         "type": 1,
@@ -5102,12 +5042,12 @@
             "container": "/config"
         }],
         "env": [{
-            "default": "1024",
+            "default": "1000",
             "description": "for GroupID",
             "label": "PUID",
             "name": "PUID"
         },{
-            "default": "100",
+            "default": "1000",
             "description": "for UserID",
             "label": "PGID",
             "name": "PGID"
@@ -5123,7 +5063,6 @@
       },{
         "title": "Resilio-sync",
         "description": "[Resilio-sync](https://www.resilio.com/individuals/) (formerly BitTorrent Sync) uses the BitTorrent protocol to sync files and folders between all of your devices. There are both free and paid versions, this container supports both. There is an official sync image but we created this one as it supports user mapping to simplify permissions for volumes.",
-        "note": "Portainer App Templates by <a href='https://www.technorabilia.com' target='_blank'>Technorabilia</a> based on data provided by <a href='https://www.linuxserver.io' target='_blank'>LinuxServer.io</a>.</p><p>Don't forget to create the volume directories on the host file system.</p><p>mkdir -p /volume1/docker/resilio-sync/config<br>mkdir -p /volume1/docker/resilio-sync/downloads<br>mkdir -p /volume1/docker/resilio-sync/sync</p>",
         "logo": "https://www.resilio.com/img/individual/freeproduct.jpg",
         "platform": "linux",
         "type": 1,
@@ -5145,12 +5084,12 @@
             "container": "/sync"
         }],
         "env": [{
-            "default": "1024",
+            "default": "1000",
             "description": "for GroupID",
             "label": "PUID",
             "name": "PUID"
         },{
-            "default": "100",
+            "default": "1000",
             "description": "for UserID",
             "label": "PGID",
             "name": "PGID"
@@ -5166,7 +5105,6 @@
       },{
         "title": "RDesktop",
         "description": "[Rdesktop](http://xrdp.org/) - Ubuntu based containers containing full desktop environments in officially supported flavors accessible via RDP.",
-        "note": "Portainer App Templates by <a href='https://www.technorabilia.com' target='_blank'>Technorabilia</a> based on data provided by <a href='https://www.linuxserver.io' target='_blank'>LinuxServer.io</a>.</p><p>Don't forget to create the volume directories on the host file system.</p><p><br>mkdir -p /volume1/docker/rdesktop/config</p>",
         "logo": "https://raw.githubusercontent.com/linuxserver/docker-templates/master/linuxserver.io/img/rdesktop.png",
         "platform": "linux",
         "type": 1,
@@ -5190,7 +5128,6 @@
     },{
         "title": "Rsnapshot",
         "description": "[Rsnapshot](http://www.rsnapshot.org/) is a filesystem snapshot utility based on rsync. rsnapshot makes it easy to make periodic snapshots of local machines, and remote machines over ssh. The code makes extensive use of hard links whenever possible, to greatly reduce the disk space required.'",
-        "note": "Portainer App Templates by <a href='https://www.technorabilia.com' target='_blank'>Technorabilia</a> based on data provided by <a href='https://www.linuxserver.io' target='_blank'>LinuxServer.io</a>.</p><p>Don't forget to create the volume directories on the host file system.</p><p>mkdir -p /volume1/docker/rsnapshot/config<br>mkdir -p /volume1/docker/rsnapshot/.snapshots<br>mkdir -p /volume1/docker/rsnapshot/data</p>",
         "logo": "https://raw.githubusercontent.com/linuxserver/docker-templates/master/linuxserver.io/img/rsnapshot.png",
         "platform": "linux",
         "type": 1,
@@ -5211,12 +5148,12 @@
             "container": "/data"
         }],
         "env": [{
-            "default": "1024",
+            "default": "1000",
             "description": "for GroupID",
             "label": "PUID",
             "name": "PUID"
         },{
-            "default": "100",
+            "default": "1000",
             "description": "for UserID",
             "label": "PGID",
             "name": "PGID"
@@ -5232,7 +5169,6 @@
     },{
         "title": "Sabnzbd",
         "description": "[Sabnzbd](http://sabnzbd.org/) makes Usenet as simple and streamlined as possible by automating everything we can. All you have to do is add an .nzb. SABnzbd takes over from there, where it will be automatically downloaded, verified, repaired, extracted and filed away with zero human interaction.",
-        "note": "Portainer App Templates by <a href='https://www.technorabilia.com' target='_blank'>Technorabilia</a> based on data provided by <a href='https://www.linuxserver.io' target='_blank'>LinuxServer.io</a>.</p><p>Don't forget to create the volume directories on the host file system.</p><p>mkdir -p /volume1/docker/sabnzbd/config<br>mkdir -p /volume1/docker/sabnzbd/downloads<br>mkdir -p /volume1/docker/sabnzbd/incomplete-downloads</p>",
         "logo": "https://raw.githubusercontent.com/linuxserver/docker-templates/master/linuxserver.io/img/sabnzbd-banner.png",
         "platform": "linux",
         "type": 1,
@@ -5254,12 +5190,12 @@
             "container": "/incomplete-downloads"
         }],
         "env": [{
-            "default": "1024",
+            "default": "1000",
             "description": "for GroupID",
             "label": "PUID",
             "name": "PUID"
         },{
-            "default": "100",
+            "default": "1000",
             "description": "for UserID",
             "label": "PGID",
             "name": "PGID"
@@ -5306,7 +5242,6 @@
       },{
         "title": "Scrutiny",
         "description": "[Scrutiny](https://github.com/AnalogJ/scrutiny) WebUI for smartd S.M.A.R.T monitoring. Scrutiny is a Hard Drive Health Dashboard & Monitoring solution, merging manufacturer provided S.M.A.R.T metrics with real-world failure rates from Backblaze.",
-        "note": "Portainer App Templates by <a href='https://www.technorabilia.com' target='_blank'>Technorabilia</a> based on data provided by <a href='https://www.linuxserver.io' target='_blank'>LinuxServer.io</a>.</p><p>Don't forget to create the volume directories on the host file system.</p><p>mkdir -p /volume1/docker/scrutiny/config<br></p>",
         "logo": "https://raw.githubusercontent.com/AnalogJ/scrutiny/master/docs/dashboard.png",
         "platform": "linux",
         "type": 1,
@@ -5324,12 +5259,12 @@
             "container": "/run/udev:ro"
         }],
         "env": [{
-            "default": "1024",
+            "default": "1000",
             "description": "for GroupID",
             "label": "PUID",
             "name": "PUID"
         },{
-            "default": "100",
+            "default": "1000",
             "description": "for UserID",
             "label": "PGID",
             "name": "PGID"
@@ -5360,7 +5295,6 @@
       },{
         "title": "SickChill",
         "description": "[Sickchill](https://github.com/SickChill/SickChill) is an Automatic Video Library Manager for TV Shows. It watches for new episodes of your favorite shows, and when they are posted it does its magic.",
-        "note": "Portainer App Templates by <a href='https://www.technorabilia.com' target='_blank'>Technorabilia</a> based on data provided by <a href='https://www.linuxserver.io' target='_blank'>LinuxServer.io</a>.</p><p>Don't forget to create the volume directories on the host file system.</p><p>mkdir -p /volume1/docker/sickchill/config<br>mkdir -p /volume1/docker/sickchill/downloads<br>mkdir -p /volume1/docker/sickchill/tv</p>",
         "logo": "https://raw.githubusercontent.com/linuxserver/docker-templates/master/linuxserver.io/img/sickchill-banner.png",
         "platform": "linux",
         "type": 1,
@@ -5381,12 +5315,12 @@
             "container": "/tv"
         }],
         "env": [{
-            "default": "1024",
+            "default": "1000",
             "description": "for GroupID",
             "label": "PUID",
             "name": "PUID"
         },{
-            "default": "100",
+            "default": "1000",
             "description": "for UserID",
             "label": "PGID",
             "name": "PGID"
@@ -5402,7 +5336,6 @@
     },{
         "title": "SickGear",
         "description": "[SickGear](https://github.com/sickgear/sickgear) provides management of TV shows and/or Anime, it detects new episodes, links downloader apps, and more.. For more information on SickGear visit their website and check it out: https://github.com/SickGear/SickGear",
-        "note": "Portainer App Templates by <a href='https://www.technorabilia.com' target='_blank'>Technorabilia</a> based on data provided by <a href='https://www.linuxserver.io' target='_blank'>LinuxServer.io</a>.</p><p>Don't forget to create the volume directories on the host file system.</p><p>mkdir -p /volume1/docker/sickgear/config<br>mkdir -p /volume1/docker/sickgear/tv<br>mkdir -p /volume1/docker/sickgear/downloads</p>",
         "logo": "https://raw.githubusercontent.com/wiki/SickGear/SickGear.Wiki/images/SickGearLogo.png",
         "platform": "linux",
         "type": 1,
@@ -5423,12 +5356,12 @@
             "container": "/downloads"
         }],
         "env": [{
-            "default": "1024",
+            "default": "1000",
             "description": "for GroupID",
             "label": "PUID",
             "name": "PUID"
         },{
-            "default": "100",
+            "default": "1000",
             "description": "for UserID",
             "label": "PGID",
             "name": "PGID"
@@ -5488,7 +5421,6 @@
     },{
         "title": "Snapdrop",
         "description": "[Snapdrop](https://github.com/RobinLinus/snapdrop) A local file sharing in your browser. Inspired by Apple's Airdrop.",
-        "note": "Portainer App Templates by <a href='https://www.technorabilia.com' target='_blank'>Technorabilia</a> based on data provided by <a href='https://www.linuxserver.io' target='_blank'>LinuxServer.io</a>.</p><p>Don't forget to create the volume directories on the host file system.</p><p>mkdir -p /volume1/docker/snapdrop/config</p>",
         "logo": "https://raw.githubusercontent.com/RobinLinus/snapdrop/master/client/images/logo_transparent_512x512.png",
         "platform": "linux",
         "type": 1,
@@ -5504,12 +5436,12 @@
             "container": "/config"
         }],
         "env": [{
-            "default": "1024",
+            "default": "1000",
             "description": "for GroupID",
             "label": "PUID",
             "name": "PUID"
         },{
-            "default": "100",
+            "default": "1000",
             "description": "for UserID",
             "label": "PGID",
             "name": "PGID"
@@ -5525,7 +5457,6 @@
     },{
         "title": "Snipe-it",
         "description": "[Snipe-it](https://github.com/snipe/snipe-it) makes asset management easy. It was built by people solving real-world IT and asset management problems, and a solid UX has always been a top priority. Straightforward design and bulk actions mean getting things done faster.",
-        "note": "Portainer App Templates by <a href='https://www.technorabilia.com' target='_blank'>Technorabilia</a> based on data provided by <a href='https://www.linuxserver.io' target='_blank'>LinuxServer.io</a>.</p><p>Don't forget to create the volume directories on the host file system.</p><p>mkdir -p /volume1/docker/snipe-it/config</p>",
         "logo": "https://s3-us-west-2.amazonaws.com/linuxserver-docs/images/snipe-it-logo500x500.png",
         "platform": "linux",
         "type": 1,
@@ -5540,12 +5471,12 @@
             "container": "/config"
         }],
         "env": [{
-            "default": "1024",
+            "default": "1000",
             "description": "for GroupID",
             "label": "PUID",
             "name": "PUID"
         },{
-            "default": "100",
+            "default": "1000",
             "description": "for UserID",
             "label": "PGID",
             "name": "PGID"
@@ -5605,7 +5536,6 @@
     },{
         "title": "Sonarr",
         "description": "[Sonarr](https://sonarr.tv/) (formerly NZBdrone) is a PVR for usenet and bittorrent users. It can monitor multiple RSS feeds for new episodes of your favorite shows and will grab, sort and rename them. It can also be configured to automatically upgrade the quality of files already downloaded when a better quality format becomes available.",
-        "note": "Portainer App Templates by <a href='https://www.technorabilia.com' target='_blank'>Technorabilia</a> based on data provided by <a href='https://www.linuxserver.io' target='_blank'>LinuxServer.io</a>.</p><p>Don't forget to create the volume directories on the host file system.</p><p>mkdir -p /volume1/docker/sonarr/config<br>mkdir -p /volume1/docker/sonarr/tv<br>mkdir -p /volume1/docker/sonarr/downloads</p>",
         "logo": "https://raw.githubusercontent.com/linuxserver/docker-templates/master/linuxserver.io/img/sonarr-banner.png",
         "platform": "linux",
         "type": 1,
@@ -5626,12 +5556,12 @@
             "container": "/downloads"
         }],
         "env": [{
-            "default": "1024",
+            "default": "1000",
             "description": "for GroupID",
             "label": "PUID",
             "name": "PUID"
         },{
-            "default": "100",
+            "default": "1000",
             "description": "for UserID",
             "label": "PGID",
             "name": "PGID"
@@ -5647,7 +5577,6 @@
     },{
         "title": "SQLiteBrowser",
         "description": "[DB Browser for SQLite](https://sqlitebrowser.org/) is a high quality, visual, open source tool to create, design, and edit database files compatible with SQLite.",
-        "note": "Portainer App Templates by <a href='https://www.technorabilia.com' target='_blank'>Technorabilia</a> based on data provided by <a href='https://www.linuxserver.io' target='_blank'>LinuxServer.io</a>.</p><p>Don't forget to create the volume directories on the host file system.</p><p>mkdir -p /volume1/docker/sqlitebrowser/config</p>",
         "logo": "https://raw.githubusercontent.com/linuxserver/docker-templates/master/linuxserver.io/img/sqlitebrowser-banner.png",
         "platform": "linux",
         "type": 1,
@@ -5665,13 +5594,13 @@
         ],
         "env": [
           {
-            "default": "1024",
+            "default": "1000",
             "description": "for GroupID",
             "label": "PUID",
             "name": "PUID"
           },
           {
-            "default": "100",
+            "default": "1000",
             "description": "for UserID",
             "label": "PGID",
             "name": "PGID"
@@ -5772,7 +5701,6 @@
       },{
         "title": "Swag",
         "description": "SWAG - Secure Web Application Gateway (formerly known as letsencrypt, no relation to Let's Encrypt™) sets up an Nginx webserver and reverse proxy with php support and a built-in certbot client that automates free SSL server certificate generation and renewal processes (Let's Encrypt and ZeroSSL). It also contains fail2ban for intrusion prevention.",
-        "note": "Portainer App Templates by <a href='https://www.technorabilia.com' target='_blank'>Technorabilia</a> based on data provided by <a href='https://www.linuxserver.io' target='_blank'>LinuxServer.io</a>.</p><p>Don't forget to create the volume directories on the host file system.</p><p>mkdir -p /volume1/docker/swag/config</p>",
         "logo": "https://github.com/linuxserver/docker-templates/raw/master/linuxserver.io/img/swag.gif",
         "platform": "linux",
         "type": 1,
@@ -5788,12 +5716,12 @@
             "container": "/config"
         }],
         "env": [{
-            "default": "1024",
+            "default": "1000",
             "description": "for GroupID",
             "label": "PUID",
             "name": "PUID"
         },{
-            "default": "100",
+            "default": "1000",
             "description": "for UserID",
             "label": "PGID",
             "name": "PGID"
@@ -5864,7 +5792,6 @@
     },{
         "title": "Synclounge",
         "description": "[Synclounge](https://github.com/samcm/synclounge) is a third party tool that allows you to watch Plex in sync with your friends/family, wherever you are.",
-        "note": "Portainer App Templates by <a href='https://www.technorabilia.com' target='_blank'>Technorabilia</a> based on data provided by <a href='https://www.linuxserver.io' target='_blank'>LinuxServer.io</a>.</p><p>Don't forget to create the volume directories on the host file system.</p>",
         "logo": "https://raw.githubusercontent.com/linuxserver/docker-templates/master/linuxserver.io/img/synclounge-banner.png",
         "platform": "linux",
         "type": 1,
@@ -5901,7 +5828,6 @@
     },{
         "title": "SyncThing",
         "description": "[Syncthing](https://syncthing.net) replaces proprietary sync and cloud services with something open, trustworthy and decentralized. Your data is your data alone and you deserve to choose where it is stored, if it is shared with some third party and how it's transmitted over the Internet.",
-        "note": "Portainer App Templates by <a href='https://www.technorabilia.com' target='_blank'>Technorabilia</a> based on data provided by <a href='https://www.linuxserver.io' target='_blank'>LinuxServer.io</a>.</p><p>Don't forget to create the volume directories on the host file system.</p><p>mkdir -p /volume1/docker/syncthing/config<br>mkdir -p /volume1/docker/syncthing/data1<br>mkdir -p /volume1/docker/syncthing/data2</p>",
         "logo": "https://raw.githubusercontent.com/linuxserver/docker-templates/master/linuxserver.io/img/syncthing-banner.png",
         "platform": "linux",
         "type": 1,
@@ -5930,13 +5856,13 @@
         ],
         "env": [
           {
-            "default": "1024",
+            "default": "1000",
             "description": "for GroupID",
             "label": "PUID",
             "name": "PUID"
           },
           {
-            "default": "100",
+            "default": "1000",
             "description": "for UserID",
             "label": "PGID",
             "name": "PGID"
@@ -5954,7 +5880,6 @@
       },{
         "title": "Syslog-ng",
         "description": "[syslog-ng](https://www.syslog-ng.com/products/open-source-log-management/) allows you to flexibly collect, parse, classify, rewrite and correlate logs from across your infrastructure and store or route them to log analysis tools.",
-        "note": "Portainer App Templates by <a href='https://www.technorabilia.com' target='_blank'>Technorabilia</a> based on data provided by <a href='https://www.linuxserver.io' target='_blank'>LinuxServer.io</a>.</p><p>Don't forget to create the volume directories on the host file system.</p><p>mkdir -p /volume1/docker/syslog-ng/config<br></p>",
         "logo": "https://raw.githubusercontent.com/linuxserver/docker-templates/master/linuxserver.io/img/syslog-ng-logo.png",
         "platform": "linux",
         "type": 1,
@@ -5974,12 +5899,12 @@
             "container": "/var/log"
         }],
         "env": [{
-            "default": "1024",
+            "default": "1000",
             "description": "for GroupID",
             "label": "PUID",
             "name": "PUID"
         },{
-            "default": "100",
+            "default": "1000",
             "description": "for UserID",
             "label": "PGID",
             "name": "PGID"
@@ -5993,9 +5918,28 @@
             "Other"
         ]
     },{
+        "title": "Taisun",
+        "description": "[Taisun](https://www.taisun.io/) is an application for a Docker enabled device with an emphasis on providing a web based interface for managing a single server. Taisun allows you to: - Deploy and manage web based virtual desktops. - Deploy Taisun specific stacks of applications - Browse available images on popular Docker repositories - Import a Docker project from any git repository and start developing on your choice of web based IDE or full Linux desktop - Spinup a developer container based on popular frameworks and work from a web based IDE - Single click remote server access to Taisun and your Docker applications",
+        "logo": "https://raw.githubusercontent.com/Taisun-Docker/taisun/master/public/favicon/apple-icon-180x180.png",
+        "platform": "linux",
+        "type": 1,
+        "name": "Taisun",
+        "image": "linuxserver/taisun:latest",
+        "restart_policy": "unless-stopped",
+        "ports": [
+            "3004:3000/tcp"
+        ],
+        "volumes": [{
+            "container": "/var/run/docker.sock",
+            "bind": "/var/run/docker.sock"
+        }],
+        "categories": [
+            "Management",
+            "Need"
+        ]
+    },{
         "title": "TheLounge",
         "description": "[Thelounge](https://thelounge.github.io/) (a fork of shoutIRC) is a web IRC client that you host on your own server.",
-        "note": "Portainer App Templates by <a href='https://www.technorabilia.com' target='_blank'>Technorabilia</a> based on data provided by <a href='https://www.linuxserver.io' target='_blank'>LinuxServer.io</a>.</p><p>Don't forget to create the volume directories on the host file system.</p><p>mkdir -p /volume1/docker/thelounge/config</p>",
         "logo": "https://raw.githubusercontent.com/thelounge/thelounge/master/client/img/logo-vertical-transparent-bg.svg?sanitize=true",
         "platform": "linux",
         "type": 1,
@@ -6010,12 +5954,12 @@
             "container": "/config"
         }],
         "env": [{
-            "default": "1024",
+            "default": "1000",
             "description": "for GroupID",
             "label": "PUID",
             "name": "PUID"
         },{
-            "default": "100",
+            "default": "1000",
             "description": "for UserID",
             "label": "PGID",
             "name": "PGID"
@@ -6051,7 +5995,6 @@
       },{
         "title": "Transmission",
         "description": "[Transmission](https://www.transmissionbt.com/) is designed for easy, powerful use. Transmission has the features you want from a BitTorrent client: encryption, a web interface, peer exchange, magnet links, DHT, µTP, UPnP and NAT-PMP port forwarding, webseed support, watch directories, tracker editing, global and per-torrent speed limits, and more.",
-        "note": "Portainer App Templates by <a href='https://www.technorabilia.com' target='_blank'>Technorabilia</a> based on data provided by <a href='https://www.linuxserver.io' target='_blank'>LinuxServer.io</a>.</p><p>Don't forget to create the volume directories on the host file system.</p><p>mkdir -p /volume1/docker/transmission/config<br>mkdir -p /volume1/docker/transmission/downloads<br>mkdir -p /volume1/docker/transmission/watch</p>",
         "logo": "https://raw.githubusercontent.com/linuxserver/docker-templates/master/linuxserver.io/img/transmission.png",
         "platform": "linux",
         "type": 1,
@@ -6074,12 +6017,12 @@
             "container": "/watch"
         }],
         "env": [{
-            "default": "1024",
+            "default": "1000",
             "description": "for GroupID",
             "label": "PUID",
             "name": "PUID"
         },{
-            "default": "100",
+            "default": "1000",
             "description": "for UserID",
             "label": "PGID",
             "name": "PGID"
@@ -6120,7 +6063,6 @@
     },{
         "title": "TVHeadEnd",
         "description": "[Tvheadend](https://www.tvheadend.org/) works as a proxy server: is a TV streaming server and recorder for Linux, FreeBSD and Android supporting DVB-S, DVB-S2, DVB-C, DVB-T, ATSC, ISDB-T, IPTV, SAT>IP and HDHomeRun as input sources. Tvheadend offers the HTTP (VLC, MPlayer), HTSP (Kodi, Movian) and SAT>IP streaming. Multiple EPG sources are supported (over-the-air DVB and ATSC including OpenTV DVB extensions, XMLTV, PyXML).",
-        "note": "Portainer App Templates by <a href='https://www.technorabilia.com' target='_blank'>Technorabilia</a> based on data provided by <a href='https://www.linuxserver.io' target='_blank'>LinuxServer.io</a>.</p><p>Don't forget to create the volume directories on the host file system.</p><p>mkdir -p /volume1/docker/tvheadend/config<br>mkdir -p /volume1/docker/tvheadend/recordings</p>",
         "logo": "https://raw.githubusercontent.com/linuxserver/docker-templates/master/linuxserver.io/img/tvheadend-big.png",
         "platform": "linux",
         "type": 1,
@@ -6139,12 +6081,12 @@
             "container": "/recordings"
         }],
         "env": [{
-            "default": "1024",
+            "default": "1000",
             "description": "for GroupID",
             "label": "PUID",
             "name": "PUID"
         },{
-            "default": "100",
+            "default": "1000",
             "description": "for UserID",
             "label": "PGID",
             "name": "PGID"
@@ -6165,7 +6107,6 @@
     },{
         "title": "UbooQuity",
         "description": "[Ubooquity](https://vaemendis.net/ubooquity/) is a free, lightweight and easy-to-use home server for your comics and ebooks. Use it to access your files from anywhere, with a tablet, an e-reader, a phone or a computer.",
-        "note": "Portainer App Templates by <a href='https://www.technorabilia.com' target='_blank'>Technorabilia</a> based on data provided by <a href='https://www.linuxserver.io' target='_blank'>LinuxServer.io</a>.</p><p>Don't forget to create the volume directories on the host file system.</p><p>mkdir -p /volume1/docker/ubooquity/config<br>mkdir -p /volume1/docker/ubooquity/books<br>mkdir -p /volume1/docker/ubooquity/comics<br>mkdir -p /volume1/docker/ubooquity/files</p>",
         "logo": "https://raw.githubusercontent.com/linuxserver/docker-templates/master/linuxserver.io/img/ubooquity-banner.png",
         "platform": "linux",
         "type": 1,
@@ -6190,12 +6131,12 @@
             "container": "/files"
         }],
         "env": [{
-            "default": "1024",
+            "default": "1000",
             "description": "for GroupID",
             "label": "PUID",
             "name": "PUID"
         },{
-            "default": "100",
+            "default": "1000",
             "description": "for UserID",
             "label": "PGID",
             "name": "PGID"
@@ -6230,7 +6171,6 @@
       },{
         "title": "Unifi-Controller",
         "description": "The [Unifi-controller](https://www.ubnt.com/enterprise/#unifi) software is a powerful, enterprise wireless software engine ideal for high-density client deployments requiring low latency and high uptime performance.",
-        "note": "Portainer App Templates by <a href='https://www.technorabilia.com' target='_blank'>Technorabilia</a> based on data provided by <a href='https://www.linuxserver.io' target='_blank'>LinuxServer.io</a>.</p><p>Don't forget to create the volume directories on the host file system.</p><p>mkdir -p /volume1/docker/unifi-controller/config</p>",
         "logo": "https://raw.githubusercontent.com/linuxserver/docker-templates/master/linuxserver.io/img/unifi-banner.png",
         "platform": "linux",
         "type": 1,
@@ -6253,12 +6193,12 @@
             "container": "/config"
         }],
         "env": [{
-            "default": "1024",
+            "default": "1000",
             "description": "for GroupID",
             "label": "PUID",
             "name": "PUID"
         },{
-            "default": "100",
+            "default": "1000",
             "description": "for UserID",
             "label": "PGID",
             "name": "PGID"
@@ -6334,7 +6274,6 @@
     },{
         "title": "WebGrabPlus",
         "description": "[Webgrabplus](http://www.webgrabplus.com) is a multi-site incremental xmltv epg grabber. It collects tv-program guide data from selected tvguide sites for your favourite channels.",
-        "note": "Portainer App Templates by <a href='https://www.technorabilia.com' target='_blank'>Technorabilia</a> based on data provided by <a href='https://www.linuxserver.io' target='_blank'>LinuxServer.io</a>.</p><p>Don't forget to create the volume directories on the host file system.</p><p>mkdir -p /volume1/docker/webgrabplus/config<br>mkdir -p /volume1/docker/webgrabplus/data</p>",
         "logo": "http://www.webgrabplus.com/sites/default/themes/WgTheme/images/slideshows/EPG_fading.jpg",
         "platform": "linux",
         "type": 1,
@@ -6353,13 +6292,13 @@
         ],
         "env": [
           {
-            "default": "1024",
+            "default": "1000",
             "description": "for GroupID",
             "label": "PUID",
             "name": "PUID"
           },
           {
-            "default": "100",
+            "default": "1000",
             "description": "for UserID",
             "label": "PGID",
             "name": "PGID"
@@ -6396,7 +6335,6 @@
     },{
         "title": "Wikijs",
         "description": "[Wikijs](https://github.com/Requarks/wiki) A modern, lightweight and powerful wiki app built on NodeJS.",
-        "note": "Portainer App Templates by <a href='https://www.technorabilia.com' target='_blank'>Technorabilia</a> based on data provided by <a href='https://www.linuxserver.io' target='_blank'>LinuxServer.io</a>.</p><p>Don't forget to create the volume directories on the host file system.</p><p>mkdir -p /volume1/docker/wikijs/config<br>mkdir -p /volume1/docker/wikijs/data</p>",
         "logo": "https://static.requarks.io/logo/wikijs-full.svg",
         "platform": "linux",
         "type": 1,
@@ -6414,12 +6352,12 @@
             "container": "/data"
         }],
         "env": [{
-            "default": "1024",
+            "default": "1000",
             "description": "for GroupID",
             "label": "PUID",
             "name": "PUID"
         },{
-            "default": "100",
+            "default": "1000",
             "description": "for UserID",
             "label": "PGID",
             "name": "PGID"
@@ -6435,7 +6373,6 @@
     },{
         "title": "WireGuard",
         "description": "[WireGuard®](https://www.wireguard.com/) is an extremely simple yet fast and modern VPN that utilizes state-of-the-art cryptography. It aims to be faster, simpler, leaner, and more useful than IPsec, while avoiding the massive headache. It intends to be considerably more performant than OpenVPN. WireGuard is designed as a general purpose VPN for running on embedded interfaces and super computers alike, fit for many different circumstances. Initially released for the Linux kernel, it is now cross-platform (Windows, macOS, BSD, iOS, Android) and widely deployable. It is currently under heavy development, but already it might be regarded as the most secure, easiest to use, and simplest VPN solution in the industry.",
-        "note": "Portainer App Templates by <a href='https://www.technorabilia.com' target='_blank'>Technorabilia</a> based on data provided by <a href='https://www.linuxserver.io' target='_blank'>LinuxServer.io</a>.</p><p>Don't forget to create the volume directories on the host file system.</p><p>mkdir -p /volume1/docker/wireguard/config<br></p>",
         "logo": "https://www.wireguard.com/img/wireguard.svg",
         "platform": "linux",
         "type": 1,
@@ -6489,7 +6426,6 @@
     },{
         "title": "WireShark",
         "description": "[Wireshark](https://www.wireshark.org/) is the world’s foremost and widely-used network protocol analyzer. It lets you see what’s happening on your network at a microscopic level and is the de facto (and often de jure) standard across many commercial and non-profit enterprises, government agencies, and educational institutions. Wireshark development thrives thanks to the volunteer contributions of networking experts around the globe and is the continuation of a project started by Gerald Combs in 1998.",
-        "note": "Portainer App Templates by <a href='https://www.technorabilia.com' target='_blank'>Technorabilia</a> based on data provided by <a href='https://www.linuxserver.io' target='_blank'>LinuxServer.io</a>.</p><p>Don't forget to create the volume directories on the host file system.</p><p>mkdir -p /volume1/docker/wireshark/config</p>",
         "logo": "https://raw.githubusercontent.com/linuxserver/docker-templates/master/linuxserver.io/img/wireshark-icon.png",
         "platform": "linux",
         "type": 1,
@@ -6607,7 +6543,6 @@
     },{
         "title": "XBackBone",
         "description": "[Xbackbone](https://github.com/SergiX44/XBackBone) is a simple, self-hosted, lightweight PHP file manager that support the instant sharing tool ShareX and *NIX systems. It supports uploading and displaying images, GIF, video, code, formatted text, and file downloading and uploading. Also have a web UI with multi user management, past uploads history and search support.",
-        "note": "Portainer App Templates by <a href='https://www.technorabilia.com' target='_blank'>Technorabilia</a> based on data provided by <a href='https://www.linuxserver.io' target='_blank'>LinuxServer.io</a>.</p><p>Don't forget to create the volume directories on the host file system.</p><p>mkdir -p /volume1/docker/xbackbone/config</p>",
         "logo": "https://raw.githubusercontent.com/SergiX44/XBackBone/master/docs/img/xbackbone.png",
         "platform": "linux",
         "type": 1,
@@ -6623,12 +6558,12 @@
             "container": "/con/var/lib/docker/volumes/fig"
         }],
         "env": [{
-            "default": "1024",
+            "default": "1000",
             "description": "for GroupID",
             "label": "PUID",
             "name": "PUID"
         },{
-            "default": "100",
+            "default": "1000",
             "description": "for UserID",
             "label": "PGID",
             "name": "PGID"
@@ -6641,7 +6576,6 @@
     },{
         "title": "Znc",
         "description": "[Znc](http://wiki.znc.in/ZNC) is an IRC network bouncer or BNC. It can detach the client from the actual IRC server, and also from selected channels. Multiple clients from different locations can connect to a single ZNC account simultaneously and therefore appear under the same nickname on IRC.",
-        "note": "Portainer App Templates by <a href='https://www.technorabilia.com' target='_blank'>Technorabilia</a> based on data provided by <a href='https://www.linuxserver.io' target='_blank'>LinuxServer.io</a>.</p><p>Don't forget to create the volume directories on the host file system.</p><p>mkdir -p /volume1/docker/znc/config</p>",
         "logo": "http://wiki.znc.in/resources/assets/wiki.png",
         "platform": "linux",
         "type": 1,
@@ -6656,12 +6590,12 @@
             "container": "/config"
         }],
         "env": [{
-            "default": "1024",
+            "default": "1000",
             "description": "for GroupID",
             "label": "PUID",
             "name": "PUID"
         },{
-            "default": "100",
+            "default": "1000",
             "description": "for UserID",
             "label": "PGID",
             "name": "PGID"
