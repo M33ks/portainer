@@ -597,16 +597,16 @@
             "4041:4040/tcp"
         ],
         "volumes": [{
-            "bind": "/var/lib/docker/volumes/BooksonicAir-Config",
+            "bind": "BooksonicAir-Config",
             "container": "/config"
         },{
-            "bind": "/var/lib/docker/volumes/BooksonicAir-Audiobooks",
+            "bind": "BooksonicAir-Audiobooks",
             "container": "/audiobooks"
         },{
-            "bind": "/var/lib/docker/volumes/BooksonicAir-Podcasts",
+            "bind": "BooksonicAir-Podcasts",
             "container": "/podcasts"
         },{
-            "bind": "/var/lib/docker/volumes/BooksonicAir-Othermedia",
+            "bind": "BooksonicAir-Othermedia",
             "container": "/othermedia"
         }],
         "env": [{
