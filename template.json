@@ -437,40 +437,45 @@
         "volumes": [{
             "bind": "Airsonic-Music",
             "container": "/music"
-          },{
+        },{
             "bind": "Airsonic-Playlists",
             "container": "/playlists"
-          },{
+        },{
             "bind": "Airsonic-Podcasts",
             "container": "/podcasts"
-          },{
+        },{
             "bind": "Airsonic-Media",
             "container": "/media"
-          },{
+        },{
             "bind": "Airsonic-Config",
             "container": "/config"
-          }],
+        }],
         "env": [{
             "default": "1000",
             "description": "",
             "label": "PUID",
             "name": "PUID"
-          },{
+        },{
             "default": "1000",
             "description": "",
             "label": "PGID",
             "name": "PGID"
-          },{
+        },{
+            "default": "America/New_York",
+            "description": "specify a timezone to use, see this [list](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones#List).",
+            "label": "TZ",
+            "name": "TZ"
+        },{
+            "default": "",
             "description": "",
             "label": "CONTEXT_PATH",
-            "name": "CONTEXT_PATH",
-            "set": "airsonic"
-          },{
+            "name": "CONTEXT_PATH"
+        },{
+            "default": "",
             "description": "",
             "label": "JAVA_OPTS",
-            "name": "JAVA_OPTS",
-            "set": "-Xms256m -Xmx512m"
-          }],
+            "name": "JAVA_OPTS"
+        }],
         "categories": [
           "Music"
         ]
@@ -504,12 +509,12 @@
         }],
         "env": [{
             "default": "1000",
-            "description": "for UserID",
+            "description": "",
             "label": "PUID",
             "name": "PUID"
         },{
             "default": "1000",
-            "description": "for GroupID",
+            "description": "",
             "label": "PGID",
             "name": "PGID"
         },{
@@ -519,12 +524,12 @@
             "name": "TZ"
         },{
             "default": "",
-            "description": "For setting url-base in reverse proxy setups.",
+            "description": "",
             "label": "CONTEXT_PATH",
             "name": "CONTEXT_PATH"
         },{
             "default": "",
-            "description": "For passing additional java options.",
+            "description": "",
             "label": "JAVA_OPTS",
             "name": "JAVA_OPTS"
         }],
