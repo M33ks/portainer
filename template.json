@@ -280,6 +280,9 @@
             "bind": "BooksonicAir-Audiobooks",
             "container": "/audiobooks"
         },{
+            "bind": "BooksonicAir-Music",
+            "container": "/music"
+        },{
             "bind": "BooksonicAir-Podcasts",
             "container": "/podcasts"
         },{
@@ -1552,7 +1555,7 @@
             "443/tcp"
         ],
         "volumes": [{
-            "container": "/mnt/dokku",
+            "container": "Dokku",
             "bind": "/var/lib/dokku"
         },{
             "container": "/var/run/docker.sock",
