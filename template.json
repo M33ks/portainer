@@ -13,7 +13,7 @@
             "3306:3306/tcp"
         ],
         "volumes": [{
-            "bind": "/var/lib/docker/volumes/MariaDB",
+            "bind": "MariaDB",
             "container": "/config"
         }],
         "categories": [
@@ -33,7 +33,7 @@
             "88:80/tcp"
         ],
         "volumes": [{
-            "bind": "/var/lib/docker/volumes/PHPMyAdmin",
+            "bind": "PHPMyAdmin",
             "container": "/config"
         }],
         "env": [{
@@ -65,7 +65,7 @@
             "89:80/tcp"
         ],
         "volumes": [{
-            "bind": "/var/lib/docker/volumes/MediaWiki",
+            "bind": "MediaWiki",
             "container": "/var/www/html"
         }],
         "categories": [
@@ -85,7 +85,7 @@
             "5800:5800/tcp"
         ],
         "volumes": [{
-            "bind": "/var/lib/docker/volumes/Firefox",
+            "bind": "Firefox",
             "container": "/config"
         }],
         "env": [{
@@ -118,7 +118,7 @@
             "3002:3000/tcp"
         ],
         "volumes": [{
-            "bind": "/var/lib/docker/volumes/Ubuntu",
+            "bind": "Ubuntu",
             "container": "/config"
         },{
             "bind": "/var/run/docker.sock",
@@ -176,7 +176,7 @@
             "8080:8080/tcp"
         ],
         "volumes": [{
-            "bind": "/var/lib/docker/volumes/Guacamole",
+            "bind": "Guacamole",
             "container": "/config"
         }],
         "categories": [
@@ -196,7 +196,7 @@
             "8888:8888/tcp"
         ],
         "volumes": [{
-            "bind": "/var/lib/docker/volumes/Hue",
+            "bind": "Hue",
             "container": "usr/share/hue/desktop/conf"
         }],
         "categories": [
@@ -254,7 +254,7 @@
             "3001:3001/tcp"
         ],
         "volumes": [{
-            "bind": "/var/lib/docker/volumes/UptimeKuma",
+            "bind": "UptimeKuma",
             "container": "/app/data"
         }],
         "categories": [
@@ -363,10 +363,10 @@
             "3000:3000/tcp"
         ],
         "volumes": [{
-            "bind": "/var/lib/docker/volumes/Adguard/WorkDIR",
+            "bind": "Adguard/WorkDIR",
             "container": "/opt/adguardhome/work"
         },{
-            "bind": "/var/lib/docker/volumes/Adguard/Conf",
+            "bind": "Adguard/Conf",
             "container": "/opt/adguardhome/conf"
         }],
         "env": [{
@@ -390,19 +390,19 @@
           "4040:4040/tcp"
         ],
         "volumes": [{
-            "bind": "/var/lib/docker/volumes/Airsonic-Music",
+            "bind": "Airsonic-Music",
             "container": "/music"
           },{
-            "bind": "/var/lib/docker/volumes/Airsonic-Playlists",
+            "bind": "Airsonic-Playlists",
             "container": "/playlists"
           },{
-            "bind": "/var/lib/docker/volumes/Airsonic-Podcasts",
+            "bind": "Airsonic-Podcasts",
             "container": "/podcasts"
           },{
-            "bind": "/var/lib/docker/volumes/Airsonic-Media",
+            "bind": "Airsonic-Media",
             "container": "/media"
           },{
-            "bind": "/var/lib/docker/volumes/Airsonic-Config",
+            "bind": "Airsonic-Config",
             "container": "/config"
           }],
         "env": [{
@@ -442,7 +442,7 @@
             "8000:8000/tcp"
         ],
         "volumes": [{
-            "bind": "/var/lib/docker/volumes/Apprise-API",
+            "bind": "Apprise-API",
             "container": "/config"
         }],
         "env": [{
@@ -477,7 +477,7 @@
             "3000:3000/tcp"
         ],
         "volumes": [{
-            "bind": "/var/lib/docker/volumes/audacity/config",
+            "bind": "audacity/config",
             "container": "/config"
         }],
         "env": [{
@@ -509,13 +509,13 @@
             "8337:8337/tcp"
         ],
         "volumes": [{
-            "bind": "/var/lib/docker/volumes/Beets-Config",
+            "bind": "Beets-Config",
             "container": "/config"
         },{
-            "bind": "/var/lib/docker/volumes/Beets-Downloads",
+            "bind": "Beets-Downloads",
             "container": "/downloads"
         },{
-            "bind": "/var/lib/docker/volumes/Beets-Music",
+            "bind": "Beets-Music",
             "container": "/music"
         }],
         "env": [{
@@ -543,7 +543,7 @@
             "3010:3000/tcp"
         ],
         "volumes": [{
-            "bind": "/var/lib/docker/volumes/Blender",
+            "bind": "Blender",
             "container": "/config"
         }],
         "env": [{
@@ -568,16 +568,16 @@
             "4040:4040/tcp"
         ],
         "volumes": [{
-            "bind": "/var/lib/docker/volumes/Booksonic-Config",
+            "bind": "Booksonic-Config",
             "container": "/config"
         },{
-            "bind": "/var/lib/docker/volumes/Booksonic-Audiobooks",
+            "bind": "Booksonic-Audiobooks",
             "container": "/audiobooks"
         },{
-            "bind": "/var/lib/docker/volumes/Booksonic-Podcasts",
+            "bind": "Booksonic-Podcasts",
             "container": "/podcasts"
         },{
-            "bind": "/var/lib/docker/volumes/Booksonic-Othermedia",
+            "bind": "Booksonic-Othermedia",
             "container": "/othermedia"
         }],
         "env": [{
@@ -617,16 +617,16 @@
             "4041:4040/tcp"
         ],
         "volumes": [{
-            "bind": "/var/lib/docker/volumes/BooksonicAir-Config",
+            "bind": "BooksonicAir-Config",
             "container": "/config"
         },{
-            "bind": "/var/lib/docker/volumes/BooksonicAir-Audiobooks",
+            "bind": "BooksonicAir-Audiobooks",
             "container": "/audiobooks"
         },{
-            "bind": "/var/lib/docker/volumes/BooksonicAir-Podcasts",
+            "bind": "BooksonicAir-Podcasts",
             "container": "/podcasts"
         },{
-            "bind": "/var/lib/docker/volumes/BooksonicAir-Othermedia",
+            "bind": "BooksonicAir-Othermedia",
             "container": "/othermedia"
         }],
         "env": [{
@@ -666,7 +666,7 @@
             "6875:80/tcp"
         ],
         "volumes": [{
-            "bind": "/var/lib/docker/volumes/Bookstack",
+            "bind": "Bookstack",
             "container": "/config"
         }],
         "env": [{
@@ -721,7 +721,7 @@
             "80:80/tcp"
         ],
         "volumes": [{
-            "bind": "/var/lib/docker/volumes/Caddy",
+            "bind": "Caddy",
             "container": "/data"
         }],
         "categories": [
@@ -741,7 +741,7 @@
             "8081:8081/tcp"
         ],
         "volumes": [{
-            "bind": "/var/lib/docker/volumes/Calibre",
+            "bind": "Calibre",
             "container": "/config"
         }],
         "env": [{
@@ -787,10 +787,10 @@
             "8083:8083/tcp"
         ],
         "volumes": [{
-            "bind": "/var/lib/docker/volumes/CalibreWeb-Books",
+            "bind": "CalibreWeb-Books",
             "container": "/books"
         },{
-            "bind": "/var/lib/docker/volumes/CalibreWeb-Config",
+            "bind": "CalibreWeb-Config",
             "container": "/config"
         }],
         "env": [{
@@ -819,7 +819,7 @@
             "80:80/tcp"
         ],
         "volumes": [{
-            "bind": "/var/lib/docker/volumes/Chevereto",
+            "bind": "Chevereto",
             "container": "/var/www/html/images"
         }],
         "env": [{
@@ -881,7 +881,7 @@
             "90:80/tcp"
         ],
         "volumes": [{
-            "bind": "/var/lib/docker/volumes/Chrome",
+            "bind": "Chrome",
             "container": "/config"
         }],
         "env": [{
@@ -929,10 +929,10 @@
             "8001:8000/tcp"
         ],
         "volumes": [{
-            "bind": "/var/lib/docker/volumes/Cloud9-Config",
+            "bind": "Cloud9-Config",
             "container": "/config"
         },{
-            "bind": "/var/lib/docker/volumes/Cloud9-Code",
+            "bind": "Cloud9-Code",
             "container": "/code"
         },{
             "bind": "/var/run/docker.sock",
@@ -970,7 +970,7 @@
             "8443:8443/tcp"
         ],
         "volumes": [{
-            "bind": "/var/lib/docker/volumes/Code-Server",
+            "bind": "Code-Server",
             "container": "/config"
         }],
         "env": [{
@@ -1020,7 +1020,7 @@
             "90:80/tcp"
         ],
         "volumes": [{
-            "bind": "/var/lib/docker/volumes/Codiad",
+            "bind": "Codiad",
             "container": "/config"
         }],
         "categories": [
@@ -1062,10 +1062,10 @@
             "8443:8443/tcp"
         ],
         "volumes": [{
-            "bind": "/var/lib/docker/volumes/ContentBox-DB",
+            "bind": "ContentBox-DB",
             "container": "/data/contentbox/db"
         },{
-            "bind": "/var/lib/docker/volumes/ContentBox-Media",
+            "bind": "ContentBox-Media",
             "container": "/app/includes/shared/media"
         }],
         "env": [{
@@ -1097,10 +1097,10 @@
             "80:80/tcp"
         ],
         "volumes": [{
-            "bind": "/var/lib/docker/volumes/Cops-Config",
+            "bind": "Cops-Config",
             "container": "/config"
         },{
-            "bind": "/var/lib/docker/volumes/Cops-Books",
+            "bind": "Cops-Books",
             "container": "/books"
         }],
         "env": [{
@@ -1135,13 +1135,13 @@
             "5050:5050/tcp"
         ],
         "volumes": [{
-            "bind": "/var/lib/docker/volumes/CouchPotato-Config",
+            "bind": "CouchPotato-Config",
             "container": "/config"
         },{
-            "bind": "/var/lib/docker/volumes/CouchPotato-Downloads",
+            "bind": "CouchPotato-Downloads",
             "container": "/downloads"
         },{
-            "bind": "/var/lib/docker/volumes/CouchPotato-Movies",
+            "bind": "CouchPotato-Movies",
             "container": "/movies"
         }],
         "env": [{
@@ -1177,7 +1177,7 @@
             "4300:4300/tcp"
         ],
         "volumes": [{
-            "bind": "/var/lib/docker/volumes/CrateDB",
+            "bind": "CrateDB",
             "container": "/data"
         }],
         "categories": [
@@ -1194,10 +1194,10 @@
         "restart_policy": "unless-stopped",
         "network": "host",
         "volumes": [{
-            "bind": "/var/lib/docker/volumes/Daapd-Config",
+            "bind": "Daapd-Config",
             "container": "/config"
         },{
-            "bind": "/var/lib/docker/volumes/Daapd-Music",
+            "bind": "Daapd-Music",
             "container": "/music"
         }],
         "env": [{
@@ -1262,7 +1262,7 @@
             "3000:3000/tcp"
         ],
         "volumes": [{
-            "bind": "/var/lib/docker/volumes/DarkTable",
+            "bind": "DarkTable",
             "container": "/config"
         }],
         "env": [{
@@ -1297,10 +1297,10 @@
             "8080:8080/tcp"
         ],
         "volumes": [{
-            "bind": "/var/lib/docker/volumes/Davos-Config",
+            "bind": "Davos-Config",
             "container": "/config"
         },{
-            "bind": "/var/lib/docker/volumes/Davos-Download",
+            "bind": "Davos-Download",
             "container": "/download"
         }],
         "env": [{
@@ -1332,7 +1332,7 @@
         "image": "linuxserver/ddclient:latest",
         "restart_policy": "unless-stopped",
         "volumes": [{
-            "bind": "/var/lib/docker/volumes/DDClient",
+            "bind": "DDClient",
             "container": "/config"
         }],
         "env": [{
@@ -1369,10 +1369,10 @@
             "6881:6881/udp"
         ],
         "volumes": [{
-            "bind": "/var/lib/docker/volumes/Deluge-Config",
+            "bind": "Deluge-Config",
             "container": "/config"
         },{
-            "bind": "/var/lib/docker/volumes/Deluge-Downloads",
+            "bind": "Deluge-Downloads",
             "container": "/downloads"
         }],
         "env": [{
@@ -1413,7 +1413,7 @@
             "3011:3000/tcp"
         ],
         "volumes": [{
-            "bind": "/var/lib/docker/volumes/Digikam",
+            "bind": "Digikam",
             "container": "/config"
         }],
         "env": [{
@@ -1438,7 +1438,7 @@
             "8080:8080/tcp"
         ],
         "volumes": [{
-            "bind": "/var/lib/docker/volumes/Dillinger-Config",
+            "bind": "Dillinger-Config",
             "container": "/config"
         }],
         "env": [{
@@ -1473,10 +1473,10 @@
             "80:80/tcp"
         ],
         "volumes": [{
-            "bind": "/var/lib/docker/volumes/Diskover-Config",
+            "bind": "Diskover-Config",
             "container": "/config"
         },{
-            "bind": "/var/lib/docker/volumes/Diskover-Data",
+            "bind": "Diskover-Data",
             "container": "/data"
         }],
         "env": [{
@@ -1531,7 +1531,7 @@
             "91:80/tcp"
         ],
         "volumes": [{
-            "bind": "/var/lib/docker/volumes/Docker-Compose",
+            "bind": "Docker-Compose",
             "container": "/config"
         }],
         "categories": [
@@ -1586,7 +1586,7 @@
             "445:443/tcp"
         ],
         "volumes": [{
-            "bind": "/var/lib/docker/volumes/DokuWiki",
+            "bind": "DokuWiki",
             "container": "/config"
         }],
         "categories": [
@@ -1607,7 +1607,7 @@
             "1443:1443/tcp"
         ],
         "volumes": [{
-            "bind": "/var/lib/docker/volumes/Domoticz",
+            "bind": "Domoticz",
             "container": "/config"
         }],
         "env": [{
@@ -1632,10 +1632,10 @@
             "3012:3000/tcp"
         ],
         "volumes": [{
-            "bind": "/var/lib/docker/volumes/DoubleCommander-Config",
+            "bind": "DoubleCommander-Config",
             "container": "/config"
         },{
-            "bind": "/var/lib/docker/volumes/DoubleCommander-Data",
+            "bind": "DoubleCommander-Data",
             "container": "/data"
         }],
         "categories": [
@@ -1651,7 +1651,7 @@
         "image": "linuxserver/duckdns:latest",
         "restart_policy": "unless-stopped",
         "volumes": [{
-            "bind": "/var/lib/docker/volumes/DuckDNS",
+            "bind": "DuckDNS",
             "container": "/config"
         }],
         "env": [{
@@ -1701,13 +1701,13 @@
             "8200:8200/tcp"
         ],
         "volumes": [{
-            "bind": "/var/lib/docker/volumes/Duplicati-Config",
+            "bind": "Duplicati-Config",
             "container": "/config"
         },{
-            "bind": "/var/lib/docker/volumes/Duplicati-Backups",
+            "bind": "Duplicati-Backups",
             "container": "/backups"
         },{
-            "bind": "/var/lib/docker/volumes/Duplicati-Source",
+            "bind": "Duplicati-Source",
             "container": "/source"
         }],
         "env": [{
@@ -1747,7 +1747,7 @@
             "80:80/tcp"
         ],
         "volumes": [{
-            "bind": "/var/lib/docker/volumes/Drupal",
+            "bind": "Drupal",
             "container": "/var/www/html"
         }],
         "categories": [
@@ -1767,7 +1767,7 @@
             "9300:9300/tcp"
         ],
         "volumes": [{
-            "bind": "/var/lib/docker/volumes/ElasticSearch",
+            "bind": "ElasticSearch",
             "container": "/usr/share/elasticsearch/data"
         }],
         "categories": [
@@ -1787,13 +1787,13 @@
             "8920:8920/tcp"
         ],
         "volumes": [{
-            "bind": "/var/lib/docker/volumes/Emby-Config",
+            "bind": "Emby-Config",
             "container": "/config"
         },{
-            "bind": "/var/lib/docker/volumes/Emby-TVShows",
+            "bind": "Emby-TVShows",
             "container": "/data/tvshows"
         },{
-            "bind": "/var/lib/docker/volumes/Emby-Movies",
+            "bind": "Emby-Movies",
             "container": "/data/movies"
         },{
             "bind": "/opt/vc/lib",
@@ -1831,7 +1831,7 @@
             "6555:6555/tcp"
         ],
         "volumes": [{
-                "bind": "/var/lib/docker/volumes/EmbyStat",
+                "bind": "EmbyStat",
                 "container": "/config"
         }],
         "env": [{
@@ -1868,7 +1868,7 @@
             "4001:4001/tcp"
         ],
         "volumes": [{
-            "bind": "/var/lib/docker/volumes/EmulatorJS",
+            "bind": "EmulatorJS",
             "container": "/data"
         }],
         "env": [{
@@ -1893,7 +1893,7 @@
             "22:2222/tcp"
         ],
         "volumes": [{
-            "bind": "/var/lib/docker/volumes/EndleSSH",
+            "bind": "EndleSSH",
             "container": "/config"
         }],
         "env": [{
@@ -1976,10 +1976,10 @@
             "80:80/tcp"
         ],
         "volumes": [{
-            "bind": "/var/lib/docker/volumes/File-Browser-Data",
+            "bind": "File-Browser-Data",
             "container": "/data"
         },{
-            "bind": "/var/lib/docker/volumes/File-Browser-Srv",
+            "bind": "File-Browser-Srv",
             "container": "/srv"
         }],
         "categories": [
@@ -1999,7 +1999,7 @@
             "3000:3000/tcp"
         ],
         "volumes": [{
-            "bind": "/var/lib/docker/volumes/FileZilla",
+            "bind": "FileZilla",
             "container": "/config"
         }],
         "env": [{
@@ -2034,7 +2034,7 @@
             "8080:8080/tcp"
         ],
         "volumes": [{
-            "bind": "/var/lib/docker/volumes/Fleet",
+            "bind": "Fleet",
             "container": "/config"
         }],
         "env": [{
@@ -2090,7 +2090,7 @@
             "36330:36330/tcp"
         ],
         "volumes": [{
-            "bind": "/var/lib/docker/volumes/FoldingAtHome",
+            "bind": "FoldingAtHome",
             "container": "/config"
         }],
         "env": [{
@@ -2125,7 +2125,7 @@
             "80:80/tcp"
         ],
         "volumes": [{
-            "bind": "/var/lib/docker/volumes/FreshRSS",
+            "bind": "FreshRSS",
             "container": "/config"
         }],
         "env": [{
@@ -2163,13 +2163,13 @@
             "22:22/tcp"
         ],
         "volumes": [{
-            "bind": "/var/lib/docker/volumes/Gitlab-ETC",
+            "bind": "Gitlab-ETC",
             "container": "/etc/gitlab"
         },{
-            "bind": "/var/lib/docker/volumes/Gitlab-Log",
+            "bind": "Gitlab-Log",
             "container": "/var/log/gitlab"
         },{
-            "bind": "/var/lib/docker/volumes/Gitlab-OPT",
+            "bind": "Gitlab-OPT",
             "container": "/var/opt/gitlab"
         }],
         "categories": [
@@ -2191,7 +2191,7 @@
             "2368:2368/tcp"
         ],
         "volumes": [{
-            "bind": "/var/lib/docker/volumes/Ghost",
+            "bind": "Ghost",
             "container": "/var/lib/ghost/content"
         }],
         "categories": [
@@ -2210,7 +2210,7 @@
             "80:80/tcp"
         ],
         "volumes": [{
-            "bind": "/var/lib/docker/volumes/Grav",
+            "bind": "Grav",
             "container": "/config"
         }],
         "env": [{
@@ -2245,7 +2245,7 @@
             "9283:80/tcp"
         ],
         "volumes": [{
-            "bind": "/var/lib/docker/volumes/Grocy",
+            "bind": "Grocy",
             "container": "/config"
         }],
         "env": [{
@@ -2293,7 +2293,7 @@
             "50000:50000/tcp"
         ],
         "volumes": [{
-            "bind": "/var/lib/docker/volumes/Habridge",
+            "bind": "Habridge",
             "container": "/config"
         }],
         "env": [{
@@ -2333,13 +2333,13 @@
             "8181:8181/tcp"
         ],
         "volumes": [{
-            "bind": "/var/lib/docker/volumes/Headphones-Config",
+            "bind": "Headphones-Config",
             "container": "/config"
         },{
-            "bind": "/var/lib/docker/volumes/Headphones-Downloads",
+            "bind": "Headphones-Downloads",
             "container": "/downloads"
         },{
-            "bind": "/var/lib/docker/volumes/Headphones-Music",
+            "bind": "Headphones-Music",
             "container": "/music"
         }],
         "env": [{
@@ -2374,7 +2374,7 @@
             "8000:8000/tcp"
         ],
         "volumes": [{
-            "bind": "/var/lib/docker/volumes/HealthChecks",
+            "bind": "HealthChecks",
             "container": "/config"
         }],
         "env": [{
@@ -2474,7 +2474,7 @@
             "3000:3000/tcp"
         ],
         "volumes": [{
-            "bind": "/var/lib/docker/volumes/HedgeDoc",
+            "bind": "HedgeDoc",
             "container": "/config"
         }],
         "env": [{
@@ -2550,7 +2550,7 @@
             "443:443/tcp"
         ],
         "volumes": [{
-            "bind": "/var/lib/docker/volumes/Heimdall",
+            "bind": "Heimdall",
             "container": "/config"
         }],
         "env": [{
@@ -2583,7 +2583,7 @@
             "8123:8123/tcp"
         ],
         "volumes": [{
-            "bind": "/var/lib/docker/volumes/HomeAssistant",
+            "bind": "HomeAssistant",
             "container": "/config"
         }],
         "env": [{
@@ -2618,7 +2618,7 @@
             "87:80/tcp"
         ],
         "volumes": [{
-            "bind": "/var/lib/docker/volumes/Httpd",
+            "bind": "Httpd",
             "container": "/usr/local/apache2/htdocs/"
         }],
         "categories": [
@@ -2641,7 +2641,7 @@
             "443:443/tcp"
         ],
         "volumes": [{
-            "bind": "/var/lib/docker/volumes/IPFS",
+            "bind": "IPFS",
             "container": "/config"
         }],
         "env": [{
@@ -2691,10 +2691,10 @@
             "9117:9117/tcp"
         ],
         "volumes": [{
-            "bind": "/var/lib/docker/volumes/Jackett-Config",
+            "bind": "Jackett-Config",
             "container": "/config"
         },{
-            "bind": "/var/lib/docker/volumes/Jackett-Downloads",
+            "bind": "Jackett-Downloads",
             "container": "/downloads"
         }],
         "env": [{
@@ -2742,13 +2742,13 @@
             "1900:1900/udp"
         ],
         "volumes": [{
-                "bind": "/var/lib/docker/volumes/Jellyfin-Config",
+                "bind": "Jellyfin-Config",
                 "container": "/config"
             },{
-                "bind": "/var/lib/docker/volumes/Jellyfin-TVShows",
+                "bind": "Jellyfin-TVShows",
                 "container": "/data/tvshows"
             },{
-                "bind": "/var/lib/docker/volumes/Jellyfin-Movies",
+                "bind": "Jellyfin-Movies",
                 "container": "/data/movies"
             }],
         "env": [{
@@ -2786,7 +2786,7 @@
             "5000:50000/tcp"
         ],
         "volumes": [{
-            "bind": "/var/lib/docker/volumes/Jenkins",
+            "bind": "Jenkins",
             "container": "/var/jenkins_home"
         }],
         "categories": [
@@ -2805,7 +2805,7 @@
             "80:80/tcp"
         ],
         "volumes": [{
-            "bind": "/var/lib/docker/volumes/Joomla",
+            "bind": "Joomla",
             "container": "/var/www/html"
         }],
         "env": [{
@@ -2834,7 +2834,7 @@
             "8000:8000/tcp"
         ],
         "volumes": [{
-            "bind": "/var/lib/docker/volumes/Kanzi",
+            "bind": "Kanzi",
             "container": "/config"
         }],
         "env": [{
@@ -2879,13 +2879,13 @@
             "5299:5299/tcp"
         ],
         "volumes": [{
-            "bind": "/var/lib/docker/volumes/LazyLibrarian-Config",
+            "bind": "LazyLibrarian-Config",
             "container": "/config"
         },{
-            "bind": "/var/lib/docker/volumes/LazyLibrarian-Downloads",
+            "bind": "LazyLibrarian-Downloads",
             "container": "/downloads"
         },{
-            "bind": "/var/lib/docker/volumes/LazyLibrarian-Books",
+            "bind": "LazyLibrarian-Books",
             "container": "/books"
         }],
         "env": [{
@@ -2962,7 +2962,7 @@
             "3000:3000/tcp"
         ],
         "volumes": [{
-            "bind": "/var/lib/docker/volumes/LibreOffice",
+            "bind": "LibreOffice",
             "container": "/config"
         }],
         "env": [{
@@ -2997,19 +2997,19 @@
           "4040/tcp"
         ],
         "volumes": [{
-            "bind": "/var/lib/docker/volumes/LibreSonic-Music",
+            "bind": "LibreSonic-Music",
             "container": "/music"
         },{
-            "bind": "/var/lib/docker/volumes/LibreSonic-Playlists",
+            "bind": "LibreSonic-Playlists",
             "container": "/playlists"
         },{
-            "bind": "/var/lib/docker/volumes/LibreSonic-Podcasts",
+            "bind": "LibreSonic-Podcasts",
             "container": "/podcasts"
         },{
-            "bind": "/var/lib/docker/volumes/LibreSonic-Media",
+            "bind": "LibreSonic-Media",
             "container": "/media"
         },{
-            "bind": "/var/lib/docker/volumes/LibreSonic-Config",
+            "bind": "LibreSonic-Config",
             "container": "/config"
         }],
         "env": [{
@@ -3049,7 +3049,7 @@
             "80:80/tcp"
         ],
         "volumes": [{
-            "bind": "/var/lib/docker/volumes/LibreSpeed",
+            "bind": "LibreSpeed",
             "container": "/config"
         }],
         "env": [{
@@ -3124,13 +3124,13 @@
             "8686:8686/tcp"
         ],
         "volumes": [{
-            "bind": "/var/lib/docker/volumes/Lidarr-Config",
+            "bind": "Lidarr-Config",
             "container": "/config"
         },{
-            "bind": "/var/lib/docker/volumes/Lidarr-Music",
+            "bind": "Lidarr-Music",
             "container": "/music"
         },{
-            "bind": "/var/lib/docker/volumes/Lidarr-Downloads",
+            "bind": "Lidarr-Downloads",
             "container": "/downloads"
         }],
         "env": [{
@@ -3165,7 +3165,7 @@
             "8080:8080/tcp"
         ],
         "volumes": [{
-            "bind": "/var/lib/docker/volumes/Limnoria",
+            "bind": "Limnoria",
             "container": "/config"
         }],
         "env": [{
@@ -3220,10 +3220,10 @@
             "80:80/tcp"
         ],
         "volumes": [{
-            "bind": "/var/lib/docker/volumes/Lychee-Config",
+            "bind": "Lychee-Config",
             "container": "/config"
         },{
-            "bind": "/var/lib/docker/volumes/Lychee-Pictures",
+            "bind": "Lychee-Pictures",
             "container": "/pictures"
         }],
         "env": [{
@@ -3278,7 +3278,7 @@
             "3306:3306/tcp"
         ],
         "volumes": [{
-            "bind": "/var/lib/docker/volumes/MariaDB",
+            "bind": "MariaDB",
             "container": "/var/lib/mysql"
         }],
         "env": [{
@@ -3302,7 +3302,7 @@
             "80:80/tcp"
         ],
         "volumes": [{
-            "bind": "/var/lib/docker/volumes/Mautic",
+            "bind": "Mautic",
             "container": "/var/www/html"
         }],
         "env": [{
@@ -3331,13 +3331,13 @@
             "8081:8081/tcp"
         ],
         "volumes": [{
-            "bind": "/var/lib/docker/volumes/Medusa-Config",
+            "bind": "Medusa-Config",
             "container": "/config"
         },{
-            "bind": "/var/lib/docker/volumes/Medusa-Downloads",
+            "bind": "Medusa-Downloads",
             "container": "/downloads"
         },{
-            "bind": "/var/lib/docker/volumes/Medusa-TV",
+            "bind": "Medusa-TV",
             "container": "/tv"
         }],
         "env": [{
@@ -3372,7 +3372,7 @@
             "30000:30000/udp"
         ],
         "volumes": [{
-            "bind": "/var/lib/docker/volumes/Minetest",
+            "bind": "Minetest",
             "container": "/config/.minetest"
         }],
         "env": [{
@@ -3414,7 +3414,7 @@
             "1900:1900/udp"
         ],
         "volumes": [{
-            "bind": "/var/lib/docker/volumes/MiniSatip",
+            "bind": "MiniSatip",
             "container": "/config"
         }],
         "env": [{
@@ -3456,10 +3456,10 @@
             "9001:9001/tcp"
         ],
         "volumes": [{
-            "bind": "/var/lib/docker/volumes/Minio-Data",
+            "bind": "Minio-Data",
             "container": "/data"
         },{
-            "bind": "/var/lib/docker/volumes/Minio",
+            "bind": "Minio",
             "container": "/root/.minio"
         }],
         "env": [{
@@ -3487,7 +3487,7 @@
             "27017:27017/tcp"
         ],
         "volumes": [{
-            "bind": "/var/lib/docker/volumes/Mongo",
+            "bind": "Mongo",
             "container": "/data/db"
         }],
         "categories": [
@@ -3506,10 +3506,10 @@
             "3014:3000/tcp"
         ],
         "volumes": [{
-            "bind": "/var/lib/docker/volumes/MStream-Config",
+            "bind": "MStream-Config",
             "container": "/config"
         },{
-            "bind": "/var/lib/docker/volumes/MStream-Music",
+            "bind": "MStream-Music",
             "container": "/music"
         }],
         "categories": [
@@ -3528,7 +3528,7 @@
             "96:80/tcp"
         ],
         "volumes": [{
-            "bind": "/var/lib/docker/volumes/Muximux",
+            "bind": "Muximux",
             "container": "/config"
         }],
         "categories": [
@@ -3547,13 +3547,13 @@
             "8090:8090/tcp"
         ],
         "volumes": [{
-            "bind": "/var/lib/docker/volumes/MyLar3-Config",
+            "bind": "MyLar3-Config",
             "container": "/config"
         },{
-            "bind": "/var/lib/docker/volumes/MyLar3-Comics",
+            "bind": "MyLar3-Comics",
             "container": "/comics"
         },{
-            "bind": "/var/lib/docker/volumes/MyLar3-Downloads",
+            "bind": "MyLar3-Downloads",
             "container": "/downloads"
         }],
         "env": [{
@@ -3583,7 +3583,7 @@
             "3306:3306/tcp"
         ],
         "volumes": [{
-            "bind": "/var/lib/docker/volumes/MySQL",
+            "bind": "MySQL",
             "container": "/var/lib/mysql"
         }],
         "env": [{
@@ -3611,7 +3611,7 @@
             "3000:3000/tcp"
         ],
         "volumes": [{
-            "bind": "/var/lib/docker/volumes/MySQL-Workbench",
+            "bind": "MySQL-Workbench",
             "container": "/config"
         }],
         "env": [{
@@ -3648,10 +3648,10 @@
             "8080:80/tcp"
         ],
         "volumes": [{
-            "bind": "/var/lib/docker/volumes/NetBootXYZ-Config",
+            "bind": "NetBootXYZ-Config",
             "container": "/config"
         },{
-            "bind": "/var/lib/docker/volumes/NetBootXYZ-Assets",
+            "bind": "NetBootXYZ-Assets",
             "container": "/assets"
         }],
         "env": [{
@@ -3696,7 +3696,7 @@
             "8000:8000/tcp"
         ],
         "volumes": [{
-            "bind": "/var/lib/docker/volumes/NetBox",
+            "bind": "NetBox",
             "container": "/config"
         }],
         "env": [{
@@ -3831,10 +3831,10 @@
             "8443:443/tcp"
         ],
         "volumes": [{
-            "bind": "/var/lib/docker/volumes/NextCloud/Config",
+            "bind": "NextCloud/Config",
             "container": "/config"
         },{
-            "bind": "/var/lib/docker/volumes/NextCloud/Data",
+            "bind": "NextCloud/Data",
             "container": "/data"
         }],
         "env": [{
@@ -3872,10 +3872,10 @@
             "443:443/tcp"
         ],
         "volumes": [{
-            "bind": "/var/lib/docker/volumes/NGINX/Data",
+            "bind": "NGINX/Data",
             "container": "/data"
         },{
-            "bind": "/var/lib/docker/volumes/NGINX/LetsEncrypt",
+            "bind": "NGINX/LetsEncrypt",
             "container": "/etc/letsencrypt"
         }],
         "categories": [
@@ -3894,7 +3894,7 @@
             "6667:6667/tcp"
         ],
         "volumes": [{
-            "bind": "/var/lib/docker/volumes/Ngircd",
+            "bind": "Ngircd",
             "container": "/config"
         }],
         "env": [{
@@ -3944,10 +3944,10 @@
             "27017:27017/tcp"
         ],
         "volumes": [{
-            "bind": "/var/lib/docker/volumes/OPCRouter-DB",
+            "bind": "OPCRouter-DB",
             "container": "/data/db"
         },{
-            "bind": "/var/lib/docker/volumes/OPCRouter-Crypto",
+            "bind": "OPCRouter-Crypto",
             "container": "/root/.dotnet/corefx/cryptography/x509stores/"
         }],
         "env": [{
@@ -4039,7 +4039,7 @@
             "2222:2222/tcp"
         ],
         "volumes": [{
-            "bind": "/var/lib/docker/volumes/OpenSSH-Server",
+            "bind": "OpenSSH-Server",
             "container": "/config"
         }],
         "env": [{
@@ -4119,7 +4119,7 @@
                 "8443:8443/tcp"
         ],
         "volumes": [{
-                "bind": "/var/lib/docker/volumes/VSCode",
+                "bind": "VSCode",
                 "container": "/config"
         }],
         "env": [{
@@ -4171,7 +4171,7 @@
             "1194:1194/udp"
         ],
         "volumes": [{
-            "bind": "/var/lib/docker/volumes/OpenVPN",
+            "bind": "OpenVPN",
             "container": "/config"
         }],
         "env": [{
@@ -4258,10 +4258,10 @@
             "8000:8000/tcp"
         ],
         "volumes": [{
-            "bind": "/var/lib/docker/volumes/Paperless-NG-Config",
+            "bind": "Paperless-NG-Config",
             "container": "/config"
         },{
-            "bind": "/var/lib/docker/volumes/Paperless-NG-Data",
+            "bind": "Paperless-NG-Data",
             "container": "/data"
         }],
         "env": [{
@@ -4301,10 +4301,10 @@
             "8000:8000/tcp"
         ],
         "volumes": [{
-                "bind": "/var/lib/docker/volumes/PaperMerge-Config",
+                "bind": "PaperMerge-Config",
                 "container": "/config"
             },{
-                "bind": "/var/lib/docker/volumes/PaperMerge-Data",
+                "bind": "PaperMerge-Data",
                 "container": "/data"
             }],
         "env": [{
@@ -4344,13 +4344,13 @@
             "80:80/tcp"
         ],
         "volumes": [{
-                "bind": "/var/lib/docker/volumes/PhotoShow-Config",
+                "bind": "PhotoShow-Config",
                 "container": "/config"
             },{
-                "bind": "/var/lib/docker/volumes/PhotoShow-Pictures",
+                "bind": "PhotoShow-Pictures",
                 "container": "/Pictures:ro"
             },{
-                "bind": "/var/lib/docker/volumes/PhotoShow-Thumbs",
+                "bind": "PhotoShow-Thumbs",
                 "container": "/Thumbs"
             }],
         "env": [{
@@ -4388,10 +4388,10 @@
             "4443:443/tcp"
         ],
         "volumes": [{
-            "bind": "/var/lib/docker/volumes/PiHole/config",
+            "bind": "PiHole/config",
             "container": "/etc/pihole"
         },{
-            "bind": "/var/lib/docker/volumes/PiHole/DNS",
+            "bind": "PiHole/DNS",
             "container": "/etc/dnsmasq.d"
         }],
         "categories": [
@@ -4410,10 +4410,10 @@
             "80:80/tcp"
         ],
         "volumes": [{
-                "bind": "/var/lib/docker/volumes/Piwigo-Config",
+                "bind": "Piwigo-Config",
                 "container": "/config"
             },{
-                "bind": "/var/lib/docker/volumes/Piwigo-Gallery",
+                "bind": "Piwigo-Gallery",
                 "container": "/gallery"
             }],
         "env": [{
@@ -4448,10 +4448,10 @@
             "80:80/tcp"
         ],
         "volumes": [{
-            "bind": "/var/lib/docker/volumes/Pixapop-Config",
+            "bind": "Pixapop-Config",
             "container": "/config"
         },{
-            "bind": "/var/lib/docker/volumes/Pixapop-Photos",
+            "bind": "Pixapop-Photos",
             "container": "/photos"
         }],
         "env": [{
@@ -4494,13 +4494,13 @@
         "restart_policy": "unless-stopped",
         "network": "host",
         "volumes": [{
-            "bind": "/var/lib/docker/volumes/Plex-Config",
+            "bind": "Plex-Config",
             "container": "/config"
         },{
-            "bind": "/var/lib/docker/volumes/Plex-TV",
+            "bind": "Plex-TV",
             "container": "/tv"
         },{
-            "bind": "/var/lib/docker/volumes/Plex-Movies",
+            "bind": "Plex-Movies",
             "container": "/movies"
         }],
         "env": [{
@@ -4541,7 +4541,7 @@
             "8080:8080/tcp"
         ],
         "volumes": [{
-            "bind": "/var/lib/docker/volumes/Plone",
+            "bind": "Plone",
             "container": "/data"
         }],
         "categories": [
@@ -4560,7 +4560,7 @@
             "5432:5432/tcp"
         ],
         "volumes": [{
-            "bind": "/var/lib/docker/volumes/PostgreSQL",
+            "bind": "PostgreSQL",
             "container": "/var/lib/postgresql/data"
         }],
         "env": [{
@@ -4588,10 +4588,10 @@
             "80:80/tcp"
         ],
         "volumes": [{
-            "bind": "/var/lib/docker/volumes/ProjectSend-Config",
+            "bind": "ProjectSend-Config",
             "container": "/config"
         },{
-            "bind": "/var/lib/docker/volumes/ProjectSend-Data",
+            "bind": "ProjectSend-Data",
             "container": "/data"
         }],
         "env": [{
@@ -4631,7 +4631,7 @@
             "8080:8080/tcp"
         ],
         "volumes": [{
-            "bind": "/var/lib/docker/volumes/PWNDrop",
+            "bind": "PWNDrop",
             "container": "/config"
         }],
         "env": [{
@@ -4669,7 +4669,7 @@
             "33060:33060/tcp"
         ],
         "volumes": [{
-                "bind": "/var/lib/docker/volumes/Pydio-Cells",
+                "bind": "Pydio-Cells",
                 "container": "/config"
             }],
         "env": [{
@@ -4715,10 +4715,10 @@
             "7227:7227/tcp"
         ],
         "volumes": [{
-            "bind": "/var/lib/docker/volumes/PyLoad-Config",
+            "bind": "PyLoad-Config",
             "container": "/config"
         },{
-            "bind": "/var/lib/docker/volumes/PyLoad-Downloads",
+            "bind": "PyLoad-Downloads",
             "container": "/downloads"
         }],
         "env": [{
@@ -4753,10 +4753,10 @@
             "3131:3131/tcp"
         ],
         "volumes": [{
-            "bind": "/var/lib/docker/volumes/Pylon-Config",
+            "bind": "Pylon-Config",
             "container": "/config"
         },{
-            "bind": "/var/lib/docker/volumes/Pylon-Code",
+            "bind": "Pylon-Code",
             "container": "/code"
         }],
         "env": [{
@@ -4793,10 +4793,10 @@
             "8080:8080/tcp"
         ],
         "volumes": [{
-                "bind": "/var/lib/docker/volumes/QBitTorrent-Config",
+                "bind": "QBitTorrent-Config",
                 "container": "/config"
             },{
-                "bind": "/var/lib/docker/volumes/QBitTorrent-Downloads",
+                "bind": "QBitTorrent-Downloads",
                 "container": "/downloads"
             }],
         "env": [{
@@ -4837,7 +4837,7 @@
             "113:10113/tcp"
         ],
         "volumes": [{
-            "bind": "/var/lib/docker/volumes/Quassel-Core",
+            "bind": "Quassel-Core",
             "container": "/config"
         }],
         "env": [{
@@ -4878,7 +4878,7 @@
             "5672:5672/tcp"
         ],
         "volumes": [{
-            "bind": "/var/lib/docker/volumes/RabbitMQ",
+            "bind": "RabbitMQ",
             "container": "/var/lib/rabbitmq"
         }],
         "categories": [
@@ -4897,13 +4897,13 @@
           "7878:7878/tcp"
         ],
         "volumes": [{
-            "bind": "/var/lib/docker/volumes/Radarr-Config",
+            "bind": "Radarr-Config",
             "container": "/config"
             },{
-            "bind": "/var/lib/docker/volumes/Radarr-Movies",
+            "bind": "Radarr-Movies",
             "container": "/movies"
             },{
-            "bind": "/var/lib/docker/volumes/Radarr-Downloads",
+            "bind": "Radarr-Downloads",
             "container": "/downloads"
         }],
         "env": [{
@@ -4938,7 +4938,7 @@
           "3000:3000/tcp"
         ],
         "volumes": [{
-            "bind": "/var/lib/docker/volumes/Raneto",
+            "bind": "Raneto",
             "container": "/config"
         }],
         "env": [{
@@ -4974,7 +4974,7 @@
             "3000:3000/tcp"
         ],
         "volumes": [{
-            "bind": "/var/lib/docker/volumes/Redmine",
+            "bind": "Redmine",
             "container": "/usr/src/redmine/files"
         }],
         "categories": [
@@ -4993,7 +4993,7 @@
             "3003:3000/tcp"
         ],
         "volumes": [{
-            "bind": "/var/lib/docker/volumes/Remina",
+            "bind": "Remina",
             "container": "/config"
         }],
         "env": [{
@@ -5038,7 +5038,7 @@
           "4545:4545/tcp"
         ],
         "volumes": [{
-            "bind": "/var/lib/docker/volumes/Requestrr",
+            "bind": "Requestrr",
             "container": "/config"
         }],
         "env": [{
@@ -5074,13 +5074,13 @@
           "55555:55555/tcp"
         ],
         "volumes": [{
-            "bind": "/var/lib/docker/volumes/Resilio-Sync-Config",
+            "bind": "Resilio-Sync-Config",
             "container": "/config"
         },{
-            "bind": "/var/lib/docker/volumes/Resilio-Sync-Downloads",
+            "bind": "Resilio-Sync-Downloads",
             "container": "/downloads"
         },{
-            "bind": "/var/lib/docker/volumes/Resilio-Sync",
+            "bind": "Resilio-Sync",
             "container": "/sync"
         }],
         "env": [{
@@ -5119,7 +5119,7 @@
             "bind": "/var/run/docker.sock",
             "container": "/var/run/docker.sock"
         },{
-            "bind": "/var/lib/docker/volumes/RDesktop",
+            "bind": "RDesktop",
             "container": "/config"
         }],
         "categories": [
@@ -5138,13 +5138,13 @@
           "80:80/tcp"
         ],
         "volumes": [{
-            "bind": "/var/lib/docker/volumes/RSnapShot-Config",
+            "bind": "RSnapShot-Config",
             "container": "/config"
         },{
-            "bind": "/var/lib/docker/volumes/RSnapShot-Snapshots",
+            "bind": "RSnapShot-Snapshots",
             "container": "/.snapshots"
         },{
-            "bind": "/var/lib/docker/volumes/RSnapShot-Data",
+            "bind": "RSnapShot-Data",
             "container": "/data"
         }],
         "env": [{
@@ -5180,13 +5180,13 @@
           "9090:9090/tcp"
         ],
         "volumes": [{
-            "bind": "/var/lib/docker/volumes/SabnZBD-Config",
+            "bind": "SabnZBD-Config",
             "container": "/config"
         },{
-            "bind": "/var/lib/docker/volumes/SabnZBD-Downloads",
+            "bind": "SabnZBD-Downloads",
             "container": "/downloads"
         },{
-            "bind": "/var/lib/docker/volumes/SabnZBD-Incomplete-Downloads",
+            "bind": "SabnZBD-Incomplete-Downloads",
             "container": "/incomplete-downloads"
         }],
         "env": [{
@@ -5221,10 +5221,10 @@
             "8000:8000/tcp"
         ],
         "volumes": [{
-            "bind": "/var/lib/docker/volumes/Scality-Data",
+            "bind": "Scality-Data",
             "container": "/usr/src/app/localData"
         },{
-            "bind": "/var/lib/docker/volumes/Scality-MetaData",
+            "bind": "Scality-MetaData",
             "container": "/usr/src/app/localMetadata"
         }],
         "env": [{
@@ -5252,7 +5252,7 @@
           "8080:8080/tcp"
         ],
         "volumes": [{
-            "bind": "/var/lib/docker/volumes/Scrutiny",
+            "bind": "Scrutiny",
             "container": "/config"
         },{
             "bind": "/run/udev:ro",
@@ -5305,13 +5305,13 @@
           "8081:8081/tcp"
         ],
         "volumes": [{
-            "bind": "/var/lib/docker/volumes/SickChill-Config",
+            "bind": "SickChill-Config",
             "container": "/config"
         },{
-            "bind": "/var/lib/docker/volumes/SickChill-Downloads",
+            "bind": "SickChill-Downloads",
             "container": "/downloads"
         },{
-            "bind": "/var/lib/docker/volumes/SickChill-TV",
+            "bind": "SickChill-TV",
             "container": "/tv"
         }],
         "env": [{
@@ -5346,13 +5346,13 @@
           "8081:8081/tcp"
         ],
         "volumes": [{
-            "bind": "/var/lib/docker/volumes/SickGear-Config",
+            "bind": "SickGear-Config",
             "container": "/config"
         },{
-            "bind": "/var/lib/docker/volumes/SickGear-TV",
+            "bind": "SickGear-TV",
             "container": "/tv"
         },{
-            "bind": "/var/lib/docker/volumes/SickGear-Downloads",
+            "bind": "SickGear-Downloads",
             "container": "/downloads"
         }],
         "env": [{
@@ -5409,10 +5409,10 @@
 		    "8084:80/tcp"
 	    ],
         "volumes": [{
-            "bind": "/var/lib/docker/volumes/SmokePing-Config",
+            "bind": "SmokePing-Config",
 		    "container": "/config"
 	    },{
-            "bind": "/var/lib/docker/volumes/SmokePing-Data",
+            "bind": "SmokePing-Data",
 		    "container": "/data"
  	    }],
         "category": [
@@ -5432,7 +5432,7 @@
           "443:443/tcp"
         ],
         "volumes": [{
-            "bind": "/var/lib/docker/volumes/SnapDrop",
+            "bind": "SnapDrop",
             "container": "/config"
         }],
         "env": [{
@@ -5467,7 +5467,7 @@
           "8080:80/tcp"
         ],
         "volumes": [{
-            "bind": "/var/lib/docker/volumes/Snipe-IT",
+            "bind": "Snipe-IT",
             "container": "/config"
         }],
         "env": [{
@@ -5527,7 +5527,7 @@
             "8983:8983/tcp"
         ],
         "volumes": [{
-            "bind": "/var/lib/docker/volumes/Solr",
+            "bind": "Solr",
             "container": "/opt/solr/mydata"
 	    }],
         "categories": [
@@ -5546,13 +5546,13 @@
           "8989:8989/tcp"
         ],
         "volumes": [{
-            "bind": "/var/lib/docker/volumes/Sonarr-Config",
+            "bind": "Sonarr-Config",
             "container": "/config"
         },{
-            "bind": "/var/lib/docker/volumes/Sonarr-TV",
+            "bind": "Sonarr-TV",
             "container": "/tv"
         },{
-            "bind": "/var/lib/docker/volumes/Sonarr-Downloads",
+            "bind": "Sonarr-Downloads",
             "container": "/downloads"
         }],
         "env": [{
@@ -5588,7 +5588,7 @@
         ],
         "volumes": [
           {
-            "bind": "/var/lib/docker/volumes/SQLiteBrowser",
+            "bind": "SQLiteBrowser",
             "container": "/config"
           }
         ],
@@ -5654,7 +5654,7 @@
             "1433:1433/tcp"
         ],
         "volumes": [{
-            "bind": "/var/lib/docker/volumes/SQLServerDev",
+            "bind": "SQLServerDev",
             "container": "C:/temp/"
         }],
         "env": [{
@@ -5683,7 +5683,7 @@
             "1433:1433/tcp"
         ],
         "volumes": [{
-            "bind": "/var/lib/docker/volumes/SQLServerExpress",
+            "bind": "SQLServerExpress",
             "container": "C:/temp/"
         }],
         "env": [{
@@ -5712,7 +5712,7 @@
           "80:80/tcp"
         ],
         "volumes": [{
-            "bind": "/var/lib/docker/volumes/Swag",
+            "bind": "Swag",
             "container": "/config"
         }],
         "env": [{
@@ -5842,15 +5842,15 @@
         ],
         "volumes": [
           {
-            "bind": "/var/lib/docker/volumes/SyncThing-Config",
+            "bind": "SyncThing-Config",
             "container": "/config"
           },
           {
-            "bind": "/var/lib/docker/volumes/SyncThing-Data1",
+            "bind": "SyncThing-Data1",
             "container": "/data1"
           },
           {
-            "bind": "/var/lib/docker/volumes/SyncThing-Data2",
+            "bind": "SyncThing-Data2",
             "container": "/data2"
           }
         ],
@@ -5892,7 +5892,7 @@
           "6514:6514/tcp"
         ],
         "volumes": [{
-            "bind": "/var/lib/docker/volumes/SysLog-NG",
+            "bind": "SysLog-NG",
             "container": "/config"
         },{
             "bind": "/var/log",
@@ -5950,7 +5950,7 @@
           "9000:9000/tcp"
         ],
         "volumes": [{
-            "bind": "/var/lib/docker/volumes/TheLounge",
+            "bind": "TheLounge",
             "container": "/config"
         }],
         "env": [{
@@ -6007,13 +6007,13 @@
           "51413:51413/udp"
         ],
         "volumes": [{
-            "bind": "/var/lib/docker/volumes/Transmission-Config",
+            "bind": "Transmission-Config",
             "container": "/config"
         },{
-            "bind": "/var/lib/docker/volumes/Transmission-Downloads",
+            "bind": "Transmission-Downloads",
             "container": "/downloads"
         },{
-            "bind": "/var/lib/docker/volumes/Transmission-Watch",
+            "bind": "Transmission-Watch",
             "container": "/watch"
         }],
         "env": [{
@@ -6074,10 +6074,10 @@
           "9982:9982/tcp"
         ],
         "volumes": [{
-            "bind": "/var/lib/docker/volumes/TVHeadEnd-Config",
+            "bind": "TVHeadEnd-Config",
             "container": "/config"
         },{
-            "bind": "/var/lib/docker/volumes/TVHeadEnd-Recordings",
+            "bind": "TVHeadEnd-Recordings",
             "container": "/recordings"
         }],
         "env": [{
@@ -6118,16 +6118,16 @@
           "2203:2203/tcp"
         ],
         "volumes": [{
-            "bind": "/var/lib/docker/volumes/UbooQuity-Config",
+            "bind": "UbooQuity-Config",
             "container": "/config"
         },{
-            "bind": "/var/lib/docker/volumes/UbooQuity-Books",
+            "bind": "UbooQuity-Books",
             "container": "/books"
         },{
-            "bind": "/var/lib/docker/volumes/UbooQuity-Comics",
+            "bind": "UbooQuity-Comics",
             "container": "/comics"
         },{
-            "bind": "/var/lib/docker/volumes/UbooQuity-Files",
+            "bind": "UbooQuity-Files",
             "container": "/files"
         }],
         "env": [{
@@ -6189,7 +6189,7 @@
           "5514:5514/udp"
         ],
         "volumes": [{
-            "bind": "/var/lib/docker/volumes/Unifi-Controller",
+            "bind": "Unifi-Controller",
             "container": "/config"
         }],
         "env": [{
@@ -6229,7 +6229,7 @@
             "96:80/tcp"
         ],
         "volumes": [{
-            "bind": "/var/lib/docker/volumes/YOURLS",
+            "bind": "YOURLS",
             "container": "/app/data"
         }],
         "env": [{
@@ -6282,11 +6282,11 @@
         "restart_policy": "unless-stopped",
         "volumes": [
           {
-            "bind": "/var/lib/docker/volumes/WebGrabPlus-Config",
+            "bind": "WebGrabPlus-Config",
             "container": "/config"
           },
           {
-            "bind": "/var/lib/docker/volumes/WebGrabPlus-Data",
+            "bind": "WebGrabPlus-Data",
             "container": "/data"
           }
         ],
@@ -6326,7 +6326,7 @@
             "90:80/tcp"
         ],
         "volumes": [{
-            "bind": "/var/lib/docker/volumes/Website",
+            "bind": "Website",
             "container": "/var/www/html"
         }],
         "categories": [
@@ -6345,10 +6345,10 @@
           "3000:3000/tcp"
         ],
         "volumes": [{
-            "bind": "/var/lib/docker/volumes/WikiJS-Config",
+            "bind": "WikiJS-Config",
             "container": "/config"
         },{
-            "bind": "/var/lib/docker/volumes/WikiJS-Data",
+            "bind": "WikiJS-Data",
             "container": "/data"
         }],
         "env": [{
@@ -6383,10 +6383,10 @@
             "51820:51820/udp"
         ],
         "volumes": [{
-            "bind": "/var/lib/docker/volumes/WireGuard-Config",
+            "bind": "WireGuard-Config",
             "container": "/config"
         },{
-            "bind": "/var/lib/docker/volumes/WireGuard-Modules",
+            "bind": "WireGuard-Modules",
             "container": "/lib/modules"
         }],
         "env": [{
@@ -6443,7 +6443,7 @@
             "3015:3000/tcp"
         ],
         "volumes": [{
-            "bind": "/var/lib/docker/volumes/WireShark",
+            "bind": "WireShark",
             "container": "/config"
         },{
             "bind": "/var/run/docker.sock",
@@ -6500,7 +6500,7 @@
                 "5001:5000/tcp"
             ],
         "volumes": [{
-            "bind": "/var/lib/docker/volumes/Whoogle",
+            "bind": "Whoogle",
             "container": "/config"
         }],
         "env": [{
@@ -6554,8 +6554,8 @@
           "443:443/tcp"
         ],
         "volumes": [{
-            "bind": "/var/lib/docker/volumes/XBackBone",
-            "container": "/con/var/lib/docker/volumes/fig"
+            "bind": "XBackBone",
+            "container": "/config"
         }],
         "env": [{
             "default": "1000",
@@ -6586,7 +6586,7 @@
           "6501:6501/tcp"
         ],
         "volumes": [{
-            "bind": "/var/lib/docker/volumes/ZNC",
+            "bind": "ZNC",
             "container": "/config"
         }],
         "env": [{
