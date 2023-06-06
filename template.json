@@ -262,38 +262,6 @@
             "Monitoring"
         ]
     },{
-        "title": "Dozzle",
-        "description": "View Logs for Docker Containers",
-        "note": "",
-        "logo": "",
-        "platform": "linux",
-        "type": 1,
-        "name": "Dozzle",
-        "image": "amir20/dozzle",
-        "restart_policy": "unless-stopped",
-        "ports": [
-            "8081:8080/tcp"
-        ],
-        "volumes": [{
-            "bind": "/var/run/docker.sock",
-            "container": "/var/run/docker.sock"
-        }],
-        "env": [{
-            "default": "admin",
-            "description": "username ",
-            "label": "username ",
-            "name": "username "
-        },{
-            "default": "admin",
-            "description": "password ",
-            "label": "password ",
-            "name": "password "
-        }],
-        "categories": [
-            "Need",
-            "Monitoring"
-        ]
-    },{
         "title": "Booksonic-Air",
         "description": "[Booksonic-air](http://booksonic.org) is a platform for accessing the audibooks you own wherever you are. At the moment the platform consists of Booksonic Air - A server for streaming your audiobooks, successor to the original Booksonic server and based on Airsonic. Booksonic App - An DSub based Android app for connection to Booksonic-Air servers. .",
         "logo": "https://raw.githubusercontent.com/linuxserver/docker-templates/master/linuxserver.io/img/booksonic-air.png",
