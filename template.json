@@ -820,7 +820,7 @@
             "name": "TZ"
         }],
         "categories": [
-            "Audiobooks"
+            "Audiobook"
         ]
     },{
         "title": "Booksonic-Air",
@@ -869,7 +869,7 @@
             "name": "TZ"
         }],
         "categories": [
-            "Audiobooks"
+            "Audiobook"
         ]
     },{
         "title": "Bookstack",
@@ -3165,7 +3165,7 @@
             "name": "TZ"
         }],
         "categories": [
-            "Web Platform"
+            "Webserver"
         ]
     },{
         "title": "Grocy",
@@ -3253,7 +3253,7 @@
             "name": "TZ"
         }],
         "categories": [
-            "Web Platform"
+            "Automation"
         ]
     },{
         "title": "Headphones",
@@ -3574,7 +3574,7 @@
             "name": "TZ"
         }],
         "categories": [
-            "Home Automation"
+            "Automation"
         ]
     },{
         "title": "Homer",
@@ -3784,7 +3784,7 @@
             "container": "/app/data"
         }],
         "categories": [
-            "serverless"
+            "Cloud"
         ]
     },{
         "title": "IronFunctions API",
@@ -3804,7 +3804,7 @@
             "container": "/app/data"
         }],
         "categories": [
-            "serverless"
+            "Cloud"
         ]
     },{
         "title": "IronFunctions UI",
@@ -4525,7 +4525,7 @@
             "name": "TZ"
         }],
         "categories": [
-            "Bit"
+            "Torrent"
         ]
     },{
         "title": "Limnoria",
@@ -4580,7 +4580,7 @@
             "label": "Postgres password"
         }],
         "categories": [
-            "media"
+            "Media"
         ]
       },{
         "title": "Lollypop",
@@ -5359,7 +5359,7 @@
             "container": "/config"
         }],
         "categories": [
-            "Management"
+            "Bookmarks"
         ]
     },{
         "title": "Mylar3",
@@ -6416,7 +6416,7 @@
             "name": "PGID"
         }],
         "categories": [
-            "streaming"
+            "Movies"
         ]
     },{
         "title": "Owncloud",
@@ -6463,9 +6463,7 @@
             "name": "PORT"
         }],
         "categories": [
-            "Cloud",
-            "Productivity",
-            "Web"
+            "Cloud"
         ]
     },{
         "title": "Overseerr",
@@ -8353,8 +8351,7 @@
             "container": "/srv/shiori"
         }],
         "categories": [
-            "Other",
-            "Tools"
+            "Bookmarks"
         ]
     },{
         "title": "Snipe-it",
@@ -8973,7 +8970,7 @@
             "label": "License key"
         }],
         "categories": [
-            "edge"
+            "Cloud"
         ]
       },{
         "title": "Transmission",
@@ -9523,7 +9520,7 @@
             "container": "/var/run/docker.sock"
         }],
         "categories": [
-            "Backup"
+            "Docker"
         ]
     },{
         "title": "WebCord",
@@ -9861,7 +9858,7 @@
             "name": "WOWZA_KEY"
         }],
         "categories": [
-            "streaming"
+            "Movies"
         ]
     },{
         "title": "WPS-Office",
