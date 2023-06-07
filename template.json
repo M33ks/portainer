@@ -79,7 +79,7 @@
         "logo": "",
         "platform": "linux",
         "type": 1,
-        "name": "Chrome",
+        "name": "Chromium",
         "image": "kasmweb/chrome:1.13.0",
         "restart_policy": "unless-stopped",
         "shm_size": "512m",
