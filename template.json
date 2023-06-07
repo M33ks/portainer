@@ -114,13 +114,13 @@
             "Audiobook"
         ]
     },{
-        "title": "KasmWeb Chrome",
+        "title": "Chrome",
         "description": "KasmWeb Chrome is a containerized Chrome browser with remote access capabilities.",
         "note": "Docker run command for KasmWeb Chrome",
         "logo": "",
         "platform": "linux",
         "type": 1,
-        "name": "KasmWeb-Chrome",
+        "name": "Chrome",
         "image": "kasmweb/chrome:1.13.0",
         "restart_policy": "unless-stopped",
         "ports": [
