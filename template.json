@@ -116,19 +116,6 @@
         "ports": [
             "4040:80"
         ],
-        "volumes": [{
-            "bind": "AudioBookShelf-Config",
-            "container": "/config"
-        },{
-            "bind": "AudioBookShelf-MetaData",
-            "container": "/metadata"
-        },{
-            "bind": "AudioBookShelf-AudioBooks",
-            "container": "/audiobooks"
-        },{
-            "bind": "AudioBookShelf-Podcasts",
-            "container": "/podcasts"
-        }],
         "categories": [
             "Audiobook"
         ]
