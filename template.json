@@ -54,7 +54,8 @@
             "name": "SHM_SIZE"
         }],
         "categories": [
-            "Browser"
+            "Browser",
+            "Kasm"
         ]
     },{
         "title": "Dozzle",
@@ -665,7 +666,8 @@
             "name": "SHM_SIZE"
         }],
         "categories": [
-            "Kasm"
+            "Kasm",
+            "Development"
         ]
     },{
         "title": "Audacity",
@@ -1151,7 +1153,8 @@
             "name": "SHM_SIZE"
         }],
         "categories": [
-            "Kasm"
+            "Kasm",
+            "Browser"
         ]
     },{
         "title": "Budge",
@@ -1476,7 +1479,8 @@
             "name": "SHM_SIZE"
         }],
         "categories": [
-            "Browser"
+            "Browser",
+            "Kasm"
         ]
     },{
         "title": "Chromium",
@@ -2709,7 +2713,8 @@
             "name": "SHM_SIZE"
         }],
         "categories": [
-            "Browser"
+            "Browser",
+            "Kasm"
         ]
     },{
         "title": "ElasticSearch",
@@ -3225,6 +3230,33 @@
             "Productivity"
         ]
     },{
+        "title": "FileZilla",
+        "description": "KasmWeb FileZilla is a containerized FileZilla with remote access capabilities.",
+        "note": "Docker run command for KasmWeb FileZilla",
+        "logo": "",
+        "platform": "linux",
+        "type": 1,
+        "name": "FileZilla",
+        "image": "kasmweb/filezilla:1.13.0",
+        "restart_policy": "unless-stopped",
+        "ports": [
+          "6901:6901/tcp"
+        ],
+        "env": [{
+            "default": "admin",
+            "description": "Password for VNC connection",
+            "label": "VNC_PW",
+            "name": "VNC_PW"
+        },{
+            "default": "512m",
+            "description": "Shared memory size",
+            "label": "SHM_SIZE",
+            "name": "SHM_SIZE"
+        }],
+        "categories": [
+            "Kasm"
+        ]
+    },{
         "title": "Firefox",
         "description": "[Firefox](https://www.mozilla.org/en-US/firefox/) Browser, also known as Mozilla Firefox or simply Firefox, is a free and open-source web browser developed by the Mozilla Foundation and its subsidiary, the Mozilla Corporation. Firefox uses the Gecko layout engine to render web pages, which implements current and anticipated web standards.",
         "logo": "https://raw.githubusercontent.com/linuxserver/docker-templates/master/linuxserver.io/img/firefox-logo.png",
@@ -3254,6 +3286,34 @@
         }],
         "categories": [
             "Need",
+            "Browser"
+        ]
+    },{
+        "title": "Firefox",
+        "description": "KasmWeb Firefox is a containerized Firefox with remote access capabilities.",
+        "note": "Docker run command for KasmWeb Firefox",
+        "logo": "",
+        "platform": "linux",
+        "type": 1,
+        "name": "Firefox",
+        "image": "kasmweb/firefox:1.13.0",
+        "restart_policy": "unless-stopped",
+        "ports": [
+          "6901:6901/tcp"
+        ],
+        "env": [{
+            "default": "admin",
+            "description": "Password for VNC connection",
+            "label": "VNC_PW",
+            "name": "VNC_PW"
+        },{
+            "default": "512m",
+            "description": "Shared memory size",
+            "label": "SHM_SIZE",
+            "name": "SHM_SIZE"
+        }],
+        "categories": [
+            "Kasm",
             "Browser"
         ]
     },{
@@ -3572,6 +3632,33 @@
         }],
         "categories": [
             "Blog"
+        ]
+    },{
+        "title": "Gimp",
+        "description": "KasmWeb Gimp is a containerized Gimp with remote access capabilities.",
+        "note": "Docker run command for KasmWeb Gimp",
+        "logo": "",
+        "platform": "linux",
+        "type": 1,
+        "name": "Gimp",
+        "image": "kasmweb/gimp:1.13.0",
+        "restart_policy": "unless-stopped",
+        "ports": [
+          "6901:6901/tcp"
+        ],
+        "env": [{
+            "default": "admin",
+            "description": "Password for VNC connection",
+            "label": "VNC_PW",
+            "name": "VNC_PW"
+        },{
+            "default": "512m",
+            "description": "Shared memory size",
+            "label": "SHM_SIZE",
+            "name": "SHM_SIZE"
+        }],
+        "categories": [
+            "Kasm"
         ]
     },{
         "title": "Grav",
@@ -4257,7 +4344,8 @@
             "name": "SHM_SIZE"
         }],
         "categories": [
-            "Kasm"
+            "Kasm",
+            "Development"
         ]
     },{
         "title": "Invoice Ninja",
@@ -4638,7 +4726,8 @@
             "name": "SHM_SIZE"
         }],
         "categories": [
-            "Kasm"
+            "Kasm",
+            "OS"
         ]
     },{
         "title": "Kanzi",
@@ -5367,6 +5456,33 @@
             "CMS"
         ]
     },{
+        "title": "Maltego",
+        "description": "KasmWeb Maltego is a containerized Maltego with remote access capabilities.",
+        "note": "Docker run command for KasmWeb Maltego",
+        "logo": "",
+        "platform": "linux",
+        "type": 1,
+        "name": "Maltego",
+        "image": "kasmweb/maltego:1.13.0",
+        "restart_policy": "unless-stopped",
+        "ports": [
+          "6901:6901/tcp"
+        ],
+        "env": [{
+            "default": "admin",
+            "description": "Password for VNC connection",
+            "label": "VNC_PW",
+            "name": "VNC_PW"
+        },{
+            "default": "512m",
+            "description": "Shared memory size",
+            "label": "SHM_SIZE",
+            "name": "SHM_SIZE"
+        }],
+        "categories": [
+            "Kasm"
+        ]
+    },{
         "title": "MariaDB",   
         "description": "[Mariadb](https://mariadb.org/) is one of the most popular database servers. Made by the original developers of MySQL.",
         "logo": "https://raw.githubusercontent.com/linuxserver/docker-templates/master/linuxserver.io/img/mariadb-git.png",
@@ -5816,6 +5932,33 @@
         }],
         "categories": [
             "Minecraft"
+        ]
+    },{
+        "title": "Minetest",
+        "description": "KasmWeb Minetest is a containerized Minetest with remote access capabilities.",
+        "note": "Docker run command for KasmWeb Minetest",
+        "logo": "",
+        "platform": "linux",
+        "type": 1,
+        "name": "Minetest",
+        "image": "kasmweb/minetest:1.13.0",
+        "restart_policy": "unless-stopped",
+        "ports": [
+          "6901:6901/tcp"
+        ],
+        "env": [{
+            "default": "admin",
+            "description": "Password for VNC connection",
+            "label": "VNC_PW",
+            "name": "VNC_PW"
+        },{
+            "default": "512m",
+            "description": "Shared memory size",
+            "label": "SHM_SIZE",
+            "name": "SHM_SIZE"
+        }],
+        "categories": [
+            "Kasm"
         ]
     },{
         "title": "Minisatip",
@@ -7498,7 +7641,8 @@
             "name": "SHM_SIZE"
         }],
         "categories": [
-            "Kasm"
+            "Kasm",
+            "OS"
         ]
     },{
         "title": "Petio",
@@ -8064,7 +8208,8 @@
             "name": "SHM_SIZE"
         }],
         "categories": [
-            "Kasm"
+            "Kasm",
+            "Development"
         ]
     },{
         "title": "Pritunl",
@@ -9297,6 +9442,33 @@
 		    "Movies"
 	    ]
       },{
+        "title": "Signal",
+        "description": "KasmWeb Signal is a containerized Signal with remote access capabilities.",
+        "note": "Docker run command for KasmWeb Signal",
+        "logo": "",
+        "platform": "linux",
+        "type": 1,
+        "name": "Signal",
+        "image": "kasmweb/signal:1.13.0",
+        "restart_policy": "unless-stopped",
+        "ports": [
+          "6901:6901/tcp"
+        ],
+        "env": [{
+            "default": "admin",
+            "description": "Password for VNC connection",
+            "label": "VNC_PW",
+            "name": "VNC_PW"
+        },{
+            "default": "512m",
+            "description": "Shared memory size",
+            "label": "SHM_SIZE",
+            "name": "SHM_SIZE"
+        }],
+        "categories": [
+            "Kasm"
+        ]
+    },{
         "title": "Sematext Docker Agent",
         "description": "Collect logs, metrics and docker events",
         "logo": "https://portainer-io-assets.sfo2.digitaloceanspaces.com/logos/sematext_agent.png",
@@ -9791,6 +9963,34 @@
             "name": "SHM_SIZE"
         }],
         "categories": [
+            "Kasm",
+            "Development"
+        ]
+    },{
+        "title": "Super-Tux-Kart",
+        "description": "KasmWeb Super-Tux-Kart is a containerized Super-Tux-Kart with remote access capabilities.",
+        "note": "Docker run command for KasmWeb Super-Tux-Kart",
+        "logo": "",
+        "platform": "linux",
+        "type": 1,
+        "name": "Super-Tux-Kart",
+        "image": "kasmweb/super-tux-kart:1.13.0",
+        "restart_policy": "unless-stopped",
+        "ports": [
+          "6901:6901/tcp"
+        ],
+        "env": [{
+            "default": "admin",
+            "description": "Password for VNC connection",
+            "label": "VNC_PW",
+            "name": "VNC_PW"
+        },{
+            "default": "512m",
+            "description": "Shared memory size",
+            "label": "SHM_SIZE",
+            "name": "SHM_SIZE"
+        }],
+        "categories": [
             "Kasm"
         ]
     },{
@@ -10133,6 +10333,33 @@
             "Kasm"
         ]
     },{
+        "title": "Terminal",
+        "description": "KasmWeb Terminal is a containerized Terminal with remote access capabilities.",
+        "note": "Docker run command for KasmWeb Thunderbird",
+        "logo": "",
+        "platform": "linux",
+        "type": 1,
+        "name": "Terminal",
+        "image": "kasmweb/terminal:1.13.0",
+        "restart_policy": "unless-stopped",
+        "ports": [
+          "6901:6901/tcp"
+        ],
+        "env": [{
+            "default": "admin",
+            "description": "Password for VNC connection",
+            "label": "VNC_PW",
+            "name": "VNC_PW"
+        },{
+            "default": "512m",
+            "description": "Shared memory size",
+            "label": "SHM_SIZE",
+            "name": "SHM_SIZE"
+        }],
+        "categories": [
+            "Kasm"
+        ]
+    },{
         "title": "TheLounge",
         "description": "[Thelounge](https://thelounge.github.io/) (a fork of shoutIRC) is a web IRC client that you host on your own server.",
         "logo": "https://raw.githubusercontent.com/thelounge/thelounge/master/client/img/logo-vertical-transparent-bg.svg?sanitize=true",
@@ -10217,6 +10444,33 @@
             "RSS"
         ]
     },{
+        "title": "Thunderbird",
+        "description": "KasmWeb Thunderbird is a containerized Thunderbird with remote access capabilities.",
+        "note": "Docker run command for KasmWeb Thunderbird",
+        "logo": "",
+        "platform": "linux",
+        "type": 1,
+        "name": "Thunderbird",
+        "image": "kasmweb/thunderbird:1.13.0",
+        "restart_policy": "unless-stopped",
+        "ports": [
+          "6901:6901/tcp"
+        ],
+        "env": [{
+            "default": "admin",
+            "description": "Password for VNC connection",
+            "label": "VNC_PW",
+            "name": "VNC_PW"
+        },{
+            "default": "512m",
+            "description": "Shared memory size",
+            "label": "SHM_SIZE",
+            "name": "SHM_SIZE"
+        }],
+        "categories": [
+            "Kasm"
+        ]
+    },{
         "title": "Tor",
         "description": "KasmWeb Tor is a containerized Tor browser with remote access capabilities.",
         "note": "Docker run command for KasmWeb Tor",
@@ -10241,7 +10495,8 @@
             "name": "SHM_SIZE"
         }],
         "categories": [
-            "Browser"
+            "Browser",
+            "Kasm"
         ]
     },{
         "title": "TOSIBOX Lock for Container",
@@ -10288,7 +10543,8 @@
             "name": "SHM_SIZE"
         }],
         "categories": [
-            "Kasm"
+            "Kasm",
+            "OS"
         ]
     },{
         "title": "Transmission",
@@ -10831,6 +11087,33 @@
             "Browser"
         ]
     },{
+        "title": "VLC",
+        "description": "KasmWeb VLC is a containerized VLC with remote access capabilities.",
+        "note": "Docker run command for KasmWeb VLC",
+        "logo": "",
+        "platform": "linux",
+        "type": 1,
+        "name": "VLC",
+        "image": "kasmweb/vlc:1.13.0",
+        "restart_policy": "unless-stopped",
+        "ports": [
+          "6901:6901/tcp"
+        ],
+        "env": [{
+            "default": "admin",
+            "description": "Password for VNC connection",
+            "label": "VNC_PW",
+            "name": "VNC_PW"
+        },{
+            "default": "512m",
+            "description": "Shared memory size",
+            "label": "SHM_SIZE",
+            "name": "SHM_SIZE"
+        }],
+        "categories": [
+            "Kasm"
+        ]
+    },{
         "title": "VMWare-Horizon",
         "description": "KasmWeb VMWare-Horizon is a containerized VMWare-Horizon with remote access capabilities.",
         "note": "Docker run command for KasmWeb VMWare-Horizon",
@@ -10855,8 +11138,7 @@
             "name": "SHM_SIZE"
         }],
         "categories": [
-            "Kasm",
-            "Browser"
+            "Kasm"
         ]
     },{
         "title": "Vscodium",
@@ -10896,6 +11178,34 @@
             "preset":true
         }],
         "categories": [
+            "Development"
+        ]
+    },{
+        "title": "VS-Code",
+        "description": "KasmWeb VS-Code is a containerized VS-Code with remote access capabilities.",
+        "note": "Docker run command for KasmWeb VS-Code",
+        "logo": "",
+        "platform": "linux",
+        "type": 1,
+        "name": "VS-Code",
+        "image": "kasmweb/vs-code:1.13.0",
+        "restart_policy": "unless-stopped",
+        "ports": [
+          "6901:6901/tcp"
+        ],
+        "env": [{
+            "default": "admin",
+            "description": "Password for VNC connection",
+            "label": "VNC_PW",
+            "name": "VNC_PW"
+        },{
+            "default": "512m",
+            "description": "Shared memory size",
+            "label": "SHM_SIZE",
+            "name": "SHM_SIZE"
+        }],
+        "categories": [
+            "Kasm",
             "Development"
         ]
     },{
