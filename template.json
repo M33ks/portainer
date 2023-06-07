@@ -106,13 +106,33 @@
             "Browser"
         ]
     },{
-        "title": "Audio-Book-Shelf",
+        "title": "AudioBookShelf",
         "description": "Audiobookshelf is a web-based audiobook server that allows you to manage and listen to your audiobooks.",
+        "note": "Docker run command for Audiobookshelf",
+        "logo": "",
+        "platform": "linux",
         "type": 1,
-        "name": "Audio-Book-Shelfs",
+        "name": "AudioBookShelf",
         "image": "ghcr.io/advplyr/audiobookshelf",
+        "restart_policy": "unless-stopped",
         "ports": [
             "4040:80/tcp"
+        ],
+        "volumes": [{
+            "bind": "AudioBookShelf-Config",
+            "container": "/config"
+        },{
+            "bind": "AudioBookShelf-Metadata",
+            "container": "/metadata"
+        },{
+            "bind": "AudioBookShelf-Audiobooks",
+            "container": "/audiobooks"
+        },{
+            "bind": "AudioBookShelf-Podcasts",
+            "container": "/podcasts"
+        }],
+        "categories": [
+            "Audiobook"
         ]
     },{
         "title": "Ubuntu",
@@ -353,7 +373,7 @@
         "image": "linuxserver/adguardhome-sync:latest",
         "restart_policy": "unless-stopped",
         "ports": [
-          "8080:8080"
+          "8080:8080/tcp"
         ],
         "volumes": [{
             "bind": "AdGuardHome-Sync",
@@ -456,7 +476,7 @@
         "image": "linuxserver/airsonic-advanced:latest",
         "restart_policy": "unless-stopped",
         "ports": [
-          "4040:4040"
+          "4040:4040/tcp"
         ],
         "volumes": [{
             "bind": "AirSonic-Advanced-Config",
@@ -615,7 +635,7 @@
         "image": "linuxserver/babybuddy:latest",
         "restart_policy": "unless-stopped",
         "ports": [
-          "8000:8000"
+          "8000:8000/tcp"
         ],
         "volumes": [{
             "bind": "BabyBuddy",
@@ -734,8 +754,8 @@
         "image": "linuxserver/boinc:latest",
         "restart_policy": "unless-stopped",
         "ports": [
-          "8080:8080",
-          "8181:8181"
+          "8080:8080/tcp",
+          "8181:8181/tcp"
         ],
         "volumes": [{
             "bind": "Boinc",
@@ -985,8 +1005,8 @@
         "image": "linuxserver/budge:latest",
         "restart_policy": "unless-stopped",
         "ports": [
-            "80:80",
-            "443:443"
+            "80:80/tcp",
+            "443:443/tcp"
         ],
         "volumes": [{
             "bind": "/volume1/docker/budge/config",
@@ -1158,7 +1178,7 @@
         "image": "linuxserver/changedetection.io:latest",
         "restart_policy": "unless-stopped",
         "ports": [
-            "5000:5000"
+            "5000:5000/tcp"
         ],
         "volumes": [{
                 "bind": "ChangeDetection",
@@ -2171,7 +2191,7 @@
         "image": "linuxserver/doplarr:latest",
         "restart_policy": "unless-stopped",
         "ports": [
-            "80:80"
+            "80:80/tcp"
         ],
         "volumes": [
             {
@@ -5720,9 +5740,9 @@
         "image": "linuxserver/nano:latest",
         "restart_policy": "unless-stopped",
         "ports": [
-            "8075:8075",
-            "7076:3000",
-            "7077:3001"
+            "8075:8075/tcp",
+            "7076:3000/tcp",
+            "7077:3001/tcp"
         ],
         "volumes": [
             {
@@ -6118,7 +6138,7 @@
         "image": "linuxserver/nntp2nntp:latest",
         "restart_policy": "unless-stopped",
         "ports": [
-            "1563:1563"
+            "1563:1563/tcp"
         ],
         "volumes": [{
             "bind": "Nntp2nntp",
@@ -6463,7 +6483,7 @@
         "image": "linuxserver/openvscode-server:latest",
         "restart_policy": "unless-stopped",
         "ports": [
-                "8443:8443/tcp"
+            "8443:8443/tcp"
         ],
         "volumes": [{
                 "bind": "VSCode",
@@ -6610,7 +6630,7 @@
         "name": "organizr",
         "image": "organizrtools/organizr:latest",
         "ports": [
-            "80/tcp"
+            "80:80/tcp"
         ],
         "volumes": [{
             "bind": "Organizr",
@@ -6758,7 +6778,7 @@
         "image": "linuxserver/overseerr:latest",
         "restart_policy": "unless-stopped",
         "ports": [
-            "5055:5055"
+            "5055:5055/tcp"
         ],
         "volumes": [{
             "bind": "Overseerr",
@@ -6796,7 +6816,7 @@
         "image": "linuxserver/pairdrop:latest",
         "restart_policy": "unless-stopped",
         "ports": [
-            "3000:3000"
+            "3000:3000/tcp"
         ],
         "env": [{
             "default": "1000",
@@ -7078,8 +7098,8 @@
         "image": "linuxserver/pidgin:latest",
         "restart_policy": "unless-stopped",
         "ports": [
-            "3000:3000",
-            "3001:3001"
+            "3000:3000/tcp",
+            "3001:3001/tcp"
         ],
         "volumes": [{
             "bind": "Pidgin",
@@ -8097,7 +8117,7 @@
         "image": "amruthpillai/reactive-resume:latest",
         "restart_policy": "unless-stopped",
         "ports": [
-            "80/tcp"
+            "80:80/tcp"
         ],
         "volumes": [{
             "bind": "ReactiveResume",
@@ -8733,7 +8753,7 @@
         "image": "radhifadlillah/shiori:latest",
         "restart_policy": "unless-stopped",
         "ports": [
-            "8080/tcp"
+            "8080:8080/tcp"
         ],
         "volumes": [{
             "bind": "Shiori",
