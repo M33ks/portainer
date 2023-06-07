@@ -650,7 +650,7 @@
             "name": "TZ"
         }],
         "categories": [
-            "Video",
+            "Movies",
             "Music"
         ]
     },{
@@ -2884,7 +2884,7 @@
             "name": "fleet_admin_secret"
         }],
         "categories": [
-            "Uncategorized"
+            "Cloud"
         ]
     },{
         "title": "FoldingAtHome",
@@ -2920,7 +2920,7 @@
             "name": "TZ"
         }],
         "categories": [
-            "Uncategorized"
+            "Research"
         ]
     },{
         "title": "FreshRSS",
@@ -2955,7 +2955,7 @@
             "name": "TZ"
         }],
         "categories": [
-            "Uncategorized"
+            "RSS"
         ]
     },{
         "title": "Frigate NVR",
@@ -3625,7 +3625,7 @@
             "name": "PGID"
         }],
         "categories": [
-            "Video",
+            "Movies",
             "Music"
         ]
     },{
@@ -3705,9 +3705,7 @@
             "name": "PORT"
         }],
         "categories": [
-            "Cloud",
-            "Productivity",
-            "Web"
+            "Finance"
         ]
     },{
         "title": "IPFS",
@@ -3830,7 +3828,7 @@
             "name": "API_URL"
         }],
         "categories": [
-            "serverless"
+            "Cloud"
         ]
     },{
         "title": "Jackett",
@@ -4140,7 +4138,7 @@
             "name": "SUBFOLDER"
         }],
         "category": [
-            "Video"
+            "Movies"
         ]
     },{
         "title": "Kodi-Headless",
@@ -4175,7 +4173,7 @@
             "name": "TZ"
         }],
         "category": [
-            "Video"
+            "Movies"
         ]
     },{
         "title": "LazyLibrarian",
@@ -4922,7 +4920,7 @@
             "description": "The size of the DB connection pool, must be *at least* the same as `SIDEKIQ_THREADS`. See [notes](https://docs.joinmastodon.org/admin/scaling/#sidekiq-threads)."
         }],
         "categories": [
-            "other"
+            "Cloud"
         ]
     },{
         "title": "Mautic",
@@ -5138,7 +5136,7 @@
             "name": "RUN_OPTS"
         }],
         "categories": [
-            "Video"
+            "Movies"
         ]
     },{
         "title": "Minio",
@@ -5995,9 +5993,8 @@
             "name": "PGID"
         }],
         "categories": [
-            "Downloaders",
             "Plex",
-            "Video"
+            "Movies"
         ]
     },{
         "title": "OPC Router",
@@ -7125,7 +7122,7 @@
         }],
         "categories": [
             "VPN",
-            "Web"
+            "Proxy"
         ]
     },{
         "title": "ProjectSend",
@@ -7379,7 +7376,7 @@
             "name": "TZ"
         }],
         "categories": [
-            "Download"
+            "Downloaders"
         ]
     },{
         "title": "Pyload-ng",
@@ -7419,7 +7416,7 @@
             "name": "TZ"
         }],
         "categories": [
-            "Download"
+            "Downloaders"
         ]
     },{
         "title": "Pylon",
@@ -9895,7 +9892,7 @@
             "name": "TZ"
         }],
         "categories": [
-            "Documents"
+            "Office"
         ]
     },{
         "title": "XBackBone",
