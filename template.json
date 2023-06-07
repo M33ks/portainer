@@ -641,6 +641,33 @@
             "Notifications"
         ]
     },{
+        "title": "Atom",
+        "description": "KasmWeb Atom is a containerized Atom with remote access capabilities.",
+        "note": "Docker run command for KasmWeb Atom",
+        "logo": "",
+        "platform": "linux",
+        "type": 1,
+        "name": "Atom",
+        "image": "kasmweb/atom:1.13.0",
+        "restart_policy": "unless-stopped",
+        "ports": [
+          "6901:6901/tcp"
+        ],
+        "env": [{
+            "default": "admin",
+            "description": "Password for VNC connection",
+            "label": "VNC_PW",
+            "name": "VNC_PW"
+        },{
+            "default": "512m",
+            "description": "Shared memory size",
+            "label": "SHM_SIZE",
+            "name": "SHM_SIZE"
+        }],
+        "categories": [
+            "Kasm"
+        ]
+    },{
         "title": "Audacity",
         "description": "[Audacity](https://www.audacityteam.org/) is an easy-to-use, multi-track audio editor and recorder. Developed by a group of volunteers as open source.",
         "logo": "https://raw.githubusercontent.com/linuxserver/docker-templates/master/linuxserver.io/img/audacity-logo.png",
@@ -1098,6 +1125,33 @@
         }],
         "categories": [
             "Media"
+        ]
+    },{
+        "title": "Brave",
+        "description": "KasmWeb Brave is a containerized Brave with remote access capabilities.",
+        "note": "Docker run command for KasmWeb Brave",
+        "logo": "",
+        "platform": "linux",
+        "type": 1,
+        "name": "Brave",
+        "image": "kasmweb/brave:1.13.0",
+        "restart_policy": "unless-stopped",
+        "ports": [
+          "6901:6901/tcp"
+        ],
+        "env": [{
+            "default": "admin",
+            "description": "Password for VNC connection",
+            "label": "VNC_PW",
+            "name": "VNC_PW"
+        },{
+            "default": "512m",
+            "description": "Shared memory size",
+            "label": "SHM_SIZE",
+            "name": "SHM_SIZE"
+        }],
+        "categories": [
+            "Kasm"
         ]
     },{
         "title": "Budge",
@@ -4105,6 +4159,33 @@
             "Monitoring"
         ]
     },{
+        "title": "Hunchly",
+        "description": "KasmWeb Hunchly is a containerized Hunchly with remote access capabilities.",
+        "note": "Docker run command for KasmWeb Hunchly",
+        "logo": "",
+        "platform": "linux",
+        "type": 1,
+        "name": "Hunchly",
+        "image": "kasmweb/hunchly:1.13.0",
+        "restart_policy": "unless-stopped",
+        "ports": [
+          "6901:6901/tcp"
+        ],
+        "env": [{
+            "default": "admin",
+            "description": "Password for VNC connection",
+            "label": "VNC_PW",
+            "name": "VNC_PW"
+        },{
+            "default": "512m",
+            "description": "Shared memory size",
+            "label": "SHM_SIZE",
+            "name": "SHM_SIZE"
+        }],
+        "categories": [
+            "Kasm"
+        ]
+    },{
         "title": "Huginn",
         "description": "Create agents that monitor and act on your behalf.",
         "note": "",
@@ -4123,6 +4204,60 @@
         }],
         "categories": [
             "Monitor"
+        ]
+    },{
+        "title": "Inkscape",
+        "description": "KasmWeb Inkscape is a containerized Inkscape with remote access capabilities.",
+        "note": "Docker run command for KasmWeb Inkscape",
+        "logo": "",
+        "platform": "linux",
+        "type": 1,
+        "name": "Inkscape",
+        "image": "kasmweb/inkscape:1.13.0",
+        "restart_policy": "unless-stopped",
+        "ports": [
+          "6901:6901/tcp"
+        ],
+        "env": [{
+            "default": "admin",
+            "description": "Password for VNC connection",
+            "label": "VNC_PW",
+            "name": "VNC_PW"
+        },{
+            "default": "512m",
+            "description": "Shared memory size",
+            "label": "SHM_SIZE",
+            "name": "SHM_SIZE"
+        }],
+        "categories": [
+            "Kasm"
+        ]
+    },{
+        "title": "Insomnia",
+        "description": "KasmWeb Insomnia is a containerized Insomnia with remote access capabilities.",
+        "note": "Docker run command for KasmWeb Insomnia",
+        "logo": "",
+        "platform": "linux",
+        "type": 1,
+        "name": "Insomnia",
+        "image": "kasmweb/insomnia:1.13.0",
+        "restart_policy": "unless-stopped",
+        "ports": [
+          "6901:6901/tcp"
+        ],
+        "env": [{
+            "default": "admin",
+            "description": "Password for VNC connection",
+            "label": "VNC_PW",
+            "name": "VNC_PW"
+        },{
+            "default": "512m",
+            "description": "Shared memory size",
+            "label": "SHM_SIZE",
+            "name": "SHM_SIZE"
+        }],
+        "categories": [
+            "Kasm"
         ]
     },{
         "title": "Invoice Ninja",
@@ -4477,6 +4612,33 @@
         }],
         "categories": [
             "CMS"
+        ]
+    },{
+        "title": "Kali",
+        "description": "KasmWeb Kali is a containerized Kali with remote access capabilities.",
+        "note": "Docker run command for KasmWeb Kali",
+        "logo": "",
+        "platform": "linux",
+        "type": 1,
+        "name": "Kali",
+        "image": "kasmweb/kali-rolling-desktop:1.13.0",
+        "restart_policy": "unless-stopped",
+        "ports": [
+          "6901:6901/tcp"
+        ],
+        "env": [{
+            "default": "admin",
+            "description": "Password for VNC connection",
+            "label": "VNC_PW",
+            "name": "VNC_PW"
+        },{
+            "default": "512m",
+            "description": "Shared memory size",
+            "label": "SHM_SIZE",
+            "name": "SHM_SIZE"
+        }],
+        "categories": [
+            "Kasm"
         ]
     },{
         "title": "Kanzi",
@@ -6554,6 +6716,60 @@
             "Downloaders"
         ]
     },{
+        "title": "Office",
+        "description": "KasmWeb Only Office is a containerized Office with remote access capabilities.",
+        "note": "Docker run command for KasmWeb Office",
+        "logo": "",
+        "platform": "linux",
+        "type": 1,
+        "name": "Office",
+        "image": "kasmweb/only-office:1.13.0",
+        "restart_policy": "unless-stopped",
+        "ports": [
+          "6901:6901/tcp"
+        ],
+        "env": [{
+            "default": "admin",
+            "description": "Password for VNC connection",
+            "label": "VNC_PW",
+            "name": "VNC_PW"
+        },{
+            "default": "512m",
+            "description": "Shared memory size",
+            "label": "SHM_SIZE",
+            "name": "SHM_SIZE"
+        }],
+        "categories": [
+            "Kasm"
+        ]
+    },{
+        "title": "Office",
+        "description": "KasmWeb Libre Office is a containerized Office with remote access capabilities.",
+        "note": "Docker run command for KasmWeb Office",
+        "logo": "",
+        "platform": "linux",
+        "type": 1,
+        "name": "Office",
+        "image": "kasmweb/libre-office:1.13.0",
+        "restart_policy": "unless-stopped",
+        "ports": [
+          "6901:6901/tcp"
+        ],
+        "env": [{
+            "default": "admin",
+            "description": "Password for VNC connection",
+            "label": "VNC_PW",
+            "name": "VNC_PW"
+        },{
+            "default": "512m",
+            "description": "Shared memory size",
+            "label": "SHM_SIZE",
+            "name": "SHM_SIZE"
+        }],
+        "categories": [
+            "Kasm"
+        ]
+    },{
         "title": "Ombi",
         "description": "Ombi allows you to host your own Plex Request and user management system.",
         "note": "",
@@ -7258,6 +7474,33 @@
             "File Management"
         ]
     },{
+        "title": "ParrotOS",
+        "description": "KasmWeb ParrotOS is a containerized ParrotOS with remote access capabilities.",
+        "note": "Docker run command for KasmWeb ParrotOS",
+        "logo": "",
+        "platform": "linux",
+        "type": 1,
+        "name": "ParrotOS",
+        "image": "kasmweb/parrotos-5-desktop:1.13.0",
+        "restart_policy": "unless-stopped",
+        "ports": [
+          "6901:6901/tcp"
+        ],
+        "env": [{
+            "default": "admin",
+            "description": "Password for VNC connection",
+            "label": "VNC_PW",
+            "name": "VNC_PW"
+        },{
+            "default": "512m",
+            "description": "Shared memory size",
+            "label": "SHM_SIZE",
+            "name": "SHM_SIZE"
+        }],
+        "categories": [
+            "Kasm"
+        ]
+    },{
         "title": "Petio",
         "description": "Petio is a third-party companion app available to Plex server owners to allow their users to request, review, and discover content.",
         "logo": "https://raw.githubusercontent.com/Qballjos/portainer_templates/master/Images/petio-icon.png",
@@ -7366,6 +7609,33 @@
         "categories": [
             "Need",
             "Database"
+        ]
+    },{
+        "title": "Pinta",
+        "description": "KasmWeb Libre Pinta is a containerized Pinta with remote access capabilities.",
+        "note": "Docker run command for KasmWeb Pinta",
+        "logo": "",
+        "platform": "linux",
+        "type": 1,
+        "name": "Pinta",
+        "image": "kasmweb/pinta:1.13.0",
+        "restart_policy": "unless-stopped",
+        "ports": [
+          "6901:6901/tcp"
+        ],
+        "env": [{
+            "default": "admin",
+            "description": "Password for VNC connection",
+            "label": "VNC_PW",
+            "name": "VNC_PW"
+        },{
+            "default": "512m",
+            "description": "Shared memory size",
+            "label": "SHM_SIZE",
+            "name": "SHM_SIZE"
+        }],
+        "categories": [
+            "Kasm"
         ]
     },{
         "title": "Pi.Alert",
@@ -7770,6 +8040,33 @@
             "Database"
         ]
       },{
+        "title": "Postman",
+        "description": "KasmWeb Postman is a containerized Postman with remote access capabilities.",
+        "note": "Docker run command for KasmWeb Postman",
+        "logo": "",
+        "platform": "linux",
+        "type": 1,
+        "name": "Postman",
+        "image": "kasmweb/postman:1.13.0",
+        "restart_policy": "unless-stopped",
+        "ports": [
+          "6901:6901/tcp"
+        ],
+        "env": [{
+            "default": "admin",
+            "description": "Password for VNC connection",
+            "label": "VNC_PW",
+            "name": "VNC_PW"
+        },{
+            "default": "512m",
+            "description": "Shared memory size",
+            "label": "SHM_SIZE",
+            "name": "SHM_SIZE"
+        }],
+        "categories": [
+            "Kasm"
+        ]
+    },{
         "title": "Pritunl",
         "description": "Pritunl container built on Alpine Linux. Supports IPv6 and running behind a reverse proxy. This container requires an external MongoDB and should be run via Docker Compose or other orchestration.",
         "note": "Documentation on this container can be found here: <a href=https://hub.docker.com/r/goofball222/pritunl>https://hub.docker.com/r/goofball222/pritunl</a>",
@@ -8532,6 +8829,33 @@
             "VNC"
         ]
     },{
+        "title": "RetroArch",
+        "description": "KasmWeb RetroArch is a containerized RetroArch with remote access capabilities.",
+        "note": "Docker run command for KasmWeb RetroArch",
+        "logo": "",
+        "platform": "linux",
+        "type": 1,
+        "name": "RetroArch",
+        "image": "kasmweb/retroarch:1.13.0",
+        "restart_policy": "unless-stopped",
+        "ports": [
+          "6901:6901/tcp"
+        ],
+        "env": [{
+            "default": "admin",
+            "description": "Password for VNC connection",
+            "label": "VNC_PW",
+            "name": "VNC_PW"
+        },{
+            "default": "512m",
+            "description": "Shared memory size",
+            "label": "SHM_SIZE",
+            "name": "SHM_SIZE"
+        }],
+        "categories": [
+            "Kasm"
+        ]
+    },{
         "title": "Requestrr",
         "description": "[Requestrr](https://github.com/darkalfx/requestrr) is a chatbot used to simplify using services like Sonarr/Radarr/Ombi via the use of chat.",
         "logo": "https://github.com/darkalfx/requestrr/raw/master/Logos/requestrr_discord_Icon_512.png",
@@ -9000,6 +9324,52 @@
             "Monitoring"
         ]
       },{
+        "title": "Shiori",
+        "description": "Shiori is a simple bookmarks manager written in Go language. Intended as a simple clone of Pocket. You can use it as a command-line application or as a web application.",
+        "logo": "https://raw.githubusercontent.com/Qballjos/portainer_templates/master/Images/shiori-icon.png",
+        "platform": "linux",
+        "type": 1,
+        "name": "shiori",
+        "image": "radhifadlillah/shiori:latest",
+        "restart_policy": "unless-stopped",
+        "ports": [
+            "8080:8080/tcp"
+        ],
+        "volumes": [{
+            "bind": "Shiori",
+            "container": "/srv/shiori"
+        }],
+        "categories": [
+            "Bookmarks"
+        ]
+    },{
+        "title": "Slack",
+        "description": "KasmWeb Slack is a containerized Slack with remote access capabilities.",
+        "note": "Docker run command for KasmWeb Slack",
+        "logo": "",
+        "platform": "linux",
+        "type": 1,
+        "name": "Slack",
+        "image": "kasmweb/slack:1.10.0-rolling",
+        "restart_policy": "unless-stopped",
+        "ports": [
+          "6901:6901/tcp"
+        ],
+        "env": [{
+            "default": "admin",
+            "description": "Password for VNC connection",
+            "label": "VNC_PW",
+            "name": "VNC_PW"
+        },{
+            "default": "512m",
+            "description": "Shared memory size",
+            "label": "SHM_SIZE",
+            "name": "SHM_SIZE"
+        }],
+        "categories": [
+            "Kasm"
+        ]
+    },{
         "title": "SmokePing",
         "description": "Smokeping keeps track of your network latency.",
         "logo": "https://raw.githubusercontent.com/thesugarat/portainer_templates-1/master/Images/smokeping-icon.png",
@@ -9079,25 +9449,6 @@
         "categories": [
             "Other",
             "Tools"
-        ]
-    },{
-        "title": "Shiori",
-        "description": "Shiori is a simple bookmarks manager written in Go language. Intended as a simple clone of Pocket. You can use it as a command-line application or as a web application.",
-        "logo": "https://raw.githubusercontent.com/Qballjos/portainer_templates/master/Images/shiori-icon.png",
-        "platform": "linux",
-        "type": 1,
-        "name": "shiori",
-        "image": "radhifadlillah/shiori:latest",
-        "restart_policy": "unless-stopped",
-        "ports": [
-            "8080:8080/tcp"
-        ],
-        "volumes": [{
-            "bind": "Shiori",
-            "container": "/srv/shiori"
-        }],
-        "categories": [
-            "Bookmarks"
         ]
     },{
         "title": "Snipe-it",
@@ -9388,7 +9739,61 @@
         "categories": [
             "Database"
         ]
-      },{
+    },{
+        "title": "Steam",
+        "description": "KasmWeb Steam is a containerized Steam with remote access capabilities.",
+        "note": "Docker run command for KasmWeb Steam",
+        "logo": "",
+        "platform": "linux",
+        "type": 1,
+        "name": "Steam",
+        "image": "kasmweb/steam:1.13.0",
+        "restart_policy": "unless-stopped",
+        "ports": [
+          "6901:6901/tcp"
+        ],
+        "env": [{
+            "default": "admin",
+            "description": "Password for VNC connection",
+            "label": "VNC_PW",
+            "name": "VNC_PW"
+        },{
+            "default": "512m",
+            "description": "Shared memory size",
+            "label": "SHM_SIZE",
+            "name": "SHM_SIZE"
+        }],
+        "categories": [
+            "Kasm"
+        ]
+    },{
+        "title": "SublimeText",
+        "description": "KasmWeb SublimeText is a containerized SublimeText with remote access capabilities.",
+        "note": "Docker run command for KasmWeb SublimeText",
+        "logo": "",
+        "platform": "linux",
+        "type": 1,
+        "name": "SublimeText",
+        "image": "kasmweb/sublime-text:1.13.0",
+        "restart_policy": "unless-stopped",
+        "ports": [
+          "6901:6901/tcp"
+        ],
+        "env": [{
+            "default": "admin",
+            "description": "Password for VNC connection",
+            "label": "VNC_PW",
+            "name": "VNC_PW"
+        },{
+            "default": "512m",
+            "description": "Shared memory size",
+            "label": "SHM_SIZE",
+            "name": "SHM_SIZE"
+        }],
+        "categories": [
+            "Kasm"
+        ]
+    },{
         "title": "Swag",
         "description": "SWAG - Secure Web Application Gateway (formerly known as letsencrypt, no relation to Let's Encrypt™) sets up an Nginx webserver and reverse proxy with php support and a built-in certbot client that automates free SSL server certificate generation and renewal processes (Let's Encrypt and ZeroSSL). It also contains fail2ban for intrusion prevention.",
         "logo": "https://github.com/linuxserver/docker-templates/raw/master/linuxserver.io/img/swag.gif",
@@ -9674,6 +10079,60 @@
             "Management"
         ]
     },{
+        "title": "Teams",
+        "description": "KasmWeb Teams is a containerized Teams with remote access capabilities.",
+        "note": "Docker run command for KasmWeb Teams",
+        "logo": "",
+        "platform": "linux",
+        "type": 1,
+        "name": "Teams",
+        "image": "kasmweb/teams:1.13.0",
+        "restart_policy": "unless-stopped",
+        "ports": [
+          "6901:6901/tcp"
+        ],
+        "env": [{
+            "default": "admin",
+            "description": "Password for VNC connection",
+            "label": "VNC_PW",
+            "name": "VNC_PW"
+        },{
+            "default": "512m",
+            "description": "Shared memory size",
+            "label": "SHM_SIZE",
+            "name": "SHM_SIZE"
+        }],
+        "categories": [
+            "Kasm"
+        ]
+    },{
+        "title": "Telegram",
+        "description": "KasmWeb Telegram is a containerized Telegram with remote access capabilities.",
+        "note": "Docker run command for KasmWeb Telegram",
+        "logo": "",
+        "platform": "linux",
+        "type": 1,
+        "name": "Telegram",
+        "image": "kasmweb/telegram:1.13.0",
+        "restart_policy": "unless-stopped",
+        "ports": [
+          "6901:6901/tcp"
+        ],
+        "env": [{
+            "default": "admin",
+            "description": "Password for VNC connection",
+            "label": "VNC_PW",
+            "name": "VNC_PW"
+        },{
+            "default": "512m",
+            "description": "Shared memory size",
+            "label": "SHM_SIZE",
+            "name": "SHM_SIZE"
+        }],
+        "categories": [
+            "Kasm"
+        ]
+    },{
         "title": "TheLounge",
         "description": "[Thelounge](https://thelounge.github.io/) (a fork of shoutIRC) is a web IRC client that you host on your own server.",
         "logo": "https://raw.githubusercontent.com/thelounge/thelounge/master/client/img/logo-vertical-transparent-bg.svg?sanitize=true",
@@ -9805,6 +10264,33 @@
             "Cloud"
         ]
       },{
+        "title": "Tracelabs",
+        "description": "KasmWeb Tracelabs is a containerized Tracelabs with remote access capabilities.",
+        "note": "Docker run command for KasmWeb Tracelabs",
+        "logo": "",
+        "platform": "linux",
+        "type": 1,
+        "name": "Tracelabs",
+        "image": "kasmweb/tracelabs:1.13.0",
+        "restart_policy": "unless-stopped",
+        "ports": [
+          "6901:6901/tcp"
+        ],
+        "env": [{
+            "default": "admin",
+            "description": "Password for VNC connection",
+            "label": "VNC_PW",
+            "name": "VNC_PW"
+        },{
+            "default": "512m",
+            "description": "Shared memory size",
+            "label": "SHM_SIZE",
+            "name": "SHM_SIZE"
+        }],
+        "categories": [
+            "Kasm"
+        ]
+    },{
         "title": "Transmission",
         "description": "[Transmission](https://www.transmissionbt.com/) is designed for easy, powerful use. Transmission has the features you want from a BitTorrent client: encryption, a web interface, peer exchange, magnet links, DHT, µTP, UPnP and NAT-PMP port forwarding, webseed support, watch directories, tracker editing, global and per-torrent speed limits, and more.",
         "logo": "https://raw.githubusercontent.com/linuxserver/docker-templates/master/linuxserver.io/img/transmission.png",
@@ -10226,6 +10712,33 @@
             "Movies"
         ]
     },{
+        "title": "UnityHub",
+        "description": "KasmWeb UnityHub is a containerized UnityHub with remote access capabilities.",
+        "note": "Docker run command for KasmWeb UnityHub",
+        "logo": "",
+        "platform": "linux",
+        "type": 1,
+        "name": "UnityHub",
+        "image": "kasmweb/unityhub:1.13.0",
+        "restart_policy": "unless-stopped",
+        "ports": [
+          "6901:6901/tcp"
+        ],
+        "env": [{
+            "default": "admin",
+            "description": "Password for VNC connection",
+            "label": "VNC_PW",
+            "name": "VNC_PW"
+        },{
+            "default": "512m",
+            "description": "Shared memory size",
+            "label": "SHM_SIZE",
+            "name": "SHM_SIZE"
+        }],
+        "categories": [
+            "Kasm"
+        ]
+    },{
         "title": "Uptime Kuma",
         "description": "It is a self-hosted monitoring tool like Uptime Robot",
         "logo": "https://images.opencollective.com/uptime-kuma/29c5113/logo/256.png",
@@ -10288,6 +10801,62 @@
         "categories": [
             "Other",
             "Tools"
+        ]
+    },{
+        "title": "Vivaldi",
+        "description": "KasmWeb Vivaldi is a containerized Vivaldi with remote access capabilities.",
+        "note": "Docker run command for KasmWeb Vivaldi",
+        "logo": "",
+        "platform": "linux",
+        "type": 1,
+        "name": "Vivaldi",
+        "image": "kasmweb/vivaldi:1.13.0",
+        "restart_policy": "unless-stopped",
+        "ports": [
+          "6901:6901/tcp"
+        ],
+        "env": [{
+            "default": "admin",
+            "description": "Password for VNC connection",
+            "label": "VNC_PW",
+            "name": "VNC_PW"
+        },{
+            "default": "512m",
+            "description": "Shared memory size",
+            "label": "SHM_SIZE",
+            "name": "SHM_SIZE"
+        }],
+        "categories": [
+            "Kasm",
+            "Browser"
+        ]
+    },{
+        "title": "VMWare-Horizon",
+        "description": "KasmWeb VMWare-Horizon is a containerized VMWare-Horizon with remote access capabilities.",
+        "note": "Docker run command for KasmWeb VMWare-Horizon",
+        "logo": "",
+        "platform": "linux",
+        "type": 1,
+        "name": "VMWare-Horizon",
+        "image": "kasmweb/vmware-horizon:1.11.0-rolling",
+        "restart_policy": "unless-stopped",
+        "ports": [
+          "6901:6901/tcp"
+        ],
+        "env": [{
+            "default": "admin",
+            "description": "Password for VNC connection",
+            "label": "VNC_PW",
+            "name": "VNC_PW"
+        },{
+            "default": "512m",
+            "description": "Shared memory size",
+            "label": "SHM_SIZE",
+            "name": "SHM_SIZE"
+        }],
+        "categories": [
+            "Kasm",
+            "Browser"
         ]
     },{
         "title": "Vscodium",
@@ -11020,5 +11589,32 @@
         "categories": [
             "IRC"
         ]
-    }      
+    },{
+        "title": "Zoom",
+        "description": "KasmWeb Zoom is a containerized Zoom with remote access capabilities.",
+        "note": "Docker run command for KasmWeb Zoom",
+        "logo": "",
+        "platform": "linux",
+        "type": 1,
+        "name": "Zoom",
+        "image": "kasmweb/zoom:1.13.0",
+        "restart_policy": "unless-stopped",
+        "ports": [
+          "6901:6901/tcp"
+        ],
+        "env": [{
+            "default": "admin",
+            "description": "Password for VNC connection",
+            "label": "VNC_PW",
+            "name": "VNC_PW"
+        },{
+            "default": "512m",
+            "description": "Shared memory size",
+            "label": "SHM_SIZE",
+            "name": "SHM_SIZE"
+        }],
+        "categories": [
+            "Kasm"
+        ]
+    }
 ]}
