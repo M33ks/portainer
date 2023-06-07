@@ -604,6 +604,62 @@
             "Audiobook"
         ]
     },{
+        "title": "AlmaLinuxDesktop",
+        "description": "KasmWeb AlmaLinuxDesktop is a containerized AlmaLinuxDesktop with remote access capabilities.",
+        "note": "Docker run command for KasmWeb AlmaLinuxDesktop",
+        "logo": "",
+        "platform": "linux",
+        "type": 1,
+        "name": "AlmaLinuxDesktop",
+        "image": "kasmweb/almalinux-9-desktop:1.13.0",
+        "restart_policy": "unless-stopped",
+        "ports": [
+          "6901:6901/tcp"
+        ],
+        "env": [{
+            "default": "admin",
+            "description": "Password for VNC connection",
+            "label": "VNC_PW",
+            "name": "VNC_PW"
+        },{
+            "default": "512m",
+            "description": "Shared memory size",
+            "label": "SHM_SIZE",
+            "name": "SHM_SIZE"
+        }],
+        "categories": [
+            "Kasm",
+            "OS"
+        ]
+    },{
+        "title": "AlpineLinuxDesktop",
+        "description": "KasmWeb AlpineLinuxDesktop is a containerized AlpineLinuxDesktop with remote access capabilities.",
+        "note": "Docker run command for KasmWeb AlpineLinuxDesktop",
+        "logo": "",
+        "platform": "linux",
+        "type": 1,
+        "name": "AlpineLinuxDesktop",
+        "image": "kasmweb/alpine-317-desktop:1.13.0",
+        "restart_policy": "unless-stopped",
+        "ports": [
+          "6901:6901/tcp"
+        ],
+        "env": [{
+            "default": "admin",
+            "description": "Password for VNC connection",
+            "label": "VNC_PW",
+            "name": "VNC_PW"
+        },{
+            "default": "512m",
+            "description": "Shared memory size",
+            "label": "SHM_SIZE",
+            "name": "SHM_SIZE"
+        }],
+        "categories": [
+            "Kasm",
+            "OS"
+        ]
+    },{
         "title": "Apprise-API",
         "description": "[Apprise-api](https://github.com/caronc/apprise-api) Takes advantage of [Apprise](https://github.com/caronc/apprise) through your network with a user-friendly API. * Send notifications to more then 65+ services. * An incredibly lightweight gateway to Apprise. * A production ready micro-service at your disposal. Apprise API was designed to easily fit into existing (and new) eco-systems that are looking for a simple notification solution.",
         "logo": "https://raw.githubusercontent.com/caronc/apprise-api/master/apprise_api/static/logo.png",
@@ -704,6 +760,33 @@
             "name": "TZ",
             "preset":true
         }]
+    },{
+        "title": "Audacity",
+        "description": "KasmWeb Audacity is a containerized Audacity with remote access capabilities.",
+        "note": "Docker run command for KasmWeb Audacity",
+        "logo": "",
+        "platform": "linux",
+        "type": 1,
+        "name": "Audacity",
+        "image": "kasmweb/audacity:1.13.0",
+        "restart_policy": "unless-stopped",
+        "ports": [
+          "6901:6901/tcp"
+        ],
+        "env": [{
+            "default": "admin",
+            "description": "Password for VNC connection",
+            "label": "VNC_PW",
+            "name": "VNC_PW"
+        },{
+            "default": "512m",
+            "description": "Shared memory size",
+            "label": "SHM_SIZE",
+            "name": "SHM_SIZE"
+        }],
+        "categories": [
+            "Kasm"
+        ]
     },{
         "title": "AudioBookShelf",
         "description": "Audiobookshelf is a web-based audiobook server that allows you to manage and listen to your audiobooks.",
@@ -966,6 +1049,33 @@
         }],
         "categories": [
             "Photo"
+        ]
+    },{
+        "title": "Blender",
+        "description": "KasmWeb Blender is a containerized Blender with remote access capabilities.",
+        "note": "Docker run command for KasmWeb Blender",
+        "logo": "",
+        "platform": "linux",
+        "type": 1,
+        "name": "Blender",
+        "image": "kasmweb/blender:1.13.0",
+        "restart_policy": "unless-stopped",
+        "ports": [
+          "6901:6901/tcp"
+        ],
+        "env": [{
+            "default": "admin",
+            "description": "Password for VNC connection",
+            "label": "VNC_PW",
+            "name": "VNC_PW"
+        },{
+            "default": "512m",
+            "description": "Shared memory size",
+            "label": "SHM_SIZE",
+            "name": "SHM_SIZE"
+        }],
+        "categories": [
+            "Kasm"
         ]
     },{
         "title": "Booksonic",
@@ -1328,6 +1438,34 @@
         }],
         "categories": [
             "Downloaders"
+        ]
+    },{
+        "title": "CentOS",
+        "description": "KasmWeb CentOS is a containerized CentOS with remote access capabilities.",
+        "note": "Docker run command for KasmWeb CentOS",
+        "logo": "",
+        "platform": "linux",
+        "type": 1,
+        "name": "CentOS",
+        "image": "kasmweb/centos-7-desktop:1.13.0",
+        "restart_policy": "unless-stopped",
+        "ports": [
+          "6901:6901/tcp"
+        ],
+        "env": [{
+            "default": "admin",
+            "description": "Password for VNC connection",
+            "label": "VNC_PW",
+            "name": "VNC_PW"
+        },{
+            "default": "512m",
+            "description": "Shared memory size",
+            "label": "SHM_SIZE",
+            "name": "SHM_SIZE"
+        }],
+        "categories": [
+            "Kasm",
+            "OS"
         ]
     },{
         "title": "Changedetection.io",
@@ -2049,6 +2187,33 @@
         ]
     },{
         "title": "Deluge",
+        "description": "KasmWeb Deluge is a containerized Deluge with remote access capabilities.",
+        "note": "Docker run command for KasmWeb Deluge",
+        "logo": "",
+        "platform": "linux",
+        "type": 1,
+        "name": "Deluge",
+        "image": "kasmweb/deluge:1.13.0",
+        "restart_policy": "unless-stopped",
+        "ports": [
+          "6901:6901/tcp"
+        ],
+        "env": [{
+            "default": "admin",
+            "description": "Password for VNC connection",
+            "label": "VNC_PW",
+            "name": "VNC_PW"
+        },{
+            "default": "512m",
+            "description": "Shared memory size",
+            "label": "SHM_SIZE",
+            "name": "SHM_SIZE"
+        }],
+        "categories": [
+            "Kasm"
+        ]
+    },{
+        "title": "Deluge",
         "description": "[Deluge](http://deluge-torrent.org/) is a lightweight, Free Software, cross-platform BitTorrent client. * Full Encryption * WebUI * Plugin System * Much more...",
         "logo": "https://avatars2.githubusercontent.com/u/6733935?v=3&s=200",
         "platform": "linux",
@@ -2207,6 +2372,33 @@
         }],
         "categories": [
             "Development"
+        ]
+    },{
+        "title": "Discord",
+        "description": "KasmWeb Discord is a containerized Discord with remote access capabilities.",
+        "note": "Docker run command for KasmWeb Discord",
+        "logo": "",
+        "platform": "linux",
+        "type": 1,
+        "name": "Discord",
+        "image": "kasmweb/discord:1.13.0",
+        "restart_policy": "unless-stopped",
+        "ports": [
+          "6901:6901/tcp"
+        ],
+        "env": [{
+            "default": "admin",
+            "description": "Password for VNC connection",
+            "label": "VNC_PW",
+            "name": "VNC_PW"
+        },{
+            "default": "512m",
+            "description": "Shared memory size",
+            "label": "SHM_SIZE",
+            "name": "SHM_SIZE"
+        }],
+        "categories": [
+            "Kasm"
         ]
     },{
         "title": "Diskover",
@@ -3033,6 +3225,34 @@
         }],
         "categories": [
             "Other"
+        ]
+    },{
+        "title": "FedoraDesktop",
+        "description": "KasmWeb FedoraDesktop is a containerized FedoraDesktop with remote access capabilities.",
+        "note": "Docker run command for KasmWeb FedoraDesktop",
+        "logo": "",
+        "platform": "linux",
+        "type": 1,
+        "name": "FedoraDesktop",
+        "image": "kasmweb/fedora-37-desktop:1.13.0",
+        "restart_policy": "unless-stopped",
+        "ports": [
+          "6901:6901/tcp"
+        ],
+        "env": [{
+            "default": "admin",
+            "description": "Password for VNC connection",
+            "label": "VNC_PW",
+            "name": "VNC_PW"
+        },{
+            "default": "512m",
+            "description": "Shared memory size",
+            "label": "SHM_SIZE",
+            "name": "SHM_SIZE"
+        }],
+        "categories": [
+            "Kasm",
+            "OS"
         ]
     },{
         "title": "Feed2toot",
@@ -7138,6 +7358,34 @@
             "SSH"
         ]
     },{
+        "title": "OpenSuse",
+        "description": "KasmWeb OpenSuse is a containerized OpenSuse with remote access capabilities.",
+        "note": "Docker run command for KasmWeb OpenSuse",
+        "logo": "",
+        "platform": "linux",
+        "type": 1,
+        "name": "OpenSuse",
+        "image": "kasmweb/opensuse-15-desktop:1.13.0",
+        "restart_policy": "unless-stopped",
+        "ports": [
+          "6901:6901/tcp"
+        ],
+        "env": [{
+            "default": "admin",
+            "description": "Password for VNC connection",
+            "label": "VNC_PW",
+            "name": "VNC_PW"
+        },{
+            "default": "512m",
+            "description": "Shared memory size",
+            "label": "SHM_SIZE",
+            "name": "SHM_SIZE"
+        }],
+        "categories": [
+            "Kasm",
+            "OS"
+        ]
+    },{
         "title": "OpenVSCode-Server",
         "description": "[Openvscode-server](https://github.com/gitpod-io/openvscode-server) provides a version of VS Code that runs a server on a remote machine and allows access through a modern web browser.",
         "logo": "https://raw.githubusercontent.com/linuxserver/docker-templates/master/linuxserver.io/img/openvscode-server-logo.png",
@@ -7284,6 +7532,34 @@
         },
         "categories": [
             "Browser"
+        ]
+    },{
+        "title": "OracleDesktop",
+        "description": "KasmWeb OracleDesktop is a containerized OracleDesktop with remote access capabilities.",
+        "note": "Docker run command for KasmWeb OracleDesktop",
+        "logo": "",
+        "platform": "linux",
+        "type": 1,
+        "name": "OracleDesktop",
+        "image": "kasmweb/oracle-9-desktop:1.13.0",
+        "restart_policy": "unless-stopped",
+        "ports": [
+          "6901:6901/tcp"
+        ],
+        "env": [{
+            "default": "admin",
+            "description": "Password for VNC connection",
+            "label": "VNC_PW",
+            "name": "VNC_PW"
+        },{
+            "default": "512m",
+            "description": "Shared memory size",
+            "label": "SHM_SIZE",
+            "name": "SHM_SIZE"
+        }],
+        "categories": [
+            "Kasm",
+            "OS"
         ]
     },{
         "title": "Organizr",
@@ -8974,6 +9250,33 @@
             "VNC"
         ]
     },{
+        "title": "Remina",
+        "description": "KasmWeb Remina is a containerized Remina with remote access capabilities.",
+        "note": "Docker run command for KasmWeb Remina",
+        "logo": "",
+        "platform": "linux",
+        "type": 1,
+        "name": "Remina",
+        "image": "kasmweb/remmina:1.13.0",
+        "restart_policy": "unless-stopped",
+        "ports": [
+          "6901:6901/tcp"
+        ],
+        "env": [{
+            "default": "admin",
+            "description": "Password for VNC connection",
+            "label": "VNC_PW",
+            "name": "VNC_PW"
+        },{
+            "default": "512m",
+            "description": "Shared memory size",
+            "label": "SHM_SIZE",
+            "name": "SHM_SIZE"
+        }],
+        "categories": [
+            "Kasm"
+        ]
+    },{
         "title": "RetroArch",
         "description": "KasmWeb RetroArch is a containerized RetroArch with remote access capabilities.",
         "note": "Docker run command for KasmWeb RetroArch",
@@ -9143,6 +9446,34 @@
         }],
         "categories": [
             "Other"
+        ]
+    },{
+        "title": "RockyLinuxDesktop",
+        "description": "KasmWeb RockyLinuxDesktop is a containerized RockyLinuxDesktop with remote access capabilities.",
+        "note": "Docker run command for KasmWeb RockyLinuxDesktop",
+        "logo": "",
+        "platform": "linux",
+        "type": 1,
+        "name": "RockyLinuxDesktop",
+        "image": "kasmweb/rockylinux-9-desktop:1.13.0",
+        "restart_policy": "unless-stopped",
+        "ports": [
+          "6901:6901/tcp"
+        ],
+        "env": [{
+            "default": "admin",
+            "description": "Password for VNC connection",
+            "label": "VNC_PW",
+            "name": "VNC_PW"
+        },{
+            "default": "512m",
+            "description": "Shared memory size",
+            "label": "SHM_SIZE",
+            "name": "SHM_SIZE"
+        }],
+        "categories": [
+            "Kasm",
+            "OS"
         ]
     },{
         "title": "Rsnapshot",
@@ -10869,6 +11200,90 @@
             "Linux"
         ]
       },{
+        "title": "UbuntuBionic",
+        "description": "KasmWeb UbuntuBionic is a containerized UbuntuBionic with remote access capabilities.",
+        "note": "Docker run command for KasmWeb UbuntuBionic",
+        "logo": "",
+        "platform": "linux",
+        "type": 1,
+        "name": "UbuntuBionic",
+        "image": "kasmweb/ubuntu-bionic-desktop:1.10.0-rolling",
+        "restart_policy": "unless-stopped",
+        "ports": [
+          "6901:6901/tcp"
+        ],
+        "env": [{
+            "default": "admin",
+            "description": "Password for VNC connection",
+            "label": "VNC_PW",
+            "name": "VNC_PW"
+        },{
+            "default": "512m",
+            "description": "Shared memory size",
+            "label": "SHM_SIZE",
+            "name": "SHM_SIZE"
+        }],
+        "categories": [
+            "Kasm",
+            "OS"
+        ]
+    },{
+        "title": "UbuntuFocal",
+        "description": "KasmWeb UbuntuFocal is a containerized UbuntuFocal with remote access capabilities.",
+        "note": "Docker run command for KasmWeb UbuntuFocal",
+        "logo": "",
+        "platform": "linux",
+        "type": 1,
+        "name": "UbuntuFocal",
+        "image": "kasmweb/ubuntu-focal-desktop:1.13.0",
+        "restart_policy": "unless-stopped",
+        "ports": [
+          "6901:6901/tcp"
+        ],
+        "env": [{
+            "default": "admin",
+            "description": "Password for VNC connection",
+            "label": "VNC_PW",
+            "name": "VNC_PW"
+        },{
+            "default": "512m",
+            "description": "Shared memory size",
+            "label": "SHM_SIZE",
+            "name": "SHM_SIZE"
+        }],
+        "categories": [
+            "Kasm",
+            "OS"
+        ]
+    },{
+        "title": "UbuntuJammy",
+        "description": "KasmWeb UbuntuJammy is a containerized UbuntuJammy with remote access capabilities.",
+        "note": "Docker run command for KasmWeb UbuntuJammy",
+        "logo": "",
+        "platform": "linux",
+        "type": 1,
+        "name": "UbuntuJammy",
+        "image": "kasmweb/ubuntu-jammy-desktop:1.13.0",
+        "restart_policy": "unless-stopped",
+        "ports": [
+          "6901:6901/tcp"
+        ],
+        "env": [{
+            "default": "admin",
+            "description": "Password for VNC connection",
+            "label": "VNC_PW",
+            "name": "VNC_PW"
+        },{
+            "default": "512m",
+            "description": "Shared memory size",
+            "label": "SHM_SIZE",
+            "name": "SHM_SIZE"
+        }],
+        "categories": [
+            "Kasm",
+            "OS"
+        ]
+    },{
         "title": "Unifi-Controller",
         "description": "The [Unifi-controller](https://www.ubnt.com/enterprise/#unifi) software is a powerful, enterprise wireless software engine ideal for high-density client deployments requiring low latency and high uptime performance.",
         "logo": "https://raw.githubusercontent.com/linuxserver/docker-templates/master/linuxserver.io/img/unifi-banner.png",
