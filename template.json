@@ -73,18 +73,18 @@
             "Wiki"
         ]
     },{
-        "title": "Chrome",
+        "title": "Kasm-Chrome",
         "description": "KasmWeb Chrome is a containerized Chrome browser with remote access capabilities.",
         "note": "Docker run command for KasmWeb Chrome",
         "logo": "",
         "platform": "linux",
         "type": 1,
-        "name": "Chrome",
+        "name": "Kasm-Chrome",
         "image": "kasmweb/chrome:1.13.0",
         "restart_policy": "unless-stopped",
-        "host_config": [{
-            "shm_size": "512m"
-        }],
+        "host_config": {
+            "shm_size": 1073741824
+        },
         "ports": [
             "6901:6901"
         ],
