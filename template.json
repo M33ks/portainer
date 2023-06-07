@@ -45,7 +45,8 @@
             "default": "99999999999999",
             "description": "Max Upload File Size",
             "label": "UPLOAD_LIMIT",
-            "name": "UPLOAD_LIMIT"
+            "name": "UPLOAD_LIMIT",
+            "preset":true
         }],
         "categories": [
             "Need",
@@ -97,7 +98,8 @@
             "default": "1",
             "description": "DARK_MODE",
             "label": "DARK_MODE",
-            "name": "DARK_MODE"
+            "name": "DARK_MODE",
+            "preset":true
         }],
         "categories": [
             "Need",
@@ -106,18 +108,11 @@
     },{
         "title": "AudioBookShelf",
         "description": "Audiobookshelf is a web-based audiobook server that allows you to manage and listen to your audiobooks.",
-        "note": "Docker run command for Audiobookshelf",
-        "logo": "",
-        "platform": "linux",
         "type": 1,
         "name": "AudioBookShelf",
         "image": "ghcr.io/advplyr/audiobookshelf",
-        "restart_policy": "unless-stopped",
         "ports": [
             "4040:80"
-        ],
-        "categories": [
-            "Audiobook"
         ]
     },{
         "title": "Ubuntu",
@@ -144,17 +139,20 @@
             "default": "1000",
             "description": "PUID",
             "label": "PUID",
-            "name": "PUID"
+            "name": "PUID",
+            "preset":true
         },{
             "default": "1000",
             "description": "PGID",
             "label": "PGID",
-            "name": "PGID"
+            "name": "PGID",
+            "preset":true
         },{
             "default": "America/New_York",
             "description": "TZ",
             "label": "TZ",
-            "name": "TZ"
+            "name": "TZ",
+            "preset":true
         },{
             "default": "Page Title",
             "description": "TITLE",
@@ -246,7 +244,8 @@
             "default": "--accept-license ",
             "description": "SPLUNK_START_ARGS ",
             "label": "SPLUNK_START_ARGS ",
-            "name": "SPLUNK_START_ARGS "
+            "name": "SPLUNK_START_ARGS ",
+            "preset":true
         },{
             "default": "admin ",
             "description": "SPLUNK_PASSWORD ",
@@ -364,17 +363,20 @@
             "default": "1000",
             "description": "for UserID",
             "label": "PUID",
-            "name": "PUID"
+            "name": "PUID",
+            "preset":true
         },{
             "default": "1000",
             "description": "for GroupID",
             "label": "PGID",
-            "name": "PGID"
+            "name": "PGID",
+            "preset":true
         },{
             "default": "America/New_York",
             "description": "specify a timezone to use, see this [list](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones#List).",
             "label": "TZ",
-            "name": "TZ"
+            "name": "TZ",
+            "preset":true
         },{
             "default": "/config/adguardhome-sync.yaml",
             "description": "Set a custom config file.",
@@ -416,17 +418,20 @@
             "default": "1000",
             "description": "",
             "label": "PUID",
-            "name": "PUID"
+            "name": "PUID",
+            "preset":true
         },{
             "default": "1000",
             "description": "",
             "label": "PGID",
-            "name": "PGID"
+            "name": "PGID",
+            "preset":true
         },{
             "default": "America/New_York",
             "description": "specify a timezone to use, see this [list](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones#List).",
             "label": "TZ",
-            "name": "TZ"
+            "name": "TZ",
+            "preset":true
         },{
             "default": "",
             "description": "",
@@ -473,17 +478,20 @@
             "default": "1000",
             "description": "",
             "label": "PUID",
-            "name": "PUID"
+            "name": "PUID",
+            "preset":true
         },{
             "default": "1000",
             "description": "",
             "label": "PGID",
-            "name": "PGID"
+            "name": "PGID",
+            "preset":true
         },{
             "default": "America/New_York",
             "description": "specify a timezone to use, see this [list](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones#List).",
             "label": "TZ",
-            "name": "TZ"
+            "name": "TZ",
+            "preset":true
         },{
             "default": "",
             "description": "",
@@ -519,17 +527,20 @@
             "default": "1000",
             "description": "for GroupID",
             "label": "PUID",
-            "name": "PUID"
+            "name": "PUID",
+            "preset":true
         },{
             "default": "1000",
             "description": "for UserID",
             "label": "PGID",
-            "name": "PGID"
+            "name": "PGID",
+            "preset":true
         },{
             "default": "America/New_York",
             "description": "Specify a timezone to use for example America/New_York",
             "label": "TZ",
-            "name": "TZ"
+            "name": "TZ",
+            "preset":true
         }],
         "categories": [
             "Notifications"
@@ -554,17 +565,20 @@
             "default": "1000",
             "description": "for GroupID",
             "label": "PUID",
-            "name": "PUID"
+            "name": "PUID",
+            "preset":true
         },{
             "default": "1000",
             "description": "for UserID",
             "label": "PGID",
-            "name": "PGID"
+            "name": "PGID",
+            "preset":true
         },{
             "default": "America/New_York",
             "description": "Specify a timezone to use for example America/New_York",
             "label": "TZ",
-            "name": "TZ"
+            "name": "TZ",
+            "preset":true
         }]
     },{
         "title": "Authelia",
@@ -611,17 +625,20 @@
             "default": "1000",
             "name": "PUID",
             "label": "PUID",
-            "description": "for UserID"
+            "description": "for UserID",
+            "preset":true
         },{
             "default": "1000",
             "name": "PGID",
             "label": "PGID",
-            "description": "for GroupID"
+            "description": "for GroupID",
+            "preset":true
         },{
             "default": "America/New_York",
             "name": "TZ",
             "label": "TZ",
-            "description": "specify a timezone to use, see this [list](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones#List)."
+            "description": "specify a timezone to use, see this [list](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones#List).",
+            "preset":true
         },{
             "default": "http://127.0.0.1:8000,https://babybuddy.domain.com",
             "name": "CSRF_TRUSTED_ORIGINS",
@@ -655,15 +672,18 @@
         "env": [{
             "default": "1000",
             "label": "PUID",
-            "name": "PUID"
+            "name": "PUID",
+            "preset":true
         },{
             "default": "100",
             "label": "PGID",
-            "name": "PGID"
+            "name": "PGID",
+            "preset":true
         },{
             "default": "America/New_York",
             "label": "TZ",
-            "name": "TZ"
+            "name": "TZ",
+            "preset":true
         }],
         "categories": [
             "Movies",
@@ -694,11 +714,13 @@
         "env": [{
             "default": "1000",
             "label": "PUID",
-            "name": "PUID"
+            "name": "PUID",
+            "preset":true
         },{
             "default": "1000",
             "label": "PGID",
-            "name": "PGID"
+            "name": "PGID",
+            "preset":true
         }],
         "categories": [
             "Music"
@@ -723,17 +745,20 @@
             "default": "1000",
             "name": "PUID",
             "label": "PUID",
-            "description": "for UserID"
+            "description": "for UserID",
+            "preset":true
         },{
             "default": "1000",
             "name": "PGID",
             "label": "PGID",
-            "description": "for GroupID"
+            "description": "for GroupID",
+            "preset":true
         },{
             "default": "America/New_York",
             "name": "TZ",
             "label": "TZ",
-            "description": "specify a timezone to use, see this [list](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones#List)."
+            "description": "specify a timezone to use, see this [list](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones#List).",
+            "preset":true
         },{
             "default": "admin",
             "name": "PASSWORD",
@@ -823,17 +848,20 @@
             "default": "1000",
             "description": "PUID",
             "label": "PUID",
-            "name": "PUID"
+            "name": "PUID",
+            "preset":true
         },{
             "default": "1000",
             "description": "PGID",
             "label": "PGID",
-            "name": "PGID"
+            "name": "PGID",
+            "preset":true
         },{
             "default": "America/New_York",
             "description": "TZ",
             "label": "TZ",
-            "name": "TZ"
+            "name": "TZ",
+            "preset":true
         }],
         "categories": [
             "Audiobook"
@@ -872,17 +900,20 @@
             "default": "1000",
             "description": "PUID",
             "label": "PUID",
-            "name": "PUID"
+            "name": "PUID",
+            "preset":true
         },{
             "default": "1000",
             "description": "PGID",
             "label": "PGID",
-            "name": "PGID"
+            "name": "PGID",
+            "preset":true
         },{
             "default": "America/New_York",
             "description": "TZ",
             "label": "TZ",
-            "name": "TZ"
+            "name": "TZ",
+            "preset":true
         }],
         "categories": [
             "Audiobook"
@@ -907,12 +938,14 @@
             "default": "1000",
             "description": "for GroupID",
             "label": "PUID",
-            "name": "PUID"
+            "name": "PUID",
+            "preset":true
         },{
             "default": "1000",
             "description": "for UserID",
             "label": "PGID",
-            "name": "PGID"
+            "name": "PGID",
+            "preset":true
         },{
             "default": "https://bookstack.mydomain.com",
             "description": "for specifying the IP:port or URL your application will be accessed on (ie. `http://192.168.1.1:6875` or `https://bookstack.mydomain.com`",
@@ -963,17 +996,20 @@
             "default": "1000",
             "description": "for UserID",
             "label": "PUID",
-            "name": "PUID"
+            "name": "PUID",
+            "preset":true
         },{
             "default": "1000",
             "description": "for GroupID",
             "label": "PGID",
-            "name": "PGID"
+            "name": "PGID",
+            "preset":true
         },{
             "default": "America/New_York",
             "description": "specify a timezone to use, see this [list](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones#List).",
             "label": "TZ",
-            "name": "TZ"
+            "name": "TZ",
+            "preset":true
         }],
         "categories": [
             "Finance"
@@ -1018,17 +1054,20 @@
             "default": "1000",
             "description": "for GroupID",
             "label": "PUID",
-            "name": "PUID"
+            "name": "PUID",
+            "preset":true
         },{
             "default": "1000",
             "description": "for UserID",
             "label": "PGID",
-            "name": "PGID"
+            "name": "PGID",
+            "preset":true
         },{
             "default": "America/New_York",
             "description": "Specify a timezone to use for example America/New_York",
             "label": "TZ",
-            "name": "TZ"
+            "name": "TZ",
+            "preset":true
         },{
             "default": "admin",
             "description": "Optionally set a password for the gui.",
@@ -1065,11 +1104,13 @@
         "env": [{
             "default": "1000",
             "label": "PUID",
-            "name": "PUID"
+            "name": "PUID",
+            "preset":true
         },{
             "default": "1000",
             "label": "PGID",
-            "name": "PGID"
+            "name": "PGID",
+            "preset":true
         }],
         "categories": [
             "Cloud",
@@ -1096,11 +1137,13 @@
         "env": [{
             "default": "1000",
             "label": "PUID",
-            "name": "PUID"
+            "name": "PUID",
+            "preset":true
         },{
             "default": "100",
             "label": "PGID",
-            "name": "PGID"
+            "name": "PGID",
+            "preset":true
         }],
         "categories": [
             "Downloaders"
@@ -1122,29 +1165,32 @@
                 "container": "/config"
             }],
         "env": [{
-                "default": "1000",
-                "description": "for UserID",
-                "label": "PUID",
-                "name": "PUID"
-            },{
-                "default": "1000",
-                "description": "for GroupID",
-                "label": "PGID",
-                "name": "PGID"
-            },{
-                "default": "America/New_York",
-                "description": "specify a timezone to use, see this [list](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones#List).",
-                "label": "TZ",
-                "name": "TZ"
-            },{
-                "default": "",
-                "description": "Specify the full URL (including protocol) when running behind a reverse proxy",
-                "label": "BASE_URL",
-                "name": "BASE_URL"
-            }],
-            "categories": [
-                "Monitoring"
-            ]
+            "default": "1000",
+            "description": "for UserID",
+            "label": "PUID",
+            "name": "PUID",
+            "preset":true
+        },{
+            "default": "1000",
+            "description": "for GroupID",
+            "label": "PGID",
+            "name": "PGID",
+            "preset":true
+        },{
+            "default": "America/New_York",
+            "description": "specify a timezone to use, see this [list](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones#List).",
+            "label": "TZ",
+            "name": "TZ",
+            "preset":true
+        },{
+            "default": "",
+            "description": "Specify the full URL (including protocol) when running behind a reverse proxy",
+            "label": "BASE_URL",
+            "name": "BASE_URL"
+        }],
+        "categories": [
+            "Monitoring"
+        ]
     },{
         "title": "Chevereto",
         "description": "Chevereto is a powerful and fast image hosting script that allows you to create your very own full-featured image hosting website in just minutes. Please note that this offers only the free Chevereto version.",
@@ -1165,12 +1211,14 @@
             "default": "1000",
             "description": "for GroupID",
             "label": "PUID",
-            "name": "PUID"
+            "name": "PUID",
+            "preset":true
         },{
             "default": "1000",
             "description": "for UserID",
             "label": "PGID",
-            "name": "PGID"
+            "name": "PGID",
+            "preset":true
         },{
             "default": "127.0.0.1",
             "description": "Database host",
@@ -1200,7 +1248,8 @@
             "default": "America/New_York",
             "description": "Specify a timezone, for example, America/Chicago",
             "label": "TZ",
-            "name": "TZ"
+            "name": "TZ",
+            "preset":true
         }],
         "categories": [
             "Photo"
@@ -1254,17 +1303,20 @@
             "default": "1000",
             "description": "PUID",
             "label": "PUID",
-            "name": "PUID"
+            "name": "PUID",
+            "preset":true
         },{
             "default": "1000",
             "description": "PGID",
             "label": "PGID",
-            "name": "PGID"
+            "name": "PGID",
+            "preset":true
         },{
             "default": "America/New_York",
             "description": "TZ",
             "label": "TZ",
-            "name": "TZ"
+            "name": "TZ",
+            "preset":true
         }],
         "host_config": {
             "shm_size": 1073741824
@@ -1479,17 +1531,20 @@
             "default": "1000",
             "description": "for GroupID",
             "label": "PUID",
-            "name": "PUID"
+            "name": "PUID",
+            "preset":true
         },{
             "default": "1000",
             "description": "for UserID",
             "label": "PGID",
-            "name": "PGID"
+            "name": "PGID",
+            "preset":true
         },{
             "default": "America/New_York",
             "description": "Specify a timezone, for example, America/New_York",
             "label": "TZ",
-            "name": "TZ"
+            "name": "TZ",
+            "preset":true
         }],
         "categories": [
             "Books"
@@ -1520,17 +1575,20 @@
             "default": "1000",
             "description": "for GroupID",
             "label": "PUID",
-            "name": "PUID"
+            "name": "PUID",
+            "preset":true
         },{
             "default": "1000",
             "description": "for UserID",
             "label": "PGID",
-            "name": "PGID"
+            "name": "PGID",
+            "preset":true
         },{
             "default": "America/New_York",
             "description": "Specify a timezone, for example, America/New_York",
             "label": "TZ",
-            "name": "TZ"
+            "name": "TZ",
+            "preset":true
         }],
         "categories": [
             "Media"
@@ -1576,17 +1634,20 @@
             "default": "1000",
             "description": "for GroupID",
             "label": "PUID",
-            "name": "PUID"
+            "name": "PUID",
+            "preset":true
         },{
             "default": "1000",
             "description": "for UserID",
             "label": "PGID",
-            "name": "PGID"
+            "name": "PGID",
+            "preset":true
         },{
             "default": "America/New_York",
             "description": "Specify a timezone, for example, America/New_York",
             "label": "TZ",
-            "name": "TZ"
+            "name": "TZ",
+            "preset":true
         }],
         "categories": [
             "Media"
@@ -1660,17 +1721,20 @@
             "default": "1000",
             "description": "for GroupID",
             "label": "PUID",
-            "name": "PUID"
+            "name": "PUID",
+            "preset":true
         },{
             "default": "1000",
             "description": "for UserID",
             "label": "PGID",
-            "name": "PGID"
+            "name": "PGID",
+            "preset":true
         },{
             "default": "America/New_York",
             "description": "Specify a timezone, for example, America/New_York",
             "label": "TZ",
-            "name": "TZ"
+            "name": "TZ",
+            "preset":true
         }],
         "categories": [
             "Productivity"
@@ -1698,17 +1762,20 @@
             "default": "1000",
             "description": "for GroupID",
             "label": "PUID",
-            "name": "PUID"
+            "name": "PUID",
+            "preset":true
         },{
             "default": "1000",
             "description": "for UserID",
             "label": "PGID",
-            "name": "PGID"
+            "name": "PGID",
+            "preset":true
         },{
             "default": "America/New_York",
             "description": "Specify a timezone, for example, America/New_York",
             "label": "TZ",
-            "name": "TZ"
+            "name": "TZ",
+            "preset":true
         }],
         "categories": [
             "Productivity"
@@ -1730,17 +1797,20 @@
             "default": "1000",
             "description": "for GroupID",
             "label": "PUID",
-            "name": "PUID"
+            "name": "PUID",
+            "preset":true
         },{
             "default": "1000",
             "description": "for UserID",
             "label": "PGID",
-            "name": "PGID"
+            "name": "PGID",
+            "preset":true
         },{
             "default": "America/New_York",
             "description": "Specify a timezone, for example, America/New_York",
             "label": "TZ",
-            "name": "TZ"
+            "name": "TZ",
+            "preset":true
         }],
         "categories": [
             "Networking"
@@ -1793,17 +1863,20 @@
             "default": "1000",
             "description": "for GroupID",
             "label": "PUID",
-            "name": "PUID"
+            "name": "PUID",
+            "preset":true
         },{
             "default": "1000",
             "description": "for UserID",
             "label": "PGID",
-            "name": "PGID"
+            "name": "PGID",
+            "preset":true
         },{
             "default": "America/New_York",
             "description": "Specify a timezone, for example, America/New_York",
             "label": "TZ",
-            "name": "TZ"
+            "name": "TZ",
+            "preset":true
         },{
             "default": "error",
             "description": "set the loglevel output when running Deluge, default is info for deluged and warning for deluged-web",
@@ -1838,11 +1911,13 @@
         "env": [{
             "default": "1000",
             "label": "PUID",
-            "name": "PUID"
+            "name": "PUID",
+            "preset":true
         },{
             "default": "1000",
             "label": "PGID",
-            "name": "PUID"
+            "name": "PUID",
+            "preset":true
         },{
             "default": "MULLVAD",
             "description": "see https://github.com/sgtsquiggs/docker-deluge-openvpn",
@@ -1906,17 +1981,20 @@
             "default": "1000",
             "description": "for GroupID",
             "label": "PUID",
-            "name": "PUID"
+            "name": "PUID",
+            "preset":true
         },{
             "default": "1000",
             "description": "for UserID",
             "label": "PGID",
-            "name": "PGID"
+            "name": "PGID",
+            "preset":true
         },{
             "default": "America/New_York",
             "description": "Specify a timezone, for example, America/New_York",
             "label": "TZ",
-            "name": "TZ"
+            "name": "TZ",
+            "preset":true
         }],
         "categories": [
             "Development"
@@ -1944,17 +2022,20 @@
             "default": "1000",
             "description": "for GroupID",
             "label": "PUID",
-            "name": "PUID"
+            "name": "PUID",
+            "preset":true
         },{
             "default": "1000",
             "description": "for UserID",
             "label": "PGID",
-            "name": "PGID"
+            "name": "PGID",
+            "preset":true
         },{
             "default": "America/New_York",
             "description": "Specify a timezone to use for example America/New_York",
             "label": "TZ",
-            "name": "TZ"
+            "name": "TZ",
+            "preset":true
         },{
             "default": "elasticsearch",
             "description": "ElasticSearch host (optional)",
@@ -2102,17 +2183,20 @@
             "default": "1000",
             "description": "for UserID",
             "label": "PUID",
-            "name": "PUID"
+            "name": "PUID",
+            "preset":true
         },{
             "default": "1000",
             "description": "for GroupID",
             "label": "PGID",
-            "name": "PGID"
+            "name": "PGID",
+            "preset":true
         },{
             "default": "America/New_York",
             "description": "specify a timezone to use, see this [list](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones#List).",
             "label": "TZ",
-            "name": "TZ"
+            "name": "TZ",
+            "preset":true
         },{
             "default": "",
             "description": "Specify your discord bot token.",
@@ -2277,17 +2361,20 @@
             "default": "1000",
             "description": "PUID",
             "label": "PUID",
-            "name": "PUID"
+            "name": "PUID",
+            "preset":true
         },{
             "default": "1000",
             "description": "PGID",
             "label": "PGID",
-            "name": "PGID"
+            "name": "PGID",
+            "preset":true
         },{
             "default": "America/New_York",
             "description": "TZ",
             "label": "TZ",
-            "name": "TZ"
+            "name": "TZ",
+            "preset":true
         }],
         "categories": [
             "Database"
@@ -2318,17 +2405,20 @@
             "default": "1000",
             "description": "for GroupID",
             "label": "PUID",
-            "name": "PUID"
+            "name": "PUID",
+            "preset":true
         },{
             "default": "1000",
             "description": "for UserID",
             "label": "PGID",
-            "name": "PGID"
+            "name": "PGID",
+            "preset":true
         },{
             "default": "America/New_York",
             "description": "Specify a timezone to use for example America/New_York",
             "label": "TZ",
-            "name": "TZ"
+            "name": "TZ",
+            "preset":true
         },{
             "default": "",
             "description": "Optionally specify any [CLI variables](https://duplicati.readthedocs.io/en/latest/07-other-command-line-utilities/) you want to launch the app with",
@@ -2407,17 +2497,20 @@
             "default": "1000",
             "description": "for GroupID",
             "label": "PUID",
-            "name": "PUID"
+            "name": "PUID",
+            "preset":true
         },{
             "default": "1000",
             "description": "for UserID",
             "label": "PGID",
-            "name": "PGID"
+            "name": "PGID",
+            "preset":true
         },{
             "default": "America/New_York",
             "description": "Specify a timezone to use for example America/New_York",
             "label": "TZ",
-            "name": "TZ"
+            "name": "TZ",
+            "preset":true
         }],
         "categories": [
             "Home Media"
@@ -2442,17 +2535,20 @@
             "default": "1000",
             "description": "for GroupID",
             "label": "PUID",
-            "name": "PUID"
+            "name": "PUID",
+            "preset":true
         },{
             "default": "1000",
             "description": "for UserID",
             "label": "PGID",
-            "name": "PGID"
+            "name": "PGID",
+            "preset":true
         },{
             "default": "America/New_York",
             "description": "Specify a timezone to use for example America/New_York",
             "label": "TZ",
-            "name": "TZ"
+            "name": "TZ",
+            "preset":true
         }],
         "categories": [
             "Home Media"
@@ -2504,17 +2600,20 @@
             "default": "1000",
             "description": "for GroupID",
             "label": "PUID",
-            "name": "PUID"
+            "name": "PUID",
+            "preset":true
         },{
             "default": "1000",
             "description": "for UserID",
             "label": "PGID",
-            "name": "PGID"
+            "name": "PGID",
+            "preset":true
         },{
             "default": "America/New_York",
             "description": "Specify a timezone to use for example America/New_York",
             "label": "TZ",
-            "name": "TZ"
+            "name": "TZ",
+            "preset":true
         },{
             "default": "10000",
             "description": "The endless banner is sent one line at a time. This is the delay in milliseconds between individual lines.",
@@ -2619,17 +2718,20 @@
             "default": "1000",
             "description": "for UserID",
             "label": "PUID",
-            "name": "PUID"
+            "name": "PUID",
+            "preset":true
         },{
             "default": "1000",
             "description": "for GroupID",
             "label": "PGID",
-            "name": "PGID"
+            "name": "PGID",
+            "preset":true
         },{
             "default": "America/New_York",
             "description": "specify a timezone to use, see this [list](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones#List).",
             "label": "TZ",
-            "name": "TZ"
+            "name": "TZ",
+            "preset":true
         },{
             "default": "-vv",
             "description": "Set the container log verbosity. Valid options are -v, -vv, -vvv, -vvvv, or leaving the value blank or not setting the variable.",
@@ -2681,17 +2783,20 @@
             "default": "1000",
             "description": "for UserID",
             "label": "PUID",
-            "name": "PUID"
+            "name": "PUID",
+            "preset":true
         },{
             "default": "1000",
             "description": "for GroupID",
             "label": "PGID",
-            "name": "PGID"
+            "name": "PGID",
+            "preset":true
         },{
             "default": "America/New_York",
             "description": "specify a timezone to use, see this [list](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones#List).",
             "label": "TZ",
-            "name": "TZ"
+            "name": "TZ",
+            "preset":true
         },{
             "default": "5",
             "description": "Limit number of RSS entries published at each execution.",
@@ -2715,11 +2820,13 @@
         "env": [{
             "default": "1000",
             "name": "PUID",
-            "label": "PUID"
+            "label": "PUID",
+            "preset":true
         },{
             "default": "1000",
             "name": "PGID",
-            "label": "PGID"
+            "label": "PGID",
+            "preset":true
         },{
             "default": "22",
             "name": "PORT",
@@ -2749,17 +2856,20 @@
             "default": "1000",
             "description": "for UserID",
             "label": "PUID",
-            "name": "PUID"
+            "name": "PUID",
+            "preset":true
         },{
             "default": "1000",
             "description": "for GroupID",
             "label": "PGID",
-            "name": "PGID"
+            "name": "PGID",
+            "preset":true
         },{
             "default": "America/New_York",
             "description": "specify a timezone to use, see this [list](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones#List).",
             "label": "TZ",
-            "name": "TZ"
+            "name": "TZ",
+            "preset":true
         }],
         "categories": [
             "Other"
@@ -2832,17 +2942,20 @@
             "default": "1000",
             "description": "for GroupID",
             "label": "PUID",
-            "name": "PUID"
+            "name": "PUID",
+            "preset":true
         },{
             "default": "1000",
             "description": "for UserID",
             "label": "PGID",
-            "name": "PGID"
+            "name": "PGID",
+            "preset":true
         },{
             "default": "America/New_York",
             "description": "Specify a timezone to use for example America/New_York",
             "label": "TZ",
-            "name": "TZ"
+            "name": "TZ",
+            "preset":true
         }],
         "categories": [
             "Productivity"
@@ -2867,12 +2980,14 @@
             "default": "1000",
             "description": "for GroupID",
             "label": "PUID",
-            "name": "PUID"
+            "name": "PUID",
+            "preset":true
         },{
             "default": "1000",
             "description": "for UserID",
             "label": "PGID",
-            "name": "PGID"
+            "name": "PGID",
+            "preset":true
         },{
             "default": "DATABASE",
             "description": "A switch to define how Fleet manages user logins. If set to DATABASE, see the related optional params. Can be set to either DATABASE or PROPERTIES.",
@@ -2923,17 +3038,20 @@
             "default": "1000",
             "description": "for GroupID",
             "label": "PUID",
-            "name": "PUID"
+            "name": "PUID",
+            "preset":true
         },{
             "default": "1000",
             "description": "for UserID",
             "label": "PGID",
-            "name": "PGID"
+            "name": "PGID",
+            "preset":true
         },{
             "default": "America/New_York",
             "description": "Specify a timezone to use for example America/New_York",
             "label": "TZ",
-            "name": "TZ"
+            "name": "TZ",
+            "preset":true
         }],
         "categories": [
             "Research"
@@ -2958,17 +3076,20 @@
             "default": "1000",
             "description": "for GroupID",
             "label": "PUID",
-            "name": "PUID"
+            "name": "PUID",
+            "preset":true
         },{
             "default": "1000",
             "description": "for UserID",
             "label": "PGID",
-            "name": "PGID"
+            "name": "PGID",
+            "preset":true
         },{
             "default": "America/New_York",
             "description": "Specify a timezone to use for example America/New_York",
             "label": "TZ",
-            "name": "TZ"
+            "name": "TZ",
+            "preset":true
         }],
         "categories": [
             "RSS"
@@ -3012,12 +3133,14 @@
             "default": "1000",
             "description": "for GroupID",
             "label": "PUID",
-            "name": "PUID"
+            "name": "PUID",
+            "preset":true
         },{
             "default": "1000",
             "description": "for UserID",
             "label": "PGID",
-            "name": "PGID"
+            "name": "PGID",
+            "preset":true
         }],
         "category": [
             "Web",
@@ -3046,17 +3169,20 @@
             "default": "1000",
             "description": "for UserID",
             "label": "PUID",
-            "name": "PUID"
+            "name": "PUID",
+            "preset":true
         },{
             "default": "1000",
             "description": "for GroupID",
             "label": "PGID",
-            "name": "PGID"
+            "name": "PGID",
+            "preset":true
         },{
             "default": "America/New_York",
             "description": "specify a timezone to use, see this [list](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones#List).",
             "label": "TZ",
-            "name": "TZ"
+            "name": "TZ",
+            "preset":true
         }],
         "categories": [
             "Git"
@@ -3113,17 +3239,20 @@
             "default": "1000",
             "description": "for UserID",
             "label": "PUID",
-            "name": "PUID"
+            "name": "PUID",
+            "preset":true
         },{
             "default": "1000",
             "description": "for GroupID",
             "label": "PGID",
-            "name": "PGID"
+            "name": "PGID",
+            "preset":true
         },{
             "default": "America/New_York",
             "description": "specify a timezone to use, see this [list](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones#List).",
             "label": "TZ",
-            "name": "TZ"
+            "name": "TZ",
+            "preset":true
         }],
         "categories": [
             "Git"
@@ -3168,17 +3297,20 @@
             "default": "1000",
             "description": "for GroupID",
             "label": "PUID",
-            "name": "PUID"
+            "name": "PUID",
+            "preset":true
         },{
             "default": "1000",
             "description": "for UserID",
             "label": "PGID",
-            "name": "PGID"
+            "name": "PGID",
+            "preset":true
         },{
             "default": "America/New_York",
             "description": "Specify a timezone to use for example America/New_York",
             "label": "TZ",
-            "name": "TZ"
+            "name": "TZ",
+            "preset":true
         }],
         "categories": [
             "Webserver"
@@ -3203,17 +3335,20 @@
             "default": "1000",
             "description": "for GroupID",
             "label": "PUID",
-            "name": "PUID"
+            "name": "PUID",
+            "preset":true
         },{
             "default": "1000",
             "description": "for UserID",
             "label": "PGID",
-            "name": "PGID"
+            "name": "PGID",
+            "preset":true
         },{
             "default": "America/New_York",
             "description": "Specify a timezone to use for example America/New_York",
             "label": "TZ",
-            "name": "TZ"
+            "name": "TZ",
+            "preset":true
         }],
         "categories": [
             "Tools"
@@ -3251,12 +3386,14 @@
             "default": "1000",
             "description": "for GroupID",
             "label": "PUID",
-            "name": "PUID"
+            "name": "PUID",
+            "preset":true
         },{
             "default": "1000",
             "description": "for UserID",
             "label": "PGID",
-            "name": "PGID"
+            "name": "PGID",
+            "preset":true
         },{
             "default": "<Your Key To Encrypt Security Data>",
             "description": "Key used to secure communication.",
@@ -3266,7 +3403,8 @@
             "default": "America/New_York",
             "description": "Specify a timezone to use for example America/New_York",
             "label": "TZ",
-            "name": "TZ"
+            "name": "TZ",
+            "preset":true
         }],
         "categories": [
             "Automation"
@@ -3297,17 +3435,20 @@
             "default": "1000",
             "description": "for GroupID",
             "label": "PUID",
-            "name": "PUID"
+            "name": "PUID",
+            "preset":true
         },{
             "default": "1000",
             "description": "for UserID",
             "label": "PGID",
-            "name": "PGID"
+            "name": "PGID",
+            "preset":true
         },{
             "default": "America/New_York",
             "description": "Specify a timezone to use for example America/New_York",
             "label": "TZ",
-            "name": "TZ"
+            "name": "TZ",
+            "preset":true
         }],
         "categories": [
             "Music"
@@ -3332,12 +3473,14 @@
             "default": "1000",
             "description": "for GroupID",
             "label": "PUID",
-            "name": "PUID"
+            "name": "PUID",
+            "preset":true
         },{
             "default": "1000",
             "description": "for UserID",
             "label": "PGID",
-            "name": "PGID"
+            "name": "PGID",
+            "preset":true
         },{
             "default": "<SITE_ROOT>",
             "description": "The site's top-level URL and the port it listens to if different than 80 or 443 (e.g., https://healthchecks.example.com:8000)",
@@ -3432,12 +3575,14 @@
             "default": "1000",
             "description": "for GroupID",
             "label": "PUID",
-            "name": "PUID"
+            "name": "PUID",
+            "preset":true
         },{
             "default": "1000",
             "description": "for UserID",
             "label": "PGID",
-            "name": "PGID"
+            "name": "PGID",
+            "preset":true
         },{
             "default": "<hostname or ip>",
             "description": "Host address of MySQL database",
@@ -3467,7 +3612,8 @@
             "default": "America/New_York",
             "description": "Specify a timezone to use (e.g., America/New_York)",
             "label": "TZ",
-            "name": "TZ"
+            "name": "TZ",
+            "preset":true
         },{
             "default": "localhost",
             "description": "The address the GUI will be accessed at (e.g., `192.168.1.1` or `hedgedoc.domain.com`)",
@@ -3508,17 +3654,20 @@
             "default": "1000",
             "description": "for GroupID",
             "label": "PUID",
-            "name": "PUID"
+            "name": "PUID",
+            "preset":true
         },{
             "default": "1000",
             "description": "for UserID",
             "label": "PGID",
-            "name": "PGID"
+            "name": "PGID",
+            "preset":true
         },{
             "default": "America/New_York",
             "description": "Specify a timezone to use (e.g., America/New_York)",
             "label": "TZ",
-            "name": "TZ"
+            "name": "TZ",
+            "preset":true
         }]
     },{
         "title": "Hishtory-Server",
@@ -3536,17 +3685,20 @@
             "default": "1000",
             "description": "for UserID",
             "label": "PUID",
-            "name": "PUID"
+            "name": "PUID",
+            "preset":true
         },{
             "default": "1000",
             "description": "for GroupID",
             "label": "PGID",
-            "name": "PGID"
+            "name": "PGID",
+            "preset":true
         },{
             "default": "America/New_York",
             "description": "specify a timezone to use, see this [list](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones#List).",
             "label": "TZ",
-            "name": "TZ"
+            "name": "TZ",
+            "preset":true
         },{
             "default": "postgresql://${HISHTORY_DB_USER}:${HISHTORY_DB_PASS}@hishtory-db:5432/hishtory?sslmode=disable",
             "description": "Postgres DB [Connection URI](https://www.postgresql.org/docs/current/libpq-connect.html#LIBPQ-CONNSTRING). Special characters must be [URL encoded](https://en.wikipedia.org/wiki/URL_encoding).",
@@ -3577,17 +3729,20 @@
             "default": "1000",
             "description": "for GroupID",
             "label": "PUID",
-            "name": "PUID"
+            "name": "PUID",
+            "preset":true
         },{
             "default": "1000",
             "description": "for UserID",
             "label": "PGID",
-            "name": "PGID"
+            "name": "PGID",
+            "preset":true
         },{
             "default": "America/New_York",
             "description": "Specify a timezone to use (e.g., America/New_York)",
             "label": "TZ",
-            "name": "TZ"
+            "name": "TZ",
+            "preset":true
         }],
         "categories": [
             "Automation"
@@ -3634,11 +3789,13 @@
         "env": [{
             "default": "1000",
             "label": "PUID",
-            "name": "PUID"
+            "name": "PUID",
+            "preset":true
         },{
             "default": "100",
             "label": "PGID",
-            "name": "PGID"
+            "name": "PGID",
+            "preset":true
         }],
         "categories": [
             "Movies",
@@ -3706,7 +3863,8 @@
         },{
             "default": "America/New_York",
             "label": "TZ",
-            "name": "TZ"
+            "name": "TZ",
+            "preset":true
         },{
             "default": "admin",
             "label": "DATABASE_PASSWORD",
@@ -3747,17 +3905,20 @@
             "default": "1000",
             "description": "for GroupID",
             "label": "PUID",
-            "name": "PUID"
+            "name": "PUID",
+            "preset":true
         },{
             "default": "1000",
             "description": "for UserID",
             "label": "PGID",
-            "name": "PGID"
+            "name": "PGID",
+            "preset":true
         },{
             "default": "America/New_York",
             "description": "Specify a timezone to use (e.g., America/New_York)",
             "label": "TZ",
-            "name": "TZ"
+            "name": "TZ",
+            "preset":true
         }],
         "categories": [
             "P2P"
@@ -3869,17 +4030,20 @@
             "default": "1000",
             "description": "for GroupID",
             "label": "PUID",
-            "name": "PUID"
+            "name": "PUID",
+            "preset":true
         },{
             "default": "1000",
             "description": "for UserID",
             "label": "PGID",
-            "name": "PGID"
+            "name": "PGID",
+            "preset":true
         },{
             "default": "America/New_York",
             "description": "Specify a timezone to use (e.g., America/New_York)",
             "label": "TZ",
-            "name": "TZ"
+            "name": "TZ",
+            "preset":true
         },{
             "default": "true",
             "description": "Allow Jackett to update inside of the container (currently recommended by Jackett and enabled by default)",
@@ -3923,17 +4087,20 @@
                 "default": "1000",
                 "description": "for GroupID",
                 "label": "PUID",
-                "name": "PUID"
+                "name": "PUID",
+            "preset":true
             },{
                 "default": "1000",
                 "description": "for UserID",
                 "label": "PGID",
-                "name": "PGID"
+                "name": "PGID",
+            "preset":true
             },{
                 "default": "America/New_York",
                 "description": "Specify a timezone to use (e.g., America/New_York)",
                 "label": "TZ",
-                "name": "TZ"
+                "name": "TZ",
+            "preset":true
             },{
                 "default": "192.168.0.5",
                 "description": "Set the autodiscovery response domain or IP address.",
@@ -3980,17 +4147,20 @@
             "default": "1000",
             "description": "for UserID",
             "label": "PUID",
-            "name": "PUID"
+            "name": "PUID",
+            "preset":true
         },{
             "default": "1000",
             "description": "for GroupID",
             "label": "PGID",
-            "name": "PGID"
+            "name": "PGID",
+            "preset":true
         },{
             "default": "America/New_York",
             "description": "specify a timezone to use, see this [list](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones#List).",
             "label": "TZ",
-            "name": "TZ"
+            "name": "TZ",
+            "preset":true
         }],
         "categories": [
             "Other"
@@ -4044,17 +4214,20 @@
             "default": "1000",
             "description": "for GroupID",
             "label": "PUID",
-            "name": "PUID"
+            "name": "PUID",
+            "preset":true
         },{
             "default": "1000",
             "description": "for UserID",
             "label": "PGID",
-            "name": "PGID"
+            "name": "PGID",
+            "preset":true
         },{
             "default": "America/New_York",
             "description": "Specify a timezone to use (e.g., America/New_York)",
             "label": "TZ",
-            "name": "TZ"
+            "name": "TZ",
+            "preset":true
         },{
             "default": "kanzi",
             "description": "Specify an invocation name for this skill, use either kanzi or kod.",
@@ -4136,17 +4309,20 @@
             "default": "1000",
             "description": "for UserID",
             "label": "PUID",
-            "name": "PUID"
+            "name": "PUID",
+            "preset":true
         },{
             "default": "1000",
             "description": "for GroupID",
             "label": "PGID",
-            "name": "PGID"
+            "name": "PGID",
+            "preset":true
         },{
             "default": "America/New_York",
             "description": "specify a timezone to use, see this [list](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones#List).",
             "label": "TZ",
-            "name": "TZ"
+            "name": "TZ",
+            "preset":true
         },{
             "default": "/",
             "description": "Specify a subfolder to use with reverse proxies, IE `/subfolder/`",
@@ -4176,17 +4352,20 @@
             "default": "1000",
             "description": "for GroupID",
             "label": "PUID",
-            "name": "PUID"
+            "name": "PUID",
+            "preset":true
         },{
             "default": "1000",
             "description": "for UserID",
             "label": "PGID",
-            "name": "PGID"
+            "name": "PGID",
+            "preset":true
         },{
             "default": "America/New_York",
             "description": "Specify a timezone to use (e.g., America/New_York)",
             "label": "TZ",
-            "name": "TZ"
+            "name": "TZ",
+            "preset":true
         }],
         "category": [
             "Movies"
@@ -4217,17 +4396,20 @@
             "default": "1000",
             "description": "for GroupID",
             "label": "PUID",
-            "name": "PUID"
+            "name": "PUID",
+            "preset":true
         },{
             "default": "1000",
             "description": "for UserID",
             "label": "PGID",
-            "name": "PGID"
+            "name": "PGID",
+            "preset":true
         },{
             "default": "America/New_York",
             "description": "Specify a timezone to use (e.g., America/New_York)",
             "label": "TZ",
-            "name": "TZ"
+            "name": "TZ",
+            "preset":true
         },{
             "default": "linuxserver/calibre-web:calibre|linuxserver/mods:lazylibrarian-ffmpeg",
             "description": "Allows additional functionality to be added, e.g. the Calibredb import program (optional, more info below)",
@@ -4278,11 +4460,13 @@
         },{
             "default": "1000",
             "label": "PUID",
-            "name": "PUID"
+            "name": "PUID",
+            "preset":true
         },{
             "default": "1000",
             "label": "PGID",
-            "name": "PGID"
+            "name": "PGID",
+            "preset":true
         },{
             "default": "http",
             "label": "VALIDATION",
@@ -4295,7 +4479,8 @@
         },{
             "default": "America/New_York",
             "label": "TZ",
-            "name": "TZ"
+            "name": "TZ",
+            "preset":true
         }],
         "category": [
             "Tools",
@@ -4318,7 +4503,8 @@
             "default": "America/New_York",
             "description": "Specify a timezone to use (e.g., America/New_York)",
             "label": "TZ",
-            "name": "TZ"
+            "name": "TZ",
+            "preset":true
         },{
             "default": "",
             "description": "Optionally define a custom fernet key, has to be base64-encoded 32-byte (only needed if container is frequently recreated, or if using multi-node setups, invalidating previous authentications)",
@@ -4358,17 +4544,20 @@
             "default": "1000",
             "description": "for GroupID",
             "label": "PUID",
-            "name": "PUID"
+            "name": "PUID",
+            "preset":true
         },{
             "default": "1000",
             "description": "for UserID",
             "label": "PGID",
-            "name": "PGID"
+            "name": "PGID",
+            "preset":true
         },{
             "default": "America/New_York",
             "description": "Specify a timezone to use (e.g., America/New_York)",
             "label": "TZ",
-            "name": "TZ"
+            "name": "TZ",
+            "preset":true
         }],
         "categories": [
             "Productivity"
@@ -4410,17 +4599,20 @@
             "default": "1000",
             "description": "Specify the PUID (GroupID)",
             "label": "PUID",
-            "name": "PUID"
+            "name": "PUID",
+            "preset":true
         },{
             "default": "1000",
             "description": "Specify the PGID (UserID)",
             "label": "PGID",
-            "name": "PGID"
+            "name": "PGID",
+            "preset":true
         },{
             "default": "America/New_York",
             "description": "Specify the timezone",
             "label": "TZ",
-            "name": "TZ"
+            "name": "TZ",
+            "preset":true
         }],
         "categories": [
             "Music"
@@ -4445,17 +4637,20 @@
             "default": "1000",
             "description": "for GroupID",
             "label": "PUID",
-            "name": "PUID"
+            "name": "PUID",
+            "preset":true
         },{
             "default": "1000",
             "description": "for UserID",
             "label": "PGID",
-            "name": "PGID"
+            "name": "PGID",
+            "preset":true
         },{
             "default": "America/New_York",
             "description": "Specify a timezone to use (e.g., America/New_York)",
             "label": "TZ",
-            "name": "TZ"
+            "name": "TZ",
+            "preset":true
         },{
             "default": "PASSWORD",
             "description": "Set the password for the results database.",
@@ -4526,17 +4721,20 @@
             "default": "1000",
             "description": "for GroupID",
             "label": "PUID",
-            "name": "PUID"
+            "name": "PUID",
+            "preset":true
         },{
             "default": "1000",
             "description": "for UserID",
             "label": "PGID",
-            "name": "PGID"
+            "name": "PGID",
+            "preset":true
         },{
             "default": "America/New_York",
             "description": "Specify a timezone to use (e.g., America/New_York)",
             "label": "TZ",
-            "name": "TZ"
+            "name": "TZ",
+            "preset":true
         }],
         "categories": [
             "Torrent"
@@ -4561,17 +4759,20 @@
             "default": "1000",
             "description": "for GroupID",
             "label": "PUID",
-            "name": "PUID"
+            "name": "PUID",
+            "preset":true
         },{
             "default": "1000",
             "description": "for UserID",
             "label": "PGID",
-            "name": "PGID"
+            "name": "PGID",
+            "preset":true
         },{
             "default": "America/New_York",
             "description": "Specify a timezone to use (e.g., America/New_York)",
             "label": "TZ",
-            "name": "TZ"
+            "name": "TZ",
+            "preset":true
         }],
         "categories": [
             "Bot"
@@ -4618,17 +4819,20 @@
             "default": "1000",
             "description": "for UserID",
             "label": "PUID",
-            "name": "PUID"
+            "name": "PUID",
+            "preset":true
         },{
             "default": "1000",
             "description": "for GroupID",
             "label": "PGID",
-            "name": "PGID"
+            "name": "PGID",
+            "preset":true
         },{
             "default": "America/New_York",
             "description": "specify a timezone to use, see this [list](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones#List).",
             "label": "TZ",
-            "name": "TZ"
+            "name": "TZ",
+            "preset":true
         }],
         "categories": [
             "Music"
@@ -4656,17 +4860,20 @@
             "default": "1000",
             "description": "for GroupID",
             "label": "PUID",
-            "name": "PUID"
+            "name": "PUID",
+            "preset":true
         },{
             "default": "1000",
             "description": "for UserID",
             "label": "PGID",
-            "name": "PGID"
+            "name": "PGID",
+            "preset":true
         },{
             "default": "America/New_York",
             "description": "Specify a timezone to use (e.g., America/New_York)",
             "label": "TZ",
-            "name": "TZ"
+            "name": "TZ",
+            "preset":true
         },{
             "default": "mariadb",
             "description": "for specifying the database host",
@@ -4758,17 +4965,20 @@
             "default": "1000",
             "name": "PUID",
             "label": "PUID",
-            "description": "for UserID"
+            "description": "for UserID",
+            "preset":true
         },{
             "default": "1000",
             "name": "PGID",
             "label": "PGID",
-            "description": "for GroupID"
+            "description": "for GroupID",
+            "preset":true
         },{
             "default": "America/New_York",
             "name": "TZ",
             "label": "TZ",
-            "description": "specify a timezone to use, see this [list](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones#List)."
+            "description": "specify a timezone to use, see this [list](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones#List).",
+            "preset":true
         },{
             "default": "example.com",
             "name": "LOCAL_DOMAIN",
@@ -4987,11 +5197,13 @@
         "env": [{
             "default": "1000",
             "label": "PUID",
-            "name": "PUID"
+            "name": "PUID",
+            "preset":true
         },{
             "default": "1000",
             "label": "PGID",
-            "name": "PGID"
+            "name": "PGID",
+            "preset":true
         }],
         "categories": [
             "Minecraft"
@@ -5022,17 +5234,20 @@
             "default": "1000",
             "description": "for GroupID",
             "label": "PUID",
-            "name": "PUID"
+            "name": "PUID",
+            "preset":true
         },{
             "default": "1000",
             "description": "for UserID",
             "label": "PGID",
-            "name": "PGID"
+            "name": "PGID",
+            "preset":true
         },{
             "default": "America/New_York",
             "description": "Specify a timezone to use (e.g., America/New_York)",
             "label": "TZ",
-            "name": "TZ"
+            "name": "TZ",
+            "preset":true
         }],
         "categories": [
             "Movies"
@@ -5092,17 +5307,20 @@
             "default": "1000",
             "description": "for GroupID",
             "label": "PUID",
-            "name": "PUID"
+            "name": "PUID",
+            "preset":true
         },{
             "default": "1000",
             "description": "for UserID",
             "label": "PGID",
-            "name": "PGID"
+            "name": "PGID",
+            "preset":true
         },{
             "default": "America/New_York",
             "description": "Specify a timezone to use (e.g., America/New_York)",
             "label": "TZ",
-            "name": "TZ"
+            "name": "TZ",
+            "preset":true
         },{
             "default": "'--gameid minetest'",
             "description": "Optionally specify any [CLI variables](https://wiki.minetest.net/Command_line) you want to launch the app with",
@@ -5134,17 +5352,20 @@
             "default": "1000",
             "description": "for GroupID",
             "label": "PUID",
-            "name": "PUID"
+            "name": "PUID",
+            "preset":true
         },{
             "default": "1000",
             "description": "for UserID",
             "label": "PGID",
-            "name": "PGID"
+            "name": "PGID",
+            "preset":true
         },{
             "default": "America/New_York",
             "description": "Specify a timezone to use (e.g., America/New_York)",
             "label": "TZ",
-            "name": "TZ"
+            "name": "TZ",
+            "preset":true
         },{
             "default": "<parameter>",
             "description": "Specify specific run params for minisatip",
@@ -5250,17 +5471,20 @@
             "default": "1000",
             "description": "for UserID",
             "label": "PUID",
-            "name": "PUID"
+            "name": "PUID",
+            "preset":true
         },{
             "default": "1000",
             "description": "for GroupID",
             "label": "PGID",
-            "name": "PGID"
+            "name": "PGID",
+            "preset":true
         },{
             "default": "America/New_York",
             "description": "specify a timezone to use, see this [list](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones#List).",
             "label": "TZ",
-            "name": "TZ"
+            "name": "TZ",
+            "preset":true
         },{
             "default": "192.168.0.0/16",
             "description": "If using a VPN, set this to your local LAN IP range using CIDR notation. Without it you will be unable to access the web interface. If you have multiple ranges or a complex LAN setup you will need to manage this yourself in the wg0.conf, see the App Setup section for details.",
@@ -5299,15 +5523,18 @@
         "env": [{
             "default": "1000",
             "label": "PUID",
-            "name": "PUID"
+            "name": "PUID",
+            "preset":true
         },{
             "default": "100",
             "label": "PGID",
-            "name": "PGID"
+            "name": "PGID",
+            "preset":true
         },{
             "default": "America/New_York",
             "label": "TZ",
-            "name": "TZ"
+            "name": "TZ",
+            "preset":true
         }],
         "categories": [
             "Voice",
@@ -5342,15 +5569,18 @@
         },{
             "default": "1000",
             "label": "PUID",
-            "name": "PUID"
+            "name": "PUID",
+            "preset":true
         },{
             "default": "100",
             "label": "PGID",
-            "name": "PGID"
+            "name": "PGID",
+            "preset":true
         },{
             "default": "America/New_York",
             "label": "TZ",
-            "name": "TZ"
+            "name": "TZ",
+            "preset":true
             }
         ],
         "category": [
@@ -5401,12 +5631,14 @@
             "default": "1000",
             "description": "for GroupID",
             "label": "PUID",
-            "name": "PUID"
+            "name": "PUID",
+            "preset":true
         },{
             "default": "1000",
             "description": "for UserID",
             "label": "PGID",
-            "name": "PGID"
+            "name": "PGID",
+            "preset":true
         }],
         "categories": [
             "Books"
@@ -5459,17 +5691,20 @@
             "default": "1000",
             "description": "for GroupID",
             "label": "PUID",
-            "name": "PUID"
+            "name": "PUID",
+            "preset":true
         },{
             "default": "1000",
             "description": "for UserID",
             "label": "PGID",
-            "name": "PGID"
+            "name": "PGID",
+            "preset":true
         },{
             "default": "America/New_York",
             "description": "Specify a timezone to use for example America/New_York",
             "label": "TZ",
-            "name": "TZ"
+            "name": "TZ",
+            "preset":true
         }],
         "categories": [
             "Database"
@@ -5500,19 +5735,22 @@
                 "default": "1000",
                 "description": "for UserID",
                 "label": "PUID",
-                "name": "PUID"
+                "name": "PUID",
+            "preset":true
             },
             {
                 "default": "1000",
                 "description": "for GroupID",
                 "label": "PGID",
-                "name": "PGID"
+                "name": "PGID",
+            "preset":true
             },
             {
                 "default": "America/New_York",
                 "description": "specify a timezone to use, see this [list](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones#List).",
                 "label": "TZ",
-                "name": "TZ"
+                "name": "TZ",
+            "preset":true
             },
             {
                 "default": "localhost",
@@ -5601,12 +5839,14 @@
             "default": "1000",
             "description": "for GroupID",
             "label": "PUID",
-            "name": "PUID"
+            "name": "PUID",
+            "preset":true
         },{
             "default": "1000",
             "description": "for UserID",
             "label": "PGID",
-            "name": "PGID"
+            "name": "PGID",
+            "preset":true
         },{
             "default": "1.9.9",
             "description": "Specify a specific version of boot files you want to use from NETBOOT.XYZ (unset pulls latest)",
@@ -5646,17 +5886,20 @@
             "default": "1000",
             "description": "for GroupID",
             "label": "PUID",
-            "name": "PUID"
+            "name": "PUID",
+            "preset":true
         },{
             "default": "1000",
             "description": "for UserID",
             "label": "PGID",
-            "name": "PGID"
+            "name": "PGID",
+            "preset":true
         },{
             "default": "America/New_York",
             "description": "Specify a timezone to use for example America/New_York",
             "label": "TZ",
-            "name": "TZ"
+            "name": "TZ",
+            "preset":true
         },{
             "default": "<SUPERUSER_EMAIL>",
             "description": "Email address for `admin` account",
@@ -5784,17 +6027,20 @@
             "default": "1000",
             "description": "PUID",
             "label": "PUID",
-            "name": "PUID"
+            "name": "PUID",
+            "preset":true
         },{
             "default": "1000",
             "description": "PGID",
             "label": "PGID",
-            "name": "PGID"
+            "name": "PGID",
+            "preset":true
         },{
             "default": "America/New_York",
             "description": "TZ",
             "label": "TZ",
-            "name": "TZ"
+            "name": "TZ",
+            "preset":true
         }],
         "categories": [
             "Filesystem", 
@@ -5844,17 +6090,20 @@
             "default": "1000",
             "description": "for GroupID",
             "label": "PUID",
-            "name": "PUID"
+            "name": "PUID",
+            "preset":true
         },{
             "default": "1000",
             "description": "for UserID",
             "label": "PGID",
-            "name": "PGID"
+            "name": "PGID",
+            "preset":true
         },{
             "default": "America/New_York",
             "description": "Specify a timezone to use for example America/New_York",
             "label": "TZ",
-            "name": "TZ"
+            "name": "TZ",
+            "preset":true
         }],
         "categories": [
             "IRC"
@@ -5879,27 +6128,20 @@
             "default": "1000",
             "description": "for UserID",
             "label": "PUID",
-            "name": "PUID"
+            "name": "PUID",
+            "preset":true
         },{
             "default": "1000",
             "description": "for GroupID",
             "label": "PGID",
-            "name": "PGID"
+            "name": "PGID",
+            "preset":true
         },{
             "default": "America/New_York",
             "description": "specify a timezone to use, see this [list](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones#List).",
             "label": "TZ",
-            "name": "TZ"
-        },{
-            "default": "<yourUID>",
-            "description": "specify your UID",
-            "label": "PUID",
-            "name": "PUID"
-        },{
-            "default": "<yourGID>",
-            "description": "specify your GID",
-            "label": "PGID",
-            "name": "PGID"
+            "name": "TZ",
+            "preset":true
         }],
         "categories": [
             "Proxy"
@@ -5941,11 +6183,13 @@
         "env": [{
             "default": "1000",
             "label": "PUID",
-            "name": "PUID"
+            "name": "PUID",
+            "preset":true
         },{
-            "default": "100",
+            "default": "1000",
             "label": "PGID",
-            "name": "PGID"
+            "name": "PGID",
+            "preset":true
         }],
         "categories": [
             "Downloaders"
@@ -5973,11 +6217,13 @@
         "env": [{
             "default": "1000",
             "label": "PUID",
-            "name": "PUID"
+            "name": "PUID",
+            "preset":true
         },{
             "default": "1000",
             "label": "PGID",
-            "name": "PGID"
+            "name": "PGID",
+            "preset":true
         }],
         "categories": [
             "Downloaders"
@@ -6002,11 +6248,13 @@
         "env": [{
             "default": "1000",
             "label": "PUID",
-            "name": "PUID"
+            "name": "PUID",
+            "preset":true
         },{
-            "default": "100",
+            "default": "1000",
             "label": "PGID",
-            "name": "PGID"
+            "name": "PGID",
+            "preset":true
         }],
         "categories": [
             "Plex",
@@ -6142,17 +6390,20 @@
             "default": "1000",
             "description": "for GroupID",
             "label": "PUID",
-            "name": "PUID"
+            "name": "PUID",
+            "preset":true
         },{
             "default": "1000",
             "description": "for UserID",
             "label": "PGID",
-            "name": "PGID"
+            "name": "PGID",
+            "preset":true
         },{
             "default": "America/New_York",
             "description": "Specify a timezone to use for example America/New_York",
             "label": "TZ",
-            "name": "TZ"
+            "name": "TZ",
+            "preset":true
         },{
             "default": "yourpublickey",
             "description": "Optional ssh public key, which will automatically be added to authorized_keys.",
@@ -6232,17 +6483,20 @@
             "default": "1000",
             "description": "PUID",
             "label": "PUID",
-            "name": "PUID"
+            "name": "PUID",
+            "preset":true
         },{
             "default": "1000",
             "description": "PGID",
             "label": "PGID",
-            "name": "PGID"
+            "name": "PGID",
+            "preset":true
         },{
             "default": "America/New_York",
             "description": "TZ",
             "label": "TZ",
-            "name": "TZ"
+            "name": "TZ",
+            "preset":true
         },{
             "default": "/config/workspace",
             "description": "DEFAULT_WORKSPACE",
@@ -6271,26 +6525,29 @@
             "container": "/config"
         }],
         "env": [{
-                "default": "eth0",
-                "description": "INTERFACE",
-                "label": "INTERFACE",
-                "name": "INTERFACE"
-            },{
-                "default": "1000",
-                "description": "PUID",
-                "label": "PUID",
-                "name": "PUID"
-            },{
-                "default": "1000",
-                "description": "PGID",
-                "label": "PGID",
-                "name": "PGID"
-            },{
-                "default": "America/New_York",
-                "description": "TZ",
-                "label": "TZ",
-                "name": "TZ"
-            }],
+            "default": "eth0",
+            "description": "INTERFACE",
+            "label": "INTERFACE",
+            "name": "INTERFACE"
+        },{
+            "default": "1000",
+            "description": "PUID",
+            "label": "PUID",
+            "name": "PUID",
+            "preset":true
+        },{
+            "default": "1000",
+            "description": "PGID",
+            "label": "PGID",
+            "name": "PGID",
+            "preset":true
+        },{
+            "default": "America/New_York",
+            "description": "TZ",
+            "label": "TZ",
+            "name": "TZ",
+            "preset":true
+        }],
         "category": [
             "VPN"
         ]
@@ -6323,17 +6580,20 @@
             "default": "1000",
             "description": "PUID",
             "label": "PUID",
-            "name": "PUID"
+            "name": "PUID",
+            "preset":true
         },{
             "default": "1000",
             "description": "PGID",
             "label": "PGID",
-            "name": "PGID"
+            "name": "PGID",
+            "preset":true
         },{
             "default": "America/New_York",
             "description": "TZ",
             "label": "TZ",
-            "name": "TZ"
+            "name": "TZ",
+            "preset":true
         }],
         "host_config": {
             "shm_size": 1073741824
@@ -6359,15 +6619,18 @@
         "env": [{
             "default": "1000",
             "label": "PUID",
-            "name": "PUID"
+            "name": "PUID",
+            "preset":true
         },{
             "default": "1000",
             "label": "PGID",
-            "name": "PGID"
+            "name": "PGID",
+            "preset":true
         },{
             "default": "America/New_York",
             "label": "TZ",
-            "name": "TZ"
+            "name": "TZ",
+            "preset":true
         }],
         "category": [
             "Management"
@@ -6392,11 +6655,13 @@
         "env": [{
             "default": "1000",
             "label": "PUID",
-            "name": "PUID"
+            "name": "PUID",
+            "preset":true
         },{
             "default": "1000",
             "label": "PGID",
-            "name": "PGID"
+            "name": "PGID",
+            "preset":true
         }],
         "categories": [
           "Management"
@@ -6422,11 +6687,13 @@
         "env": [{
             "default": "1000",
             "label": "PUID",
-            "name": "PUID"
+            "name": "PUID",
+            "preset":true
         },{
             "default": "1000",
             "label": "PGID",
-            "name": "PGID"
+            "name": "PGID",
+            "preset":true
         }],
         "categories": [
             "Movies"
@@ -6445,15 +6712,18 @@
         "env": [{
             "default": "1000",
             "label": "PUID",
-            "name": "PUID"
+            "name": "PUID",
+            "preset":true
         },{
             "default": "1000",
             "label": "PGID",
-            "name": "PGID"
+            "name": "PGID",
+            "preset":true
         },{
             "default": "America/New_York",
             "label": "TZ",
-            "name": "TZ"
+            "name": "TZ",
+            "preset":true
         },{
             "default": "www.example.com",
             "label": "OWNCLOUD_DOMAIN",
@@ -6498,17 +6768,20 @@
             "default": "1000",
             "description": "for UserID",
             "label": "PUID",
-            "name": "PUID"
+            "name": "PUID",
+            "preset":true
         },{
             "default": "1000",
             "description": "for GroupID",
             "label": "PGID",
-            "name": "PGID"
+            "name": "PGID",
+            "preset":true
         },{
             "default": "America/New_York",
             "description": "specify a timezone to use, see this [list](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones#List).",
             "label": "TZ",
-            "name": "TZ"
+            "name": "TZ",
+            "preset":true
         }],
         "categories": [
             "Media"
@@ -6529,17 +6802,20 @@
             "default": "1000",
             "name": "PUID",
             "label": "PUID",
-            "description": "for UserID"
+            "description": "for UserID",
+            "preset":true
         },{
             "default": "1000",
             "name": "PGID",
             "label": "PGID",
-            "description": "for GroupID"
+            "description": "for GroupID",
+            "preset":true
         },{
             "default": "America/New_York",
             "name": "TZ",
             "label": "TZ",
-            "description": "specify a timezone to use, see this [list](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones#List)."
+            "description": "specify a timezone to use, see this [list](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones#List).",
+            "preset":true
         },{
             "default": "false",
             "name": "RATE_LIMIT",
@@ -6587,17 +6863,20 @@
             "default": "1000",
             "description": "for GroupID",
             "label": "PUID",
-            "name": "PUID"
+            "name": "PUID",
+            "preset":true
         },{
             "default": "1000",
             "description": "for UserID",
             "label": "PGID",
-            "name": "PGID"
+            "name": "PGID",
+            "preset":true
         },{
             "default": "America/New_York",
             "description": "Specify a timezone to use for example America/New_York",
             "label": "TZ",
-            "name": "TZ"
+            "name": "TZ",
+            "preset":true
         },{
             "default": "",
             "description": "Specify an external redis instance to use. Can optionally include a port (`redis:6379`) and/or db (`redis/foo`). If left blank or not included, will use a built-in redis instance. If changed after initial setup will also require manual modification of /config/settings.py",
@@ -6630,17 +6909,20 @@
             "default": "1000",
             "description": "for GroupID",
             "label": "PUID",
-            "name": "PUID"
+            "name": "PUID",
+            "preset":true
         },{
             "default": "1000",
             "description": "for UserID",
             "label": "PGID",
-            "name": "PGID"
+            "name": "PGID",
+            "preset":true
         },{
             "default": "America/New_York",
             "description": "Specify a timezone to use for example America/New_York",
             "label": "TZ",
-            "name": "TZ"
+            "name": "TZ",
+            "preset":true
         },{
             "default": "",
             "description": "Specify an external redis instance to use. Can optionally include a port (`redis:6379`) and/or db (`redis/foo`). If left blank or not included, will use a built-in redis instance. If changed after initial setup will also require manual modification of /config/settings.py",
@@ -6664,15 +6946,18 @@
         "env": [{
             "default": "1000",
             "label": "PUID",
-            "name": "PUID"
+            "name": "PUID",
+            "preset":true
         },{
             "default": "1000",
             "label": "PGID",
-            "name": "PGID"
+            "name": "PGID",
+            "preset":true
         },{
             "default": "America/New_York",
             "label": "TZ",
-            "name": "TZ"
+            "name": "TZ",
+            "preset":true
         },{
             "default": "5800",
             "label": "PORT",
@@ -6707,17 +6992,20 @@
             "default": "1000",
             "description": "for GroupID",
             "label": "PUID",
-            "name": "PUID"
+            "name": "PUID",
+            "preset":true
         },{
             "default": "1000",
             "description": "for UserID",
             "label": "PGID",
-            "name": "PGID"
+            "name": "PGID",
+            "preset":true
         },{
             "default": "America/New_York",
             "description": "Specify a timezone to use for example America/New_York",
             "label": "TZ",
-            "name": "TZ"
+            "name": "TZ",
+            "preset":true
         }],
         "categories": [
             "Photo"
@@ -6741,11 +7029,13 @@
         "env": [{
             "default": "1000",
             "label": "PUID",
-            "name": "PUID"
+            "name": "PUID",
+            "preset":true
         },{
             "default": "1000",
             "label": "PGID",
-            "name": "PGID"
+            "name": "PGID",
+            "preset":true
         }],
         "categories": [
             "Network Server"
@@ -6799,17 +7089,20 @@
             "default": "1000",
             "name": "PUID",
             "label": "PUID",
-            "description": "for UserID"
+            "description": "for UserID",
+            "preset":true
         },{
             "default": "1000",
             "name": "PGID",
             "label": "PGID",
-            "description": "for GroupID"
+            "description": "for GroupID",
+            "preset":true
         },{
             "default": "America/New_York",
             "name": "TZ",
             "label": "TZ",
-            "description": "specify a timezone to use, see this [list](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones#List)."
+            "description": "specify a timezone to use, see this [list](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones#List).",
+            "preset":true
         }],
         "categories": [
             "Chat"
@@ -6827,28 +7120,31 @@
             "80:80/tcp"
         ],
         "volumes": [{
-                "bind": "Piwigo-Config",
-                "container": "/config"
-            },{
-                "bind": "Piwigo-Gallery",
-                "container": "/gallery"
-            }],
+            "bind": "Piwigo-Config",
+            "container": "/config"
+        },{
+            "bind": "Piwigo-Gallery",
+            "container": "/gallery"
+        }],
         "env": [{
-                "default": "1000",
-                "description": "for GroupID",
-                "label": "PUID",
-                "name": "PUID"
-            },{
-                "default": "1000",
-                "description": "for UserID",
-                "label": "PGID",
-                "name": "PGID"
-            },{
-                "default": "America/New_York",
-                "description": "Specify a timezone to use for example America/New_York",
-                "label": "TZ",
-                "name": "TZ"
-            }],
+            "default": "1000",
+            "description": "for GroupID",
+            "label": "PUID",
+            "name": "PUID",
+            "preset":true
+        },{
+            "default": "1000",
+            "description": "for UserID",
+            "label": "PGID",
+            "name": "PGID",
+            "preset":true
+        },{
+            "default": "America/New_York",
+            "description": "Specify a timezone to use for example America/New_York",
+            "label": "TZ",
+            "name": "TZ",
+            "preset":true
+        }],
         "categories": [
             "Photo"
         ]
@@ -6875,17 +7171,20 @@
             "default": "1000",
             "description": "for GroupID",
             "label": "PUID",
-            "name": "PUID"
+            "name": "PUID",
+            "preset":true
         },{
             "default": "1000",
             "description": "for UserID",
             "label": "PGID",
-            "name": "PGID"
+            "name": "PGID",
+            "preset":true
         },{
             "default": "America/New_York",
             "description": "Specify a timezone to use for example America/New_York",
             "label": "TZ",
-            "name": "TZ"
+            "name": "TZ",
+            "preset":true
         },{
             "default": "admin",
             "description": "Specify a username to enable authentication.",
@@ -6945,12 +7244,14 @@
             "default": "1000",
             "description": "for GroupID",
             "label": "PUID",
-            "name": "PUID"
+            "name": "PUID",
+            "preset":true
         },{
             "default": "1000",
             "description": "for UserID",
             "label": "PGID",
-            "name": "PGID"
+            "name": "PGID",
+            "preset":true
         },{
             "default": "docker",
             "description": "Set whether to update plex or not - see Application Setup section.",
@@ -6986,12 +7287,14 @@
             "default": "1000",
             "description": "The user ID for file permissions within the container",
             "label": "PUID",
-            "name": "PUID"
+            "name": "PUID",
+            "preset":true
         },{
             "default": "1000",
             "description": "The group ID for file permissions within the container",
             "label": "PGID",
-            "name": "PGID"
+            "name": "PGID",
+            "preset":true
         },{
             "default": "",
             "description": "The base URL for Plex Requests",
@@ -7018,17 +7321,20 @@
             "default": "1000",
             "name": "PUID",
             "label": "PUID",
-            "description": "for UserID"
+            "description": "for UserID",
+            "preset":true
         },{
             "default": "1000",
             "name": "PGID",
             "label": "PGID",
-            "description": "for GroupID"
+            "description": "for GroupID",
+            "preset":true
         },{
             "default": "America/New_York",
             "name": "TZ",
             "label": "TZ",
-            "description": "specify a timezone to use, see this [list](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones#List)."
+            "description": "specify a timezone to use, see this [list](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones#List).",
+            "preset":true
         },{
             "default": "/config/config.yml",
             "name": "PMM_CONFIG",
@@ -7163,17 +7469,20 @@
             "default": "1000",
             "description": "for GroupID",
             "label": "PUID",
-            "name": "PUID"
+            "name": "PUID",
+            "preset":true
         },{
             "default": "1000",
             "description": "for UserID",
             "label": "PGID",
-            "name": "PGID"
+            "name": "PGID",
+            "preset":true
         },{
             "default": "America/New_York",
             "description": "Specify a timezone to use for example America/New_York",
             "label": "TZ",
-            "name": "TZ"
+            "name": "TZ",
+            "preset":true
         },{
             "default": "<5000>",
             "description": "To set maximum upload size (in MB), default if unset is 5000.",
@@ -7222,11 +7531,13 @@
         "env": [{
             "label": "PUID",
             "name": "PUID",
-            "default": "1000"
+            "default": "1000",
+            "preset":true
         },{
             "label": "PGID",
             "name": "PGID",
-            "default": "1000"
+            "default": "1000",
+            "preset":true
         }],
         "categories": [
             "Downloaders",
@@ -7252,17 +7563,20 @@
             "default": "1000",
             "description": "for GroupID",
             "label": "PUID",
-            "name": "PUID"
+            "name": "PUID",
+            "preset":true
         },{
             "default": "1000",
             "description": "for UserID",
             "label": "PGID",
-            "name": "PGID"
+            "name": "PGID",
+            "preset":true
         },{
             "default": "America/New_York",
             "description": "Specify a timezone to use for example America/New_York",
             "label": "TZ",
-            "name": "TZ"
+            "name": "TZ",
+            "preset":true
         },{
             "default": "/pwndrop",
             "description": "Secret path for admin access. Defaults to `/pwndrop`. This parameter only takes effect during initial install; it can later be changed in the web gui.",
@@ -7294,17 +7608,20 @@
             "default": "1000",
             "description": "for GroupID",
             "label": "PUID",
-            "name": "PUID"
+            "name": "PUID",
+            "preset":true
         },{
             "default": "1000",
             "description": "for UserID",
             "label": "PGID",
-            "name": "PGID"
+            "name": "PGID",
+            "preset":true
         },{
             "default": "America/New_York",
             "description": "Specify a timezone to use for example America/New_York",
             "label": "TZ",
-            "name": "TZ"
+            "name": "TZ",
+            "preset":true
         }],
         "category": [
             "Cloud"
@@ -7323,35 +7640,38 @@
             "33060:33060/tcp"
         ],
         "volumes": [{
-                "bind": "Pydio-Cells",
-                "container": "/config"
-            }],
+            "bind": "Pydio-Cells",
+            "container": "/config"
+        }],
         "env": [{
-                "default": "1000",
-                "description": "for GroupID",
-                "label": "PUID",
-                "name": "PUID"
-            },{
-                "default": "1000",
-                "description": "for UserID",
-                "label": "PGID",
-                "name": "PGID"
-            },{
-                "default": "America/New_York",
-                "description": "Specify a timezone to use for example America/New_York",
-                "label": "TZ",
-                "name": "TZ"
-            },{
-                "default": "yourdomain.url",
-                "description": "The external url you would like to use to access Pydio Cells (Can be https://domain.url or https://IP:PORT).",
-                "label": "EXTERNALURL",
-                "name": "EXTERNALURL"
-            },{
-                "default": "0.0.0.0",
-                "description": "Enter the LAN IP of the docker server. Required for local access by IP, added to self signed cert as SAN (not required if accessing only through reverse proxy).",
-                "label": "SERVER_IP",
-                "name": "SERVER_IP"
-            }],
+            "default": "1000",
+            "description": "for GroupID",
+            "label": "PUID",
+            "name": "PUID",
+            "preset":true
+        },{
+            "default": "1000",
+            "description": "for UserID",
+            "label": "PGID",
+            "name": "PGID",
+            "preset":true
+        },{
+            "default": "America/New_York",
+            "description": "Specify a timezone to use for example America/New_York",
+            "label": "TZ",
+            "name": "TZ",
+            "preset":true
+        },{
+            "default": "yourdomain.url",
+            "description": "The external url you would like to use to access Pydio Cells (Can be https://domain.url or https://IP:PORT).",
+            "label": "EXTERNALURL",
+            "name": "EXTERNALURL"
+        },{
+            "default": "0.0.0.0",
+            "description": "Enter the LAN IP of the docker server. Required for local access by IP, added to self signed cert as SAN (not required if accessing only through reverse proxy).",
+            "label": "SERVER_IP",
+            "name": "SERVER_IP"
+        }],
         "categories": [
             "Cloud"
         ]
@@ -7379,17 +7699,20 @@
             "default": "1000",
             "description": "for GroupID",
             "label": "PUID",
-            "name": "PUID"
+            "name": "PUID",
+            "preset":true
         },{
             "default": "1000",
             "description": "for UserID",
             "label": "PGID",
-            "name": "PGID"
+            "name": "PGID",
+            "preset":true
         },{
             "default": "America/New_York",
             "description": "Specify a timezone to use for example America/New_York",
             "label": "TZ",
-            "name": "TZ"
+            "name": "TZ",
+            "preset":true
         }],
         "categories": [
             "Downloaders"
@@ -7419,17 +7742,20 @@
             "default": "1000",
             "description": "for UserID",
             "label": "PUID",
-            "name": "PUID"
+            "name": "PUID",
+            "preset":true
         },{
             "default": "1000",
             "description": "for GroupID",
             "label": "PGID",
-            "name": "PGID"
+            "name": "PGID",
+            "preset":true
         },{
             "default": "America/New_York",
             "description": "specify a timezone to use, see this [list](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones#List).",
             "label": "TZ",
-            "name": "TZ"
+            "name": "TZ",
+            "preset":true
         }],
         "categories": [
             "Downloaders"
@@ -7487,33 +7813,36 @@
             "8080:8080/tcp"
         ],
         "volumes": [{
-                "bind": "QBitTorrent-Config",
-                "container": "/config"
-            },{
-                "bind": "QBitTorrent-Downloads",
-                "container": "/downloads"
-            }],
+            "bind": "QBitTorrent-Config",
+            "container": "/config"
+        },{
+            "bind": "QBitTorrent-Downloads",
+            "container": "/downloads"
+        }],
         "env": [{
-                "default": "1000",
-                "description": "for GroupID",
-                "label": "PUID",
-                "name": "PUID"
-            },{
-                "default": "1000",
-                "description": "for UserID",
-                "label": "PGID",
-                "name": "PGID"
-            },{
-                "default": "America/New_York",
-                "description": "Specify a timezone to use for example America/New_York",
-                "label": "TZ",
-                "name": "TZ"
-            },{
-                "default": "8080",
-                "description": "for changing the port of the webui, see below for explanation",
-                "label": "WEBUI_PORT",
-                "name": "WEBUI_PORT"
-            }],
+            "default": "1000",
+            "description": "for GroupID",
+            "label": "PUID",
+            "name": "PUID",
+            "preset":true
+        },{
+            "default": "1000",
+            "description": "for UserID",
+            "label": "PGID",
+            "name": "PGID",
+            "preset":true
+        },{
+            "default": "America/New_York",
+            "description": "Specify a timezone to use for example America/New_York",
+            "label": "TZ",
+            "name": "TZ",
+            "preset":true
+        },{
+            "default": "8080",
+            "description": "for changing the port of the webui, see below for explanation",
+            "label": "WEBUI_PORT",
+            "name": "WEBUI_PORT"
+        }],
         "categories": [
             "Torrent"
         ]
@@ -7541,17 +7870,20 @@
             "default": "1000",
             "description": "for UserID",
             "label": "PUID",
-            "name": "PUID"
+            "name": "PUID",
+            "preset":true
         },{
             "default": "1000",
             "description": "for GroupID",
             "label": "PGID",
-            "name": "PGID"
+            "name": "PGID",
+            "preset":true
         },{
             "default": "America/New_York",
             "description": "specify a timezone to use, see this [list](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones#List).",
             "label": "TZ",
-            "name": "TZ"
+            "name": "TZ",
+            "preset":true
         }],
         "categories": [
             "File Management"
@@ -7577,17 +7909,20 @@
             "default": "1000",
             "description": "for GroupID",
             "label": "PUID",
-            "name": "PUID"
+            "name": "PUID",
+            "preset":true
         },{
             "default": "1000",
             "description": "for UserID",
             "label": "PGID",
-            "name": "PGID"
+            "name": "PGID",
+            "preset":true
         },{
             "default": "America/New_York",
             "description": "Specify a timezone to use, for example America/New_York",
             "label": "TZ",
-            "name": "TZ"
+            "name": "TZ",
+            "preset":true
         },{
             "default": "--config-from-environment",
             "description": "Custom CLI options for Quassel",
@@ -7617,17 +7952,20 @@
             "default": "1000",
             "description": "for UserID",
             "label": "PUID",
-            "name": "PUID"
+            "name": "PUID",
+            "preset":true
         },{
             "default": "1000",
             "description": "for GroupID",
             "label": "PGID",
-            "name": "PGID"
+            "name": "PGID",
+            "preset":true
         },{
             "default": "America/New_York",
             "description": "specify a timezone to use, see this [list](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones#List).",
             "label": "TZ",
-            "name": "TZ"
+            "name": "TZ",
+            "preset":true
         },{
             "default": "192.168.1.10",
             "description": "specify the URL or IP address of your Quassel Core instance",
@@ -7693,17 +8031,20 @@
             "default": "1000",
             "description": "for GroupID",
             "label": "PUID",
-            "name": "PUID"
+            "name": "PUID",
+            "preset":true
         },{
             "default": "1000",
             "description": "for UserID",
             "label": "PGID",
-            "name": "PGID"
+            "name": "PGID",
+            "preset":true
         },{
             "default": "America/New_York",
             "description": "Specify a timezone to use, for example America/New_York",
             "label": "TZ",
-            "name": "TZ"
+            "name": "TZ",
+            "preset":true
         }],
         "categories": [
             "Movies"
@@ -7728,17 +8069,20 @@
             "default": "1000",
             "description": "for GroupID",
             "label": "PUID",
-            "name": "PUID"
+            "name": "PUID",
+            "preset":true
         },{
             "default": "1000",
             "description": "for UserID",
             "label": "PGID",
-            "name": "PGID"
+            "name": "PGID",
+            "preset":true
         },{
             "default": "America/New_York",
             "description": "Specify a timezone to use, for example America/New_York",
             "label": "TZ",
-            "name": "TZ"
+            "name": "TZ",
+            "preset":true
         }],
         "categories": [
             "Project-Management"
@@ -7812,17 +8156,20 @@
             "default": "1000",
             "description": "PUID",
             "label": "PUID",
-            "name": "PUID"
+            "name": "PUID",
+            "preset":true
         },{
             "default": "1000",
             "description": "PGID",
             "label": "PGID",
-            "name": "PGID"
+            "name": "PGID",
+            "preset":true
         },{
             "default": "America/New_York",
             "description": "TZ",
             "label": "TZ",
-            "name": "TZ"
+            "name": "TZ",
+            "preset":true
         }],
         "categories": [
             "VNC"
@@ -7847,17 +8194,20 @@
             "default": "1000",
             "description": "for GroupID",
             "label": "PUID",
-            "name": "PUID"
+            "name": "PUID",
+            "preset":true
         },{
             "default": "1000",
             "description": "for UserID",
             "label": "PGID",
-            "name": "PGID"
+            "name": "PGID",
+            "preset":true
         },{
             "default": "America/New_York",
             "description": "Specify a timezone to use, for example America/New_York",
             "label": "TZ",
-            "name": "TZ"
+            "name": "TZ",
+            "preset":true
         }],
         "categories": [
           "Bot"
@@ -7889,17 +8239,20 @@
             "default": "1000",
             "description": "for GroupID",
             "label": "PUID",
-            "name": "PUID"
+            "name": "PUID",
+            "preset":true
         },{
             "default": "1000",
             "description": "for UserID",
             "label": "PGID",
-            "name": "PGID"
+            "name": "PGID",
+            "preset":true
         },{
             "default": "America/New_York",
             "description": "Specify a timezone to use, for example America/New_York",
             "label": "TZ",
-            "name": "TZ"
+            "name": "TZ",
+            "preset":true
         }],
         "categories": [
             "Torrent"
@@ -7947,17 +8300,20 @@
             "default": "1000",
             "description": "for UserID",
             "label": "PUID",
-            "name": "PUID"
+            "name": "PUID",
+            "preset":true
         },{
             "default": "1000",
             "description": "for GroupID",
             "label": "PGID",
-            "name": "PGID"
+            "name": "PGID",
+            "preset":true
         },{
             "default": "America/New_York",
             "description": "specify a timezone to use, see this [list](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones#List).",
             "label": "TZ",
-            "name": "TZ"
+            "name": "TZ",
+            "preset":true
         }],
         "categories": [
             "Other"
@@ -7988,17 +8344,20 @@
             "default": "1000",
             "description": "for GroupID",
             "label": "PUID",
-            "name": "PUID"
+            "name": "PUID",
+            "preset":true
         },{
             "default": "1000",
             "description": "for UserID",
             "label": "PGID",
-            "name": "PGID"
+            "name": "PGID",
+            "preset":true
         },{
             "default": "America/New_York",
             "description": "Specify a timezone to use, for example America/New_York",
             "label": "TZ",
-            "name": "TZ"
+            "name": "TZ",
+            "preset":true
         }],
         "categories": [
             "Backup"
@@ -8026,15 +8385,18 @@
         "env": [{
             "default": "1000",
             "label": "PUID",
-            "name": "PUID"
+            "name": "PUID",
+            "preset":true
         },{
             "default": "1000",
             "label": "PGID",
-            "name": "PGID"
+            "name": "PGID",
+            "preset":true
         },{
             "default": "America/New_York",
             "label": "TZ",
-            "name": "TZ"
+            "name": "TZ",
+            "preset":true
         }],
         "category": [
             "Torrent"
@@ -8066,17 +8428,20 @@
             "default": "1000",
             "description": "for GroupID",
             "label": "PUID",
-            "name": "PUID"
+            "name": "PUID",
+            "preset":true
         },{
             "default": "1000",
             "description": "for UserID",
             "label": "PGID",
-            "name": "PGID"
+            "name": "PGID",
+            "preset":true
         },{
             "default": "America/New_York",
             "description": "Specify a timezone to use, for example America/New_York",
             "label": "TZ",
-            "name": "TZ"
+            "name": "TZ",
+            "preset":true
         }],
         "categories": [
             "Automation"
@@ -8135,17 +8500,20 @@
             "default": "1000",
             "description": "for GroupID",
             "label": "PUID",
-            "name": "PUID"
+            "name": "PUID",
+            "preset":true
         },{
             "default": "1000",
             "description": "for UserID",
             "label": "PGID",
-            "name": "PGID"
+            "name": "PGID",
+            "preset":true
         },{
             "default": "America/New_York",
             "description": "Specify a timezone to use, for example America/New_York",
             "label": "TZ",
-            "name": "TZ"
+            "name": "TZ",
+            "preset":true
         },{
             "default": "http://localhost:8080",
             "description": "# optional - API endpoint of the scrutiny UI. Do not change unless using as a remote collector",
@@ -8191,17 +8559,20 @@
             "default": "1000",
             "description": "for GroupID",
             "label": "PUID",
-            "name": "PUID"
+            "name": "PUID",
+            "preset":true
         },{
             "default": "1000",
             "description": "for UserID",
             "label": "PGID",
-            "name": "PGID"
+            "name": "PGID",
+            "preset":true
         },{
             "default": "America/New_York",
             "description": "Specify a timezone to use, for example America/New_York",
             "label": "TZ",
-            "name": "TZ"
+            "name": "TZ",
+            "preset":true
         }],
         "categories": [
             "Movies"
@@ -8232,12 +8603,14 @@
             "default": "1000",
             "description": "for GroupID",
             "label": "PUID",
-            "name": "PUID"
+            "name": "PUID",
+            "preset":true
         },{
             "default": "1000",
             "description": "for UserID",
             "label": "PGID",
-            "name": "PGID"
+            "name": "PGID",
+            "preset":true
         }],
         "category": [
 		    "Movies"
@@ -8312,17 +8685,20 @@
             "default": "1000",
             "description": "for GroupID",
             "label": "PUID",
-            "name": "PUID"
+            "name": "PUID",
+            "preset":true
         },{
             "default": "1000",
             "description": "for UserID",
             "label": "PGID",
-            "name": "PGID"
+            "name": "PGID",
+            "preset":true
         },{
             "default": "America/New_York",
             "description": "Specify a timezone to use for example America/New_York",
             "label": "TZ",
-            "name": "TZ"
+            "name": "TZ",
+            "preset":true
         }],
         "categories": [
             "Other"
@@ -8386,12 +8762,14 @@
             "default": "1000",
             "description": "for GroupID",
             "label": "PUID",
-            "name": "PUID"
+            "name": "PUID",
+            "preset":true
         },{
             "default": "1000",
             "description": "for UserID",
             "label": "PGID",
-            "name": "PGID"
+            "name": "PGID",
+            "preset":true
         },{
             "default": "<hostname or ip>",
             "description": "Hostname or IP and port if applicable IE <ip or hostname>:8080",
@@ -8471,12 +8849,14 @@
             "default": "1000",
             "description": "for GroupID",
             "label": "PUID",
-            "name": "PUID"
+            "name": "PUID",
+            "preset":true
         },{
             "default": "1000",
             "description": "for UserID",
             "label": "PGID",
-            "name": "PGID"
+            "name": "PGID",
+            "preset":true
         },{
             "default": "America/New_York",
             "description": "Specify a timezone to use for example America/New_York",
@@ -8509,19 +8889,22 @@
             "default": "1000",
             "description": "for GroupID",
             "label": "PUID",
-            "name": "PUID"
+            "name": "PUID",
+            "preset":true
           },
           {
             "default": "1000",
             "description": "for UserID",
             "label": "PGID",
-            "name": "PGID"
+            "name": "PGID",
+            "preset":true
           },
           {
             "default": "America/New_York",
             "description": "Specify a timezone to use for example America/New_York",
             "label": "TZ",
-            "name": "TZ"
+            "name": "TZ",
+            "preset":true
           }
         ],
         "categories": [
@@ -8631,17 +9014,20 @@
             "default": "1000",
             "description": "for GroupID",
             "label": "PUID",
-            "name": "PUID"
+            "name": "PUID",
+            "preset":true
         },{
             "default": "1000",
             "description": "for UserID",
             "label": "PGID",
-            "name": "PGID"
+            "name": "PGID",
+            "preset":true
         },{
             "default": "America/New_York",
             "description": "Specify a timezone to use for example America/New_York",
             "label": "TZ",
-            "name": "TZ"
+            "name": "TZ",
+            "preset":true
         },{
             "default": "yourdomain.url",
             "description": "Top url you have control over (`customdomain.com` if you own it, or `customsubdomain.ddnsprovider.com` if dynamic dns).",
@@ -8771,19 +9157,22 @@
             "default": "1000",
             "description": "for GroupID",
             "label": "PUID",
-            "name": "PUID"
+            "name": "PUID",
+            "preset":true
           },
           {
             "default": "1000",
             "description": "for UserID",
             "label": "PGID",
-            "name": "PGID"
+            "name": "PGID",
+            "preset":true
           },
           {
             "default": "America/New_York",
             "description": "Specify a timezone to use for example America/New_York",
             "label": "TZ",
-            "name": "TZ"
+            "name": "TZ",
+            "preset":true
           }
         ],
         "categories": [
@@ -8814,17 +9203,20 @@
             "default": "1000",
             "description": "for GroupID",
             "label": "PUID",
-            "name": "PUID"
+            "name": "PUID",
+            "preset":true
         },{
             "default": "1000",
             "description": "for UserID",
             "label": "PGID",
-            "name": "PGID"
+            "name": "PGID",
+            "preset":true
         },{
             "default": "America/New_York",
             "description": "Specify a timezone to use for example America/New_York",
             "label": "TZ",
-            "name": "TZ"
+            "name": "TZ",
+            "preset":true
         }],
         "categories": [
             "Management"
@@ -8906,17 +9298,20 @@
             "default": "1000",
             "description": "for GroupID",
             "label": "PUID",
-            "name": "PUID"
+            "name": "PUID",
+            "preset":true
         },{
             "default": "1000",
             "description": "for UserID",
             "label": "PGID",
-            "name": "PGID"
+            "name": "PGID",
+            "preset":true
         },{
             "default": "America/New_York",
             "description": "Specify a timezone to use for example America/New_York",
             "label": "TZ",
-            "name": "TZ"
+            "name": "TZ",
+            "preset":true
         }],
         "categories": [
             "IRC"
@@ -8956,11 +9351,13 @@
         "env": [{
             "label": "PUID",
             "name": "PUID",
-            "default": "1000"
+            "default": "1000",
+            "preset":true
         },{
             "label": "PGID",
             "name": "PGID",
-            "default": "1000"
+            "default": "1000",
+            "preset":true
         }],
         "categories": [
             "RSS"
@@ -9013,17 +9410,20 @@
             "default": "1000",
             "description": "for GroupID",
             "label": "PUID",
-            "name": "PUID"
+            "name": "PUID",
+            "preset":true
         },{
             "default": "1000",
             "description": "for UserID",
             "label": "PGID",
-            "name": "PGID"
+            "name": "PGID",
+            "preset":true
         },{
             "default": "America/New_York",
             "description": "Specify a timezone to use for example America/New_York",
             "label": "TZ",
-            "name": "TZ"
+            "name": "TZ",
+            "preset":true
         },{
             "default": "/combustion-release/",
             "description": "Specify an alternative UI options are [`/combustion-release/`](https://github.com/Secretmapper/combustion), [`/transmission-web-control/`](https://github.com/ronggang/transmission-web-control), [`/kettu/`](https://github.com/endor/kettu) and [`/flood-for-transmission/`](https://github.com/johman10/flood-for-transmission).",
@@ -9072,11 +9472,13 @@
         "env": [{
             "label": "PUID",
             "name": "PUID",
-            "default": "1000"
+            "default": "1000",
+            "preset":true
         },{
             "label": "PGID",
             "name": "PGID",
-            "default": "1000"
+            "default": "1000",
+            "preset":true
         },{
             "label": "OPENVPN_PROVIDER",
             "name": "OPENVPN_PROVIDER",
@@ -9150,17 +9552,20 @@
             "default": "1000",
             "description": "for GroupID",
             "label": "PUID",
-            "name": "PUID"
+            "name": "PUID",
+            "preset":true
         },{
             "default": "1000",
             "description": "for UserID",
             "label": "PGID",
-            "name": "PGID"
+            "name": "PGID",
+            "preset":true
         },{
             "default": "America/New_York",
             "description": "Specify a timezone to use for example America/New_York",
             "label": "TZ",
-            "name": "TZ"
+            "name": "TZ",
+            "preset":true
         },{
             "default": "<run options here>",
             "description": "Optionally specify additional arguments to be passed. See Additional runtime parameters.",
@@ -9200,17 +9605,20 @@
             "default": "1000",
             "description": "for GroupID",
             "label": "PUID",
-            "name": "PUID"
+            "name": "PUID",
+            "preset":true
         },{
             "default": "1000",
             "description": "for UserID",
             "label": "PGID",
-            "name": "PGID"
+            "name": "PGID",
+            "preset":true
         },{
             "default": "America/New_York",
             "description": "Specify a timezone to use for example America/New_York",
             "label": "TZ",
-            "name": "TZ"
+            "name": "TZ",
+            "preset":true
         },{
             "default": "<maxmem>",
             "description": "To set the maximum memory. ( ex: set '1024' for 1GB )",
@@ -9262,12 +9670,14 @@
             "default": "1000",
             "description": "for GroupID",
             "label": "PUID",
-            "name": "PUID"
+            "name": "PUID",
+            "preset":true
         },{
             "default": "1000",
             "description": "for UserID",
             "label": "PGID",
-            "name": "PGID"
+            "name": "PGID",
+            "preset":true
         },{
             "default": "1024M",
             "description": "Optionally change the Java memory limit (-Xmx) (default is 1024M).",
@@ -9312,11 +9722,13 @@
         "env": [{
             "default": "1000",
             "label": "PUID",
-            "name": "PUID"
+            "name": "PUID",
+            "preset":true
         },{
             "default": "1000",
             "label": "PGID",
-            "name": "PGID"
+            "name": "PGID",
+            "preset":true
         },{
             "default": "002",
             "label": "UMASK",
@@ -9395,17 +9807,20 @@
             "default": "1000",
             "description": "for UserID",
             "label": "PUID",
-            "name": "PUID"
+            "name": "PUID",
+            "preset":true
         },{
             "default": "1000",
             "description": "for GroupID",
             "label": "PGID",
-            "name": "PGID"
+            "name": "PGID",
+            "preset":true
         },{
             "default": "America/New_York",
             "description": "specify a timezone to use, see this [list](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones#List).",
             "label": "TZ",
-            "name": "TZ"
+            "name": "TZ",
+            "preset":true
         }],
         "categories": [
             "Development"
@@ -9556,17 +9971,20 @@
             "default": "1000",
             "description": "for UserID",
             "label": "PUID",
-            "name": "PUID"
+            "name": "PUID",
+            "preset":true
         },{
             "default": "1000",
             "description": "for GroupID",
             "label": "PGID",
-            "name": "PGID"
+            "name": "PGID",
+            "preset":true
         },{
             "default": "America/New_York",
             "description": "specify a timezone to use, see this [list](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones#List).",
             "label": "TZ",
-            "name": "TZ"
+            "name": "TZ",
+            "preset":true
         }],
         "categories": [
             "Chat"
@@ -9595,19 +10013,22 @@
             "default": "1000",
             "description": "for GroupID",
             "label": "PUID",
-            "name": "PUID"
+            "name": "PUID",
+            "preset":true
           },
           {
             "default": "1000",
             "description": "for UserID",
             "label": "PGID",
-            "name": "PGID"
+            "name": "PGID",
+            "preset":true
           },
           {
             "default": "America/New_York",
             "description": "Specify a timezone to use for example America/New_York",
             "label": "TZ",
-            "name": "TZ"
+            "name": "TZ",
+            "preset":true
           }
         ],
         "categories": [
@@ -9655,17 +10076,20 @@
             "default": "1000",
             "description": "for GroupID",
             "label": "PUID",
-            "name": "PUID"
+            "name": "PUID",
+            "preset":true
         },{
             "default": "1000",
             "description": "for UserID",
             "label": "PGID",
-            "name": "PGID"
+            "name": "PGID",
+            "preset":true
         },{
             "default": "America/New_York",
             "description": "Specify a timezone to use for example America/New_York",
             "label": "TZ",
-            "name": "TZ"
+            "name": "TZ",
+            "preset":true
         }],
         "categories": [
             "Wiki"
@@ -9771,17 +10195,20 @@
             "default": "1000",
             "description": "PUID",
             "label": "PUID",
-            "name": "PUID"
+            "name": "PUID",
+            "preset":true
         },{
             "default": "1000",
             "description": "PGID",
             "label": "PGID",
-            "name": "PGID"
+            "name": "PGID",
+            "preset":true
         },{
             "default": "America/New_York",
             "description": "TZ",
             "label": "TZ",
-            "name": "TZ"
+            "name": "TZ",
+            "preset":true
         }],
         "categories": [
             "Security",
@@ -9895,17 +10322,20 @@
             "default": "1000",
             "description": "for UserID",
             "label": "PUID",
-            "name": "PUID"
+            "name": "PUID",
+            "preset":true
         },{
             "default": "1000",
             "description": "for GroupID",
             "label": "PGID",
-            "name": "PGID"
+            "name": "PGID",
+            "preset":true
         },{
             "default": "America/New_York",
             "description": "specify a timezone to use, see this [list](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones#List).",
             "label": "TZ",
-            "name": "TZ"
+            "name": "TZ",
+            "preset":true
         }],
         "categories": [
             "Office"
@@ -9931,17 +10361,20 @@
             "default": "1000",
             "description": "for GroupID",
             "label": "PUID",
-            "name": "PUID"
+            "name": "PUID",
+            "preset":true
         },{
             "default": "1000",
             "description": "for UserID",
             "label": "PGID",
-            "name": "PGID"
+            "name": "PGID",
+            "preset":true
         },{
             "default": "America/New_York",
             "description": "Specify a timezone to use for example America/New_York",
             "label": "TZ",
-            "name": "TZ"
+            "name": "TZ",
+            "preset":true
         }],
         "categories": [
             "File Management"
@@ -9959,56 +10392,50 @@
             "80:80/tcp",
             "443:443/tcp"
         ],
-        "env": [
-            {
-                "default": "1000",
-                "description": "for UserID",
-                "label": "PUID",
-                "name": "PUID"
-            },
-            {
-                "default": "1000",
-                "description": "for GroupID",
-                "label": "PGID",
-                "name": "PGID"
-            },
-            {
-                "default": "America/New_York",
-                "description": "specify a timezone to use, see this [list](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones#List).",
-                "label": "TZ",
-                "name": "TZ"
-            },
-            {
-                "default": "http://localhost",
-                "description": "The protocol and hostname where the app will be accessed.",
-                "label": "APP_URL",
-                "name": "APP_URL"
-            },
-            {
-                "default": "",
-                "description": "Your Spotify application client ID.",
-                "label": "SPOTIFY_PUBLIC",
-                "name": "SPOTIFY_PUBLIC"
-            },
-            {
-                "default": "",
-                "description": "Your Spotify application secret.",
-                "label": "SPOTIFY_SECRET",
-                "name": "SPOTIFY_SECRET"
-            },
-            {
-                "default": "http://localhost:80,https://localhost:443",
-                "description": "Allowed CORS sources, set to `all` to allow any source.",
-                "label": "CORS",
-                "name": "CORS"
-            },
-            {
-                "default": "mongodb://mongo:27017/your_spotify",
-                "description": "Set mongodb endpoint address/port.",
-                "label": "MONGO_ENDPOINT",
-                "name": "MONGO_ENDPOINT"
-            }
-        ],
+        "env": [{
+            "default": "1000",
+            "description": "for UserID",
+            "label": "PUID",
+            "name": "PUID",
+            "preset":true
+        },{
+            "default": "1000",
+            "description": "for GroupID",
+            "label": "PGID",
+            "name": "PGID",
+            "preset":true
+        },{
+            "default": "America/New_York",
+            "description": "specify a timezone to use, see this [list](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones#List).",
+            "label": "TZ",
+            "name": "TZ",
+            "preset":true
+        },{
+            "default": "http://localhost",
+            "description": "The protocol and hostname where the app will be accessed.",
+            "label": "APP_URL",
+            "name": "APP_URL"
+        },{
+            "default": "",
+            "description": "Your Spotify application client ID.",
+            "label": "SPOTIFY_PUBLIC",
+            "name": "SPOTIFY_PUBLIC"
+        },{
+            "default": "",
+            "description": "Your Spotify application secret.",
+            "label": "SPOTIFY_SECRET",
+            "name": "SPOTIFY_SECRET"
+        },{
+            "default": "http://localhost:80,https://localhost:443",
+            "description": "Allowed CORS sources, set to `all` to allow any source.",
+            "label": "CORS",
+            "name": "CORS"
+        },{
+            "default": "mongodb://mongo:27017/your_spotify",
+            "description": "Set mongodb endpoint address/port.",
+            "label": "MONGO_ENDPOINT",
+            "name": "MONGO_ENDPOINT"
+        }],
         "categories": [
             "Management"
         ]
@@ -10033,17 +10460,20 @@
             "default": "1000",
             "description": "for UserID",
             "label": "PUID",
-            "name": "PUID"
+            "name": "PUID",
+            "preset":true
         },{
             "default": "1000",
             "description": "for GroupID",
             "label": "PGID",
-            "name": "PGID"
+            "name": "PGID",
+            "preset":true
         },{
             "default": "America/New_York",
             "description": "specify a timezone to use, see this [list](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones#List).",
             "label": "TZ",
-            "name": "TZ"
+            "name": "TZ",
+            "preset":true
         }],
         "categories": [
             "Other"
@@ -10068,17 +10498,20 @@
             "default": "1000",
             "description": "for GroupID",
             "label": "PUID",
-            "name": "PUID"
+            "name": "PUID",
+            "preset":true
         },{
             "default": "1000",
             "description": "for UserID",
             "label": "PGID",
-            "name": "PGID"
+            "name": "PGID",
+            "preset":true
         },{
             "default": "America/New_York",
             "description": "Specify a timezone to use for example America/New_York",
             "label": "TZ",
-            "name": "TZ"
+            "name": "TZ",
+            "preset":true
         }],
         "categories": [
             "IRC"
