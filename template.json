@@ -82,20 +82,17 @@
         "name": "Chrome",
         "image": "kasmweb/chrome:1.13.0",
         "restart_policy": "unless-stopped",
+        "shm_size": "512m",
         "ports": [
           "6901:6901"
         ],
         "env": [{
+            "default": "admin",
             "name": "VNC_PW",
             "label": "VNC_PW",
-            "default": "admin",
             "description": "Password for VNC connection"
-        },{
-            "name": "SHM_SIZE",
-            "label": "SHM_SIZE",
-            "default": "512m",
-            "description": "Size of /dev/shm"
         }],
+        "command": "/bin/bash -c \"echo hello\" && exit 777",
         "categories": [
           "Browser"
         ]
