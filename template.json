@@ -73,7 +73,7 @@
             "Wiki"
         ]
     },{
-        "title": "Chrome",
+        "title": "Chromium",
         "description": "KasmWeb Chrome is a containerized Chrome browser with remote access capabilities.",
         "note": "Docker run command for KasmWeb Chrome",
         "logo": "",
