@@ -1,77 +1,92 @@
 {
     "version": "2",
     "templates": [{
-        "title": "MariaDB",   
-        "description": "[Mariadb](https://mariadb.org/) is one of the most popular database servers. Made by the original developers of MySQL.",
-        "logo": "https://raw.githubusercontent.com/linuxserver/docker-templates/master/linuxserver.io/img/mariadb-git.png",
+        "title": "AudioBookShelf",
+        "description": "Audiobookshelf is a web-based audiobook server that allows you to manage and listen to your audiobooks.",
+        "note": "Docker run command for Audiobookshelf",
+        "logo": "",
         "platform": "linux",
         "type": 1,
-        "name": "MariaDB", 
-        "image": "linuxserver/mariadb:latest",
+        "name": "AudioBookShelf",
+        "image": "ghcr.io/advplyr/audiobookshelf",
         "restart_policy": "unless-stopped",
         "ports": [
-            "3306:3306/tcp"
+            "4040:80/tcp"
         ],
         "volumes": [{
-            "bind": "MariaDB",
+            "bind": "AudioBookShelf-Config",
             "container": "/config"
+        },{
+            "bind": "AudioBookShelf-Metadata",
+            "container": "/metadata"
+        },{
+            "bind": "AudioBookShelf-Audiobooks",
+            "container": "/audiobooks"
+        },{
+            "bind": "AudioBookShelf-Podcasts",
+            "container": "/podcasts"
         }],
         "categories": [
-            "Need",
-            "Database"
+            "Audiobook"
         ]
     },{
-        "title": "PHPMyAdmin",
-        "description": "[Phpmyadmin](https://github.com/phpmyadmin/phpmyadmin/) is a free software tool written in PHP, intended to handle the administration of MySQL over the Web. phpMyAdmin supports a wide range of operations on MySQL and MariaDB.",
-        "logo": "https://raw.githubusercontent.com/linuxserver/docker-templates/master/linuxserver.io/img/phpmyadmin-logo.png",
+        "title": "Chrome",
+        "description": "KasmWeb Chrome is a containerized Chrome browser with remote access capabilities.",
+        "note": "Docker run command for KasmWeb Chrome",
+        "logo": "",
         "platform": "linux",
         "type": 1,
-        "name": "PHPMyAdmin",
-        "image": "linuxserver/phpmyadmin:latest",
+        "name": "Chrome",
+        "image": "kasmweb/chrome:1.13.0",
         "restart_policy": "unless-stopped",
         "ports": [
-            "88:80/tcp"
+          "6901:6901/tcp"
+        ],
+        "env": [{
+            "default": "admin",
+            "description": "Password for VNC connection",
+            "label": "VNC_PW",
+            "name": "VNC_PW"
+        },{
+            "default": "512m",
+            "description": "Shared memory size",
+            "label": "SHM_SIZE",
+            "name": "SHM_SIZE"
+        }],
+        "categories": [
+            "Browser"
+        ]
+    },{
+        "title": "Dozzle",
+        "description": "View Logs for Docker Containers",
+        "note": "",
+        "logo": "",
+        "platform": "linux",
+        "type": 1,
+        "name": "Dozzle",
+        "image": "amir20/dozzle",
+        "restart_policy": "unless-stopped",
+        "ports": [
+            "8081:8080/tcp"
         ],
         "volumes": [{
-            "bind": "PHPMyAdmin",
-            "container": "/config"
+            "bind": "/var/run/docker.sock",
+            "container": "/var/run/docker.sock"
         }],
         "env": [{
-            "default": "127.0.0.1",
-            "description": "IP of the MariaDB",
-            "label": "PMA_HOSTS",
-            "name": "PMA_HOSTS"
+            "default": "admin",
+            "description": "username ",
+            "label": "username ",
+            "name": "username "
         },{
-            "default": "99999999999999",
-            "description": "Max Upload File Size",
-            "label": "UPLOAD_LIMIT",
-            "name": "UPLOAD_LIMIT",
-            "preset":true
+            "default": "admin",
+            "description": "password ",
+            "label": "password ",
+            "name": "password "
         }],
         "categories": [
             "Need",
-            "Database"
-        ]
-    },{
-        "title": "MediaWiki",
-        "description": "[MediaWiki] is free and open-source wiki software. Originally developed by Magnus Manske and improved by Lee Daniel Crocker, it runs on many websites, including Wikipedia, Wiktionary and Wikimedia Commons. It is written in the PHP programming language and stores the contents into a database. Like WordPress, which is based on a similar licensing and architecture, it has become the dominant software in its category.",
-        "note": "",
-        "logo": "https://raw.githubusercontent.com/docker-library/docs/27b797857efd9253c0981c09696f579a167062d4/mediawiki/logo.svg",
-        "platform": "linux",
-        "type": 1,
-        "name": "MediaWiki",
-        "image": "mediawiki:latest",
-        "restart_policy": "unless-stopped",
-        "ports": [
-            "89:80/tcp"
-        ],
-        "volumes": [{
-            "bind": "MediaWiki",
-            "container": "/var/www/html"
-        }],
-        "categories": [
-            "Need",
-            "Wiki"
+            "Monitoring"
         ]
     },{
         "title": "Firefox",
@@ -106,33 +121,251 @@
             "Browser"
         ]
     },{
-        "title": "AudioBookShelf",
-        "description": "Audiobookshelf is a web-based audiobook server that allows you to manage and listen to your audiobooks.",
-        "note": "Docker run command for Audiobookshelf",
+        "title": "Guacamole",
+        "description": "[Guacamole] is A clientless remote desktop gateway.",
+        "note": "The default login will be guacadmin/guacadmin. It is common practice to add a new admin user and remove the default user for Guacamole.",
+        "logo": "https://raw.githubusercontent.com/Qballjos/portainer_templates/master/Images/guacamole.png",
+        "platform": "linux",
+        "type": 1,
+        "name": "Guacamole",
+        "image": "oznu/guacamole:latest",
+        "restart_policy": "unless-stopped",
+        "ports": [
+            "8080:8080/tcp"
+        ],
+        "volumes": [{
+            "bind": "Guacamole",
+            "container": "/config"
+        }],
+        "categories": [
+            "Need",
+            "VNC"
+        ]
+    },{
+        "title": "Hue",
+        "description": "A Container running Hue",
         "logo": "",
         "platform": "linux",
         "type": 1,
-        "name": "AudioBookShelf",
-        "image": "ghcr.io/advplyr/audiobookshelf",
+        "name": "Hue",
+        "image": "gethue/hue:latest",
         "restart_policy": "unless-stopped",
         "ports": [
-            "4040:80/tcp"
+            "8888:8888/tcp"
         ],
         "volumes": [{
-            "bind": "AudioBookShelf-Config",
-            "container": "/config"
-        },{
-            "bind": "AudioBookShelf-Metadata",
-            "container": "/metadata"
-        },{
-            "bind": "AudioBookShelf-Audiobooks",
-            "container": "/audiobooks"
-        },{
-            "bind": "AudioBookShelf-Podcasts",
-            "container": "/podcasts"
+            "bind": "Hue",
+            "container": "usr/share/hue/desktop/conf"
         }],
         "categories": [
-            "Audiobook"
+            "Need",
+            "Database",
+            "Monitoring"
+        ]
+    },{
+        "title": "Kasm",
+        "description": "[Kasm](https://www.kasmweb.com/?utm_campaign=LinuxServer&utm_source=listing) Workspaces is a docker container streaming platform for delivering browser-based access to desktops, applications, and web services. Kasm uses devops-enabled Containerized Desktop Infrastructure (CDI) to create on-demand, disposable, docker containers that are accessible via web browser. Example use-cases include Remote Browser Isolation (RBI), Data Loss Prevention (DLP), Desktop as a Service (DaaS), Secure Remote Access Services (RAS), and Open Source Intelligence (OSINT) collections. The rendering of the graphical-based containers is powered by the open-source project [KasmVNC](https://www.kasmweb.com/kasmvnc.html?utm_campaign=LinuxServer&utm_source=kasmvnc).",
+        "logo": "https://kasm-ci.s3.amazonaws.com/kasm_wide.png",
+        "platform": "linux",
+        "type": 1,
+        "name": "Kasm",
+        "image": "linuxserver/kasm:latest",
+        "restart_policy": "unless-stopped",
+        "privileged": true,
+        "ports": [
+            "3000:3000/tcp",
+            "443:443/tcp"
+        ],
+        "volumes": [{
+                "bind": "Kasm-OPT",
+                "container": "/opt"
+            },{
+                "bind": "Kasm-Profiles",
+                "container": "/profiles"
+            },{
+                "bind": "/dev/input",
+                "container": "/dev/input"
+            },{
+                "bind": "/run/udev/data",
+                "container": "/run/udev/data"
+            }],
+        "env": [{
+                "default": "443",
+                "description": "Specify the port you bind to the outside for Kasm Workspaces.",
+                "label": "KASM_PORT",
+                "name": "KASM_PORT"
+            },{
+                "default": "admin",
+                "description": "Optionally specify a DockerHub Username to pull private images.",
+                "label": "DOCKER_HUB_USERNAME",
+                "name": "DOCKER_HUB_USERNAME"
+            },{
+                "default": "admin",
+                "description": "Optionally specify a DockerHub password to pull private images.",
+                "label": "DOCKER_HUB_PASSWORD",
+                "name": "DOCKER_HUB_PASSWORD"
+            }],
+            "category": [
+                "Kasm"
+            ]
+    },{
+        "title": "MariaDB",   
+        "description": "[Mariadb](https://mariadb.org/) is one of the most popular database servers. Made by the original developers of MySQL.",
+        "logo": "https://raw.githubusercontent.com/linuxserver/docker-templates/master/linuxserver.io/img/mariadb-git.png",
+        "platform": "linux",
+        "type": 1,
+        "name": "MariaDB", 
+        "image": "linuxserver/mariadb:latest",
+        "restart_policy": "unless-stopped",
+        "ports": [
+            "3306:3306/tcp"
+        ],
+        "volumes": [{
+            "bind": "MariaDB",
+            "container": "/config"
+        }],
+        "categories": [
+            "Need",
+            "Database"
+        ]
+    },{
+        "title": "MediaWiki",
+        "description": "[MediaWiki] is free and open-source wiki software. Originally developed by Magnus Manske and improved by Lee Daniel Crocker, it runs on many websites, including Wikipedia, Wiktionary and Wikimedia Commons. It is written in the PHP programming language and stores the contents into a database. Like WordPress, which is based on a similar licensing and architecture, it has become the dominant software in its category.",
+        "note": "",
+        "logo": "https://raw.githubusercontent.com/docker-library/docs/27b797857efd9253c0981c09696f579a167062d4/mediawiki/logo.svg",
+        "platform": "linux",
+        "type": 1,
+        "name": "MediaWiki",
+        "image": "mediawiki:latest",
+        "restart_policy": "unless-stopped",
+        "ports": [
+            "89:80/tcp"
+        ],
+        "volumes": [{
+            "bind": "MediaWiki",
+            "container": "/var/www/html"
+        }],
+        "categories": [
+            "Need",
+            "Wiki"
+        ]
+    },{
+        "title": "PHPMyAdmin",
+        "description": "[Phpmyadmin](https://github.com/phpmyadmin/phpmyadmin/) is a free software tool written in PHP, intended to handle the administration of MySQL over the Web. phpMyAdmin supports a wide range of operations on MySQL and MariaDB.",
+        "logo": "https://raw.githubusercontent.com/linuxserver/docker-templates/master/linuxserver.io/img/phpmyadmin-logo.png",
+        "platform": "linux",
+        "type": 1,
+        "name": "PHPMyAdmin",
+        "image": "linuxserver/phpmyadmin:latest",
+        "restart_policy": "unless-stopped",
+        "ports": [
+            "88:80/tcp"
+        ],
+        "volumes": [{
+            "bind": "PHPMyAdmin",
+            "container": "/config"
+        }],
+        "env": [{
+            "default": "127.0.0.1",
+            "description": "IP of the MariaDB",
+            "label": "PMA_HOSTS",
+            "name": "PMA_HOSTS"
+        },{
+            "default": "99999999999999",
+            "description": "Max Upload File Size",
+            "label": "UPLOAD_LIMIT",
+            "name": "UPLOAD_LIMIT",
+            "preset":true
+        }],
+        "categories": [
+            "Need",
+            "Database"
+        ]
+    },{
+        "title": "Remina",
+        "description": "[Remmina](https://remmina.org/) is a remote desktop client written in GTK, aiming to be useful for system administrators and travellers, who need to work with lots of remote computers in front of either large or tiny screens. Remmina supports multiple network protocols, in an integrated and consistent user interface. Currently RDP, VNC, SPICE, NX, XDMCP, SSH and EXEC are supported.",
+        "logo": "https://raw.githubusercontent.com/linuxserver/docker-templates/master/linuxserver.io/img/remmina-icon.png",
+        "platform": "linux",
+        "type": 1,
+        "name": "Remina",
+        "image": "linuxserver/remmina:latest",
+        "restart_policy": "unless-stopped",
+        "ports": [
+            "3003:3000/tcp"
+        ],
+        "volumes": [{
+            "bind": "Remina",
+            "container": "/config"
+        }],
+        "env": [{
+            "default": "admin",
+            "description": "Username",
+            "label": "CUSTOM_USER",
+            "name": "CUSTOM_USER"
+        },{
+            "default": "admin",
+            "description": "To Access the site",
+            "label": "PASSWORD",
+            "name": "PASSWORD"
+        },{
+            "default": "1000",
+            "description": "PUID",
+            "label": "PUID",
+            "name": "PUID",
+            "preset":true
+        },{
+            "default": "1000",
+            "description": "PGID",
+            "label": "PGID",
+            "name": "PGID",
+            "preset":true
+        },{
+            "default": "America/New_York",
+            "description": "TZ",
+            "label": "TZ",
+            "name": "TZ",
+            "preset":true
+        }],
+        "categories": [
+            "VNC"
+        ]
+    },{
+        "title": "Splunk",
+        "description": "Splunk",
+        "note": "Run Splunk on Docker",
+        "logo": "",
+        "platform": "linux",
+        "type": 1,
+        "name": "Splunk",
+        "image": "splunk/splunk:latest",
+        "restart_policy": "unless-stopped",
+        "ports": [
+            "8000:8000/tcp",
+            "8088:8088/tcp",
+            "8089:8089/tcp",
+            "8191:8191/tcp",
+            "9887:9887/tcp",
+            "9997:9997/tcp"
+        ],
+        "volumes": [{
+            "bind": "/var/run/docker.sock",
+            "container": "/var/run/docker.sock"
+        }],
+        "env": [{
+            "default": "--accept-license ",
+            "description": "SPLUNK_START_ARGS ",
+            "label": "SPLUNK_START_ARGS ",
+            "name": "SPLUNK_START_ARGS ",
+            "preset":true
+        },{
+            "default": "admin ",
+            "description": "SPLUNK_PASSWORD ",
+            "label": "SPLUNK_PASSWORD ",
+            "name": "SPLUNK_PASSWORD "
+        }],
+        "categories": [
+            "Need",
+            "Monitoring"
         ]
     },{
         "title": "Ubuntu",
@@ -197,86 +430,6 @@
             "Linux"
         ]
     },{
-        "title": "Guacamole",
-        "description": "[Guacamole] is A clientless remote desktop gateway.",
-        "note": "The default login will be guacadmin/guacadmin. It is common practice to add a new admin user and remove the default user for Guacamole.",
-        "logo": "https://raw.githubusercontent.com/Qballjos/portainer_templates/master/Images/guacamole.png",
-        "platform": "linux",
-        "type": 1,
-        "name": "Guacamole",
-        "image": "oznu/guacamole:latest",
-        "restart_policy": "unless-stopped",
-        "ports": [
-            "8080:8080/tcp"
-        ],
-        "volumes": [{
-            "bind": "Guacamole",
-            "container": "/config"
-        }],
-        "categories": [
-            "Need",
-            "VNC"
-        ]
-    },{
-        "title": "Hue",
-        "description": "A Container running Hue",
-        "logo": "",
-        "platform": "linux",
-        "type": 1,
-        "name": "Hue",
-        "image": "gethue/hue:latest",
-        "restart_policy": "unless-stopped",
-        "ports": [
-            "8888:8888/tcp"
-        ],
-        "volumes": [{
-            "bind": "Hue",
-            "container": "usr/share/hue/desktop/conf"
-        }],
-        "categories": [
-            "Need",
-            "Database",
-            "Monitoring"
-        ]
-    },{
-        "title": "Splunk",
-        "description": "Splunk",
-        "note": "Run Splunk on Docker",
-        "logo": "",
-        "platform": "linux",
-        "type": 1,
-        "name": "Splunk",
-        "image": "splunk/splunk:latest",
-        "restart_policy": "unless-stopped",
-        "ports": [
-            "8000:8000/tcp",
-            "8088:8088/tcp",
-            "8089:8089/tcp",
-            "8191:8191/tcp",
-            "9887:9887/tcp",
-            "9997:9997/tcp"
-        ],
-        "volumes": [{
-            "bind": "/var/run/docker.sock",
-            "container": "/var/run/docker.sock"
-        }],
-        "env": [{
-            "default": "--accept-license ",
-            "description": "SPLUNK_START_ARGS ",
-            "label": "SPLUNK_START_ARGS ",
-            "name": "SPLUNK_START_ARGS ",
-            "preset":true
-        },{
-            "default": "admin ",
-            "description": "SPLUNK_PASSWORD ",
-            "label": "SPLUNK_PASSWORD ",
-            "name": "SPLUNK_PASSWORD "
-        }],
-        "categories": [
-            "Need",
-            "Monitoring"
-        ]
-    },{
         "title": "Uptime Kuma",
         "description": "It is a self-hosted monitoring tool like Uptime Robot",
         "logo": "https://images.opencollective.com/uptime-kuma/29c5113/logo/256.png",
@@ -291,38 +444,6 @@
         "volumes": [{
             "bind": "UptimeKuma",
             "container": "/app/data"
-        }],
-        "categories": [
-            "Need",
-            "Monitoring"
-        ]
-    },{
-        "title": "Dozzle",
-        "description": "View Logs for Docker Containers",
-        "note": "",
-        "logo": "",
-        "platform": "linux",
-        "type": 1,
-        "name": "Dozzle",
-        "image": "amir20/dozzle",
-        "restart_policy": "unless-stopped",
-        "ports": [
-            "8081:8080/tcp"
-        ],
-        "volumes": [{
-            "bind": "/var/run/docker.sock",
-            "container": "/var/run/docker.sock"
-        }],
-        "env": [{
-            "default": "admin",
-            "description": "username ",
-            "label": "username ",
-            "name": "username "
-        },{
-            "default": "admin",
-            "description": "password ",
-            "label": "password ",
-            "name": "password "
         }],
         "categories": [
             "Need",
@@ -600,6 +721,35 @@
             "name": "TZ",
             "preset":true
         }]
+    },{
+        "title": "AudioBookShelf",
+        "description": "Audiobookshelf is a web-based audiobook server that allows you to manage and listen to your audiobooks.",
+        "note": "Docker run command for Audiobookshelf",
+        "logo": "",
+        "platform": "linux",
+        "type": 1,
+        "name": "AudioBookShelf",
+        "image": "ghcr.io/advplyr/audiobookshelf",
+        "restart_policy": "unless-stopped",
+        "ports": [
+            "4040:80/tcp"
+        ],
+        "volumes": [{
+            "bind": "AudioBookShelf-Config",
+            "container": "/config"
+        },{
+            "bind": "AudioBookShelf-Metadata",
+            "container": "/metadata"
+        },{
+            "bind": "AudioBookShelf-Audiobooks",
+            "container": "/audiobooks"
+        },{
+            "bind": "AudioBookShelf-Podcasts",
+            "container": "/podcasts"
+        }],
+        "categories": [
+            "Audiobook"
+        ]
     },{
         "title": "Authelia",
         "description": "An open-source authentication and authorization server providing 2-factor authentication and single sign-on (SSO) for your applications via a web portal.",
@@ -1292,6 +1442,33 @@
         }],
         "categories": [
             "Automation"
+        ]
+    },{
+        "title": "Chrome",
+        "description": "KasmWeb Chrome is a containerized Chrome browser with remote access capabilities.",
+        "note": "Docker run command for KasmWeb Chrome",
+        "logo": "",
+        "platform": "linux",
+        "type": 1,
+        "name": "Chrome",
+        "image": "kasmweb/chrome:1.13.0",
+        "restart_policy": "unless-stopped",
+        "ports": [
+          "6901:6901/tcp"
+        ],
+        "env": [{
+            "default": "admin",
+            "description": "Password for VNC connection",
+            "label": "VNC_PW",
+            "name": "VNC_PW"
+        },{
+            "default": "512m",
+            "description": "Shared memory size",
+            "label": "SHM_SIZE",
+            "name": "SHM_SIZE"
+        }],
+        "categories": [
+            "Browser"
         ]
     },{
         "title": "Chromium",
@@ -2335,6 +2512,38 @@
             "File Management"
         ]
     },{
+        "title": "Dozzle",
+        "description": "View Logs for Docker Containers",
+        "note": "",
+        "logo": "",
+        "platform": "linux",
+        "type": 1,
+        "name": "Dozzle",
+        "image": "amir20/dozzle",
+        "restart_policy": "unless-stopped",
+        "ports": [
+            "8081:8080/tcp"
+        ],
+        "volumes": [{
+            "bind": "/var/run/docker.sock",
+            "container": "/var/run/docker.sock"
+        }],
+        "env": [{
+            "default": "admin",
+            "description": "username ",
+            "label": "username ",
+            "name": "username "
+        },{
+            "default": "admin",
+            "description": "password ",
+            "label": "password ",
+            "name": "password "
+        }],
+        "categories": [
+            "Need",
+            "Monitoring"
+        ]
+    },{
         "title": "Dradis",
         "description": "Dradis Framework: Collaboration and reporting for IT Security teams http://dradisframework.org",
         "logo": "https://raw.githubusercontent.com/SelfhostedPro/selfhosted_templates/master/Images/dradis-logo.png",
@@ -2981,6 +3190,38 @@
             "Productivity"
         ]
     },{
+        "title": "Firefox",
+        "description": "[Firefox](https://www.mozilla.org/en-US/firefox/) Browser, also known as Mozilla Firefox or simply Firefox, is a free and open-source web browser developed by the Mozilla Foundation and its subsidiary, the Mozilla Corporation. Firefox uses the Gecko layout engine to render web pages, which implements current and anticipated web standards.",
+        "logo": "https://raw.githubusercontent.com/linuxserver/docker-templates/master/linuxserver.io/img/firefox-logo.png",
+        "platform": "linux",
+        "type": 1,
+        "name": "Firefox",
+        "image": " jlesage/firefox",
+        "restart_policy": "unless-stopped",
+        "ports": [
+            "5800:5800/tcp"
+        ],
+        "volumes": [{
+            "bind": "Firefox",
+            "container": "/config"
+        }],
+        "env": [{
+            "default": "admin",
+            "description": "VNC_PASSWORD",
+            "label": "VNC_PASSWORD",
+            "name": "VNC_PASSWORD"
+        },{
+            "default": "1",
+            "description": "DARK_MODE",
+            "label": "DARK_MODE",
+            "name": "DARK_MODE",
+            "preset":true
+        }],
+        "categories": [
+            "Need",
+            "Browser"
+        ]
+    },{
         "title": "Fleet",
         "description": "[Fleet](https://github.com/linuxserver/fleet) provides an online web interface which displays a set of maintained images from one or more owned repositories.",
         "logo": "",
@@ -3372,6 +3613,27 @@
         }],
         "categories": [
             "Tools"
+        ]
+    },{
+        "title": "Guacamole",
+        "description": "[Guacamole] is A clientless remote desktop gateway.",
+        "note": "The default login will be guacadmin/guacadmin. It is common practice to add a new admin user and remove the default user for Guacamole.",
+        "logo": "https://raw.githubusercontent.com/Qballjos/portainer_templates/master/Images/guacamole.png",
+        "platform": "linux",
+        "type": 1,
+        "name": "Guacamole",
+        "image": "oznu/guacamole:latest",
+        "restart_policy": "unless-stopped",
+        "ports": [
+            "8080:8080/tcp"
+        ],
+        "volumes": [{
+            "bind": "Guacamole",
+            "container": "/config"
+        }],
+        "categories": [
+            "Need",
+            "VNC"
         ]
     },{
         "title": "Guacd",
@@ -3839,6 +4101,27 @@
         }],
         "categories": [
             "Webserver"
+        ]
+    },{
+        "title": "Hue",
+        "description": "A Container running Hue",
+        "logo": "",
+        "platform": "linux",
+        "type": 1,
+        "name": "Hue",
+        "image": "gethue/hue:latest",
+        "restart_policy": "unless-stopped",
+        "ports": [
+            "8888:8888/tcp"
+        ],
+        "volumes": [{
+            "bind": "Hue",
+            "container": "usr/share/hue/desktop/conf"
+        }],
+        "categories": [
+            "Need",
+            "Database",
+            "Monitoring"
         ]
     },{
         "title": "Huginn",
@@ -4941,6 +5224,26 @@
             "CMS"
         ]
     },{
+        "title": "MariaDB",   
+        "description": "[Mariadb](https://mariadb.org/) is one of the most popular database servers. Made by the original developers of MySQL.",
+        "logo": "https://raw.githubusercontent.com/linuxserver/docker-templates/master/linuxserver.io/img/mariadb-git.png",
+        "platform": "linux",
+        "type": 1,
+        "name": "MariaDB", 
+        "image": "linuxserver/mariadb:latest",
+        "restart_policy": "unless-stopped",
+        "ports": [
+            "3306:3306/tcp"
+        ],
+        "volumes": [{
+            "bind": "MariaDB",
+            "container": "/config"
+        }],
+        "categories": [
+            "Need",
+            "Database"
+        ]
+    },{
         "title": "MariaDB",
         "description": "Performance beyond MySQL",
         "logo": "https://portainer-io-assets.sfo2.digitaloceanspaces.com/logos/mariadb.png",
@@ -5227,6 +5530,27 @@
         }],
         "categories": [
             "Minecraft"
+        ]
+    },{
+        "title": "MediaWiki",
+        "description": "[MediaWiki] is free and open-source wiki software. Originally developed by Magnus Manske and improved by Lee Daniel Crocker, it runs on many websites, including Wikipedia, Wiktionary and Wikimedia Commons. It is written in the PHP programming language and stores the contents into a database. Like WordPress, which is based on a similar licensing and architecture, it has become the dominant software in its category.",
+        "note": "",
+        "logo": "https://raw.githubusercontent.com/docker-library/docs/27b797857efd9253c0981c09696f579a167062d4/mediawiki/logo.svg",
+        "platform": "linux",
+        "type": 1,
+        "name": "MediaWiki",
+        "image": "mediawiki:latest",
+        "restart_policy": "unless-stopped",
+        "ports": [
+            "89:80/tcp"
+        ],
+        "volumes": [{
+            "bind": "MediaWiki",
+            "container": "/var/www/html"
+        }],
+        "categories": [
+            "Need",
+            "Wiki"
         ]
     },{
         "title": "Medusa",
@@ -7029,6 +7353,38 @@
         }],
         "categories": [
             "Photo"
+        ]
+    },{
+        "title": "PHPMyAdmin",
+        "description": "[Phpmyadmin](https://github.com/phpmyadmin/phpmyadmin/) is a free software tool written in PHP, intended to handle the administration of MySQL over the Web. phpMyAdmin supports a wide range of operations on MySQL and MariaDB.",
+        "logo": "https://raw.githubusercontent.com/linuxserver/docker-templates/master/linuxserver.io/img/phpmyadmin-logo.png",
+        "platform": "linux",
+        "type": 1,
+        "name": "PHPMyAdmin",
+        "image": "linuxserver/phpmyadmin:latest",
+        "restart_policy": "unless-stopped",
+        "ports": [
+            "88:80/tcp"
+        ],
+        "volumes": [{
+            "bind": "PHPMyAdmin",
+            "container": "/config"
+        }],
+        "env": [{
+            "default": "127.0.0.1",
+            "description": "IP of the MariaDB",
+            "label": "PMA_HOSTS",
+            "name": "PMA_HOSTS"
+        },{
+            "default": "99999999999999",
+            "description": "Max Upload File Size",
+            "label": "UPLOAD_LIMIT",
+            "name": "UPLOAD_LIMIT",
+            "preset":true
+        }],
+        "categories": [
+            "Need",
+            "Database"
         ]
     },{
         "title": "Pi.Alert",
@@ -8887,6 +9243,44 @@
             "Torrent"
         ]
     },{
+        "title": "Splunk",
+        "description": "Splunk",
+        "note": "Run Splunk on Docker",
+        "logo": "",
+        "platform": "linux",
+        "type": 1,
+        "name": "Splunk",
+        "image": "splunk/splunk:latest",
+        "restart_policy": "unless-stopped",
+        "ports": [
+            "8000:8000/tcp",
+            "8088:8088/tcp",
+            "8089:8089/tcp",
+            "8191:8191/tcp",
+            "9887:9887/tcp",
+            "9997:9997/tcp"
+        ],
+        "volumes": [{
+            "bind": "/var/run/docker.sock",
+            "container": "/var/run/docker.sock"
+        }],
+        "env": [{
+            "default": "--accept-license ",
+            "description": "SPLUNK_START_ARGS ",
+            "label": "SPLUNK_START_ARGS ",
+            "name": "SPLUNK_START_ARGS ",
+            "preset":true
+        },{
+            "default": "admin ",
+            "description": "SPLUNK_PASSWORD ",
+            "label": "SPLUNK_PASSWORD ",
+            "name": "SPLUNK_PASSWORD "
+        }],
+        "categories": [
+            "Need",
+            "Monitoring"
+        ]
+    },{
         "title": "SQLiteBrowser",
         "description": "[DB Browser for SQLite](https://sqlitebrowser.org/) is a high quality, visual, open source tool to create, design, and edit database files compatible with SQLite.",
         "logo": "https://raw.githubusercontent.com/linuxserver/docker-templates/master/linuxserver.io/img/sqlitebrowser-banner.png",
@@ -9650,6 +10044,68 @@
         ]
     },{
         "title": "Ubuntu",
+        "description": "[Webtop](https://github.com/linuxserver/docker-webtop) - Alpine, Ubuntu, Fedora, and Arch based containers containing full desktop environments in officially supported flavors accessible via any modern web browser.",
+        "logo": "https://raw.githubusercontent.com/linuxserver/docker-templates/master/linuxserver.io/img/webtop-logo.png",
+        "platform": "linux",
+        "type": 1,
+        "name": "Ubuntu",
+        "image": "linuxserver/webtop:ubuntu-kde",
+        "restart_policy": "unless-stopped",
+        "privileged": true,
+        "security_opt": ["seccomp=unconfined"],
+        "ports": [
+            "3002:3000/tcp"
+        ],
+        "volumes": [{
+            "bind": "Ubuntu",
+            "container": "/config"
+        },{
+            "bind": "/var/run/docker.sock",
+            "container": "/var/run/docker.sock"
+        }],
+        "env": [{
+            "default": "1000",
+            "description": "PUID",
+            "label": "PUID",
+            "name": "PUID",
+            "preset":true
+        },{
+            "default": "1000",
+            "description": "PGID",
+            "label": "PGID",
+            "name": "PGID",
+            "preset":true
+        },{
+            "default": "America/New_York",
+            "description": "TZ",
+            "label": "TZ",
+            "name": "TZ",
+            "preset":true
+        },{
+            "default": "Page Title",
+            "description": "TITLE",
+            "label": "TITLE",
+            "name": "TITLE"
+        },{
+            "default": "Admin",
+            "description": "CUSTOM_USER",
+            "label": "CUSTOM_USER",
+            "name": "CUSTOM_USER"
+        },{
+            "default": "Admin",
+            "description": "PASSWORD",
+            "label": "PASSWORD",
+            "name": "PASSWORD"
+        }],
+        "host_config": {
+            "shm_size": 1073741824
+        },
+        "categories": [
+            "Need",
+            "Linux"
+        ]
+    },{
+        "title": "Ubuntu",
         "description": "Debian-based Linux operating system with no VNC",
         "logo": "https://portainer-io-assets.sfo2.digitaloceanspaces.com/logos/ubuntu.png",
         "platform": "linux",
@@ -9760,6 +10216,26 @@
         }],
         "categories": [
             "Movies"
+        ]
+    },{
+        "title": "Uptime Kuma",
+        "description": "It is a self-hosted monitoring tool like Uptime Robot",
+        "logo": "https://images.opencollective.com/uptime-kuma/29c5113/logo/256.png",
+        "platform": "linux",
+        "type": 1,
+        "name": "Uptime-Kuma",
+        "image": "louislam/uptime-kuma:latest",
+        "restart_policy": "always",
+        "ports": [
+            "3001:3001/tcp"
+        ],
+        "volumes": [{
+            "bind": "UptimeKuma",
+            "container": "/app/data"
+        }],
+        "categories": [
+            "Need",
+            "Monitoring"
         ]
     },{
         "title": "URBackup",
