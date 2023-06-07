@@ -83,7 +83,7 @@
         "image": "kasmweb/chrome:1.13.0",
         "restart_policy": "unless-stopped",
         "host_config": {
-            "shm_size": 1073741824
+            "shm_size": 131072
         },
         "ports": [
             "6901:6901"
