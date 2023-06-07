@@ -2631,6 +2631,33 @@
             "CMS"
         ]
     },{
+        "title": "Edge",
+        "description": "KasmWeb Edge is a containerized Edge browser with remote access capabilities.",
+        "note": "Docker run command for KasmWeb Edge",
+        "logo": "",
+        "platform": "linux",
+        "type": 1,
+        "name": "Edge",
+        "image": "kasmweb/edge:1.13.0",
+        "restart_policy": "unless-stopped",
+        "ports": [
+          "6901:6901/tcp"
+        ],
+        "env": [{
+            "default": "admin",
+            "description": "Password for VNC connection",
+            "label": "VNC_PW",
+            "name": "VNC_PW"
+        },{
+            "default": "512m",
+            "description": "Shared memory size",
+            "label": "SHM_SIZE",
+            "name": "SHM_SIZE"
+        }],
+        "categories": [
+            "Browser"
+        ]
+    },{
         "title": "ElasticSearch",
         "description": "Open-source search and analytics engine",
         "logo": "https://portainer-io-assets.sfo2.digitaloceanspaces.com/logos/elasticsearch.png",
@@ -9729,6 +9756,33 @@
         }],
         "categories": [
             "RSS"
+        ]
+    },{
+        "title": "Tor",
+        "description": "KasmWeb Tor is a containerized Tor browser with remote access capabilities.",
+        "note": "Docker run command for KasmWeb Tor",
+        "logo": "",
+        "platform": "linux",
+        "type": 1,
+        "name": "Tor",
+        "image": "kasmweb/tor-browser:1.13.0",
+        "restart_policy": "unless-stopped",
+        "ports": [
+          "6901:6901/tcp"
+        ],
+        "env": [{
+            "default": "admin",
+            "description": "Password for VNC connection",
+            "label": "VNC_PW",
+            "name": "VNC_PW"
+        },{
+            "default": "512m",
+            "description": "Shared memory size",
+            "label": "SHM_SIZE",
+            "name": "SHM_SIZE"
+        }],
+        "categories": [
+            "Browser"
         ]
     },{
         "title": "TOSIBOX Lock for Container",
