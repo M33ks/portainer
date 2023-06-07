@@ -91,34 +91,30 @@
         ]
     },{
         "title": "Firefox",
-        "description": "[Firefox](https://www.mozilla.org/en-US/firefox/) Browser, also known as Mozilla Firefox or simply Firefox, is a free and open-source web browser developed by the Mozilla Foundation and its subsidiary, the Mozilla Corporation. Firefox uses the Gecko layout engine to render web pages, which implements current and anticipated web standards.",
-        "logo": "https://raw.githubusercontent.com/linuxserver/docker-templates/master/linuxserver.io/img/firefox-logo.png",
+        "description": "KasmWeb Firefox is a containerized Firefox with remote access capabilities.",
+        "note": "Docker run command for KasmWeb Firefox",
+        "logo": "",
         "platform": "linux",
         "type": 1,
         "name": "Firefox",
-        "image": " jlesage/firefox",
+        "image": "kasmweb/firefox:1.13.0",
         "restart_policy": "unless-stopped",
         "ports": [
-            "5800:5800/tcp"
+          "6904:6901/tcp"
         ],
-        "volumes": [{
-            "bind": "Firefox",
-            "container": "/config"
-        }],
         "env": [{
             "default": "admin",
-            "description": "VNC_PASSWORD",
-            "label": "VNC_PASSWORD",
-            "name": "VNC_PASSWORD"
+            "description": "Password for VNC connection",
+            "label": "VNC_PW",
+            "name": "VNC_PW"
         },{
-            "default": "1",
-            "description": "DARK_MODE",
-            "label": "DARK_MODE",
-            "name": "DARK_MODE",
-            "preset":true
+            "default": "512m",
+            "description": "Shared memory size",
+            "label": "SHM_SIZE",
+            "name": "SHM_SIZE"
         }],
         "categories": [
-            "Need",
+            "Kasm",
             "Browser"
         ]
     },{
@@ -174,7 +170,7 @@
         "image": "kasmweb/kali-rolling-desktop:1.13.0",
         "restart_policy": "unless-stopped",
         "ports": [
-          "6901:6901/tcp"
+          "6903:6901/tcp"
         ],
         "env": [{
             "default": "admin",
@@ -361,7 +357,7 @@
         "image": "kasmweb/tor-browser:1.13.0",
         "restart_policy": "unless-stopped",
         "ports": [
-          "6901:6901/tcp"
+          "6902:6901/tcp"
         ],
         "env": [{
             "default": "admin",
