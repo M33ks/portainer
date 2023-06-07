@@ -262,58 +262,6 @@
             "Monitoring"
         ]
     },{
-        "title": "Booksonic-Air",
-        "description": "[Booksonic-air](http://booksonic.org) is a platform for accessing the audibooks you own wherever you are. At the moment the platform consists of Booksonic Air - A server for streaming your audiobooks, successor to the original Booksonic server and based on Airsonic. Booksonic App - An DSub based Android app for connection to Booksonic-Air servers. .",
-        "logo": "https://raw.githubusercontent.com/linuxserver/docker-templates/master/linuxserver.io/img/booksonic-air.png",
-        "platform": "linux",
-        "type": 1,
-        "name": "Booksonic-Air",
-        "image": "linuxserver/booksonic-air:latest",
-        "restart_policy": "unless-stopped",
-        "ports": [
-            "4041:4040/tcp"
-        ],
-        "volumes": [{
-            "bind": "BooksonicAir-Config",
-            "container": "/config"
-        },{
-            "bind": "BooksonicAir-Audiobooks",
-            "container": "/audiobooks"
-        },{
-            "bind": "BooksonicAir-Music",
-            "container": "/music"
-        },{
-            "bind": "BooksonicAir-Podcasts",
-            "container": "/podcasts"
-        },{
-            "bind": "BooksonicAir-Othermedia",
-            "container": "/othermedia"
-        }],
-        "env": [{
-            "default": "",
-            "description": "Base url for use with reverse proxies etc.",
-            "label": "CONTEXT_PATH",
-            "name": "CONTEXT_PATH"
-        },{
-            "default": "1000",
-            "description": "PUID",
-            "label": "PUID",
-            "name": "PUID"
-        },{
-            "default": "1000",
-            "description": "PGID",
-            "label": "PGID",
-            "name": "PGID"
-        },{
-            "default": "America/New_York",
-            "description": "TZ",
-            "label": "TZ",
-            "name": "TZ"
-        }],
-        "categories": [
-            "Audiobooks"
-        ]
-    },{
         "title": "Dozzle",
         "description": "View Logs for Docker Containers",
         "note": "",
@@ -418,9 +366,7 @@
             "name": "CONFIGFILE"
         }],
         "categories": [
-            "Other",
-            "VPN",
-            "Tools"
+            "VPN"
         ]
     },{
         "title": "Airsonic",
@@ -534,9 +480,8 @@
             "name": "JAVA_OPTS"
         }],
         "categories": [
-            "Other",
-            "VPN",
-            "Tools"
+            "Music",
+            "Audiobook"
         ]
     },{
         "title": "Apprise-API",
@@ -628,8 +573,6 @@
             "name": "TZ"
         }],
         "categories": [
-            "Other",
-            "Tools",
             "Authentication"
         ]
     },{
@@ -670,7 +613,7 @@
             "description": "Add any address you'd like to access Babybuddy at (comma separated, no spaces)"
         }],
         "categories": [
-            "Other"
+            "Baby"
         ]
     },{
         "title": "Bazarr",
@@ -828,7 +771,7 @@
             "description": "Specify a subfolder to use with reverse proxies, IE `/subfolder/`"
         }],
         "categories": [
-            "Photography"
+            "Photo"
         ]
     },{
         "title": "Booksonic",
@@ -1017,7 +960,7 @@
             "name": "TZ"
         }],
         "categories": [
-            "Other"
+            "Finance"
         ]
     },{
         "title": "Caddy",
@@ -1184,7 +1127,7 @@
                 "name": "BASE_URL"
             }],
             "categories": [
-                "Other"
+                "Monitoring"
             ]
     },{
         "title": "Chevereto",
@@ -1244,8 +1187,6 @@
             "name": "TZ"
         }],
         "categories": [
-            "Other",
-            "Tools",
             "Photo"
         ]
     },{
@@ -1265,8 +1206,7 @@
             "container": "/config"
         }],
         "categories": [
-            "Other",
-            "Tools"
+            "Automation"
         ]
     },{
         "title": "Chromium",
@@ -1652,8 +1592,7 @@
             "container": "/dashmachine/dashmachine/user_data"
         }],
         "categories": [
-            "Other",
-            "Tools"
+            "Bookmarks"
         ]
     },{
         "title": "Datadog agent",
@@ -1811,7 +1750,6 @@
             "container": "/downloads"
         }],
         "categories": [
-            "Other",
             "Music"
         ]
     },{
@@ -1904,9 +1842,7 @@
             "name": "OPENVPN_PASSWORD"
         }],
         "categories": [
-            "Other",
-            "VPN",
-            "Tools"
+            "VPN"
         ]
     },{
         "title": "Digikam",
@@ -1932,7 +1868,7 @@
             "description": "Specify a subfolder to use with reverse proxies, IE `/subfolder/`"
         }],
         "categories": [
-            "Photography"
+            "Photo"
         ]
     },{
         "title": "Dillinger",
@@ -2253,7 +2189,8 @@
             "name": "JAVA_OPTS"
         }],
         "categories": [
-            "Other"
+            "Bot",
+            "Discord"
         ]
     },{
         "title": "DoubleCommander",
@@ -2684,7 +2621,7 @@
             "name": "VERBOSITY"
         }],
         "categories": [
-            "Other"
+            "Authentication"
         ]
     },{
         "title": "FDO",
@@ -2746,7 +2683,7 @@
             "name": "FEED_LIMIT"
         }],
         "categories": [
-            "Other"
+            "RSS"
         ]
     },{
         "title": "Fenrus",
@@ -2857,8 +2794,7 @@
             "container": "/myfiles"
         }],
         "categories": [
-            "Other",
-            "Tools"
+            "File Management"
         ]
     },{
         "title": "FileZilla",
@@ -3107,7 +3043,7 @@
             "name": "TZ"
         }],
         "categories": [
-            "Other"
+            "Git"
         ]
     },{
         "title": "Gitlab CE",
@@ -3136,7 +3072,8 @@
         }],
         "categories": [
             "Development",
-            "Project-Management"
+            "Project-Management",
+            "Git"
         ]
     },{
         "title": "GitQlient",
@@ -3173,7 +3110,7 @@
             "name": "TZ"
         }],
         "categories": [
-            "Other"
+            "Git"
         ]
     },{
         "title": "Ghost",
@@ -3357,7 +3294,7 @@
             "name": "TZ"
         }],
         "categories": [
-            "Misc"
+            "Music"
         ]
     },{
         "title": "Healthchecks",
@@ -3457,7 +3394,7 @@
             "name": "SECRET_KEY"
         }],
         "categories": [
-            "Misc"
+            "Tools"
         ]
     },{
         "title": "HedgeDoc",
@@ -3601,7 +3538,7 @@
             "name": "HISHTORY_POSTGRES_DB"
         }],
         "categories": [
-            "Other"
+            "Shell"
         ]
     },{
         "title": "HomeAssistant",
@@ -3660,8 +3597,7 @@
             "container": "/www/config.yml"
         }],
         "categories": [
-            "Other",
-            "Tools"
+            "Webserver"
         ]
     },{
         "title": "HTPC Manager",
@@ -3690,8 +3626,7 @@
         }],
         "categories": [
             "Video",
-            "Music",
-            "Other"
+            "Music"
         ]
     },{
         "title": "Httpd",
@@ -3730,8 +3665,7 @@
             "container": "/var/lib/mysql"
         }],
         "categories": [
-            "Other",
-            "Tools"
+            "Monitor"
         ]
     },{
         "title": "Invoice Ninja",
@@ -3773,8 +3707,6 @@
         "categories": [
             "Cloud",
             "Productivity",
-            "Tools",
-            "Other",
             "Web"
         ]
     },{
@@ -3946,7 +3878,7 @@
             "name": "RUN_OPTS"
         }],
         "categories": [
-            "Misc"
+            "Proxy"
         ]
     },{
         "title": "Jellyfin",
@@ -4121,7 +4053,7 @@
             "name": "URL_ENDPOINT"
         }],
         "categories": [
-            "Other"
+            "Kodi"
         ]
     },{
         "title": "Kasm",
@@ -4167,7 +4099,7 @@
                 "name": "DOCKER_HUB_PASSWORD"
             }],
             "category": [
-                "Other"
+                "Kasm"
             ]
     },{
         "title": "KDenLive",
@@ -4208,7 +4140,7 @@
             "name": "SUBFOLDER"
         }],
         "category": [
-            "Other"
+            "Video"
         ]
     },{
         "title": "Kodi-Headless",
@@ -4289,7 +4221,7 @@
             "name": "DOCKER_MODS"
         }],
         "categories": [
-            "Other"
+            "Books"
         ]
     },{
         "title": "LetsEncrypt",
@@ -4390,7 +4322,7 @@
             "name": "KEYFILE"
         }],
         "categories": [
-            "Other"
+            "Authentication"
         ]
     },{
         "title": "LibreOffice",
@@ -4552,7 +4484,7 @@
             "name": "DB_PORT"
         }],
         "categories": [
-            "Other"
+            "Office"
         ]
     },{
         "title": "Lidarr",
@@ -4593,7 +4525,7 @@
             "name": "TZ"
         }],
         "categories": [
-            "Other"
+            "Bit"
         ]
     },{
         "title": "Limnoria",
@@ -4628,7 +4560,7 @@
             "name": "TZ"
         }],
         "categories": [
-            "Other"
+            "Bot"
         ]
     },{
         "title": "LiveSwitch",
@@ -4685,7 +4617,7 @@
             "name": "TZ"
         }],
         "categories": [
-            "Other"
+            "Music"
         ]
     },{
         "title": "Lychee",
@@ -4743,7 +4675,7 @@
             "name": "DB_DATABASE"
         }],
         "categories": [
-            "Other"
+            "Photo"
         ]
     },{
         "title": "Magento 2",
@@ -5048,7 +4980,7 @@
             "name": "PGID"
         }],
         "categories": [
-            "Other"
+            "Minecraft"
         ]
     },{
         "title": "Medusa",
@@ -5089,7 +5021,7 @@
             "name": "TZ"
         }],
         "categories": [
-            "Other"
+            "Movies"
         ]
     },{
         "title": "Microsoft-OMSAgent",
@@ -5164,7 +5096,7 @@
             "name": "CLI_ARGS"
         }],
         "categories": [
-            "Other"
+            "Minecraft"
         ]
     },{
         "title": "Minisatip",
@@ -5206,7 +5138,7 @@
             "name": "RUN_OPTS"
         }],
         "categories": [
-            "Other"
+            "Video"
         ]
     },{
         "title": "Minio",
@@ -5322,7 +5254,7 @@
             "name": "LOCAL_NET"
         }],
         "categories": [
-            "Other"
+            "Browser"
         ]
     },{
         "title": "Murmur",
@@ -5364,7 +5296,6 @@
             "name": "TZ"
         }],
         "categories": [
-            "Other",
             "Voice",
             "Chat"
         ]
@@ -5409,9 +5340,7 @@
             }
         ],
         "category": [
-            "Music",
-            "Other",
-            "Tools"
+            "Music"
         ]
     },{
         "title": "Muximux",
@@ -5466,7 +5395,7 @@
             "name": "PGID"
         }],
         "categories": [
-            "Other"
+            "Books"
         ]
     },{
         "title": "MySQL",
@@ -5529,7 +5458,7 @@
             "name": "TZ"
         }],
         "categories": [
-            "Other"
+            "Database"
         ]
     },{
         "title": "Nano",
@@ -5615,7 +5544,7 @@
             }
         ],
         "categories": [
-            "Other"
+            "Finance"
         ]
     },{
         "title": "Nano-Wallet",
@@ -5631,7 +5560,7 @@
             "80:80/tcp"
         ],
         "categories": [
-            "Other"
+            "Finance"
         ]
     },{
         "title": "NetBootXYZ",
@@ -5681,7 +5610,7 @@
             "name": "SUBFOLDER"
         }],
         "categories": [
-            "Other"
+            "Linux"
         ]
     },{
         "title": "NetBox",
@@ -5816,7 +5745,7 @@
             "name": "REMOTE_AUTH_DEFAULT_PERMISSIONS"
         }],
         "categories": [
-            "Other"
+            "Monitor"
         ]
     },{
         "title": "NextCloud",
@@ -5914,7 +5843,7 @@
             "name": "TZ"
         }],
         "categories": [
-            "Other"
+            "IRC"
         ]
     },{
         "title": "Nntp2nntp",
@@ -5959,7 +5888,7 @@
             "name": "PGID"
         }],
         "categories": [
-            "Other"
+            "Proxy"
         ]
     },{
         "title": "NodeJS",
@@ -6037,9 +5966,7 @@
             "name": "PGID"
         }],
         "categories": [
-            "Downloaders",
-            "Other",
-            "Tools"
+            "Downloaders"
         ]
     },{
         "title": "Ombi",
@@ -6069,9 +5996,8 @@
         }],
         "categories": [
             "Downloaders",
-            "Other",
-            "Video",
-            "Tools"
+            "Plex",
+            "Video"
         ]
     },{
         "title": "OPC Router",
@@ -6431,8 +6357,7 @@
             "name": "TZ"
         }],
         "category": [
-            "Other",
-            "Tools"
+            "Management"
         ]
     },{
         "title": "Organizr V2",
@@ -6461,8 +6386,7 @@
             "name": "PGID"
         }],
         "categories": [
-          "Other",
-          "Tools"
+          "Management"
         ]
     },{
         "title": "OScam",
@@ -6492,7 +6416,7 @@
             "name": "PGID"
         }],
         "categories": [
-            "Other"
+            "streaming"
         ]
     },{
         "title": "Owncloud",
@@ -6541,8 +6465,6 @@
         "categories": [
             "Cloud",
             "Productivity",
-            "Tools",
-            "Other",
             "Web"
         ]
     },{
@@ -6629,7 +6551,7 @@
             "description": "Set to `true` to debug the http server configuration by logging clients IP addresses used by PairDrop to STDOUT. [See here for more info](https://github.com/schlagmichdoch/PairDrop/blob/master/docs/host-your-own.md#debug-mode). Do not use in production!"
         }],
         "categories": [
-            "Other"
+            "Air Drop"
         ]
     },{
         "title": "Paperless-NG",
@@ -6672,7 +6594,7 @@
             "name": "REDIS_URL"
         }],
         "categories": [
-            "Other"
+            "File Management"
         ]
     },{
         "title": "PaperMerge",
@@ -6715,7 +6637,7 @@
             "name": "REDIS_URL"
         }],
         "categories": [
-            "Other"
+            "File Management"
         ]
     },{
         "title": "Petio",
@@ -6746,8 +6668,7 @@
             "name": "PORT"
         }],
         "categories": [
-            "Other",
-            "Tools"
+            "Plex"
         ]
     },{
         "title": "PhotoShow",
@@ -6787,7 +6708,9 @@
             "label": "TZ",
             "name": "TZ"
         }],
-        "categories": []
+        "categories": [
+            "Photo"
+        ]
     },{
         "title": "Pi.Alert",
         "description": "WIFI / LAN intruder detector",
@@ -6841,7 +6764,7 @@
             "container": "/etc/dnsmasq.d"
         }],
         "categories": [
-            "Adblocker"
+            "AdBlocker"
         ]
     },{
         "title": "Pidgin",
@@ -6878,7 +6801,7 @@
             "description": "specify a timezone to use, see this [list](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones#List)."
         }],
         "categories": [
-            "Other"
+            "Chat"
         ]
     },{
         "title": "Piwigo",
@@ -6916,7 +6839,7 @@
                 "name": "TZ"
             }],
         "categories": [
-            "Other"
+            "Photo"
         ]
     },{
         "title": "Pixapop",
@@ -6964,7 +6887,7 @@
             "name": "APP_PASSWORD"
         }],
         "categories": [
-            "Productivity"
+            "Photo"
         ]
     },{
         "title": "Plesk",
@@ -7029,7 +6952,7 @@
             "name": "PLEX_CLAIM"
         }],
         "categories": [
-            "Other"
+            "Plex"
         ]
     },{
         "title": "Plex Requests",
@@ -7065,10 +6988,7 @@
             "name": "URL_BASE"
         }],
         "categories": [
-            "Downloaders",
-            "Other",
-            "Video",
-            "Tools"
+            "Plex"
         ]
     },{
         "title": "Plex-meta-manager",
@@ -7125,7 +7045,7 @@
             "description": "Set to `True` to run without any of the missing movie/show functions."
         }],
         "categories": [
-            "Media Management"
+            "Plex"
         ]
     },{
         "title": "Plone",
@@ -7207,8 +7127,6 @@
         }],
         "categories": [
             "VPN",
-            "Tools",
-            "Other",
             "Web"
         ]
     },{
@@ -7252,7 +7170,7 @@
             "name": "MAX_UPLOAD"
         }],
         "categories": [
-            "Other"
+            "File Management"
         ]
     },{
         "title": "ProtonMail Bridge",
@@ -7272,10 +7190,7 @@
             "container": "/root"
         }],
         "categories": [
-            "Email",
-            "Productivity",
-            "Tools",
-            "Other"
+            "Email"
         ]
     },{
         "title": "Prowlarr",
@@ -7304,7 +7219,7 @@
         }],
         "categories": [
             "Downloaders",
-            "Video"
+            "Proxy"
         ]
     },{
         "title": "PWNDrop",
@@ -7342,7 +7257,10 @@
             "description": "Secret path for admin access. Defaults to `/pwndrop`. This parameter only takes effect during initial install; it can later be changed in the web gui.",
             "label": "SECRET_PATH",
             "name": "SECRET_PATH"
-        }]
+        }],
+        "categories": [
+            "File Management"
+        ]
     },{
         "title": "Pydio",
         "description": "Pydio (formerly AjaXplorer) is a mature open source software solution for file sharing and synchronization. With intuitive user interfaces (web / mobile / desktop), Pydio provides enterprise-grade features to gain back control and privacy of your data: user directory connectors, legacy filesystems drivers, comprehensive admin interface, and much more.",
@@ -7378,8 +7296,7 @@
             "name": "TZ"
         }],
         "category": [
-            "Cloud",
-            "Other"
+            "Cloud"
         ]
     },{
         "title": "Pydio-cells",
@@ -7425,7 +7342,7 @@
                 "name": "SERVER_IP"
             }],
         "categories": [
-            "Other"
+            "Cloud"
         ]
     },{
         "title": "PyLoad",
@@ -7464,7 +7381,7 @@
             "name": "TZ"
         }],
         "categories": [
-            "Other"
+            "Download"
         ]
     },{
         "title": "Pyload-ng",
@@ -7504,7 +7421,7 @@
             "name": "TZ"
         }],
         "categories": [
-            "Other"
+            "Download"
         ]
     },{
         "title": "Pylon",
@@ -7587,12 +7504,11 @@
                 "name": "WEBUI_PORT"
             }],
         "categories": [
-            "Other"
+            "Torrent"
         ]
     },{
         "title": "QDirStat",
         "description": "[QDirStat](https://github.com/shundhammer/qdirstat) Qt-based directory statistics: KDirStat without any KDE -- from the author of the original KDirStat.",
-        "note": "Portainer App Templates by <a href='https://www.technorabilia.com' target='_blank'>Technorabilia</a> based on data provided by <a href='https://www.linuxserver.io' target='_blank'>LinuxServer.io</a>.</p><p>Don't forget to create the volume directories on the host file system.</p><p>mkdir -p /volume1/docker/qdirstat/config<br>mkdir -p /volume1/docker/qdirstat/data</p>",
         "logo": "https://raw.githubusercontent.com/linuxserver/docker-templates/master/linuxserver.io/img/qdirstat-logo.png",
         "platform": "linux",
         "type": 1,
@@ -7627,7 +7543,7 @@
             "name": "TZ"
         }],
         "categories": [
-            "Other"
+            "File Management"
         ]
     },{
         "title": "Quassel-Core",
@@ -7673,7 +7589,6 @@
     },{
         "title": "Quassel-web",
         "description": "[Quassel-web](https://github.com/magne4000/quassel-webserver) is a web client for Quassel. Note that a Quassel-Core instance is required, we have a container available [here.](https://hub.docker.com/r/linuxserver/quassel-core/)",
-        "note": "Portainer App Templates by <a href='https://www.technorabilia.com' target='_blank'>Technorabilia</a> based on data provided by <a href='https://www.linuxserver.io' target='_blank'>LinuxServer.io</a>.</p><p>Don't forget to create the volume directories on the host file system.</p><p>mkdir -p /volume1/docker/quassel-web/config</p>",
         "logo": "https://raw.githubusercontent.com/linuxserver/docker-templates/master/linuxserver.io/img/quassel-web-banner.png",
         "platform": "linux",
         "type": 1,
@@ -7719,7 +7634,7 @@
             "name": "URL_BASE"
         }],
         "categories": [
-            "Other"
+            "IRC"
         ]
     },{
         "title": "RabbitMQ",
@@ -7780,7 +7695,7 @@
             "name": "TZ"
         }],
         "categories": [
-            "Other"
+            "Movies"
         ]
       },{
         "title": "Raneto",
@@ -7834,8 +7749,7 @@
             "container": "/usr/src/app"
         }],
         "categories": [
-            "Other",
-            "Tools"
+            "Resume"
         ]
     },{
         "title": "Redmine",
@@ -7935,7 +7849,7 @@
             "name": "TZ"
         }],
         "categories": [
-          "Media"
+          "Bot"
         ]
       },{
         "title": "Resilio-Sync",
@@ -7977,7 +7891,7 @@
             "name": "TZ"
         }],
         "categories": [
-            "VNC"
+            "Torrent"
         ]
       },{
         "title": "RDesktop",
@@ -8005,7 +7919,6 @@
     },{
         "title": "Readme-Sync",
         "description": "This container needs special attention. Please check [here](https://hub.docker.com/r/linuxserver/readme-sync) for details.",
-        "note": "Portainer App Templates by <a href='https://www.technorabilia.com' target='_blank'>Technorabilia</a> based on data provided by <a href='https://www.linuxserver.io' target='_blank'>LinuxServer.io</a>.</p><p>Don't forget to create the volume directories on the host file system.</p><p>mkdir -p /volume1/docker/readme-sync/config</p>",
         "logo": "",
         "platform": "linux",
         "type": 1,
@@ -8077,7 +7990,7 @@
             "name": "TZ"
         }],
         "categories": [
-            "Other"
+            "Backup"
         ]
     },{
         "title": "RUTorrent",
@@ -8113,7 +8026,7 @@
             "name": "TZ"
         }],
         "category": [
-            "Downloaders"
+            "Torrent"
         ]
     },{
         "title": "Sabnzbd",
@@ -8155,7 +8068,7 @@
             "name": "TZ"
         }],
         "categories": [
-            "Other"
+            "Automation"
         ]
     },{
         "title": "Scality S3",
@@ -8280,7 +8193,7 @@
             "name": "TZ"
         }],
         "categories": [
-            "Other"
+            "Movies"
         ]
     },{
         "title": "SickGear",
@@ -8316,7 +8229,7 @@
             "name": "PGID"
         }],
         "category": [
-		    "Other"
+		    "Movies"
 	    ]
       },{
         "title": "Sematext Docker Agent",
@@ -8501,7 +8414,7 @@
             "name": "MYSQL_PASSWORD"
         }],
         "categories": [
-            "Other"
+            "Management"
         ]
     },{
         "title": "Solr",
@@ -8561,7 +8474,7 @@
             "name": "TZ"
         }],
         "categories": [
-            "Other"
+            "Torrent"
         ]
     },{
         "title": "SQLiteBrowser",
@@ -8602,7 +8515,7 @@
           }
         ],
         "categories": [
-            "Other"
+            "Database"
         ]
     },{
         "title": "SQL Server",
@@ -8812,7 +8725,7 @@
             "name": "AUTOJOIN_ROOM"
         }],
         "categories": [
-            "Other"
+            "Plex"
         ]
     },{
         "title": "SyncThing",
@@ -8864,7 +8777,7 @@
           }
         ],
         "categories": [
-            "Other"
+            "Cloud"
         ]
       },{
         "title": "Syslog-ng",
@@ -8904,7 +8817,7 @@
             "name": "TZ"
         }],
         "categories": [
-            "Other"
+            "Management"
         ]
     },{
         "title": "Taisun",
@@ -8961,9 +8874,7 @@
         }],
         "categories": [
             "VPN",
-            "Tools",
-            "Other",
-            "Web"
+            "Management"
         ]
     },{
         "title": "TheLounge",
@@ -8998,7 +8909,7 @@
             "name": "TZ"
         }],
         "categories": [
-            "Other"
+            "IRC"
         ]
     },{
         "title": "TiddlyWiki",
@@ -9017,8 +8928,7 @@
             "container": "/var/lib/tiddlywiki"
         }],
         "categories": [
-            "Other",
-            "Tools"
+            "Wiki"
         ]
     },{
         "title": "Tiny Tiny RSS",
@@ -9043,7 +8953,7 @@
             "default": "1000"
         }],
         "categories": [
-            "Other"
+            "RSS"
         ]
     },{
         "title": "TOSIBOX Lock for Container",
@@ -9131,7 +9041,7 @@
             "name": "HOST_WHITELIST"
         }],
         "categories": [
-            "Other"
+            "Torrent"
         ]
     },{
         "title": "Transmission-OpenVPN",
@@ -9176,9 +9086,7 @@
             "default": "192.168.0.0/24"
         }],
         "categories": [
-            "Other",
-            "VPN",
-            "Tools"
+            "VPN"
         ]
     },{
         "title": "Trilium",
@@ -9250,7 +9158,7 @@
             "name": "RUN_OPTS"
         }],
         "categories": [
-            "Other"
+            "Movies"
         ]
     },{
         "title": "UbooQuity",
@@ -9300,7 +9208,7 @@
             "name": "MAXMEM"
         }],
         "categories": [
-            "Other"
+            "Books"
         ]
     },{
         "title": "Ubuntu",
@@ -9409,7 +9317,7 @@
             "set": "UniFi Video"
         }],
         "categories": [
-            "CCTV"
+            "Movies"
         ]
     },{
         "title": "URBackup",
@@ -9432,7 +9340,7 @@
             "container": "/var/urbackup"
         }],
         "categories": [
-          "backup"
+          "Backup"
         ]
     },{
         "title": "VaultWarden",
@@ -9490,7 +9398,7 @@
             "name": "TZ"
         }],
         "categories": [
-            "Other"
+            "Development"
         ]
     },{
         "title": "Yacht",
@@ -9512,8 +9420,7 @@
             "container": "/var/run/docker.sock"
         }],
         "categories": [
-            "Other",
-            "Tools"
+            "Docker"
         ]
     },{
         "title": "YouTubeDL-Material",
@@ -9616,14 +9523,11 @@
             "container": "/var/run/docker.sock"
         }],
         "categories": [
-            "Other",
-            "Tools",
-            "Maintenance"
+            "Backup"
         ]
     },{
         "title": "WebCord",
         "description": "[WebCord](https://github.com/SpacingBat3/WebCord) can be summarized as a pack of security and privacy hardenings, Discord features reimplementations, Electron / Chromium / Discord bugs workarounds, stylesheets, internal pages and wrapped https://discord.com page, designed to conform with ToS as much as it is possible (or hide the changes that might violate it from Discord's eyes).",
-        "note": "Portainer App Templates by <a href='https://www.technorabilia.com' target='_blank'>Technorabilia</a> based on data provided by <a href='https://www.linuxserver.io' target='_blank'>LinuxServer.io</a>.</p><p>Don't forget to create the volume directories on the host file system.</p><p>mkdir -p /volume1/docker/webcord/config</p>",
         "logo": "https://raw.githubusercontent.com/linuxserver/docker-templates/master/linuxserver.io/img/webcord-icon.png",
         "platform": "linux",
         "type": 1,
@@ -9655,7 +9559,7 @@
             "name": "TZ"
         }],
         "categories": [
-            "Other"
+            "Chat"
         ]
     },{
         "title": "WebGrabPlus",
@@ -9697,7 +9601,7 @@
           }
         ],
         "categories": [
-            "Other"
+            "Movies"
         ]
     },{
         "title": "Website",
@@ -9754,7 +9658,7 @@
             "name": "TZ"
         }],
         "categories": [
-            "Other"
+            "Wiki"
         ]
     },{
         "title": "WireGuard",
@@ -9994,7 +9898,7 @@
             "name": "TZ"
         }],
         "categories": [
-            "Other"
+            "Documents"
         ]
     },{
         "title": "XBackBone",
@@ -10030,12 +9934,11 @@
             "name": "TZ"
         }],
         "categories": [
-            "Other"
+            "File Management"
         ]
     },{
         "title": "Your_spotify",
         "description": "[Your_spotify](https://github.com/Yooooomi/your_spotify) is a self-hosted application that tracks what you listen and offers you a dashboard to explore statistics about it! It's composed of a web server which polls the Spotify API every now and then and a web application on which you can explore your statistics.",
-        "note": "Portainer App Templates by <a href='https://www.technorabilia.com' target='_blank'>Technorabilia</a> based on data provided by <a href='https://www.linuxserver.io' target='_blank'>LinuxServer.io</a>.</p><p>Don't forget to create the volume directories on the host file system.</p>",
         "logo": "https://raw.githubusercontent.com/linuxserver/docker-templates/master/linuxserver.io/img/your_spotify-logo.png",
         "platform": "linux",
         "type": 1,
@@ -10095,6 +9998,9 @@
                 "label": "MONGO_ENDPOINT",
                 "name": "MONGO_ENDPOINT"
             }
+        ],
+        "categories": [
+            "Management"
         ]
     },{
         "title": "Yq",
@@ -10165,7 +10071,7 @@
             "name": "TZ"
         }],
         "categories": [
-            "Other"
+            "IRC"
         ]
     }      
 ]}
