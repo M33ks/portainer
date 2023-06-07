@@ -73,31 +73,6 @@
             "Wiki"
         ]
     },{
-        "title": "Kasm-Chrome",
-        "description": "KasmWeb Chrome is a containerized Chrome browser with remote access capabilities.",
-        "note": "Docker run command for KasmWeb Chrome",
-        "logo": "",
-        "platform": "linux",
-        "type": 1,
-        "name": "Kasm-Chrome",
-        "image": "kasmweb/chrome:1.13.0",
-        "restart_policy": "unless-stopped",
-        "host_config": {
-            "shm_size": 131072
-        },
-        "ports": [
-            "6901:6901"
-        ],
-        "env": [{
-            "default": "admin",
-            "name": "VNC_PW",
-            "label": "VNC_PW",
-            "description": "Password for VNC connection"
-        }],
-        "categories": [
-          "Browser"
-        ]
-      },{
         "title": "Firefox",
         "description": "[Firefox](https://www.mozilla.org/en-US/firefox/) Browser, also known as Mozilla Firefox or simply Firefox, is a free and open-source web browser developed by the Mozilla Foundation and its subsidiary, the Mozilla Corporation. Firefox uses the Gecko layout engine to render web pages, which implements current and anticipated web standards.",
         "logo": "https://raw.githubusercontent.com/linuxserver/docker-templates/master/linuxserver.io/img/firefox-logo.png",
@@ -153,17 +128,6 @@
         },{
             "bind": "AudioBookShelf-Podcasts",
             "container": "/podcasts"
-        }],
-        "env": [{
-            "default": "1000",
-            "description": "",
-            "label": "PUID",
-            "name": "PUID"
-        },{
-            "default": "1000",
-            "description": "",
-            "label": "PGID",
-            "name": "PGID"
         }],
         "categories": [
             "Audiobook"
