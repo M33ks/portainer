@@ -163,52 +163,6 @@
             "Monitoring"
         ]
     },{
-        "title": "Kasm",
-        "description": "[Kasm](https://www.kasmweb.com/?utm_campaign=LinuxServer&utm_source=listing) Workspaces is a docker container streaming platform for delivering browser-based access to desktops, applications, and web services. Kasm uses devops-enabled Containerized Desktop Infrastructure (CDI) to create on-demand, disposable, docker containers that are accessible via web browser. Example use-cases include Remote Browser Isolation (RBI), Data Loss Prevention (DLP), Desktop as a Service (DaaS), Secure Remote Access Services (RAS), and Open Source Intelligence (OSINT) collections. The rendering of the graphical-based containers is powered by the open-source project [KasmVNC](https://www.kasmweb.com/kasmvnc.html?utm_campaign=LinuxServer&utm_source=kasmvnc).",
-        "logo": "https://kasm-ci.s3.amazonaws.com/kasm_wide.png",
-        "platform": "linux",
-        "type": 1,
-        "name": "Kasm",
-        "image": "linuxserver/kasm:latest",
-        "restart_policy": "unless-stopped",
-        "privileged": true,
-        "ports": [
-            "3000:3000/tcp",
-            "443:443/tcp"
-        ],
-        "volumes": [{
-                "bind": "Kasm-OPT",
-                "container": "/opt"
-            },{
-                "bind": "Kasm-Profiles",
-                "container": "/profiles"
-            },{
-                "bind": "/dev/input",
-                "container": "/dev/input"
-            },{
-                "bind": "/run/udev/data",
-                "container": "/run/udev/data"
-            }],
-        "env": [{
-                "default": "443",
-                "description": "Specify the port you bind to the outside for Kasm Workspaces.",
-                "label": "KASM_PORT",
-                "name": "KASM_PORT"
-            },{
-                "default": "admin",
-                "description": "Optionally specify a DockerHub Username to pull private images.",
-                "label": "DOCKER_HUB_USERNAME",
-                "name": "DOCKER_HUB_USERNAME"
-            },{
-                "default": "admin",
-                "description": "Optionally specify a DockerHub password to pull private images.",
-                "label": "DOCKER_HUB_PASSWORD",
-                "name": "DOCKER_HUB_PASSWORD"
-            }],
-            "category": [
-                "Kasm"
-            ]
-    },{
         "title": "MariaDB",   
         "description": "[Mariadb](https://mariadb.org/) is one of the most popular database servers. Made by the original developers of MySQL.",
         "logo": "https://raw.githubusercontent.com/linuxserver/docker-templates/master/linuxserver.io/img/mariadb-git.png",
