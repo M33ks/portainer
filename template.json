@@ -106,13 +106,13 @@
             "Browser"
         ]
     },{
-        "title": "AudioBookShelfs",
+        "title": "Audio-Book-Shelf",
         "description": "Audiobookshelf is a web-based audiobook server that allows you to manage and listen to your audiobooks.",
         "type": 1,
-        "name": "AudioBookShelfs",
+        "name": "Audio-Book-Shelfs",
         "image": "ghcr.io/advplyr/audiobookshelf",
         "ports": [
-            "4040:80"
+            "4040:80/tcp"
         ]
     },{
         "title": "Ubuntu",
