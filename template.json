@@ -164,6 +164,34 @@
             "Monitoring"
         ]
     },{
+        "title": "Kali",
+        "description": "KasmWeb Kali is a containerized Kali with remote access capabilities.",
+        "note": "Docker run command for KasmWeb Kali",
+        "logo": "",
+        "platform": "linux",
+        "type": 1,
+        "name": "Kali",
+        "image": "kasmweb/kali-rolling-desktop:1.13.0",
+        "restart_policy": "unless-stopped",
+        "ports": [
+          "6901:6901/tcp"
+        ],
+        "env": [{
+            "default": "admin",
+            "description": "Password for VNC connection",
+            "label": "VNC_PW",
+            "name": "VNC_PW"
+        },{
+            "default": "512m",
+            "description": "Shared memory size",
+            "label": "SHM_SIZE",
+            "name": "SHM_SIZE"
+        }],
+        "categories": [
+            "Kasm",
+            "OS"
+        ]
+    },{
         "title": "MariaDB",   
         "description": "[Mariadb](https://mariadb.org/) is one of the most popular database servers. Made by the original developers of MySQL.",
         "logo": "https://raw.githubusercontent.com/linuxserver/docker-templates/master/linuxserver.io/img/mariadb-git.png",
@@ -321,6 +349,34 @@
         "categories": [
             "Need",
             "Monitoring"
+        ]
+    },{
+        "title": "Tor",
+        "description": "KasmWeb Tor is a containerized Tor browser with remote access capabilities.",
+        "note": "Docker run command for KasmWeb Tor",
+        "logo": "",
+        "platform": "linux",
+        "type": 1,
+        "name": "Tor",
+        "image": "kasmweb/tor-browser:1.13.0",
+        "restart_policy": "unless-stopped",
+        "ports": [
+          "6901:6901/tcp"
+        ],
+        "env": [{
+            "default": "admin",
+            "description": "Password for VNC connection",
+            "label": "VNC_PW",
+            "name": "VNC_PW"
+        },{
+            "default": "512m",
+            "description": "Shared memory size",
+            "label": "SHM_SIZE",
+            "name": "SHM_SIZE"
+        }],
+        "categories": [
+            "Browser",
+            "Kasm"
         ]
     },{
         "title": "Ubuntu",
