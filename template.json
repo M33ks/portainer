@@ -532,7 +532,8 @@
             "name": "CONFIGFILE"
         }],
         "categories": [
-            "VPN"
+            "AdBlocker",
+            "Linux Server"
         ]
     },{
         "title": "Airsonic",
@@ -592,7 +593,9 @@
             "name": "JAVA_OPTS"
         }],
         "categories": [
-          "Music"
+          "Music",
+          "Audiobook",
+          "Linux Server"
         ]
     },{
         "title": "AirSonic-Advanced",
@@ -653,7 +656,8 @@
         }],
         "categories": [
             "Music",
-            "Audiobook"
+            "Audiobook",
+            "Linux Server"
         ]
     },{
         "title": "AlmaLinuxDesktop",
@@ -747,7 +751,9 @@
             "preset":true
         }],
         "categories": [
-            "Notifications"
+            "Notifications",
+            "Linux Server",
+            "API"
         ]
     },{
         "title": "Atom",
@@ -811,12 +817,16 @@
             "label": "TZ",
             "name": "TZ",
             "preset":true
-        }]
+        }],
+        "categories": [
+            "Music",
+            "Linux Server"
+        ]
     },{
         "title": "Audacity",
         "description": "KasmWeb Audacity is a containerized Audacity with remote access capabilities.",
         "note": "Docker run command for KasmWeb Audacity",
-        "logo": "",
+        "logo": "https://raw.githubusercontent.com/linuxserver/docker-templates/master/linuxserver.io/img/audacity-logo.png",
         "platform": "linux",
         "type": 1,
         "name": "Audacity",
@@ -837,7 +847,8 @@
             "name": "SHM_SIZE"
         }],
         "categories": [
-            "Kasm"
+            "Kasm",
+            "Music"
         ]
     },{
         "title": "AudioBookShelf",
@@ -934,7 +945,8 @@
             "description": "Add any address you'd like to access Babybuddy at (comma separated, no spaces)"
         }],
         "categories": [
-            "Baby"
+            "Baby",
+            "Linux Server"
         ]
     },{
         "title": "Bazarr",
@@ -975,7 +987,7 @@
         }],
         "categories": [
             "Movies",
-            "Music"
+            "Linux Server"
         ]
     },{
         "title": "Beets",
@@ -1011,7 +1023,8 @@
             "preset":true
         }],
         "categories": [
-            "Music"
+            "Music",
+            "Linux Server"
         ]
     },{
         "title": "Boinc",
@@ -1054,7 +1067,8 @@
             "description": "Optionally set a password for the GUI."
         }],
         "categories": [
-            "Research"
+            "Research",
+            "Linux Server"
           ]
     },{
         "title": "Bitwarden RS",
@@ -1074,8 +1088,7 @@
             "container": "/config"
         }],
         "categories": [
-            "Other",
-            "Tools"
+            "API"
         ]
     },{
         "title": "Blender",
@@ -1100,13 +1113,14 @@
             "description": "Specify a subfolder to use with reverse proxies, IE `/subfolder/`"
         }],
         "categories": [
-            "Photo"
+            "Photo",
+            "Linux Server"
         ]
     },{
         "title": "Blender",
         "description": "KasmWeb Blender is a containerized Blender with remote access capabilities.",
         "note": "Docker run command for KasmWeb Blender",
-        "logo": "",
+        "logo": "https://raw.githubusercontent.com/linuxserver/docker-templates/master/linuxserver.io/img/blender-logo.png",
         "platform": "linux",
         "type": 1,
         "name": "Blender",
@@ -1127,6 +1141,7 @@
             "name": "SHM_SIZE"
         }],
         "categories": [
+            "Photo",
             "Kasm"
         ]
     },{
@@ -1179,7 +1194,8 @@
             "preset":true
         }],
         "categories": [
-            "Audiobook"
+            "Audiobook",
+            "Linux Server"
         ]
     },{
         "title": "Booksonic-Air",
@@ -1231,7 +1247,8 @@
             "preset":true
         }],
         "categories": [
-            "Audiobook"
+            "Audiobook",
+            "Linux Server"
         ]
     },{
         "title": "Bookstack",
@@ -1288,7 +1305,8 @@
             "name": "DB_DATABASE"
         }],
         "categories": [
-            "Media"
+            "Wiki",
+            "Linux Server"
         ]
     },{
         "title": "Brave",
@@ -1355,7 +1373,8 @@
             "preset":true
         }],
         "categories": [
-            "Finance"
+            "Finance",
+            "Linux Server"
         ]
     },{
         "title": "Caddy",
@@ -1423,7 +1442,8 @@
             "name": "CLI_ARGS"
         }],
         "categories": [
-            "Media"
+            "Books",
+            "Linux Server"
         ]
     },{
         "title": "Calibre Web",
@@ -1456,8 +1476,8 @@
             "preset":true
         }],
         "categories": [
-            "Cloud",
-            "Books"
+            "Books",
+            "Linux Server"
         ]
     },{
         "title": "Cardigann",
@@ -1489,7 +1509,8 @@
             "preset":true
         }],
         "categories": [
-            "Downloaders"
+            "Linux Server",
+            "Automation"
         ]
     },{
         "title": "CentOS",
@@ -1560,7 +1581,9 @@
             "name": "BASE_URL"
         }],
         "categories": [
-            "Monitoring"
+            "Monitoring",
+            "Linux Server",
+            "Automation"
         ]
     },{
         "title": "Chevereto",
@@ -1721,7 +1744,8 @@
             "shm_size": 1073741824
         },
         "categories": [
-            "Browser"
+            "Browser",
+            "Linux Server"
         ]
     },{
         "title": "Cloud9",
@@ -1762,7 +1786,8 @@
             "name": "PASSWORD"
         }],
         "categories": [
-            "Development"
+            "Development",
+            "Linux Server"
         ]
     },{
         
@@ -1778,7 +1803,7 @@
             "stackfile": "stacks/cockroachdb/docker-stack.yml"
         },
         "categories": [
-            "database"
+            "Database"
         ]
     },{
         "title": "Code-Server",
@@ -1828,7 +1853,8 @@
             "name": "DEFAULT_WORKSPACE"
         }],
         "categories": [
-            "Development"
+            "Development",
+            "Linux Server"
         ]
     },{
         "title": "Codiad",
@@ -1847,7 +1873,8 @@
             "container": "/config"
         }],
         "categories": [
-            "Development"
+            "Development",
+            "Linux Server"
         ]
     },{
         "title": "CommandBox",
@@ -1868,7 +1895,8 @@
             "preset": true
         }],
         "categories": [
-            "Development"
+            "Development",
+            "Terminal"
         ]
     },{
         
@@ -1946,7 +1974,8 @@
             "preset":true
         }],
         "categories": [
-            "Books"
+            "Books",
+            "Linux Server"
         ]
     },{
         "title": "CouchPotato",
@@ -1990,7 +2019,9 @@
             "preset":true
         }],
         "categories": [
-            "Media"
+            "BitTorrent",
+            "Automation",
+            "Linux Server"
         ]
     },{
         "title": "CrateDB",
@@ -2049,7 +2080,8 @@
             "preset":true
         }],
         "categories": [
-            "Media"
+            "Music",
+            "Linux Server"
         ]
     },{
         "title": "DashMachine",
@@ -2136,7 +2168,8 @@
             "preset":true
         }],
         "categories": [
-            "Productivity"
+            "Photo",
+            "Linux Server"
         ]
     },{
         "title": "Davos",
@@ -2177,7 +2210,8 @@
             "preset":true
         }],
         "categories": [
-            "Productivity"
+            "Automation",
+            "Linux Server"
         ]
     },{
         "title": "DDClient",
@@ -2212,7 +2246,8 @@
             "preset":true
         }],
         "categories": [
-            "Networking"
+            "Networking",
+            "Linux Server"
         ]
     },{
         "title": "DeeMix",
@@ -2241,7 +2276,7 @@
         "title": "Deluge",
         "description": "KasmWeb Deluge is a containerized Deluge with remote access capabilities.",
         "note": "Docker run command for KasmWeb Deluge",
-        "logo": "",
+        "logo": "https://avatars2.githubusercontent.com/u/6733935?v=3&s=200",
         "platform": "linux",
         "type": 1,
         "name": "Deluge",
@@ -2262,6 +2297,7 @@
             "name": "SHM_SIZE"
         }],
         "categories": [
+            "BitTorrent",
             "Kasm"
         ]
     },{
@@ -2310,7 +2346,8 @@
             "name": "DELUGE_LOGLEVEL"
         }],
         "categories": [
-            "File Management"
+            "BitTorrent",
+            "Linux Server"
         ]
     },{
         "title": "Deluge openvpn",
@@ -2359,6 +2396,7 @@
             "name": "OPENVPN_PASSWORD"
         }],
         "categories": [
+            "BitTorrent",
             "VPN"
         ]
     },{
@@ -2385,7 +2423,8 @@
             "description": "Specify a subfolder to use with reverse proxies, IE `/subfolder/`"
         }],
         "categories": [
-            "Photo"
+            "Photo",
+            "Linux Server"
         ]
     },{
         "title": "Dillinger",
@@ -2423,7 +2462,8 @@
             "preset":true
         }],
         "categories": [
-            "Development"
+            "File Manager",
+            "Linux Server"
         ]
     },{
         "title": "Discord",
@@ -2450,7 +2490,8 @@
             "name": "SHM_SIZE"
         }],
         "categories": [
-            "Kasm"
+            "Kasm",
+            "Chat"
         ]
     },{
         "title": "Diskover",
@@ -2511,7 +2552,8 @@
             "name": "ES_PASS"
         }],
         "categories": [
-            "Productivity"
+            "Indexer",
+            "Linux Server"
         ]
     },{
         "title": "Docker-Compose",
@@ -2530,7 +2572,8 @@
             "container": "/config"
         }],
         "categories": [
-            "Productivity"
+            "Productivity",
+            "Linux Server"
         ]
     },{
         "title": "Dokku",
@@ -2585,7 +2628,8 @@
             "container": "/config"
         }],
         "categories": [
-            "Wiki"
+            "Wiki",
+            "Linux Server"
         ]
     },{
         "title": "Domoticz",
@@ -2612,7 +2656,8 @@
             "name": "WEBROOT"
         }],
         "categories": [
-            "Automation"
+            "Automation",
+            "Linux Server"
         ]
     },{
         "title": "DopLarr",
@@ -2742,8 +2787,8 @@
             "name": "JAVA_OPTS"
         }],
         "categories": [
-            "Bot",
-            "Discord"
+            "Automation",
+            "Linux Server"
         ]
     },{
         "title": "DoubleCommander",
@@ -2765,7 +2810,8 @@
             "container": "/data"
         }],
         "categories": [
-            "File Management"
+            "File Management",
+            "Linux Server"
         ]
     },{
         "title": "Dozzle",
@@ -2796,7 +2842,6 @@
             "name": "password "
         }],
         "categories": [
-            "Need",
             "Monitoring"
         ]
     },{
@@ -2812,7 +2857,7 @@
             "3000:3000/tcp"
         ],
         "categories": [
-            "Security"
+            "Monitoring"
         ]
     },{
         "title": "DuckDNS",
@@ -2862,7 +2907,8 @@
             "preset":true
         }],
         "categories": [
-            "Database"
+            "DNS",
+            "Linux Server"
         ]
     },{
         "title": "Duplicati",
@@ -2911,7 +2957,8 @@
             "name": "CLI_ARGS"
         }],
         "categories": [
-            "Productivity"
+            "File Manager",
+            "Linux Server"
         ]
     },{
         "title": "Drupal",
@@ -2978,7 +3025,7 @@
             "container": "/usr/share/elasticsearch/data"
         }],
         "categories": [
-            "Database"
+            "Indexer"
         ]
     },{
         "title": "Emby",
@@ -3026,7 +3073,8 @@
             "preset":true
         }],
         "categories": [
-            "Home Media"
+            "Music",
+            "Linux Server"
         ]
     },{
         "title": "EmbyStat",
@@ -3064,7 +3112,8 @@
             "preset":true
         }],
         "categories": [
-            "Home Media"
+            "Monitoring",
+            "Linux Server"
         ]
     },{
         "title": "EmulatorJS",
@@ -3091,7 +3140,8 @@
             "name": "SUBFOLDER"
         }],
         "categories": [
-            "Emulator"
+            "Emulator",
+            "Linux Server"
         ]
     },{
         "title": "EndleSSH",
@@ -3154,7 +3204,8 @@
             "name": "BINDFAMILY"
         }],
         "categories": [
-            "Security"
+            "Terminal",
+            "Linux Server"
         ]
     },{
         "title": "Fail2Ban",
@@ -3252,7 +3303,8 @@
             "name": "VERBOSITY"
         }],
         "categories": [
-            "Authentication"
+            "Authentication",
+            "Linux Server"
         ]
     },{
         "title": "FDO",
@@ -3345,7 +3397,8 @@
             "name": "FEED_LIMIT"
         }],
         "categories": [
-            "RSS"
+            "RSS",
+            "Linux Server"
         ]
     },{
         "title": "Fenrus",
@@ -3374,7 +3427,7 @@
             "label": "PORT"
         }],
         "categories": [
-            "Dashboard Server"
+            "Monitoring"
         ]
     },{
         "title": "FFMPEG",
@@ -3413,7 +3466,8 @@
             "preset":true
         }],
         "categories": [
-            "Other"
+            "Other",
+            "Linux Server"
         ]
     },{
         "title": "File Browser",
@@ -3437,8 +3491,7 @@
             "container": "/srv"
         }],
         "categories": [
-            "Filesystem", 
-            "Storage"
+            "File Manager"
         ]
     },{
         "title": "FileBrowser",
@@ -3447,7 +3500,7 @@
         "logo": "https://raw.githubusercontent.com/Qballjos/portainer_templates/master/Images/filebrowser.png",
         "platform": "linux",
         "type": 1,
-        "name": "filebrowser",
+        "name": "FileBrowser",
         "image": "80x86/filebrowser:latest",
         "restart_policy": "unless-stopped",
         "ports": [
@@ -3461,7 +3514,7 @@
             "container": "/myfiles"
         }],
         "categories": [
-            "File Management"
+            "File Manager"
         ]
     },{
         "title": "FileZilla",
@@ -3499,13 +3552,14 @@
             "preset":true
         }],
         "categories": [
-            "Productivity"
+            "File Manager",
+            "Linux Server"
         ]
     },{
         "title": "FileZilla",
         "description": "KasmWeb FileZilla is a containerized FileZilla with remote access capabilities.",
         "note": "Docker run command for KasmWeb FileZilla",
-        "logo": "",
+        "logo": "https://raw.githubusercontent.com/linuxserver/docker-templates/master/linuxserver.io/img/filezilla-logo.png",
         "platform": "linux",
         "type": 1,
         "name": "FileZilla",
@@ -3526,6 +3580,7 @@
             "name": "SHM_SIZE"
         }],
         "categories": [
+            "File Manager",
             "Kasm"
         ]
     },{
@@ -3643,7 +3698,8 @@
             "name": "fleet_admin_secret"
         }],
         "categories": [
-            "Cloud"
+            "Cloud",
+            "Linux Server"
         ]
     },{
         "title": "FoldingAtHome",
@@ -3682,7 +3738,8 @@
             "preset":true
         }],
         "categories": [
-            "Research"
+            "Research",
+            "Linux Server"
         ]
     },{
         "title": "FreshRSS",
@@ -3720,7 +3777,8 @@
             "preset":true
         }],
         "categories": [
-            "RSS"
+            "RSS",
+            "Linux Server"
         ]
     },{
         "title": "Frigate NVR",
@@ -3734,7 +3792,7 @@
             "url": "https://github.com/xneo1/portainer_templates"
         },
         "categories": [
-            "Smart Home"
+            "Automation"
         ]
     },{
         "title": "Gazee",
@@ -3771,9 +3829,8 @@
             "preset":true
         }],
         "category": [
-            "Web",
             "Books",
-            "Tools"
+            "Linux Server"
         ]
     },{
         "title": "Github-Desktop",
@@ -3813,7 +3870,8 @@
             "preset":true
         }],
         "categories": [
-            "Git"
+            "Git",
+            "Linux Server"
         ]
     },{
         "title": "Gitlab CE",
@@ -3841,8 +3899,6 @@
             "container": "/var/opt/gitlab"
         }],
         "categories": [
-            "Development",
-            "Project-Management",
             "Git"
         ]
     },{
@@ -3883,7 +3939,8 @@
             "preset":true
         }],
         "categories": [
-            "Git"
+            "Git",
+            "Linux Server"
         ]
     },{
         "title": "Ghost",
@@ -3903,7 +3960,7 @@
             "container": "/var/lib/ghost/content"
         }],
         "categories": [
-            "Blog"
+            "Chat"
         ]
     },{
         "title": "Gimp",
@@ -3930,7 +3987,8 @@
             "name": "SHM_SIZE"
         }],
         "categories": [
-            "Kasm"
+            "Kasm",
+            "VNC"
         ]
     },{
         "title": "Grav",
@@ -3968,7 +4026,8 @@
             "preset":true
         }],
         "categories": [
-            "Webserver"
+            "Webserver",
+            "Linux Server"
         ]
     },{
         "title": "Grocy",
@@ -4006,7 +4065,8 @@
             "preset":true
         }],
         "categories": [
-            "Tools"
+            "Automation",
+            "Linux Server"
         ]
     },{
         "title": "Guacamole",
@@ -4026,7 +4086,6 @@
             "container": "/config"
         }],
         "categories": [
-            "Need",
             "VNC"
         ]
     },{
@@ -4040,6 +4099,10 @@
         "restart_policy": "unless-stopped",
         "ports": [
             "4822:4822/tcp"
+        ],
+        "categories": [
+            "VNC",
+            "Linux Server"
         ]
     },{
         "title": "Habridge",
@@ -4083,7 +4146,9 @@
             "preset":true
         }],
         "categories": [
-            "Automation"
+            "Automation",
+            "Linux Server",
+            "API"
         ]
     },{
         "title": "Headphones",
@@ -4127,7 +4192,8 @@
             "preset":true
         }],
         "categories": [
-            "Music"
+            "Music",
+            "Linux Server"
         ]
     },{
         "title": "Healthchecks",
@@ -4229,7 +4295,8 @@
             "name": "SECRET_KEY"
         }],
         "categories": [
-            "Tools"
+            "Monitoring",
+            "Linux Server"
         ]
     },{
         "title": "HedgeDoc",
@@ -4307,7 +4374,8 @@
             "name": "CMD_PROTOCOL_USESSL"
         }],
         "categories": [
-            "Documentation"
+            "File Manager",
+            "Linux Server"
         ]
     },{
         "title": "Heimdall",
@@ -4344,7 +4412,11 @@
             "label": "TZ",
             "name": "TZ",
             "preset":true
-        }]
+        }],
+        "categories": [
+            "Bookmarks",
+            "Linux Server"
+        ]
     },{
         "title": "Hishtory-Server",
         "description": "[hiSHtory](https://github.com/ddworken/hishtory) is a better shell history. It stores your shell history in context (what directory you ran the command in, whether it succeeded or failed, how long it took, etc). This is all stored locally and end-to-end encrypted for syncing to to all your other computers.",
@@ -4382,7 +4454,8 @@
             "name": "HISHTORY_POSTGRES_DB"
         }],
         "categories": [
-            "Shell"
+            "Terminal",
+            "Linux Server"
         ]
     },{
         "title": "HomeAssistant",
@@ -4421,7 +4494,8 @@
             "preset":true
         }],
         "categories": [
-            "Automation"
+            "Automation",
+            "Linux Server"
         ]
     },{
         "title": "Homer",
@@ -4474,8 +4548,8 @@
             "preset":true
         }],
         "categories": [
-            "Movies",
-            "Music"
+            "Other",
+            "Linux Server"
         ]
     },{
         "title": "Httpd",
@@ -4513,8 +4587,6 @@
             "container": "usr/share/hue/desktop/conf"
         }],
         "categories": [
-            "Need",
-            "Database",
             "Monitoring"
         ]
     },{
@@ -4542,7 +4614,8 @@
             "name": "SHM_SIZE"
         }],
         "categories": [
-            "Kasm"
+            "Kasm",
+            "VNC"
         ]
     },{
         "title": "Huginn",
@@ -4562,7 +4635,8 @@
             "container": "/var/lib/mysql"
         }],
         "categories": [
-            "Monitor"
+            "Monitor",
+            "Automation"
         ]
     },{
         "title": "Inkscape",
@@ -4589,7 +4663,8 @@
             "name": "SHM_SIZE"
         }],
         "categories": [
-            "Kasm"
+            "Kasm",
+            "Photo"
         ]
     },{
         "title": "Insomnia",
@@ -4700,7 +4775,8 @@
             "preset":true
         }],
         "categories": [
-            "P2P"
+            "File Manager",
+            "Linux Server"
         ]
     },{
         "title": "IT Tools",
@@ -4715,7 +4791,7 @@
             "8082:80/tcp"
         ],
         "categories": [
-            "Management"
+            "Bookmarks"
         ]
     },{
         "title": "IronFunctions",
@@ -4738,7 +4814,7 @@
             "container": "/app/data"
         }],
         "categories": [
-            "Cloud"
+            "Automation"
         ]
     },{
         "title": "IronFunctions API",
@@ -4758,7 +4834,8 @@
             "container": "/app/data"
         }],
         "categories": [
-            "Cloud"
+            "Automation",
+            "API"
         ]
     },{
         "title": "IronFunctions UI",
@@ -4784,7 +4861,7 @@
             "name": "API_URL"
         }],
         "categories": [
-            "Cloud"
+            "Automation"
         ]
     },{
         "title": "Jackett",
@@ -4835,7 +4912,8 @@
             "name": "RUN_OPTS"
         }],
         "categories": [
-            "Proxy"
+            "Proxy",
+            "Linux Server"
         ]
     },{
         "title": "Jellyfin",
@@ -4853,39 +4931,43 @@
             "1900:1900/udp"
         ],
         "volumes": [{
-                "bind": "Jellyfin-Config",
-                "container": "/config"
-            },{
-                "bind": "Jellyfin-TVShows",
-                "container": "/data/tvshows"
-            },{
-                "bind": "Jellyfin-Movies",
-                "container": "/data/movies"
-            }],
+            "bind": "Jellyfin-Config",
+            "container": "/config"
+        },{
+            "bind": "Jellyfin-TVShows",
+            "container": "/data/tvshows"
+        },{
+            "bind": "Jellyfin-Movies",
+            "container": "/data/movies"
+        }],
         "env": [{
-                "default": "1000",
-                "description": "for GroupID",
-                "label": "PUID",
-                "name": "PUID",
-            "preset":true
-            },{
-                "default": "1000",
-                "description": "for UserID",
-                "label": "PGID",
-                "name": "PGID",
-            "preset":true
-            },{
-                "default": "America/New_York",
-                "description": "Specify a timezone to use (e.g., America/New_York)",
-                "label": "TZ",
-                "name": "TZ",
-            "preset":true
-            },{
-                "default": "192.168.0.5",
-                "description": "Set the autodiscovery response domain or IP address.",
-                "label": "JELLYFIN_PublishedServerUrl",
-                "name": "JELLYFIN_PublishedServerUrl"
-            }]
+            "default": "1000",
+            "description": "for GroupID",
+            "label": "PUID",
+            "name": "PUID",
+        "preset":true
+        },{
+            "default": "1000",
+            "description": "for UserID",
+            "label": "PGID",
+            "name": "PGID",
+        "preset":true
+        },{
+            "default": "America/New_York",
+            "description": "Specify a timezone to use (e.g., America/New_York)",
+            "label": "TZ",
+            "name": "TZ",
+        "preset":true
+        },{
+            "default": "192.168.0.5",
+            "description": "Set the autodiscovery response domain or IP address.",
+            "label": "JELLYFIN_PublishedServerUrl",
+            "name": "JELLYFIN_PublishedServerUrl"
+        }],
+        "categories": [
+            "Music",
+            "Linux Server"
+        ]
     },{
         "title": "Jenkins",
         "description": "Open-source continuous integration tool",
@@ -4904,7 +4986,7 @@
             "container": "/var/jenkins_home"
         }],
         "categories": [
-            "Continuous-Integration"
+            "Automation"
         ]
     },{
         "title": "Jenkins-Builder",
@@ -4942,7 +5024,8 @@
             "preset":true
         }],
         "categories": [
-            "Other"
+            "Automation",
+            "Linux Server"
         ]
     },{
         "title": "Joomla",
@@ -5047,7 +5130,8 @@
             "name": "URL_ENDPOINT"
         }],
         "categories": [
-            "Kodi"
+            "Automation",
+            "Linux Server"
         ]
     },{
         "title": "Kasm",
@@ -5137,7 +5221,8 @@
             "name": "SUBFOLDER"
         }],
         "category": [
-            "Movies"
+            "Photo",
+            "Linux Server"
         ]
     },{
         "title": "Kodi-Headless",
@@ -5175,7 +5260,8 @@
             "preset":true
         }],
         "category": [
-            "Movies"
+            "Automation",
+            "Linux Server"
         ]
     },{
         "title": "LazyLibrarian",
@@ -5224,7 +5310,8 @@
             "name": "DOCKER_MODS"
         }],
         "categories": [
-            "Books"
+            "Books",
+            "Linux Server"
         ]
     },{
         "title": "LetsEncrypt",
@@ -5290,8 +5377,8 @@
             "preset":true
         }],
         "category": [
-            "Tools",
-            "Web"
+            "Automation",
+            "Linux Server"
         ]
     },{
         "title": "Ldap-auth",
@@ -5329,7 +5416,8 @@
             "name": "KEYFILE"
         }],
         "categories": [
-            "Authentication"
+            "Authentication",
+            "Linux Server"
         ]
     },{
         "title": "LibreOffice",
@@ -5367,7 +5455,8 @@
             "preset":true
         }],
         "categories": [
-            "Productivity"
+            "File Manager",
+            "Linux Server"
         ]
     },{
         "title": "LibreSonic",
@@ -5422,7 +5511,8 @@
             "preset":true
         }],
         "categories": [
-            "Music"
+            "Music",
+            "Linux Server"
         ]
       },{
         "title": "LibreSpeed",
@@ -5500,7 +5590,8 @@
             "name": "DB_PORT"
         }],
         "categories": [
-            "Office"
+            "Automation",
+            "Linux Server"
         ]
     },{
         "title": "Lidarr",
@@ -5544,7 +5635,8 @@
             "preset":true
         }],
         "categories": [
-            "Torrent"
+            "BitTorrent",
+            "Linux Server"
         ]
     },{
         "title": "Limnoria",
@@ -5582,7 +5674,8 @@
             "preset":true
         }],
         "categories": [
-            "Bot"
+            "Chat",
+            "Linux Server"
         ]
     },{
         "title": "LiveSwitch",
@@ -5602,7 +5695,7 @@
             "label": "Postgres password"
         }],
         "categories": [
-            "Media"
+            "Music"
         ]
       },{
         "title": "Lollypop",
@@ -5642,7 +5735,8 @@
             "preset":true
         }],
         "categories": [
-            "Music"
+            "Music",
+            "Linux Server"
         ]
     },{
         "title": "Lychee",
@@ -5703,7 +5797,8 @@
             "name": "DB_DATABASE"
         }],
         "categories": [
-            "Photo"
+            "Photo",
+            "Linux Server"
         ]
     },{
         "title": "Magento 2",
@@ -5771,8 +5866,8 @@
             "container": "/config"
         }],
         "categories": [
-            "Need",
-            "Database"
+            "Database",
+            "Linux Server"
         ]
     },{
         "title": "MariaDB",
@@ -6000,7 +6095,8 @@
             "description": "The size of the DB connection pool, must be *at least* the same as `SIDEKIQ_THREADS`. See [notes](https://docs.joinmastodon.org/admin/scaling/#sidekiq-threads)."
         }],
         "categories": [
-            "Cloud"
+            "Chat",
+            "Linux Server"
         ]
     },{
         "title": "Mautic",
@@ -6029,7 +6125,7 @@
             "label": "Database password"
         }],
         "categories": [
-            "Tools"
+            "Automation"
         ]
     },{
         "title": "McMyAdmin 2",
@@ -6060,7 +6156,8 @@
             "preset":true
         }],
         "categories": [
-            "Minecraft"
+            "Minecraft",
+            "Linux Server"
         ]
     },{
         "title": "MediaWiki",
@@ -6080,7 +6177,6 @@
             "container": "/var/www/html"
         }],
         "categories": [
-            "Need",
             "Wiki"
         ]
     },{
@@ -6125,7 +6221,8 @@
             "preset":true
         }],
         "categories": [
-            "Movies"
+            "Photo",
+            "Linux Server"
         ]
     },{
         "title": "Microsoft-OMSAgent",
@@ -6203,7 +6300,8 @@
             "name": "CLI_ARGS"
         }],
         "categories": [
-            "Minecraft"
+            "Minecraft",
+            "Linux Server"
         ]
     },{
         "title": "Minetest",
@@ -6230,7 +6328,8 @@
             "name": "SHM_SIZE"
         }],
         "categories": [
-            "Kasm"
+            "Kasm",
+            "Minecraft"
         ]
     },{
         "title": "Minisatip",
@@ -6275,7 +6374,8 @@
             "name": "RUN_OPTS"
         }],
         "categories": [
-            "Movies"
+            "Photo",
+            "Linux Server"
         ]
     },{
         "title": "Minio",
@@ -6308,7 +6408,7 @@
             "label": "Root password"
         }],
         "categories": [
-            "Storage"
+            "Database"
         ]
     },{
         "title": "Mongo",
@@ -6349,7 +6449,8 @@
             "container": "/music"
         }],
         "categories": [
-            "Music"
+            "Music",
+            "Linux Server"
         ]
     },{
         "title": "Mullvad-Browser",
@@ -6394,7 +6495,8 @@
             "name": "LOCAL_NET"
         }],
         "categories": [
-            "Browser"
+            "Browser",
+            "Linux Server"
         ]
     },{
         "title": "Murmur",
@@ -6439,7 +6541,6 @@
             "preset":true
         }],
         "categories": [
-            "Voice",
             "Chat"
         ]
     },{
@@ -6486,7 +6587,8 @@
             }
         ],
         "category": [
-            "Music"
+            "Music",
+            "Linux Server"
         ]
     },{
         "title": "Muximux",
@@ -6505,7 +6607,8 @@
             "container": "/config"
         }],
         "categories": [
-            "Bookmarks"
+            "Bookmarks",
+            "Linux Server"
         ]
     },{
         "title": "Mylar3",
@@ -6543,7 +6646,8 @@
             "preset":true
         }],
         "categories": [
-            "Books"
+            "Books",
+            "Linux Server"
         ]
     },{
         "title": "MySQL",
@@ -6609,7 +6713,8 @@
             "preset":true
         }],
         "categories": [
-            "Database"
+            "Database",
+            "Linux Server"
         ]
     },{
         "title": "Nano",
@@ -6698,7 +6803,8 @@
             }
         ],
         "categories": [
-            "Finance"
+            "Finance",
+            "Linux Server"
         ]
     },{
         "title": "Nano-Wallet",
@@ -6714,7 +6820,8 @@
             "80:80/tcp"
         ],
         "categories": [
-            "Finance"
+            "Finance",
+            "Linux Server"
         ]
     },{
         "title": "NetBootXYZ",
@@ -6766,7 +6873,8 @@
             "name": "SUBFOLDER"
         }],
         "categories": [
-            "Linux"
+            "OS",
+            "Linux Server"
         ]
     },{
         "title": "NetBox",
@@ -6904,7 +7012,8 @@
             "name": "REMOTE_AUTH_DEFAULT_PERMISSIONS"
         }],
         "categories": [
-            "Monitor"
+            "Networking",
+            "Linux Server"
         ]
     },{
         "title": "NextCloud",
@@ -6945,8 +7054,8 @@
             "preset":true
         }],
         "categories": [
-            "Filesystem", 
-            "Storage"
+            "File Manager",
+            "Linux Server"
         ]
     },{
         "title": "NGINX",
@@ -6970,7 +7079,7 @@
             "container": "/etc/letsencrypt"
         }],
         "categories": [
-            "Proxy"
+            "Authentication"
         ]
     },{
         "title": "Ngircd",
@@ -7008,7 +7117,8 @@
             "preset":true
         }],
         "categories": [
-            "IRC"
+            "Chat",
+            "Linux Server"
         ]
     },{
         "title": "Nntp2nntp",
@@ -7046,7 +7156,8 @@
             "preset":true
         }],
         "categories": [
-            "Proxy"
+            "Authentication",
+            "Linux Server"
         ]
     },{
         "title": "NodeJS",
@@ -7094,7 +7205,8 @@
             "preset":true
         }],
         "categories": [
-            "Downloaders"
+            "File Manager",
+            "Linux Server"
         ]
     },{
         "title": "NZBHydra 2",
@@ -7128,7 +7240,8 @@
             "preset":true
         }],
         "categories": [
-            "Downloaders"
+            "Indexer",
+            "Linux Server"
         ]
     },{
         "title": "Office",
@@ -7213,8 +7326,9 @@
             "preset":true
         }],
         "categories": [
-            "Plex",
-            "Movies"
+            "Photo",
+            "Music",
+            "Linux Server"
         ]
     },{
         "title": "OPC Router",
@@ -7262,7 +7376,7 @@
             }]
         }],
         "categories": [
-            "Tools"
+            "Database"
         ]
     },{
         "title": "OpenAMT",
@@ -7310,7 +7424,7 @@
             "description": "Secret token used to log into Vault (don't include '.' character)."
         }],
         "categories": [
-            "Cloud"
+            "Automation"
         ]
     },{
         "title": "OpenFaaS",
@@ -7324,7 +7438,7 @@
             "url": "https://github.com/openfaas/faas"
         },
         "categories": [
-            "serverless"
+            "Automation"
         ]
     },{
         "title": "Openssh-server",
@@ -7407,7 +7521,8 @@
             "name": "USER_NAME"
         }],
         "categories": [
-            "SSH"
+            "Terminal",
+            "Linux Server"
         ]
     },{
         "title": "OpenSuse",
@@ -7488,7 +7603,8 @@
             "name": "DEFAULT_WORKSPACE"
         }],
         "categories": [
-            "Development"
+            "Development",
+            "Linux Server"
         ]
     },{
         "title": "OpenVPN-AS",
@@ -7533,7 +7649,8 @@
             "preset":true
         }],
         "category": [
-            "VPN"
+            "Authentication",
+            "Linux Server"
         ]
     },{
         "title": "Opera",
@@ -7583,7 +7700,8 @@
             "shm_size": 1073741824
         },
         "categories": [
-            "Browser"
+            "Browser",
+            "Linux Server"
         ]
     },{
         "title": "OracleDesktop",
@@ -7645,7 +7763,7 @@
             "preset":true
         }],
         "category": [
-            "Management"
+            "Bookmarks"
         ]
     },{
         "title": "Organizr V2",
@@ -7676,7 +7794,7 @@
             "preset":true
         }],
         "categories": [
-          "Management"
+          "Bookmarks"
         ]
     },{
         "title": "OScam",
@@ -7708,7 +7826,8 @@
             "preset":true
         }],
         "categories": [
-            "Movies"
+            "Photo",
+            "Linux Server"
         ]
     },{
         "title": "Owncloud",
@@ -7758,7 +7877,7 @@
             "name": "PORT"
         }],
         "categories": [
-            "Cloud"
+            "File Manager"
         ]
     },{
         "title": "Overseerr",
@@ -7796,7 +7915,8 @@
             "preset":true
         }],
         "categories": [
-            "Media"
+            "Automation",
+            "Linux Server"
         ]
     },{
         "title": "Pairdrop",
@@ -7850,7 +7970,8 @@
             "description": "Set to `true` to debug the http server configuration by logging clients IP addresses used by PairDrop to STDOUT. [See here for more info](https://github.com/schlagmichdoch/PairDrop/blob/master/docs/host-your-own.md#debug-mode). Do not use in production!"
         }],
         "categories": [
-            "Air Drop"
+            "File Manager",
+            "Linux Server"
         ]
     },{
         "title": "Paperless-NG",
@@ -7896,7 +8017,9 @@
             "name": "REDIS_URL"
         }],
         "categories": [
-            "File Management"
+            "File Management",
+            "Linux Server",
+            "Indexer"
         ]
     },{
         "title": "PaperMerge",
@@ -7942,7 +8065,9 @@
             "name": "REDIS_URL"
         }],
         "categories": [
-            "File Management"
+            "File Management",
+            "Indexer",
+            "Linux Server"
         ]
     },{
         "title": "ParrotOS",
@@ -8004,7 +8129,7 @@
             "name": "PORT"
         }],
         "categories": [
-            "Plex"
+            "Photo"
         ]
     },{
         "title": "PhotoShow",
@@ -8048,7 +8173,8 @@
             "preset":true
         }],
         "categories": [
-            "Photo"
+            "Photo",
+            "Linux Server"
         ]
     },{
         "title": "PHPMyAdmin",
@@ -8079,8 +8205,8 @@
             "preset":true
         }],
         "categories": [
-            "Need",
-            "Database"
+            "Database",
+            "Linux Server"
         ]
     },{
         "title": "Pinta",
@@ -8107,7 +8233,8 @@
             "name": "SHM_SIZE"
         }],
         "categories": [
-            "Kasm"
+            "Kasm",
+            "VNC"
         ]
     },{
         "title": "Pi.Alert",
@@ -8137,7 +8264,7 @@
             "preset":true
         }],
         "categories": [
-            "Network Server"
+            "Automation"
         ]
     },{
         "title": "Pi-Hole",
@@ -8204,7 +8331,8 @@
             "preset":true
         }],
         "categories": [
-            "Chat"
+            "Chat",
+            "Linux Server"
         ]
     },{
         "title": "Piwigo",
@@ -8245,7 +8373,8 @@
             "preset":true
         }],
         "categories": [
-            "Photo"
+            "Photo",
+            "Linux Server"
         ]
     },{
         "title": "Pixapop",
@@ -8296,7 +8425,8 @@
             "name": "APP_PASSWORD"
         }],
         "categories": [
-            "Photo"
+            "Photo",
+            "Linux Server"
         ]
     },{
         "title": "Plesk",
@@ -8363,7 +8493,8 @@
             "name": "PLEX_CLAIM"
         }],
         "categories": [
-            "Plex"
+            "Photo",
+            "Linux Server"
         ]
     },{
         "title": "Plex Requests",
@@ -8401,7 +8532,8 @@
             "name": "URL_BASE"
         }],
         "categories": [
-            "Plex"
+            "Photo",
+            "Linux Server"
         ]
     },{
         "title": "Plex-meta-manager",
@@ -8461,7 +8593,8 @@
             "description": "Set to `True` to run without any of the missing movie/show functions."
         }],
         "categories": [
-            "Plex"
+            "Photo",
+            "Linux Server"
         ]
     },{
         "title": "Plone",
@@ -8570,8 +8703,7 @@
             "name": "WIREGUARD"
         }],
         "categories": [
-            "VPN",
-            "Proxy"
+            "Automation"
         ]
     },{
         "title": "ProjectSend",
@@ -8617,7 +8749,8 @@
             "name": "MAX_UPLOAD"
         }],
         "categories": [
-            "File Management"
+            "File Manager",
+            "Linux Server"
         ]
     },{
         "title": "ProtonMail Bridge",
@@ -8667,8 +8800,8 @@
             "preset":true
         }],
         "categories": [
-            "Downloaders",
-            "Proxy"
+            "Photo",
+            "Linux Server"
         ]
     },{
         "title": "PWNDrop",
@@ -8711,7 +8844,8 @@
             "name": "SECRET_PATH"
         }],
         "categories": [
-            "File Management"
+            "File Manager",
+            "Linux Server"
         ]
     },{
         "title": "Pydio",
@@ -8751,7 +8885,8 @@
             "preset":true
         }],
         "category": [
-            "Cloud"
+            "File Manager",
+            "Linux Server"
         ]
     },{
         "title": "Pydio-cells",
@@ -8800,7 +8935,8 @@
             "name": "SERVER_IP"
         }],
         "categories": [
-            "Cloud"
+            "File Manager",
+            "Linux Server"
         ]
     },{
         "title": "PyLoad",
@@ -8842,7 +8978,8 @@
             "preset":true
         }],
         "categories": [
-            "Downloaders"
+            "File Manager",
+            "Linux Server"
         ]
     },{
         "title": "Pyload-ng",
@@ -8885,7 +9022,8 @@
             "preset":true
         }],
         "categories": [
-            "Downloaders"
+            "File Manager",
+            "Linux Server"
         ]
     },{
         "title": "Pylon",
@@ -8923,7 +9061,8 @@
             "description": "Specify a basic auth password."
         }],
         "categories": [
-            "Development"
+            "Development",
+            "Linux Server"
         ]
     },{
         "title": "QBitTorrent",
@@ -8971,7 +9110,8 @@
             "name": "WEBUI_PORT"
         }],
         "categories": [
-            "Torrent"
+            "BitTorrent",
+            "Linux Server"
         ]
     },{
         "title": "QDirStat",
@@ -9013,7 +9153,8 @@
             "preset":true
         }],
         "categories": [
-            "File Management"
+            "Indexer",
+            "Linux Server"
         ]
     },{
         "title": "Quassel-Core",
@@ -9057,7 +9198,8 @@
             "name": "RUN_OPTS"
         }],
         "categories": [
-            "IRC"
+            "Chat",
+            "Linux Server"
         ]
     },{
         "title": "Quassel-web",
@@ -9110,7 +9252,8 @@
             "name": "URL_BASE"
         }],
         "categories": [
-            "IRC"
+            "Chat",
+            "Linux Server"
         ]
     },{
         "title": "RabbitMQ",
@@ -9130,7 +9273,7 @@
             "container": "/var/lib/rabbitmq"
         }],
         "categories": [
-            "Messaging"
+            "Chat"
         ]
     },{
         "title": "Radarr",
@@ -9174,7 +9317,8 @@
             "preset":true
         }],
         "categories": [
-            "Movies"
+            "Photo",
+            "Linux Server"
         ]
       },{
         "title": "Raneto",
@@ -9212,7 +9356,8 @@
             "preset":true
         }],
         "categories": [
-            "Project-Management"
+            "File Manager",
+            "Linux Server"
         ]
       },{
         "title": "Reactive-Resume",
@@ -9251,7 +9396,7 @@
             "container": "/usr/src/redmine/files"
         }],
         "categories": [
-            "Project-Management"
+            "CMS"
         ]
     },{
         "title": "Remina",
@@ -9299,13 +9444,14 @@
             "preset":true
         }],
         "categories": [
-            "VNC"
+            "VNC",
+            "Linux Server"
         ]
     },{
         "title": "Remina",
         "description": "KasmWeb Remina is a containerized Remina with remote access capabilities.",
         "note": "Docker run command for KasmWeb Remina",
-        "logo": "",
+        "logo": "https://raw.githubusercontent.com/linuxserver/docker-templates/master/linuxserver.io/img/remmina-icon.png",
         "platform": "linux",
         "type": 1,
         "name": "Remina",
@@ -9326,6 +9472,7 @@
             "name": "SHM_SIZE"
         }],
         "categories": [
+            "VNC",
             "Kasm"
         ]
     },{
@@ -9353,7 +9500,8 @@
             "name": "SHM_SIZE"
         }],
         "categories": [
-            "Kasm"
+            "Kasm",
+            "Emulator"
         ]
     },{
         "title": "Requestrr",
@@ -9391,7 +9539,8 @@
             "preset":true
         }],
         "categories": [
-          "Bot"
+          "Chat",
+          "Linux Server"
         ]
       },{
         "title": "Resilio-Sync",
@@ -9436,7 +9585,8 @@
             "preset":true
         }],
         "categories": [
-            "Torrent"
+            "BitTorrent",
+            "Linux Server"
         ]
       },{
         "title": "RDesktop",
@@ -9459,7 +9609,8 @@
             "container": "/config"
         }],
         "categories": [
-            "VNC"
+            "VNC",
+            "Linux Server"
         ]
     },{
         "title": "Readme-Sync",
@@ -9497,7 +9648,8 @@
             "preset":true
         }],
         "categories": [
-            "Other"
+            "Other",
+            "Linux Server"
         ]
     },{
         "title": "RockyLinuxDesktop",
@@ -9569,7 +9721,8 @@
             "preset":true
         }],
         "categories": [
-            "Backup"
+            "File Manager",
+            "Linux Server"
         ]
     },{
         "title": "RUTorrent",
@@ -9608,7 +9761,8 @@
             "preset":true
         }],
         "category": [
-            "Torrent"
+            "BitTorrent",
+            "Linux Server"
         ]
     },{
         "title": "Sabnzbd",
@@ -9653,7 +9807,8 @@
             "preset":true
         }],
         "categories": [
-            "Automation"
+            "Automation",
+            "Linux Server"
         ]
     },{
         "title": "Scality S3",
@@ -9684,7 +9839,7 @@
             "label": "Scality S3 secret key"
         }],
         "categories": [
-            "Storage"
+            "File Manager"
         ]
       },{
         "title": "Scrutiny",
@@ -9740,7 +9895,8 @@
             "name": "SCRUTINY_COLLECTOR"
         }],
         "categories": [
-            "Storage"
+            "Automation",
+            "Linux Server"
         ]
       },{
         "title": "SickChill",
@@ -9784,7 +9940,8 @@
             "preset":true
         }],
         "categories": [
-            "Movies"
+            "Photo",
+            "Linux Server"
         ]
     },{
         "title": "SickGear",
@@ -9822,7 +9979,8 @@
             "preset":true
         }],
         "category": [
-		    "Movies"
+		    "Photo",
+            "Linux Server"
 	    ]
       },{
         "title": "Signal",
@@ -9849,7 +10007,8 @@
             "name": "SHM_SIZE"
         }],
         "categories": [
-            "Kasm"
+            "Kasm",
+            "Chat"
         ]
     },{
         "title": "Sematext Docker Agent",
@@ -9875,7 +10034,6 @@
             "label": "SPM monitoring token"
         }],
         "categories": [
-            "Log Management", 
             "Monitoring"
         ]
       },{
@@ -9922,7 +10080,8 @@
             "name": "SHM_SIZE"
         }],
         "categories": [
-            "Kasm"
+            "Kasm",
+            "Chat"
         ]
     },{
         "title": "SmokePing",
@@ -9944,7 +10103,8 @@
 		    "container": "/data"
  	    }],
         "category": [
-		    "Management"
+		    "Monitoring",
+            "Linux Server"
 	    ]
     },{
         "title": "Snapdrop",
@@ -9983,7 +10143,8 @@
             "preset":true
         }],
         "categories": [
-            "Other"
+            "File Manager",
+            "Linux Server"
         ]
     },{
         "title": "Snibox",
@@ -10002,8 +10163,7 @@
             "container": "/app/db/database"
         }],
         "categories": [
-            "Other",
-            "Tools"
+            "Database"
         ]
     },{
         "title": "Snipe-it",
@@ -10065,7 +10225,8 @@
             "name": "MYSQL_PASSWORD"
         }],
         "categories": [
-            "Management"
+            "Monitoring",
+            "Linux Server"
         ]
     },{
         "title": "Solr",
@@ -10084,7 +10245,7 @@
             "container": "/opt/solr/mydata"
 	    }],
         "categories": [
-            "Search-Engine"
+            "Indexer"
         ]
     },{
         "title": "Sonarr",
@@ -10127,7 +10288,8 @@
             "name": "TZ"
         }],
         "categories": [
-            "Torrent"
+            "BitTorrent",
+            "Linux Server"
         ]
     },{
         "title": "Splunk",
@@ -10164,7 +10326,6 @@
             "name": "SPLUNK_PASSWORD "
         }],
         "categories": [
-            "Need",
             "Monitoring"
         ]
     },{
@@ -10179,37 +10340,32 @@
         "ports": [
           "3000:3000/tcp"
         ],
-        "volumes": [
-          {
+        "volumes": [{
             "bind": "SQLiteBrowser",
             "container": "/config"
-          }
-        ],
-        "env": [
-          {
+        }],
+        "env": [{
             "default": "1000",
             "description": "for GroupID",
             "label": "PUID",
             "name": "PUID",
             "preset":true
-          },
-          {
+        },{
             "default": "1000",
             "description": "for UserID",
             "label": "PGID",
             "name": "PGID",
             "preset":true
-          },
-          {
+        },{
             "default": "America/New_York",
             "description": "Specify a timezone to use for example America/New_York",
             "label": "TZ",
             "name": "TZ",
             "preset":true
-          }
-        ],
+        }],
         "categories": [
-            "Database"
+            "Database",
+            "Linux Server"
         ]
     },{
         "title": "SQL Server",
@@ -10319,7 +10475,8 @@
             "name": "SHM_SIZE"
         }],
         "categories": [
-            "Kasm"
+            "Kasm",
+            "Emulation"
         ]
     },{
         "title": "SublimeText",
@@ -10374,7 +10531,8 @@
             "name": "SHM_SIZE"
         }],
         "categories": [
-            "Kasm"
+            "Kasm",
+            "Emulation"
         ]
     },{
         "title": "Swag",
@@ -10468,7 +10626,8 @@
             "name": "STAGING"
         }],
         "categories": [
-            "Database"
+            "Authentication",
+            "Linux Server"
         ]
     },{
         "title": "Synclounge",
@@ -10504,7 +10663,8 @@
             "name": "AUTOJOIN_ROOM"
         }],
         "categories": [
-            "Plex"
+            "File Manager",
+            "Linux Server"
         ]
     },{
         "title": "SyncThing",
@@ -10521,45 +10681,38 @@
           "22000:22000/udp",
           "21027:21027/udp"
         ],
-        "volumes": [
-          {
+        "volumes": [{
             "bind": "SyncThing-Config",
             "container": "/config"
-          },
-          {
+        },{
             "bind": "SyncThing-Data1",
             "container": "/data1"
-          },
-          {
+        },{
             "bind": "SyncThing-Data2",
             "container": "/data2"
-          }
-        ],
-        "env": [
-          {
+        }],
+        "env": [{
             "default": "1000",
             "description": "for GroupID",
             "label": "PUID",
             "name": "PUID",
             "preset":true
-          },
-          {
+        },{
             "default": "1000",
             "description": "for UserID",
             "label": "PGID",
             "name": "PGID",
             "preset":true
-          },
-          {
+        },{
             "default": "America/New_York",
             "description": "Specify a timezone to use for example America/New_York",
             "label": "TZ",
             "name": "TZ",
             "preset":true
-          }
-        ],
+        }],
         "categories": [
-            "Cloud"
+            "File Manager",
+            "Linux Server"
         ]
       },{
         "title": "Syslog-ng",
@@ -10602,7 +10755,8 @@
             "preset":true
         }],
         "categories": [
-            "Management"
+            "Indexer",
+            "Linux Server"
         ]
     },{
         "title": "Taisun",
@@ -10621,8 +10775,8 @@
             "bind": "/var/run/docker.sock"
         }],
         "categories": [
-            "Management",
-            "Need"
+            "VNC",
+            "Linux Server"
         ]
     },{
         "title": "Tautulli",
@@ -10658,8 +10812,7 @@
             "name": "WIREGUARD"
         }],
         "categories": [
-            "VPN",
-            "Management"
+            "Photo"
         ]
     },{
         "title": "Teams",
@@ -10686,7 +10839,8 @@
             "name": "SHM_SIZE"
         }],
         "categories": [
-            "Kasm"
+            "Kasm",
+            "Chat"
         ]
     },{
         "title": "Telegram",
@@ -10713,7 +10867,8 @@
             "name": "SHM_SIZE"
         }],
         "categories": [
-            "Kasm"
+            "Kasm",
+            "Chat"
         ]
     },{
         "title": "Terminal",
@@ -10740,7 +10895,8 @@
             "name": "SHM_SIZE"
         }],
         "categories": [
-            "Kasm"
+            "Kasm",
+            "Terminal"
         ]
     },{
         "title": "TheLounge",
@@ -10778,7 +10934,8 @@
             "preset":true
         }],
         "categories": [
-            "IRC"
+            "Chat",
+            "Linux Server"
         ]
     },{
         "title": "TiddlyWiki",
@@ -10899,7 +11056,7 @@
             "label": "License key"
         }],
         "categories": [
-            "Cloud"
+            "Automation"
         ]
       },{
         "title": "Tracelabs",
@@ -10998,7 +11155,8 @@
             "name": "HOST_WHITELIST"
         }],
         "categories": [
-            "Torrent"
+            "BitTorrent",
+            "Linux Server"
         ]
     },{
         "title": "Transmission-OpenVPN",
@@ -11045,7 +11203,9 @@
             "default": "192.168.0.0/24"
         }],
         "categories": [
-            "VPN"
+            "VPN",
+            "Linux Server",
+            "BitTorrent"
         ]
     },{
         "title": "Trilium",
@@ -11073,7 +11233,7 @@
             "name": "PORT"
         }],
         "categories": [
-            "Notes Server"
+            "Wiki"
         ]
     },{
         "title": "TVHeadEnd",
@@ -11120,7 +11280,8 @@
             "name": "RUN_OPTS"
         }],
         "categories": [
-            "Movies"
+            "Photo",
+            "Linux Server"
         ]
     },{
         "title": "UbooQuity",
@@ -11173,7 +11334,8 @@
             "name": "MAXMEM"
         }],
         "categories": [
-            "Books"
+            "Books",
+            "Linux Server"
         ]
     },{
         "title": "Ubuntu",
@@ -11234,8 +11396,8 @@
             "shm_size": 1073741824
         },
         "categories": [
-            "Need",
-            "Linux"
+            "Linux",
+            "Linux Server"
         ]
     },{
         "title": "Ubuntu",
@@ -11383,7 +11545,8 @@
             "name": "MEM_STARTUP"
         }],
         "categories": [
-            "Tools"
+            "Automation",
+            "Linux Server"
         ]
     },{
         "title": "UniFi Video",
@@ -11432,7 +11595,7 @@
             "set": "UniFi Video"
         }],
         "categories": [
-            "Movies"
+            "Photo"
         ]
     },{
         "title": "UnityHub",
@@ -11459,7 +11622,8 @@
             "name": "SHM_SIZE"
         }],
         "categories": [
-            "Kasm"
+            "Kasm",
+            "Emulation"
         ]
     },{
         "title": "Uptime Kuma",
@@ -11478,7 +11642,6 @@
             "container": "/app/data"
         }],
         "categories": [
-            "Need",
             "Monitoring"
         ]
     },{
@@ -11502,7 +11665,7 @@
             "container": "/var/urbackup"
         }],
         "categories": [
-          "Backup"
+          "File Manager"
         ]
     },{
         "title": "VaultWarden",
@@ -11522,8 +11685,7 @@
             "container": "/config"
         }],
         "categories": [
-            "Other",
-            "Tools"
+            "BitTorrent"
         ]
     },{
         "title": "Vivaldi",
@@ -11645,7 +11807,8 @@
             "preset":true
         }],
         "categories": [
-            "Development"
+            "Development",
+            "Linux Server"
         ]
     },{
         "title": "VS-Code",
@@ -11695,7 +11858,7 @@
             "container": "/var/run/docker.sock"
         }],
         "categories": [
-            "Docker"
+            "Other"
         ]
     },{
         "title": "YouTubeDL-Material",
@@ -11726,8 +11889,7 @@
             "container": "/app/audio"
         }],
         "categories": [
-            "Other",
-            "Downloaders"
+            "File Manager"
         ]
     },{
         "title": "YOURLS",
@@ -11782,7 +11944,7 @@
             "description": "Password for YOURLS"
         }],
         "categories": [
-            "Tools"
+            "Networking"
         ]
     },{
         "title": "WatchTower",
@@ -11798,7 +11960,7 @@
             "container": "/var/run/docker.sock"
         }],
         "categories": [
-            "Docker"
+            "Networking"
         ]
     },{
         "title": "WebCord",
@@ -11837,7 +11999,8 @@
             "preset":true
         }],
         "categories": [
-            "Chat"
+            "Automation",
+            "Linux Server"
         ]
     },{
         "title": "WebGrabPlus",
@@ -11848,41 +12011,35 @@
         "name": "WebGrabPlus",
         "image": "linuxserver/webgrabplus:latest",
         "restart_policy": "unless-stopped",
-        "volumes": [
-          {
+        "volumes": [{
             "bind": "WebGrabPlus-Config",
             "container": "/config"
-          },
-          {
+        },{
             "bind": "WebGrabPlus-Data",
             "container": "/data"
-          }
-        ],
-        "env": [
-          {
+        }],
+        "env": [{
             "default": "1000",
             "description": "for GroupID",
             "label": "PUID",
             "name": "PUID",
             "preset":true
-          },
-          {
+        },{
             "default": "1000",
             "description": "for UserID",
             "label": "PGID",
             "name": "PGID",
             "preset":true
-          },
-          {
+        },{
             "default": "America/New_York",
             "description": "Specify a timezone to use for example America/New_York",
             "label": "TZ",
             "name": "TZ",
             "preset":true
-          }
-        ],
+        }],
         "categories": [
-            "Movies"
+            "Photo",
+            "Linux Server"
         ]
     },{
         "title": "Website",
@@ -11942,7 +12099,8 @@
             "preset":true
         }],
         "categories": [
-            "Wiki"
+            "Wiki",
+            "Linux Server"
         ]
     },{
         "title": "WireGuard",
@@ -11995,7 +12153,8 @@
             "name": "ALLOWEDIPS"
         }],
         "categories": [
-            "VPN"
+            "Automation",
+            "Linux Server"
         ]
     },{
         "title": "WireShark",
@@ -12061,8 +12220,8 @@
             "preset":true
         }],
         "categories": [
-            "Security",
-            "Tools"
+            "Authentication",
+            "Linux Server"
         ]
     },{
         "title": "Whoogle",
@@ -12092,7 +12251,7 @@
                 "name": "WHOOGLE_PASS"
             }],
         "categories": [
-            "Search"
+            "Indexer"
         ]
     },{
         "title": "WordPress",
@@ -12114,7 +12273,6 @@
             "description": "Password used by the MySQL root user."
         }],
         "categories": [
-            "CMS",
             "Webserver"
         ]
     },{
@@ -12148,7 +12306,7 @@
             "name": "WOWZA_KEY"
         }],
         "categories": [
-            "Movies"
+            "Music"
         ]
     },{
         "title": "WPS-Office",
@@ -12188,7 +12346,8 @@
             "preset":true
         }],
         "categories": [
-            "Office"
+            "File Manager",
+            "Linux Server"
         ]
     },{
         "title": "XBackBone",
@@ -12227,7 +12386,8 @@
             "preset":true
         }],
         "categories": [
-            "File Management"
+            "File Manager",
+            "Linux Server"
         ]
     },{
         "title": "Your_spotify",
@@ -12287,7 +12447,8 @@
             "name": "MONGO_ENDPOINT"
         }],
         "categories": [
-            "Management"
+            "Music",
+            "Linux Server"
         ]
     },{
         "title": "Yq",
@@ -12326,7 +12487,8 @@
             "preset":true
         }],
         "categories": [
-            "Other"
+            "Other",
+            "Linux Server"
         ]
     },{
         "title": "Znc",
@@ -12364,7 +12526,8 @@
             "preset":true
         }],
         "categories": [
-            "IRC"
+            "Chat",
+            "Linux Server"
         ]
     },{
         "title": "Zoom",
@@ -12391,7 +12554,8 @@
             "name": "SHM_SIZE"
         }],
         "categories": [
-            "Kasm"
+            "Kasm",
+            "Chat"
         ]
     }
 ]}
