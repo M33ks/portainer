@@ -188,7 +188,7 @@
             "OS"
         ]
     },{
-        "title": "MariaDB",   
+        "title": "MariaDB",
         "description": "[Mariadb](https://mariadb.org/) is one of the most popular database servers. Made by the original developers of MySQL.",
         "logo": "https://raw.githubusercontent.com/linuxserver/docker-templates/master/linuxserver.io/img/mariadb-git.png",
         "platform": "linux",
@@ -227,6 +227,34 @@
         "categories": [
             "Need",
             "Wiki"
+        ]
+    },{
+        "title": "ParrotOS",
+        "description": "KasmWeb ParrotOS is a containerized ParrotOS with remote access capabilities.",
+        "note": "Docker run command for KasmWeb ParrotOS",
+        "logo": "",
+        "platform": "linux",
+        "type": 1,
+        "name": "ParrotOS",
+        "image": "kasmweb/parrotos-5-desktop:1.13.0",
+        "restart_policy": "unless-stopped",
+        "ports": [
+          "6901:6901/tcp"
+        ],
+        "env": [{
+            "default": "admin",
+            "description": "Password for VNC connection",
+            "label": "VNC_PW",
+            "name": "VNC_PW"
+        },{
+            "default": "512m",
+            "description": "Shared memory size",
+            "label": "SHM_SIZE",
+            "name": "SHM_SIZE"
+        }],
+        "categories": [
+            "Kasm",
+            "OS"
         ]
     },{
         "title": "PHPMyAdmin",
@@ -373,6 +401,34 @@
         "categories": [
             "Browser",
             "Kasm"
+        ]
+    },{
+        "title": "Tracelabs",
+        "description": "KasmWeb Tracelabs is a containerized Tracelabs with remote access capabilities.",
+        "note": "Docker run command for KasmWeb Tracelabs",
+        "logo": "",
+        "platform": "linux",
+        "type": 1,
+        "name": "Tracelabs",
+        "image": "kasmweb/tracelabs:1.13.0",
+        "restart_policy": "unless-stopped",
+        "ports": [
+          "6901:6901/tcp"
+        ],
+        "env": [{
+            "default": "admin",
+            "description": "Password for VNC connection",
+            "label": "VNC_PW",
+            "name": "VNC_PW"
+        },{
+            "default": "512m",
+            "description": "Shared memory size",
+            "label": "SHM_SIZE",
+            "name": "SHM_SIZE"
+        }],
+        "categories": [
+            "Kasm",
+            "OS"
         ]
     },{
         "title": "Ubuntu",
@@ -11058,7 +11114,7 @@
         "categories": [
             "Automation"
         ]
-      },{
+    },{
         "title": "Tracelabs",
         "description": "KasmWeb Tracelabs is a containerized Tracelabs with remote access capabilities.",
         "note": "Docker run command for KasmWeb Tracelabs",
