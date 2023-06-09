@@ -317,6 +317,12 @@
             "label": "UPLOAD_LIMIT",
             "name": "UPLOAD_LIMIT",
             "preset":true
+        },{
+            "default": "1",
+            "description": "For Replication",
+            "label": "ALLOW_ARBITRARY",
+            "name": "ALLOW_ARBITRARY",
+            "preset":true
         }],
         "categories": [
             "Need",
@@ -8326,6 +8332,12 @@
             "description": "Max Upload File Size",
             "label": "UPLOAD_LIMIT",
             "name": "UPLOAD_LIMIT",
+            "preset":true
+        },{
+            "default": "1",
+            "description": "For Replication",
+            "label": "ALLOW_ARBITRARY",
+            "name": "ALLOW_ARBITRARY",
             "preset":true
         }],
         "categories": [
