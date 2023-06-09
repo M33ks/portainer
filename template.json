@@ -10967,6 +10967,31 @@
             "Chat"
         ]
     },{
+        "title": "TeamSpeak",
+        "description": "TeamSpeak",
+        "note": "TeamSpeak Server",
+        "logo": "",
+        "platform": "linux",
+        "type": 1,
+        "name": "TeamSpeak",
+        "image": "teamspeak:latest",
+        "restart_policy": "unless-stopped",
+        "ports": [
+          "9987:9987/tcp",
+          "10011:10011/tcp",
+          "30033:30033/tcp"
+        ],
+        "env": [{
+            "default": "accept",
+            "description": "TS3SERVER_LICENSE",
+            "label": "TS3SERVER_LICENSE",
+            "name": "TS3SERVER_LICENSE",
+            "preset":true
+        }],
+        "categories": [
+            "Chat"
+        ]
+    },{
         "title": "Telegram",
         "description": "KasmWeb Telegram is a containerized Telegram with remote access capabilities.",
         "note": "Docker run command for KasmWeb Telegram",
