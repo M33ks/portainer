@@ -160,6 +160,40 @@
             "Monitoring"
         ]
     },{
+        "title": "Jirafeau",
+        "description": "Jirafeau is a web site permitting to upload a file in a simple way and give an unique link to it.",
+        "platform": "linux",
+        "type": 1,
+        "name": "Jirafeau",
+        "image": "jgeusebroek/jirafeau:latest",
+        "restart_policy": "unless-stopped",
+        "ports": [
+            "8082:80/tcp"
+        ],
+        "volumes": [{
+            "bind": "Jirafeau-Data",
+            "container": "/data"
+        },{
+            "bind": "Jirafeau-Config",
+            "container": "/cfg"
+        }],
+        "env": [{
+            "default": "1000",
+            "description": "for UserID",
+            "label": "PUID",
+            "name": "PUID",
+            "preset":true
+        },{
+            "default": "1000",
+            "description": "for GroupID",
+            "label": "PGID",
+            "name": "PGID",
+            "preset":true
+        }],
+        "categories": [
+            "File Sharing"
+        ]
+    },{
         "title": "Kali",
         "description": "KasmWeb Kali is a containerized Kali with remote access capabilities.",
         "note": "Docker run command for KasmWeb Kali",
