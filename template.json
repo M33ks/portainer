@@ -320,8 +320,8 @@
         },{
             "default": "1",
             "description": "For Replication",
-            "label": "ALLOW_ARBITRARY",
-            "name": "ALLOW_ARBITRARY",
+            "label": "PMA_ARBITRARY",
+            "name": "PMA_ARBITRARY",
             "preset":true
         }],
         "categories": [
@@ -8336,8 +8336,8 @@
         },{
             "default": "1",
             "description": "For Replication",
-            "label": "ALLOW_ARBITRARY",
-            "name": "ALLOW_ARBITRARY",
+            "label": "PMA_ARBITRARY",
+            "name": "PMA_ARBITRARY",
             "preset":true
         }],
         "categories": [
