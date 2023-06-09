@@ -5092,7 +5092,7 @@
         "image": "jgeusebroek/jirafeau:latest",
         "restart_policy": "unless-stopped",
         "ports": [
-            "80:80/tcp"
+            "8082:80/tcp"
         ],
         "volumes": [{
             "bind": "Jirafeau-Data",
