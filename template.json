@@ -5101,6 +5101,19 @@
             "bind": "Jirafeau-Config",
             "container": "/cfg"
         }],
+        "env": [{
+            "default": "1000",
+            "description": "for UserID",
+            "label": "PUID",
+            "name": "PUID",
+            "preset":true
+        },{
+            "default": "1000",
+            "description": "for GroupID",
+            "label": "PGID",
+            "name": "PGID",
+            "preset":true
+        }],
         "categories": [
             "File Sharing"
         ]
