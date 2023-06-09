@@ -5084,6 +5084,27 @@
             "Linux Server"
         ]
     },{
+        "title": "Jirafeau",
+        "description": "Jirafeau is a web site permitting to upload a file in a simple way and give an unique link to it.",
+        "platform": "linux",
+        "type": 1,
+        "name": "Jirafeau",
+        "image": "jgeusebroek/jirafeau:latest",
+        "restart_policy": "unless-stopped",
+        "ports": [
+            "80:80/tcp"
+        ],
+        "volumes": [{
+            "bind": "Jirafeau-Data",
+            "container": "/data"
+        },{
+            "bind": "Jirafeau-Config",
+            "container": "/cfg"
+        }],
+        "categories": [
+            "File Sharing"
+        ]
+    },{
         "title": "Joomla",
         "description": "Another free and open-source CMS",
         "logo": "https://portainer-io-assets.sfo2.digitaloceanspaces.com/logos/joomla.png",
