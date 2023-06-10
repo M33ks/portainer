@@ -3608,15 +3608,11 @@
         "name": "File-Browser",
         "image": "filebrowser/filebrowser:latest",
         "restart_policy": "unless-stopped",
-        "command": "--port 80 --database /data/database.db --root /srv",
         "ports": [
-            "80:80/tcp"
+            "8085:80/tcp"
         ],
         "volumes": [{
-            "bind": "File-Browser-Data",
-            "container": "/data"
-        },{
-            "bind": "File-Browser-Srv",
+            "bind": "Path-To-Browse",
             "container": "/srv"
         }],
         "env": [{
