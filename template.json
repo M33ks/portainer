@@ -90,6 +90,39 @@
             "Monitoring"
         ]
     },{
+        "title": "File Browser",
+        "description": "A web file manager",
+        "note": "Default credentials: admin/admin",
+        "logo": "https://portainer-io-assets.sfo2.digitaloceanspaces.com/logos/filebrowser.png",
+        "platform": "linux",
+        "type": 1,
+        "name": "File-Browser",
+        "image": "filebrowser/filebrowser:latest",
+        "restart_policy": "unless-stopped",
+        "ports": [
+            "8085:80/tcp"
+        ],
+        "volumes": [{
+            "bind": "Path-To-Browse",
+            "container": "/srv"
+        }],
+        "env": [{
+            "default": "1000",
+            "description": "for UserID",
+            "label": "PUID",
+            "name": "PUID",
+            "preset":true
+        },{
+            "default": "1000",
+            "description": "for GroupID",
+            "label": "PGID",
+            "name": "PGID",
+            "preset":true
+        }],
+        "categories": [
+            "File Manager"
+        ]
+    },{
         "title": "Firefox",
         "description": "KasmWeb Firefox is a containerized Firefox with remote access capabilities.",
         "note": "Docker run command for KasmWeb Firefox",
@@ -3585,6 +3618,19 @@
         },{
             "bind": "File-Browser-Srv",
             "container": "/srv"
+        }],
+        "env": [{
+            "default": "1000",
+            "description": "for UserID",
+            "label": "PUID",
+            "name": "PUID",
+            "preset":true
+        },{
+            "default": "1000",
+            "description": "for GroupID",
+            "label": "PGID",
+            "name": "PGID",
+            "preset":true
         }],
         "categories": [
             "File Manager"
