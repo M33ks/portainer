@@ -3166,18 +3166,14 @@
         "image": "linuxserver/emby:latest",
         "restart_policy": "unless-stopped",
         "ports": [
-            "8096:8096/tcp",
-            "8920:8920/tcp"
+            "8096:8096/tcp"
         ],
         "volumes": [{
             "bind": "Emby-Config",
             "container": "/config"
         },{
-            "bind": "Emby-TVShows",
-            "container": "/data/tvshows"
-        },{
-            "bind": "Emby-Movies",
-            "container": "/data/movies"
+            "bind": "Emby-Data",
+            "container": "/data"
         },{
             "bind": "/opt/vc/lib",
             "container": "/opt/vc/lib"
@@ -11477,7 +11473,7 @@
             "name": "TZ",
             "preset":true
         },{
-            "default": "<run options here>",
+            "default": "",
             "description": "Optionally specify additional arguments to be passed. See Additional runtime parameters.",
             "label": "RUN_OPTS",
             "name": "RUN_OPTS"
