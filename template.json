@@ -463,18 +463,6 @@
         "volumes": [{
             "bind": "Plex-Config",
             "container": "/config"
-        },{
-            "bind": "Plex-AudioBooks",
-            "container": "/audiobooks"
-        },{
-            "bind": "Plex-Music",
-            "container": "/music"
-        },{
-            "bind": "Plex-TV",
-            "container": "/tv"
-        },{
-            "bind": "Plex-Movies",
-            "container": "/movies"
         }],
         "env": [{
             "default": "",
@@ -8803,18 +8791,6 @@
         "volumes": [{
             "bind": "Plex-Config",
             "container": "/config"
-        },{
-            "bind": "Plex-AudioBooks",
-            "container": "/audiobooks"
-        },{
-            "bind": "Plex-Music",
-            "container": "/music"
-        },{
-            "bind": "Plex-TV",
-            "container": "/tv"
-        },{
-            "bind": "Plex-Movies",
-            "container": "/movies"
         }],
         "env": [{
             "default": "",
