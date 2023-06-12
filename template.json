@@ -471,6 +471,11 @@
             "container": "/movies"
         }],
         "env": [{
+            "default": "",
+            "description": "Optionally you can obtain a claim token from https://plex.tv/claim and input here. Keep in mind that the claim tokens expire within 4 minutes.",
+            "label": "PLEX_CLAIM",
+            "name": "PLEX_CLAIM"
+        },{
             "default": "1000",
             "description": "for GroupID",
             "label": "PUID",
@@ -483,15 +488,17 @@
             "name": "PGID",
             "preset":true
         },{
+            "default": "America/New_York",
+            "description": "TZ",
+            "label": "TZ",
+            "name": "TZ",
+            "preset":true
+        },{
             "default": "docker",
             "description": "Set whether to update plex or not - see Application Setup section.",
             "label": "VERSION",
-            "name": "VERSION"
-        },{
-            "default": "",
-            "description": "Optionally you can obtain a claim token from https://plex.tv/claim and input here. Keep in mind that the claim tokens expire within 4 minutes.",
-            "label": "PLEX_CLAIM",
-            "name": "PLEX_CLAIM"
+            "name": "VERSION",
+            "preset":true
         }],
         "categories": [
             "Photo",
@@ -8798,6 +8805,11 @@
             "container": "/movies"
         }],
         "env": [{
+            "default": "",
+            "description": "Optionally you can obtain a claim token from https://plex.tv/claim and input here. Keep in mind that the claim tokens expire within 4 minutes.",
+            "label": "PLEX_CLAIM",
+            "name": "PLEX_CLAIM"
+        },{
             "default": "1000",
             "description": "for GroupID",
             "label": "PUID",
@@ -8810,15 +8822,17 @@
             "name": "PGID",
             "preset":true
         },{
+            "default": "America/New_York",
+            "description": "TZ",
+            "label": "TZ",
+            "name": "TZ",
+            "preset":true
+        },{
             "default": "docker",
             "description": "Set whether to update plex or not - see Application Setup section.",
             "label": "VERSION",
-            "name": "VERSION"
-        },{
-            "default": "",
-            "description": "Optionally you can obtain a claim token from https://plex.tv/claim and input here. Keep in mind that the claim tokens expire within 4 minutes.",
-            "label": "PLEX_CLAIM",
-            "name": "PLEX_CLAIM"
+            "name": "VERSION",
+            "preset":true
         }],
         "categories": [
             "Photo",
