@@ -449,6 +449,55 @@
             "Database"
         ]
     },{
+        "title": "Plex",
+        "description": "[Plex](https://plex.tv) organizes video, music and photos from personal media libraries and streams them to smart TVs, streaming boxes and mobile devices. This container is packaged as a standalone Plex Media Server. has always been a top priority. Straightforward design and bulk actions mean getting things done faster.",
+        "logo": "http://the-gadgeteer.com/wp-content/uploads/2015/10/plex-logo-e1446990678679.png",
+        "platform": "linux",
+        "type": 1,
+        "name": "Plex",
+        "image": "linuxserver/plex:latest",
+        "restart_policy": "unless-stopped",
+        "ports": [
+            "32400:32400/tcp"
+        ],
+        "volumes": [{
+            "bind": "Plex-Config",
+            "container": "/config"
+        },{
+            "bind": "Plex-TV",
+            "container": "/tv"
+        },{
+            "bind": "Plex-Movies",
+            "container": "/movies"
+        }],
+        "env": [{
+            "default": "1000",
+            "description": "for GroupID",
+            "label": "PUID",
+            "name": "PUID",
+            "preset":true
+        },{
+            "default": "1000",
+            "description": "for UserID",
+            "label": "PGID",
+            "name": "PGID",
+            "preset":true
+        },{
+            "default": "docker",
+            "description": "Set whether to update plex or not - see Application Setup section.",
+            "label": "VERSION",
+            "name": "VERSION"
+        },{
+            "default": "",
+            "description": "Optionally you can obtain a claim token from https://plex.tv/claim and input here. Keep in mind that the claim tokens expire within 4 minutes.",
+            "label": "PLEX_CLAIM",
+            "name": "PLEX_CLAIM"
+        }],
+        "categories": [
+            "Photo",
+            "Linux Server"
+        ]
+    },{
         "title": "Remina",
         "description": "[Remmina](https://remmina.org/) is a remote desktop client written in GTK, aiming to be useful for system administrators and travellers, who need to work with lots of remote computers in front of either large or tiny screens. Remmina supports multiple network protocols, in an integrated and consistent user interface. Currently RDP, VNC, SPICE, NX, XDMCP, SSH and EXEC are supported.",
         "logo": "https://raw.githubusercontent.com/linuxserver/docker-templates/master/linuxserver.io/img/remmina-icon.png",
@@ -8735,7 +8784,9 @@
         "name": "Plex",
         "image": "linuxserver/plex:latest",
         "restart_policy": "unless-stopped",
-        "network": "host",
+        "ports": [
+            "32400:32400/tcp"
+        ],
         "volumes": [{
             "bind": "Plex-Config",
             "container": "/config"
