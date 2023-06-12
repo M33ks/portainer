@@ -464,6 +464,12 @@
             "bind": "Plex-Config",
             "container": "/config"
         },{
+            "bind": "Plex-AudioBooks",
+            "container": "/audiobooks"
+        },{
+            "bind": "Plex-Music",
+            "container": "/music"
+        },{
             "bind": "Plex-TV",
             "container": "/tv"
         },{
@@ -8797,6 +8803,12 @@
         "volumes": [{
             "bind": "Plex-Config",
             "container": "/config"
+        },{
+            "bind": "Plex-AudioBooks",
+            "container": "/audiobooks"
+        },{
+            "bind": "Plex-Music",
+            "container": "/music"
         },{
             "bind": "Plex-TV",
             "container": "/tv"
