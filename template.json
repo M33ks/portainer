@@ -90,6 +90,51 @@
             "Monitoring"
         ]
     },{
+        "title": "Emby",
+        "description": "[Emby](https://emby.media/) organizes video, music, live TV, and photos from personal media libraries and streams them to smart TVs, streaming boxes and mobile devices. This container is packaged as a standalone emby Media Server.",
+        "logo": "https://raw.githubusercontent.com/linuxserver/docker-templates/master/linuxserver.io/img/emby-logo.png",
+        "platform": "linux",
+        "type": 1,
+        "name": "Emby",
+        "image": "linuxserver/emby:latest",
+        "restart_policy": "unless-stopped",
+        "ports": [
+            "8096:8096/tcp"
+        ],
+        "volumes": [{
+            "bind": "Emby-Config",
+            "container": "/config"
+        },{
+            "bind": "Emby-Data",
+            "container": "/data"
+        },{
+            "bind": "/opt/vc/lib",
+            "container": "/opt/vc/lib"
+        }],
+        "env": [{
+            "default": "1000",
+            "description": "for GroupID",
+            "label": "PUID",
+            "name": "PUID",
+            "preset":true
+        },{
+            "default": "1000",
+            "description": "for UserID",
+            "label": "PGID",
+            "name": "PGID",
+            "preset":true
+        },{
+            "default": "America/New_York",
+            "description": "Specify a timezone to use for example America/New_York",
+            "label": "TZ",
+            "name": "TZ",
+            "preset":true
+        }],
+        "categories": [
+            "Music",
+            "Linux Server"
+        ]
+    },{
         "title": "File Browser",
         "description": "A web file manager",
         "note": "Default credentials: admin/admin",
@@ -7227,10 +7272,10 @@
             "8443:443/tcp"
         ],
         "volumes": [{
-            "bind": "NextCloud/Config",
+            "bind": "NextCloud-Config",
             "container": "/config"
         },{
-            "bind": "NextCloud/Data",
+            "bind": "NextCloud-Data",
             "container": "/data"
         }],
         "env": [{
@@ -7251,6 +7296,33 @@
             "label": "TZ",
             "name": "TZ",
             "preset":true
+        }],
+        "categories": [
+            "File Manager",
+            "Linux Server"
+        ]
+    },{
+        "title": "NextPVR",
+        "description": "NextPVR",
+        "logo": "",
+        "platform": "linux",
+        "type": 1,
+        "name": "NextPVR",
+        "image": "nextpvr/nextpvr_amd64:stable",
+        "restart_policy": "unless-stopped",
+        "ports": [
+            "8866:8866/tcp",
+            "16891:16891/udp"
+        ],
+        "volumes": [{
+            "bind": "NextPVR-Config",
+            "container": "/config"
+        },{
+            "bind": "NextPVR-Recordings",
+            "container": "/recordings"
+        },{
+            "bind": "NextPVR-Buffer",
+            "container": "/buffer"
         }],
         "categories": [
             "File Manager",
