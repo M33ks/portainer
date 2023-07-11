@@ -6105,6 +6105,21 @@
             "CMS"
         ]
     },{
+	"title": "Mailpile",
+	"description": "Mailpile is an e-mail client!/search engine and a personal webmail server/easy way to encrypt your e-mail/easy way to encrypt your e-mail ",
+	"note": "",
+	"logo": "https://www.mailpile.is/img/icon-512x512.png",
+	"platform": "linux",
+	"type": 3,
+	"name": "mailpile",
+	"repository": {
+        	"stackfile": "Template/Stack/mailpile.yml",
+        	"url": "https://github.com/xneo1/portainer_templates"
+      	},
+      	"categories": [
+        	"email"
+      	]
+    },{
         "title": "Maltego",
         "description": "KasmWeb Maltego is a containerized Maltego with remote access capabilities.",
         "note": "Docker run command for KasmWeb Maltego",
@@ -8406,6 +8421,20 @@
             "Kasm",
             "OS"
         ]
+    },{
+	"title": "Poste.io",
+	"description": "Full stack mailserver solution with  TLS support. POP3s, SMTP(s), IMAPs, RSPAMD, Clamav, Roundcube(HTTPS), SPF, DKIM with simple installation and web administration.",
+      	"logo": "",
+	"platform": "linux",
+	"type": 3
+	"name": "poste.io",
+	"repository": {
+        	"stackfile": "Template/Stack/posteio.yml",
+        	"url": "https://github.com/xneo1/portainer_templates"
+      	},
+	"categories": [
+        	"Mail"
+      	]
     },{
         "title": "Petio",
         "description": "Petio is a third-party companion app available to Plex server owners to allow their users to request, review, and discover content.",
