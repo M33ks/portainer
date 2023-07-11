@@ -8407,19 +8407,19 @@
             "OS"
         ]
     },{
-      "categories": [
-        "Mail"
-      ],
-      "description": "Full stack mailserver solution with  TLS support. POP3s, SMTP(s), IMAPs, RSPAMD, Clamav, Roundcube(HTTPS), SPF, DKIM with simple installation and web administration.",
-      "logo": "",
-      "name": "poste.io",
-      "platform": "linux",
-      "repository": {
-        "stackfile": "Template/Stack/posteio.yml",
-        "url": "https://github.com/xneo1/portainer_templates"
-      },
-      "title": "Poste.io",
-      "type": 3
+	"title": "Poste.io",
+	"description": "Full stack mailserver solution with  TLS support. POP3s, SMTP(s), IMAPs, RSPAMD, Clamav, Roundcube(HTTPS), SPF, DKIM with simple installation and web administration.",
+	"logo": "",
+	"platform": "linux",
+	"type": 3,
+	"name": "poste.io",
+	"repository": {
+	        "stackfile": "Template/Stack/posteio.yml",
+	        "url": "https://github.com/xneo1/portainer_templates"
+	},
+      	"categories": [
+        	"Mail"
+      	]
     },{
         "title": "Petio",
         "description": "Petio is a third-party companion app available to Plex server owners to allow their users to request, review, and discover content.",
