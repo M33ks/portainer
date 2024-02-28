@@ -1,42 +1,38 @@
 {
     "version": "3",
     "templates": [{
-	  "title": "Windows",
-	  "description": "Windows in a Docker container with KVM acceleration and web-based viewer.",
-	  "note": "Docker run command for Windows container",
-	  "logo": "",
-	  "platform": "linux",
-	  "type": 1,
-	  "name": "Windows",
-	  "image": "dockurr/windows",
-	  "restart_policy": "unless-stopped",
-	  "ports": [
-	    "8006:8006/tcp"
-	  ],
-	  "env": [
-	    {
-	      "default": "8G",
-	      "description": "Amount of RAM allocated to the container",
-	      "label": "RAM Size",
-	      "name": "RAM_SIZE"
-	    },
-	    {
-	      "default": "4",
-	      "description": "Number of CPU cores allocated to the container",
-	      "label": "CPU Cores",
-	      "name": "CPU_CORES"
-	    },
-	    {
-	      "default": "64G",
-	      "description": "Size of the disk allocated to the container",
-	      "label": "Disk Size",
-	      "name": "DISK_SIZE"
-	    }
-	  ],
-	  "categories": [
+        "title": "Windows",
+        "description": "Windows in a Docker container with KVM acceleration and web-based viewer.",
+        "note": "Docker run command for Windows container",
+        "logo": "",
+        "platform": "linux",
+        "type": 1,
+        "name": "Windows",
+        "image": "dockurr/windows",
+        "restart_policy": "unless-stopped",
+        "ports": [
+            "8006:8006/tcp"
+        ],
+        "env": [{
+            "default": "8G",
+            "description": "Amount of RAM allocated to the container",
+            "label": "RAM Size",
+            "name": "RAM_SIZE"
+        },{
+            "default": "4",
+            "description": "Number of CPU cores allocated to the container",
+            "label": "CPU Cores",
+            "name": "CPU_CORES"
+        },{
+            "default": "64G",
+            "description": "Size of the disk allocated to the container",
+            "label": "Disk Size",
+            "name": "DISK_SIZE"
+        }],
+        "categories": [
 	    "Windows",
 	    "Virtualization"
-	  ]
+        ]
     },{
         "title": "AudioBookShelf",
         "description": "Audiobookshelf is a web-based audiobook server that allows you to manage and listen to your audiobooks.",
