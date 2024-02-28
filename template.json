@@ -1,32 +1,4 @@
 {
-    "version": "2",
-    "templates": [{
-        "title": "AudioBookShelf",
-        "description": "Audiobookshelf is a web-based audiobook server that allows you to manage and listen to your audiobooks.",
-        "note": "Docker run command for Audiobookshelf",
-        "logo": "",
-        "platform": "linux",
-        "type": 1,
-        "name": "AudioBookShelf",
-        "image": "ghcr.io/advplyr/audiobookshelf",
-        "restart_policy": "unless-stopped",
-        "ports": [
-            "4040:80/tcp"
-        ],
-        "volumes": [{
-            "bind": "AudioBookShelf-Config",
-            "container": "/config"
-        },{
-            "bind": "AudioBookShelf-Metadata",
-            "container": "/metadata"
-        },{
-            "bind": "AudioBookShelf-Audiobooks",
-            "container": "/audiobooks"
-        }],
-        "categories": [
-            "Audiobook"
-        ]
-    },{
 	  "title": "Windows",
 	  "description": "Windows in a Docker container with KVM acceleration and web-based viewer.",
 	  "note": "Docker run command for Windows container",
@@ -63,6 +35,34 @@
 	    "Windows",
 	    "Virtualization"
 	  ]
+    },{
+    "version": "2",
+    "templates": [{
+        "title": "AudioBookShelf",
+        "description": "Audiobookshelf is a web-based audiobook server that allows you to manage and listen to your audiobooks.",
+        "note": "Docker run command for Audiobookshelf",
+        "logo": "",
+        "platform": "linux",
+        "type": 1,
+        "name": "AudioBookShelf",
+        "image": "ghcr.io/advplyr/audiobookshelf",
+        "restart_policy": "unless-stopped",
+        "ports": [
+            "4040:80/tcp"
+        ],
+        "volumes": [{
+            "bind": "AudioBookShelf-Config",
+            "container": "/config"
+        },{
+            "bind": "AudioBookShelf-Metadata",
+            "container": "/metadata"
+        },{
+            "bind": "AudioBookShelf-Audiobooks",
+            "container": "/audiobooks"
+        }],
+        "categories": [
+            "Audiobook"
+        ]
     },{
         "title": "Chrome",
         "description": "KasmWeb Chrome is a containerized Chrome browser with remote access capabilities.",
