@@ -1,4 +1,6 @@
 {
+    "version": "2",
+    "templates": [{
 	  "title": "Windows",
 	  "description": "Windows in a Docker container with KVM acceleration and web-based viewer.",
 	  "note": "Docker run command for Windows container",
@@ -36,8 +38,6 @@
 	    "Virtualization"
 	  ]
     },{
-    "version": "2",
-    "templates": [{
         "title": "AudioBookShelf",
         "description": "Audiobookshelf is a web-based audiobook server that allows you to manage and listen to your audiobooks.",
         "note": "Docker run command for Audiobookshelf",
