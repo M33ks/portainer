@@ -1,5 +1,5 @@
 {
-    "version": "2",
+    "version": "3",
     "templates": [{
 	  "title": "Windows",
 	  "description": "Windows in a Docker container with KVM acceleration and web-based viewer.",
