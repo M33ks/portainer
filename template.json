@@ -12178,7 +12178,7 @@
             "Kasm"
         ]
     },{
-        "title": "Vscodium",
+        "title": "",
         "description": "[VSCodium](https://vscodium.com/) is a community-driven, freely-licensed binary distribution of Microsoft’s editor VS Code.",
         "note": "Portainer App Templates by <a href='https://www.technorabilia.com' target='_blank'>Technorabilia</a> based on data provided by <a href='https://www.linuxserver.io' target='_blank'>LinuxServer.io</a>.</p><p>Don't forget to create the volume directories on the host file system.</p><p>mkdir -p /volume1/docker/vscodium/config</p>",
         "logo": "https://raw.githubusercontent.com/linuxserver/docker-templates/master/linuxserver.io/img/vscodium-icon.png",
@@ -12212,6 +12212,24 @@
             "description": "specify a timezone to use, see this [list](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones#List).",
             "label": "TZ",
             "name": "TZ",
+            "preset":true
+        },{
+            "default": "admin",
+            "description": "HTTP Basic auth username, abc is default.",
+            "label": "CUSTOM_USER",
+            "name": "CUSTOM_USER",
+            "preset":false
+        },{
+            "default": "admin",
+            "description": "HTTP Basic auth password, abc is default. If unset there will be no auth",
+            "label": "PASSWORD",
+            "name": "PASSWORD",
+            "preset":false
+        },{
+            "default": "VSCode",
+            "description": "The page title displayed on the web browser, default KasmVNC Client",
+            "label": "TITLE",
+            "name": "TITLE",
             "preset":true
         }],
         "categories": [
